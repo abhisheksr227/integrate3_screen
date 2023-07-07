@@ -15,14 +15,14 @@ import 'Staff_Dashboard92.dart';
 import 'dashboard_85change.dart';
 
 
-class Tester extends StatefulWidget {
-  const Tester({Key? key}) : super(key: key);
+class OwnerDashboard extends StatefulWidget {
+  const OwnerDashboard({Key? key}) : super(key: key);
 
   @override
-  State<Tester> createState() => _TesterState();
+  State<OwnerDashboard> createState() => _OwnerDashboardState();
 }
 
-class _TesterState extends State<Tester> {
+class _OwnerDashboardState extends State<OwnerDashboard> {
   @override
   Widget build(BuildContext context) {
     return

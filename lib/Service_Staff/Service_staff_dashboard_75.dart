@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'Issue_Invoice.dart';
 import 'Order_status.dart';
+import 'ReadyForDelivery.dart';
+import 'Service_login.dart';
 
 
 class StaffServiceDashboard extends StatefulWidget {
@@ -110,9 +113,9 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                 Padding(
                   padding: const EdgeInsets.only(top: 5,right: 10),
                   child: InkWell(
-                    // onTap: () {
-                    //   Navigator.push(context, MaterialPageRoute(builder: (context) => IssueInvoice(),));
-                    // },
+                     onTap: () {
+                       Navigator.push(context, MaterialPageRoute(builder: (context) => IssueInvoice(),));
+                     },
                     child: Container(
                       height: 30,
                       width: 120,
@@ -152,9 +155,9 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
               padding: const EdgeInsets.only(top: 5),
               child:
               InkWell(
-                // onTap: () {
-                //   Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceLogin(),));
-                // },
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceLogin(),));
+                 },
                 child: Container(
                   height: 30,
                   width: 120,
@@ -356,7 +359,9 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                     height: 40,
                                     width: 60,
                                     child: Center(
-                                      child:  InkWell(onTap: () { },
+                                      child:  InkWell(onTap: () {
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => ReadyForDelivery(),));
+                                      },
                                         child: Container(
                                           height: 20,
                                           width: 50,

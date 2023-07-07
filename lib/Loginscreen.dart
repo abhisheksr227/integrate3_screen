@@ -18,22 +18,17 @@ class _LoginPageState extends State<LoginPage> {
     String username = _emailController.text;
     String password = _passwordController.text;
 
-    if (username == 'one' && password == 'one') {
+    if (username == '111' && password == '111') {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Tester()),
+        MaterialPageRoute(builder: (context) => OwnerDashboard()),
       );
-    } else if (username == 'two' && password == 'two') {
+    } else if (username == '222' && password == '222') {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Tester()),
+        MaterialPageRoute(builder: (context) => StaffServiceDashboard()),
       );
-    } else if (username == 'three' && password == 'three') {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => Tester()),
-      );
-    } else if (username == 'four' && password == 'four') {
+    } else if (username == '333' && password == '333') {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => StaffServiceDashboard()),
@@ -78,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white.withOpacity(0.2),
-                  labelText: 'User',
+                  labelText: 'User name',
                   labelStyle: TextStyle(color: Colors.white),
                   prefixIcon: Icon(
                     Icons.email,

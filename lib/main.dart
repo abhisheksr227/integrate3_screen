@@ -21,8 +21,7 @@ class MyApp extends StatelessWidget {
 
         colorScheme: ColorScheme.fromSeed(primary: Colors.white, seedColor: Colors.blue),
       ),
-      home:  LoginPage
-        (),
+      home:  LoginPage(),
     );
   }
 }
