@@ -70,7 +70,7 @@ class _PriceState extends State<Price> {
                 child: ElevatedButton(
                   style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blue[700])),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => PriceGroup(),));
+
                   },
                   child: Text('Create New',style: TextStyle(color: Colors.white),),
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:integrate_3screens/Owners/Pages/New_Order.dart';
 
 class CreateNewOrder extends StatefulWidget {
   const CreateNewOrder({Key? key}) : super(key: key);
@@ -155,7 +156,9 @@ class _CreateNewOrderState extends State<CreateNewOrder> {
                 children: [
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-                      onPressed: () { },
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => NewOrder(),));
+                      },
                       child: Text('New Order',style: TextStyle(color: Colors.white,fontSize: 12),)),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
@@ -425,7 +428,7 @@ class _CreateNewOrderState extends State<CreateNewOrder> {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                     onPressed: () {
-                     // Navigator.push(context, MaterialPageRoute(builder: (context) => Invoice(),));
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => NewOrder(),));
                     },
                     child: Text('New Order',style: TextStyle(color: Colors.white),)),
               ),

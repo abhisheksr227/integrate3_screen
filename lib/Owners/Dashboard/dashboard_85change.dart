@@ -5,14 +5,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:integrate_3screens/Owners/Pages/Activity_Monitor.dart';
 import 'package:integrate_3screens/Owners/Pages/Assign_Staff.dart';
+import 'package:integrate_3screens/Owners/Pages/Client_Management.dart';
 import 'package:integrate_3screens/Owners/Pages/Create_Invoice.dart';
+import 'package:integrate_3screens/Owners/Pages/Create_NewOrder.dart';
+import 'package:integrate_3screens/Owners/Pages/Dispatch_Pending.dart';
+import 'package:integrate_3screens/Owners/Pages/Expence_heads.dart';
 import 'package:integrate_3screens/Owners/Pages/Orders_Map.dart';
 import 'package:integrate_3screens/Owners/Pages/Outstanding.dart';
+import 'package:integrate_3screens/Owners/Pages/Price_Group.dart';
 import 'package:integrate_3screens/Owners/Pages/ReadyForDispatch.dart';
+import 'package:integrate_3screens/Owners/Pages/Revenue_Report.dart';
 import 'package:intl/intl.dart';
 
 import '../Pages/Add_clients.dart';
+import '../Pages/Delivered.dart';
 import '../Pages/New_Order.dart';
+import '../Pages/Payment_history.dart';
 import '../Pages/Price.dart';
 import '../Pages/Serviceable_areas.dart';
 
@@ -58,25 +66,48 @@ class _DashboardState extends State<Dashboard> {
         children: [
           ListTile(
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => OrdersMap(),)),
-            title: Text('Orders Map'),
+            title: Text('Orders Map',style: TextStyle(color: Colors.blue),),
           ),
           ListTile(
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => CreateInvoice(),)),
-            title: Text('Create Invoice'),
+            title: Text('Create Invoice',style: TextStyle(color: Colors.blue),),
           ),
           ListTile(
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Assign(),)),
-            title: Text('Assign Staff'),
+            title: Text('Assign Staff',style: TextStyle(color: Colors.blue),),
           ),
           ListTile(
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Activity(),)),
-            title: Text('Activity Monitor'),
+            title: Text('Activity Monitor',style: TextStyle(color: Colors.blue),),
           ),
           ListTile(
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Price(),)),
-            title: Text('Price Group'),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PriceGroup(),)),
+            title: Text('Price Group',style: TextStyle(color: Colors.blue),),
           ),
-
+          ListTile(
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Payment(),)),
+            title: Text('Payment History',style: TextStyle(color: Colors.blue),),
+          ),
+          ListTile(
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Management(),)),
+            title: Text('Client Management',style: TextStyle(color: Colors.blue),),
+          ),
+          ListTile(
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Expense(),)),
+            title: Text('Expence Heads',style: TextStyle(color: Colors.blue),),
+          ),
+          ListTile(
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => RevenueReport(),)),
+            title: Text('Revenue Report',style: TextStyle(color: Colors.blue),),
+          ),
+          ListTile(
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DispatchPending(),)),
+            title: Text('Pending Dispatches',style: TextStyle(color: Colors.blue),),
+          ),
+          ListTile(
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Delivered(),)),
+            title: Text('Delivered',style: TextStyle(color: Colors.blue),),
+          ),
             ],
       ),
         appBar: AppBar(
@@ -469,7 +500,7 @@ class _DashboardState extends State<Dashboard> {
                       Padding(
                         padding: const EdgeInsets.only(left: 30,top: 40),
                         child: InkWell(onTap: () {
-                           Navigator.push(context, MaterialPageRoute(builder: (context) => NewOrder(),));
+                           Navigator.push(context, MaterialPageRoute(builder: (context) => CreateNewOrder(),));
                         },
                           child: Container(
                             height: 40,

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'Price.dart';
+
 class PriceGroup extends StatefulWidget {
   const PriceGroup({Key? key}) : super(key: key);
 
@@ -112,7 +114,7 @@ class _PriceGroupState extends State<PriceGroup> {
                 child: ElevatedButton(
                   style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blue[700])),
                   onPressed: () {
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Price(),));
                   },
                   child: Text('CREATE',style: TextStyle(color: Colors.white),),
                 ),
