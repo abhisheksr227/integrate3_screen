@@ -1,10 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'Dispatched_items.dart';
 import 'Issue_Invoice.dart';
+import 'Language84.dart';
 import 'Order_status.dart';
+import 'Pending_list.dart';
 import 'ReadyForDelivery.dart';
+import 'Report83.dart';
 import 'Service_login.dart';
+import 'Servicelogin77.dart';
 
 
 class StaffServiceDashboard extends StatefulWidget {
@@ -15,24 +20,52 @@ class StaffServiceDashboard extends StatefulWidget {
 }
 
 class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
+
+  void _onItemTapped(int index) {
+    switch (index) {
+      case 0:
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(builder: (context) => HomeScreen()),
+        // );
+        break;
+      case 1:
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(builder: (context) => ComplaintScreen()),
+        // );
+        break;
+      case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Pendinglist()),
+        );
+        break;
+    }
+  }
+
+  int _selectedIndex = 0;
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 55),
-          child: IconButton(onPressed: () {},
-            icon: const Icon(Icons.menu,color: Colors.deepPurple),),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 55),
-            child: IconButton(onPressed: () {},
-                icon: const Icon(Icons.refresh_outlined,color: Colors.deepPurple,)),
-          )
-        ],
-        toolbarHeight: 110,
+        // leading: Padding(
+        //   padding: const EdgeInsets.only(bottom: 55),
+        //   child: IconButton(onPressed: () {},
+        //     icon: const Icon(Icons.menu,color: Colors.deepPurple),),
+        // ),
+        // actions: [
+        //   Padding(
+        //     padding: const EdgeInsets.only(bottom: 55),
+        //     child: IconButton(onPressed: () {},
+        //         icon: const Icon(Icons.refresh_outlined,color: Colors.deepPurple,)),
+        //   )
+        // ],
+        // toolbarHeight: 110,
         backgroundColor: Colors.white,
         title: Center(
             child: Column(
@@ -42,18 +75,73 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                     fontWeight: FontWeight.bold,
                     color: Colors.deepPurple
                 ),),
-                Padding(
-                  padding: EdgeInsets.all(15),
-                  child: Text('Welcome Back Deepesh !',
-                    style: TextStyle(fontSize: 18,color: Colors.deepPurple),),
-                )
+                // Padding(
+                //   padding: EdgeInsets.all(15),
+                //   child: Text('Welcome Back Deepesh !',
+                //     style: TextStyle(fontSize: 18,color: Colors.deepPurple),),
+                // )
               ],
             )),
       ),
-      body:
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+
+              ),
+              child: Text(
+                "",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text(' Service Login'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ViewOrderDetails()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Dispatched'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Dispatcheditems()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Language'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Language()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Reports'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RevenueReport()),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+     body:
       SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: 30,),
             const Text('Service Staff Dashboard',
               style: TextStyle(
                   fontSize: 20,fontWeight: FontWeight.bold,color: Colors.deepPurple),),
@@ -488,7 +576,30 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
             ),
           ],
         ),
+      ),bottomNavigationBar: Container(
+      color: Colors.deepPurple,
+      child: BottomNavigationBar(
+        backgroundColor: Colors.deepPurple,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white.withOpacity(0.6),
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.ac_unit),
+            label: 'Complaint',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notification_important_rounded),
+            label: 'pending',
+          ),
+        ],
       ),
+    ),
     );
   }
 }
