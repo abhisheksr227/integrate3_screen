@@ -21,22 +21,22 @@ class _LoginPageState extends State<LoginPage> {
     String password = _passwordController.text;
 
     if (username == '111' && password == '111') {
-      Navigator.pushReplacement(
+      Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Navigation()),
       );
     } else if (username == '222' && password == '222') {
-      Navigator.pushReplacement(
+      Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => StaffServiceDashboard()),
       );
     } else if (username == '333' && password == '333') {
-      Navigator.pushReplacement(
+      Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => CustomerHomeScreen()),
       );
     } else if (username == '333' && password == '333') {
-      Navigator.pushReplacement(
+      Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => CustomerHomeScreen()),
       );

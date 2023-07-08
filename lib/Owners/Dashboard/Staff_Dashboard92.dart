@@ -604,30 +604,6 @@ class _StaffdashboardState extends State<Staffdashboard> {
               ),
             ]),
       ),
-      bottomNavigationBar: Container(
-        color: Colors.lightBlue,
-        child: BottomNavigationBar(
-          backgroundColor: Colors.blue[800],
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white.withOpacity(0.6),
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.location_pin),
-              label: 'Track',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notification_important_rounded),
-              label: 'Complaint',
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
