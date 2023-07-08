@@ -3,7 +3,11 @@ import 'dart:math';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:integrate_3screens/Owners/Pages/Invoice.dart';
 import 'package:intl/intl.dart';
+
+import '../Pages/Add_clients.dart';
+import '../Pages/New_Order.dart';
 
 class DataItem {
   int x;
@@ -427,7 +431,7 @@ class _DashboardState extends State<Dashboard> {
                       Padding(
                         padding: const EdgeInsets.only(left: 30,top: 40),
                         child: InkWell(onTap: () {
-                          // Navigator.push(context, MaterialPageRoute(builder: (context) => NewOrder(),));
+                           Navigator.push(context, MaterialPageRoute(builder: (context) => NewOrder(),));
                         },
                           child: Container(
                             height: 40,
@@ -461,7 +465,7 @@ class _DashboardState extends State<Dashboard> {
                       Padding(
                         padding: const EdgeInsets.only(left: 30,top: 20),
                         child: InkWell(onTap: () {
-                          // Navigator.push(context, MaterialPageRoute(builder: (context) => AddClients(),));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => AddClients(),));
                         },
                           child: Container(
                             height: 40,
@@ -475,7 +479,7 @@ class _DashboardState extends State<Dashboard> {
                       Padding(
                         padding: const EdgeInsets.only(top: 20,right: 30),
                         child: InkWell(onTap: () {
-                          // Navigator.push(context, MaterialPageRoute(builder: (context) => Outstanding(),));
+                           Navigator.push(context, MaterialPageRoute(builder: (context) => Invoice(),));
                         },
                           child: Container(
                             height: 40,

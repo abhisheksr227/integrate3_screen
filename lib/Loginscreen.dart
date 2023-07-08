@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Owners/Owner_dashboard.dart';
+import 'Owners/Dashboard/Owner_dashboard.dart';
 import 'Service_Staff/Service_staff_dashboard_75.dart';
 
 
@@ -27,6 +27,11 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => StaffServiceDashboard()),
+      );
+    } else if (username == '333' && password == '333') {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => OwnerDashboard()),
       );
     } else if (username == '333' && password == '333') {
       Navigator.pushReplacement(

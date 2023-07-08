@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:integrate_3screens/Owners/pickupdashboarduiclass.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pickupdashboarduiclass.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+
 import 'chartdataclass.dart';
 
 class Pickupdashboard extends StatefulWidget {
