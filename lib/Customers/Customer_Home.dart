@@ -108,8 +108,8 @@ class CustomerHomeScreen extends StatelessWidget {
                           SizedBox(width: 16.0),
                           CircleAvatar(
                             radius: 40,
-                            backgroundImage:
-                            NetworkImage('https://example.com/user_image.jpg'),
+                            // backgroundImage:
+                            // NetworkImage('https://example.com/user_image.jpg'),
                           ),
                         ],
                       ),
