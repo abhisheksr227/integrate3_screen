@@ -1,6 +1,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:integrate_3screens/Owners/Pages/Complaint.dart';
+import 'package:integrate_3screens/Owners/Pages/Track_staff.dart';
 
 
 import 'Client dashboard.dart';
@@ -26,13 +28,15 @@ class _OwnerDashboardState extends State<OwnerDashboard> {
   Widget build(BuildContext context) {
     return
       DefaultTabController(
-          length: 9, child: Scaffold(
-        body: TabBarView(
-          children: [
-            Dashboard(),sample(),Servicedashboard(),Pickupdashboard(),
-            Dispatchdashboard(),CollectionDashboard(),Clientdashboard(),
-            Staffdashboard(),Delivereddashboard()
-          ],),
-      ));
+          length: 9,
+          child: Scaffold(
+            body: TabBarView(
+              children: [
+                Dashboard(),sample(),Servicedashboard(),Pickupdashboard(),
+                Dispatchdashboard(),CollectionDashboard(),Clientdashboard(),
+                Staffdashboard(),Delivereddashboard()
+          ],)
+          )
+      );
   }
 }

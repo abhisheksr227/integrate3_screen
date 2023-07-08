@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:integrate_3screens/Owners/Pages/Create_NewOrder.dart';
 import 'package:intl/intl.dart';
+
+import 'Complaint.dart';
 
 class NewOrder extends StatefulWidget {
   const NewOrder({Key? key}) : super(key: key);
@@ -213,11 +216,13 @@ class _NewOrderState extends State<NewOrder> {
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                       onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => CreateNewOrder(),));
                       },
                       child: Text('New Order',style: TextStyle(color: Colors.white),)),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                       onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Complaint(),));
                       },
                       child: Text('Complaint',style: TextStyle(color: Colors.white),)),
                 ],

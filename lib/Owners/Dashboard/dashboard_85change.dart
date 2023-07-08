@@ -3,11 +3,14 @@ import 'dart:math';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:integrate_3screens/Owners/Pages/Invoice.dart';
+import 'package:integrate_3screens/Owners/Pages/Orders_Map.dart';
+import 'package:integrate_3screens/Owners/Pages/Outstanding.dart';
+import 'package:integrate_3screens/Owners/Pages/ReadyForDispatch.dart';
 import 'package:intl/intl.dart';
 
 import '../Pages/Add_clients.dart';
 import '../Pages/New_Order.dart';
+import '../Pages/Serviceable_areas.dart';
 
 class DataItem {
   int x;
@@ -47,11 +50,21 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavigationDrawer(
+        children: [
+          ListTile(
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => OrdersMap(),)),
+            title: Text('Orders Map'),
+          )
+            ],
+      ),
         appBar: AppBar(
           leading: Padding(
             padding: const EdgeInsets.only(bottom: 30),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
               icon: const Icon(Icons.menu, color: Colors.blue),
             ),
           ),
@@ -445,7 +458,7 @@ class _DashboardState extends State<Dashboard> {
                       Padding(
                         padding: const EdgeInsets.only(top: 40,right: 30),
                         child: InkWell(onTap: () {
-                          // Navigator.push(context, MaterialPageRoute(builder: (context) => OrdersMap(),));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ReadyForDispatch(),));
                         },
                           child: Container(
                             height: 40,
@@ -479,7 +492,7 @@ class _DashboardState extends State<Dashboard> {
                       Padding(
                         padding: const EdgeInsets.only(top: 20,right: 30),
                         child: InkWell(onTap: () {
-                           Navigator.push(context, MaterialPageRoute(builder: (context) => Invoice(),));
+                           Navigator.push(context, MaterialPageRoute(builder: (context) => Outstanding(),));
                         },
                           child: Container(
                             height: 40,
@@ -497,7 +510,7 @@ class _DashboardState extends State<Dashboard> {
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: InkWell(onTap: () {
-                      // Navigator.push(context, MaterialPageRoute(builder: (context) => Areas(),));
+                       Navigator.push(context, MaterialPageRoute(builder: (context) => Areas(),));
                     },
                       child: Container(
                         height: 40,
