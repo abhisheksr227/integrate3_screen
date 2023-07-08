@@ -3,6 +3,9 @@ import 'dart:math';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:integrate_3screens/Owners/Pages/Activity_Monitor.dart';
+import 'package:integrate_3screens/Owners/Pages/Assign_Staff.dart';
+import 'package:integrate_3screens/Owners/Pages/Create_Invoice.dart';
 import 'package:integrate_3screens/Owners/Pages/Orders_Map.dart';
 import 'package:integrate_3screens/Owners/Pages/Outstanding.dart';
 import 'package:integrate_3screens/Owners/Pages/ReadyForDispatch.dart';
@@ -10,6 +13,7 @@ import 'package:intl/intl.dart';
 
 import '../Pages/Add_clients.dart';
 import '../Pages/New_Order.dart';
+import '../Pages/Price.dart';
 import '../Pages/Serviceable_areas.dart';
 
 class DataItem {
@@ -55,18 +59,39 @@ class _DashboardState extends State<Dashboard> {
           ListTile(
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => OrdersMap(),)),
             title: Text('Orders Map'),
-          )
+          ),
+          ListTile(
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => CreateInvoice(),)),
+            title: Text('Create Invoice'),
+          ),
+          ListTile(
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Assign(),)),
+            title: Text('Assign Staff'),
+          ),
+          ListTile(
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Activity(),)),
+            title: Text('Activity Monitor'),
+          ),
+          ListTile(
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Price(),)),
+            title: Text('Price Group'),
+          ),
+
             ],
       ),
         appBar: AppBar(
-          leading: Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: IconButton(
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              icon: const Icon(Icons.menu, color: Colors.blue),
-            ),
+          leading: Builder(
+            builder: (context) {
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 30),
+                child: IconButton(
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  icon: const Icon(Icons.menu, color: Colors.blue),
+                ),
+              );
+            }
           ),
           actions: [
             Padding(
