@@ -3,6 +3,9 @@ import 'dart:math';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pages2/21-06/Individual_items_116.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pages2/21-06/Order_status_121.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Pickup_pending_123.dart';
 import 'package:integrate_3screens/Owners/Pages/Activity_Monitor.dart';
 import 'package:integrate_3screens/Owners/Pages/Assign_Staff.dart';
 import 'package:integrate_3screens/Owners/Pages/Client_Management.dart';
@@ -64,6 +67,14 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       drawer: NavigationDrawer(
         children: [
+          ListTile(
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PickUpPending(),)),
+            title: Text('Pickup pending',style: TextStyle(color: Colors.blue),),
+          ),
+          ListTile(
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => IndividualItems(),)),
+            title: Text('Individual Items',style: TextStyle(color: Colors.blue),),
+          ),
           ListTile(
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => OrdersMap(),)),
             title: Text('Orders Map',style: TextStyle(color: Colors.blue),),
@@ -514,7 +525,7 @@ class _DashboardState extends State<Dashboard> {
                       Padding(
                         padding: const EdgeInsets.only(top: 40,right: 30),
                         child: InkWell(onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => ReadyForDispatch(),));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => OrderStatus(),));
                         },
                           child: Container(
                             height: 40,
