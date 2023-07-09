@@ -68,7 +68,7 @@ class _PromotionsState extends State<Promotions> {
                   Container(
                   width: MediaQuery.of(context).size.width,
                   height: 300,
-                  child: Image.asset('Asset/Image/27d3aad990cc42c21cf0a8b756bd9ea6.jpg'),
+                  child: Image.asset('Assets/Images/27d3aad990cc42c21cf0a8b756bd9ea6.jpg'),
                 ),
                   Padding(
                     padding: const EdgeInsets.only(top: 30),

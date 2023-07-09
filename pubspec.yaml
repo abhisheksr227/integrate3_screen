@@ -68,6 +68,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - Assets/Images/whatsapp-icon-logo-8CA4FB831E-seeklogo.com.png
+    - Assets/Images/27d3aad990cc42c21cf0a8b756bd9ea6.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

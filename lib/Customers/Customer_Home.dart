@@ -1,11 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:integrate_3screens/Customers/15-19/Item_Details.dart';
+import 'package:integrate_3screens/Customers/15-19/Transaction_History.dart';
+import 'package:integrate_3screens/Customers/Bag.dart';
+import 'package:integrate_3screens/Customers/Complaint.dart';
+import 'package:integrate_3screens/Customers/Edit.dart';
+import 'package:integrate_3screens/Customers/Invoice.dart';
+import 'package:integrate_3screens/Customers/Language.dart';
+import 'package:integrate_3screens/Customers/Password.dart';
+import 'package:integrate_3screens/Customers/Promotions.dart';
+import 'package:integrate_3screens/Customers/Receipt.dart';
+import 'package:integrate_3screens/Customers/Wallet.dart';
+
+import '15-19/Order_Status_history.dart';
+import '15-19/Pricing.dart';
+import 'NewOrder.dart';
+import 'Notifications.dart';
 
 class CustomerHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar:  AppBar(),
+        appBar:  AppBar(
+          actions: [
+            IconButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Notifications(),));
+            }, icon: Icon(Icons.notifications))
+          ],
+        ),
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
@@ -26,19 +48,49 @@ class CustomerHomeScreen extends StatelessWidget {
               ListTile(
                 title: Text('Language'),
                 onTap: () {
-                  // Handle language option
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Language(),));
+                },
+              ),
+              ListTile(
+                title: Text('Bags'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Bag(),));
                 },
               ),
               ListTile(
                 title: Text('Pricing'),
                 onTap: () {
-                  // Handle pricing option
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Pricing(),));
+                },
+              ),
+              ListTile(
+                title: Text('Item Details'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Itemdetails(),));
+                },
+              ),
+              ListTile(
+                title: Text('History'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Transactionhistory(),));
                 },
               ),
               ListTile(
                 title: Text('Customer Complaint'),
                 onTap: () {
-                  // Handle customer complaint option
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Complaint(),));
+                },
+              ),
+              ListTile(
+                title: Text('Receipt'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Receipt(),));
+                },
+              ),
+              ListTile(
+                title: Text('Change Password'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Password(),));
                 },
               ),
               ListTile(
@@ -83,7 +135,7 @@ class CustomerHomeScreen extends StatelessWidget {
                                 height: 10,
                               ),GestureDetector(
                                 onTap: () {
-                                  // Handle edit profile button press
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => Edit(),));
                                 },
                                 child: Container(
                                   alignment: Alignment.center,
@@ -118,89 +170,97 @@ class CustomerHomeScreen extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          padding: const EdgeInsets.all(16.0),
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [Color(0xFF48a3c2), Color(0xFF1A344F)],
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
+                        InkWell(onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Wallet(),));
+                        },
+                          child: Container(
+                            padding: const EdgeInsets.all(16.0),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [Color(0xFF48a3c2), Color(0xFF1A344F)],
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'Wallet Balance',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Wallet Balance',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.account_balance_wallet,
                                       color: Colors.white,
                                     ),
-                                  ),
-                                  Icon(
-                                    Icons.account_balance_wallet,
-                                    color: Colors.white,
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: 16.0),
-                              Text(
-                                'AED 0',
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  color: Colors.blue,
-                                  fontWeight: FontWeight.bold,
+                                  ],
                                 ),
-                              ),
-                            ],
+                                SizedBox(height: 16.0),
+                                Text(
+                                  'AED 0',
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(height: 16.0),
-                        Container(
-                          padding: const EdgeInsets.all(16.0),
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [Color(0xFF48a3c2), Color(0xFF1A344F)],
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
+                        InkWell(onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Invoice(),));
+                        },
+                          child: Container(
+                            padding: const EdgeInsets.all(16.0),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [Color(0xFF48a3c2), Color(0xFF1A344F)],
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'Current Outstanding',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Current Outstanding',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.warning,
                                       color: Colors.white,
                                     ),
-                                  ),
-                                  Icon(
-                                    Icons.warning,
-                                    color: Colors.white,
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: 16.0),
-                              Text(
-                                'AED 0',
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  color: Colors.red,
-                                  fontWeight: FontWeight.bold,
+                                  ],
                                 ),
-                              ),
-                            ],
+                                SizedBox(height: 16.0),
+                                Text(
+                                  'AED 0',
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -209,15 +269,23 @@ class CustomerHomeScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CircleContainer(
-                          title: 'Order Status',
-                          icon: Icons.assignment,
-                          color: Colors.blue,
+                        InkWell(onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Orderstushistory(),));
+                        },
+                          child: CircleContainer(
+                            title: 'Order Status',
+                            icon: Icons.assignment,
+                            color: Colors.blue,
+                          ),
                         ),
-                        CircleContainer(
-                          title: 'New Order',
-                          icon: Icons.add_shopping_cart,
-                          color: Colors.orange,
+                        InkWell(onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => CustomerNewOrder(),));
+                        },
+                          child: CircleContainer(
+                            title: 'New Order',
+                            icon: Icons.add_shopping_cart,
+                            color: Colors.orange,
+                          ),
                         ),
                         CircleContainer(
                           title: 'Payment',
@@ -230,10 +298,14 @@ class CustomerHomeScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CircleContainer(
-                          title: 'Promotions',
-                          icon: Icons.local_offer,
-                          color: Colors.purple,
+                        InkWell(onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Promotions(),));
+                        },
+                          child: CircleContainer(
+                            title: 'Promotions',
+                            icon: Icons.local_offer,
+                            color: Colors.purple,
+                          ),
                         ),
                         CircleContainer(
                           title: 'Services',
