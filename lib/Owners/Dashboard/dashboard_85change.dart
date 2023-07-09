@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:integrate_3screens/Customers/Customer_Home.dart';
 import 'package:integrate_3screens/Owners/Dashboard/pages2/21-06/Individual_items_116.dart';
 import 'package:integrate_3screens/Owners/Dashboard/pages2/21-06/Order_status_121.dart';
 import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Pickup_pending_123.dart';
@@ -67,106 +68,106 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       drawer: NavigationDrawer(
         children: [
+          DrawerHeader(
+            child: CircleAvatar(
+              foregroundImage: AssetImage('Assets/Images/Laundry-Logo-Graphics-1-8-580x386.jpg'),
+            )
+          ),
           ListTile(
+            leading: Icon(CupertinoIcons.tray_arrow_up_fill,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PickUpPending(),)),
-            title: Text('Pickup pending',style: TextStyle(color: Colors.blue),),
+            title: Text('Pickup pending',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
           ListTile(
+            leading: Icon(Icons.list,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => IndividualItems(),)),
-            title: Text('Individual Items',style: TextStyle(color: Colors.blue),),
+            title: Text('Individual Items',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
           ListTile(
+            leading: Icon(CupertinoIcons.location_solid,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => OrdersMap(),)),
-            title: Text('Orders Map',style: TextStyle(color: Colors.blue),),
+            title: Text('Orders Map',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
           ListTile(
+            leading: Icon(CupertinoIcons.create_solid,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => CreateInvoice(),)),
-            title: Text('Create Invoice',style: TextStyle(color: Colors.blue),),
+            title: Text('Create Invoice',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
           ListTile(
+            leading: Icon(Icons.man,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Assign(),)),
-            title: Text('Assign Staff',style: TextStyle(color: Colors.blue),),
+            title: Text('Assign Staff',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
           ListTile(
+            leading: Icon(Icons.local_activity,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Activity(),)),
-            title: Text('Activity Monitor',style: TextStyle(color: Colors.blue),),
+            title: Text('Activity Monitor',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
           ListTile(
+            leading: Icon(Icons.price_change,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PriceGroup(),)),
-            title: Text('Price Group',style: TextStyle(color: Colors.blue),),
+            title: Text('Price Group',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
           ListTile(
+            leading: Icon(Icons.payment,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Payment(),)),
-            title: Text('Payment History',style: TextStyle(color: Colors.blue),),
+            title: Text('Payment History',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
           ListTile(
+            leading: Icon(Icons.manage_accounts,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Management(),)),
-            title: Text('Client Management',style: TextStyle(color: Colors.blue),),
+            title: Text('Client Management',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
           ListTile(
+            leading: Icon(CupertinoIcons.money_dollar,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Expense(),)),
-            title: Text('Expence Heads',style: TextStyle(color: Colors.blue),),
+            title: Text('Expence Heads',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
           ListTile(
+            leading: Icon(Icons.request_page,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => RevenueReport(),)),
-            title: Text('Revenue Report',style: TextStyle(color: Colors.blue),),
+            title: Text('Revenue Report',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
           ListTile(
+            leading: Icon(Icons.pending,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DispatchPending(),)),
-            title: Text('Pending Dispatches',style: TextStyle(color: Colors.blue),),
+            title: Text('Pending Dispatches',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
           ListTile(
+            leading: Icon(Icons.delivery_dining,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Delivered(),)),
-            title: Text('Delivered',style: TextStyle(color: Colors.blue),),
+            title: Text('Delivered',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
             ],
       ),
         appBar: AppBar(
           leading: Builder(
             builder: (context) {
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 30),
-                child: IconButton(
-                  onPressed: () {
-                    Scaffold.of(context).openDrawer();
-                  },
-                  icon: const Icon(Icons.menu, color: Colors.blue),
-                ),
+              return IconButton(
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                icon: const Icon(Icons.menu, color: Colors.blue),
               );
             }
           ),
           actions: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 30),
-              child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.refresh_outlined,
-                    color: Colors.blue,
-                  )),
-            )
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.refresh_outlined,
+                  color: Colors.blue,
+                ))
           ],
-          title: Center(
-              child: Column(
-                children: const [
-                  Text('LOGO', style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blue
-                  ),),
-                  Text('Welcome Back Deepesh !',
-                    style: TextStyle(fontSize: 18, color: Colors.blue),)
-                ],
-              )),
-          toolbarHeight: 100,
+          toolbarHeight: 50,
         ),
         body: SingleChildScrollView(
             child: Column(
                 children: [
-                  SizedBox(height:10),
-                  const Text('Owners Dashboard',
+                  const Text('OWNERS DASHBOARD',
                     style: TextStyle(
                         fontSize: 20,fontWeight: FontWeight.bold,color: Colors.blue),),
+                  SizedBox(height: 20,),
                   Row(mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
@@ -176,10 +177,10 @@ class _DashboardState extends State<Dashboard> {
                       Padding(
                         padding: const EdgeInsets.only(top: 15,bottom: 15),
                         child: Container(
-                          width: 100,
-                          height: 30,
+                          width: 150,
+                          height: 40,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
+                              borderRadius: BorderRadius.circular(5),
                               border: Border.all(color: Colors.blue)),
                           child: DropdownButtonFormField(
                             decoration: InputDecoration(
@@ -202,6 +203,7 @@ class _DashboardState extends State<Dashboard> {
                     children: [
                       Radio(
                         value: '',
+                        activeColor: Colors.blue,
                         groupValue: character,
                         onChanged: (value) {
                           setState(() {
