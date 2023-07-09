@@ -102,7 +102,7 @@ class CustomerHomeScreen extends StatelessWidget {
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.edit),
+                trailing: Icon(Icons.edit),
                 title: Text(
                   'Edit Profile',
                   style: TextStyle(fontSize: 16),
@@ -116,7 +116,7 @@ class CustomerHomeScreen extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.language),
+                trailing: Icon(Icons.language),
                 title: Text(
                   'Language',
                   style: TextStyle(fontSize: 16),
@@ -130,7 +130,7 @@ class CustomerHomeScreen extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.history_sharp),
+                trailing: Icon(Icons.history_sharp),
                 title: Text(
                   'Order History',
                   style: TextStyle(fontSize: 16),
@@ -144,7 +144,7 @@ class CustomerHomeScreen extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.shopping_bag),
+                trailing: Icon(Icons.shopping_bag),
                 title: Text(
                   'Bags',
                   style: TextStyle(fontSize: 16),
@@ -158,7 +158,7 @@ class CustomerHomeScreen extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.attach_money),
+                trailing: Icon(Icons.attach_money),
                 title: Text(
                   'Pricing',
                   style: TextStyle(fontSize: 16),
@@ -172,7 +172,7 @@ class CustomerHomeScreen extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.details),
+                trailing: Icon(Icons.details),
                 title: Text(
                   'Item Details',
                   style: TextStyle(fontSize: 16),
@@ -186,7 +186,7 @@ class CustomerHomeScreen extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.history),
+                trailing: Icon(Icons.history),
                 title: Text(
                   'Transaction History',
                   style: TextStyle(fontSize: 16),
@@ -202,7 +202,7 @@ class CustomerHomeScreen extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.error),
+                trailing: Icon(Icons.error),
                 title: Text(
                   'Customer Complaint',
                   style: TextStyle(fontSize: 16),
@@ -216,7 +216,7 @@ class CustomerHomeScreen extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.receipt),
+                trailing: Icon(Icons.receipt),
                 title: Text(
                   'Receipt',
                   style: TextStyle(fontSize: 16),
@@ -230,7 +230,7 @@ class CustomerHomeScreen extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.lock),
+                trailing: Icon(Icons.lock),
                 title: Text(
                   'Change Password',
                   style: TextStyle(fontSize: 16),
@@ -244,7 +244,7 @@ class CustomerHomeScreen extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.description),
+                trailing: Icon(Icons.description),
                 title: Text(
                   'Terms and Conditions',
                   style: TextStyle(fontSize: 16),
@@ -255,7 +255,7 @@ class CustomerHomeScreen extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                leading: Icon(
+                trailing: Icon(
                   Icons.exit_to_app,
                   color: Colors.blue,
                 ),
@@ -465,7 +465,7 @@ class CustomerHomeScreen extends StatelessWidget {
                 },
                 child: HomeCard(
                   title: 'Services',
-                  icon: Icons.build,
+                  icon: Icons.local_laundry_service_outlined,
                   color: Colors.teal,
                 ),
               ),

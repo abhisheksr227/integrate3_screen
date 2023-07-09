@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../Loginscreen.dart';
 import 'Dispatched_items.dart';
 import 'Issue_Invoice.dart';
 import 'Language84.dart';
@@ -114,6 +115,16 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => RevenueReport()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout,color: Colors.deepPurple,size: 20,),
+              title: Text('Logout',style: TextStyle(color: Colors.deepPurple,fontSize: 15)),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
                 );
               },
             ),

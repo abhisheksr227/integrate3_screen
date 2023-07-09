@@ -21,6 +21,7 @@ import 'package:integrate_3screens/Owners/Pages/ReadyForDispatch.dart';
 import 'package:integrate_3screens/Owners/Pages/Revenue_Report.dart';
 import 'package:intl/intl.dart';
 
+import '../../Loginscreen.dart';
 import '../Pages/Add_clients.dart';
 import '../Pages/Delivered.dart';
 import '../Pages/New_Order.dart';
@@ -67,6 +68,7 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavigationDrawer(
+        elevation: 10,
         children: [
           DrawerHeader(
             child: CircleAvatar(
@@ -78,70 +80,89 @@ class _DashboardState extends State<Dashboard> {
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PickUpPending(),)),
             title: Text('Pickup pending',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.list,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => IndividualItems(),)),
             title: Text('Individual Items',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
+          Divider(),
           ListTile(
             leading: Icon(CupertinoIcons.location_solid,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => OrdersMap(),)),
             title: Text('Orders Map',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
+          Divider(),
           ListTile(
             leading: Icon(CupertinoIcons.create_solid,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => CreateInvoice(),)),
             title: Text('Create Invoice',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.man,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Assign(),)),
             title: Text('Assign Staff',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.local_activity,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Activity(),)),
             title: Text('Activity Monitor',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.price_change,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PriceGroup(),)),
             title: Text('Price Group',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.payment,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Payment(),)),
             title: Text('Payment History',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.manage_accounts,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Management(),)),
             title: Text('Client Management',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
+          Divider(),
           ListTile(
             leading: Icon(CupertinoIcons.money_dollar,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Expense(),)),
             title: Text('Expence Heads',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.request_page,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => RevenueReport(),)),
             title: Text('Revenue Report',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.markunread_mailbox,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ReadyForDispatch(),)),
             title: Text('Ready For Dispatches',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.pending,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DispatchPending(),)),
             title: Text('Pending Dispatches',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.delivery_dining,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Delivered(),)),
             title: Text('Delivered',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.logout,color: Colors.blue,size: 20,),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(),)),
+            title: Text('Logout',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
             ],
       ),

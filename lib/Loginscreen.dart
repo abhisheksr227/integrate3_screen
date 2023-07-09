@@ -63,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
     if (username == '111' && password == '111') {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => Navigation()),
+        MaterialPageRoute(builder: (context) => CustomerHomeScreen()),
       );
     } else if (username == '222' && password == '222') {
       Navigator.push(
@@ -73,10 +73,10 @@ class _LoginPageState extends State<LoginPage> {
     } else if (username == '333' && password == '333') {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => CustomerHomeScreen()),
+        MaterialPageRoute(builder: (context) => Navigation()),
       );
     } else if (username == '333' && password == '333') {
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => CustomerHomeScreen()),
       );

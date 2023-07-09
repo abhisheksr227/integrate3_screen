@@ -40,6 +40,8 @@ class _NavigationState extends State<Navigation> {
               width: double.infinity,
               decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(50))),
               child: BottomNavigationBar(
+                elevation: 0,
+
                 backgroundColor: Colors.blue,
                 items: const <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
