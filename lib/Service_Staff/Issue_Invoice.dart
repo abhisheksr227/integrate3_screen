@@ -44,34 +44,16 @@ class _IssueInvoiceState extends State<IssueInvoice> {
                 icon: const Icon(Icons.refresh_outlined,color: Colors.deepPurple,)),
           )
         ],
-        toolbarHeight: 110,
+        toolbarHeight: 50,
         backgroundColor: Colors.white,
-        title: Center(
-            child: Column(
-              children: const [
-                Text('LOGO',style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple
-                ),),
-                Padding(
-                  padding: EdgeInsets.all(15),
-                  child: Text('Welcome Back Deepesh !',
-                    style: TextStyle(fontSize: 18,color: Colors.deepPurple),),
-                )
-              ],
-            )),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: 10,
-            ),
             Padding(
               padding: const EdgeInsets.all(15),
-              child: Text('Issue Invoice',
-                style: TextStyle(color: Colors.indigo[900],
+              child: Text('ISSUE INVOICE',
+                style: TextStyle(color: Colors.deepPurple,
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     ),),

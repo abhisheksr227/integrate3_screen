@@ -38,19 +38,7 @@ class _CreateInvoiceState extends State<CreateInvoice> {
                 )),
           )
         ],
-        title: Center(
-            child: Column(
-              children: const [
-                Text('LOGO', style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue
-                ),),
-                Text('Welcome Back Deepesh !',
-                  style: TextStyle(fontSize: 18, color: Colors.blue),)
-              ],
-            )),
-        toolbarHeight: 100,
+        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -59,7 +47,7 @@ class _CreateInvoiceState extends State<CreateInvoice> {
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 10,top: 10),
                 child: Text(
-                  'Create Invoice',
+                  'CREATE INVOICE',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,

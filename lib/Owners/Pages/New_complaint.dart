@@ -45,19 +45,7 @@ class _NewComplaintState extends State<NewComplaint> {
                 )),
           )
         ],
-        title: Center(
-            child: Column(
-              children: const [
-                Text('LOGO', style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue
-                ),),
-                Text('Welcome Back Deepesh !',
-                  style: TextStyle(fontSize: 18, color: Colors.blue),)
-              ],
-            )),
-        toolbarHeight: 100,
+        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -74,6 +62,7 @@ class _NewComplaintState extends State<NewComplaint> {
                 ),
               ),
             ),
+            SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.all(15),
               child: Card(elevation: 5,

@@ -32,19 +32,7 @@ class _OrdersMapState extends State<OrdersMap> {
                 )),
           )
         ],
-        title: Center(
-            child: Column(
-              children: const [
-                Text('LOGO', style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue
-                ),),
-                Text('Welcome Back Deepesh !',
-                  style: TextStyle(fontSize: 18, color: Colors.blue),)
-              ],
-            )),
-        toolbarHeight: 100,
+        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -53,7 +41,7 @@ class _OrdersMapState extends State<OrdersMap> {
               child: Padding(
                 padding: const EdgeInsets.only(top: 10,bottom: 20),
                 child: Text(
-                  'Orders Map',
+                  'ORDERS MAP',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,

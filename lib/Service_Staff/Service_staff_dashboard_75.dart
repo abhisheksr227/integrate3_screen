@@ -67,39 +67,19 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
         // ],
         // toolbarHeight: 110,
         backgroundColor: Colors.white,
-        title: Center(
-            child: Column(
-              children: const [
-                Text('LOGO',style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple
-                ),),
-                // Padding(
-                //   padding: EdgeInsets.all(15),
-                //   child: Text('Welcome Back Deepesh !',
-                //     style: TextStyle(fontSize: 18,color: Colors.deepPurple),),
-                // )
-              ],
-            )),
+        toolbarHeight: 50,
       ),
       drawer: Drawer(
         child: ListView(
-          children: <Widget>[
+          children: [
             DrawerHeader(
-              decoration: BoxDecoration(
-
-              ),
-              child: Text(
-                "",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
+                child: CircleAvatar(
+                  foregroundImage: AssetImage('Assets/Images/logo.jpg'),
+                )
             ),
             ListTile(
-              title: Text(' Service Login'),
+              leading: Icon(Icons.login,color: Colors.deepPurple,size: 20,),
+              title: Text(' Service Login',style: TextStyle(color: Colors.deepPurple,fontSize: 15)),
               onTap: () {
                 Navigator.push(
                   context,
@@ -108,7 +88,8 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
               },
             ),
             ListTile(
-              title: Text('Dispatched'),
+              leading: Icon(Icons.fire_truck,color: Colors.deepPurple,size: 20,),
+              title: Text('Dispatched',style: TextStyle(color: Colors.deepPurple,fontSize: 15)),
               onTap: () {
                 Navigator.push(
                   context,
@@ -117,7 +98,8 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
               },
             ),
             ListTile(
-              title: Text('Language'),
+              leading: Icon(Icons.language,color: Colors.deepPurple,size: 20,),
+              title: Text('Language',style: TextStyle(color: Colors.deepPurple,fontSize: 15)),
               onTap: () {
                 Navigator.push(
                   context,
@@ -126,7 +108,8 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
               },
             ),
             ListTile(
-              title: Text('Reports'),
+              leading: Icon(Icons.restore_page_rounded,color: Colors.deepPurple,size: 20,),
+              title: Text('Reports',style: TextStyle(color: Colors.deepPurple,fontSize: 15)),
               onTap: () {
                 Navigator.push(
                   context,
@@ -141,7 +124,6 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
       SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 30,),
             const Text('Service Staff Dashboard',
               style: TextStyle(
                   fontSize: 20,fontWeight: FontWeight.bold,color: Colors.deepPurple),),

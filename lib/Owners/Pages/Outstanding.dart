@@ -32,19 +32,7 @@ class _OutstandingState extends State<Outstanding> {
                 )),
           )
         ],
-        title: Center(
-            child: Column(
-              children: const [
-                Text('LOGO', style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue
-                ),),
-                Text('Welcome Back Deepesh !',
-                  style: TextStyle(fontSize: 18, color: Colors.blue),)
-              ],
-            )),
-        toolbarHeight: 100,
+        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -53,7 +41,7 @@ class _OutstandingState extends State<Outstanding> {
               child: Padding(
                 padding: const EdgeInsets.only(top: 10),
                 child: Text(
-                  'Outstanding',
+                  'OUTSTANDING',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,

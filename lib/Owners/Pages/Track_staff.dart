@@ -54,27 +54,15 @@ class _TrackState extends State<Track> {
                 )),
           )
         ],
-        title: Center(
-            child: Column(
-              children: const [
-                Text('LOGO', style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue
-                ),),
-                Text('Welcome Back Deepesh !',
-                  style: TextStyle(fontSize: 18, color: Colors.blue),)
-              ],
-            )),
-        toolbarHeight: 100,
+        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 40,bottom: 10),
-                child: Text('Track Staff',
+                padding: const EdgeInsets.only(top: 10),
+                child: Text('TRACK STAFF',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,

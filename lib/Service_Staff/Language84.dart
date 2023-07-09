@@ -32,19 +32,7 @@ class _LanguageState extends State<Language> {
                 )),
           )
         ],
-        title: Center(
-            child: Column(
-              children: const [
-                Text('LOGO', style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple
-                ),),
-                Text('Welcome Back Deepesh !',
-                  style: TextStyle(fontSize: 18, color: Colors.deepPurple),)
-              ],
-            )),
-        toolbarHeight: 100,
+        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -166,7 +154,7 @@ class _LanguageState extends State<Language> {
             Padding(
               padding: const EdgeInsets.all(60),
               child: SizedBox(
-                height: 25,
+                height: 40,
                 width: 100,
                 child: ElevatedButton(
                   style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.deepPurple[700])),

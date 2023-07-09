@@ -34,19 +34,7 @@ class _PriceGroupState extends State<PriceGroup> {
                 )),
           )
         ],
-        title: Center(
-            child: Column(
-              children: const [
-                Text('LOGO', style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue
-                ),),
-                Text('Welcome Back Deepesh !',
-                  style: TextStyle(fontSize: 18, color: Colors.blue),)
-              ],
-            )),
-        toolbarHeight: 100,
+        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -54,7 +42,7 @@ class _PriceGroupState extends State<PriceGroup> {
             Center(
               child: Padding(
                 padding: const EdgeInsets.only(top: 10,bottom: 15),
-                child: Text('Price Group',
+                child: Text('PRICE GROUP',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,

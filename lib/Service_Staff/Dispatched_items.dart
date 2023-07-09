@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
-
-
 class Dispatcheditems extends StatefulWidget {
   const Dispatcheditems({Key? key}) : super(key: key);
 
@@ -31,21 +28,6 @@ class _DispatcheditemsState extends State<Dispatcheditems> {
           color: Colors.deepPurple[800],
           size: 30,
         ),
-        title: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "LOGO",
-                style: TextStyle(
-                  color: Colors.deepPurple[800],
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(width: 10),
-            ],
-          ),
-        ),
         actions: [
           Row(
             children: [
@@ -59,10 +41,9 @@ class _DispatcheditemsState extends State<Dispatcheditems> {
         ],
       ),
       body: Column(children: [
-        SizedBox(height:20),
         Center(
           child: Text(
-            "Dispatched",
+            "DISPATCHED",
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -70,6 +51,7 @@ class _DispatcheditemsState extends State<Dispatcheditems> {
             ),
           ),
         ),
+        SizedBox(height: 20,),
         Padding(
           padding: const EdgeInsets.all(15.0),
           child: Card(
@@ -146,7 +128,7 @@ class _DispatcheditemsState extends State<Dispatcheditems> {
                     endIndent: 10,
                   ),
                   SizedBox(
-                    height: 150,
+                    height: 170,
                     child: ListView.builder(
                       physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
                       itemCount: 3,

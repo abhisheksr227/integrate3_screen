@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 class Orderstatus extends StatefulWidget {
   const Orderstatus({Key? key}) : super(key: key);
 
@@ -10,9 +9,8 @@ class Orderstatus extends StatefulWidget {
 }
 
 class _OrderstatusState extends State<Orderstatus> {
+
   int _selectedOption = 0;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -24,21 +22,6 @@ class _OrderstatusState extends State<Orderstatus> {
           Icons.menu,
           color: Colors.deepPurple[800],
           size: 30,
-        ),
-        title: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "LOGO",
-                style: TextStyle(
-                  color: Colors.deepPurple[800],
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(width: 10),
-            ],
-          ),
         ),
         actions: [
           Row(
@@ -54,10 +37,9 @@ class _OrderstatusState extends State<Orderstatus> {
       ),
       body: Column(
         children: [
-          SizedBox(height: 60,),
           Center(
             child: Text(
-              "Order Status",
+              "ORDER STATUS",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -73,6 +55,7 @@ class _OrderstatusState extends State<Orderstatus> {
             children: [
               Radio(
                 value: 0,
+                activeColor: Colors.deepPurple,
                 groupValue: _selectedOption,
                 onChanged: (value) {
                   setState(() {
@@ -84,6 +67,7 @@ class _OrderstatusState extends State<Orderstatus> {
               SizedBox(width: 24.0),
               Radio(
                 value: 1,
+                activeColor: Colors.deepPurple,
                 groupValue: _selectedOption,
                 onChanged: (value) {
                   setState(() {
@@ -94,6 +78,7 @@ class _OrderstatusState extends State<Orderstatus> {
               Text('Order No'),
             ],
           ),
+          SizedBox(height: 20,),
           Container(
             height: MediaQuery.of(context).size.height / 20,
             width: MediaQuery.of(context).size.width / 1.2,

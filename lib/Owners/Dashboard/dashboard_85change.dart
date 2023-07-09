@@ -129,6 +129,11 @@ class _DashboardState extends State<Dashboard> {
             title: Text('Revenue Report',style: TextStyle(color: Colors.blue,fontSize: 15),),
           ),
           ListTile(
+            leading: Icon(Icons.markunread_mailbox,color: Colors.blue,size: 20,),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ReadyForDispatch(),)),
+            title: Text('Ready For Dispatches',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          ),
+          ListTile(
             leading: Icon(Icons.pending,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DispatchPending(),)),
             title: Text('Pending Dispatches',style: TextStyle(color: Colors.blue,fontSize: 15),),

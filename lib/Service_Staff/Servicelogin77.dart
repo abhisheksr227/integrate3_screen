@@ -29,21 +29,6 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
           color: Colors.deepPurple[800],
           size: 30,
         ),
-        title: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "LOGO",
-                style: TextStyle(
-                  color: Colors.deepPurple[800],
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(width: 10),
-            ],
-          ),
-        ),
         actions: [
           Row(
             children: [
@@ -59,10 +44,9 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20,),
             Center(
               child: Text(
-                "Service Login",
+                "SERVICE LOGIN",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -222,7 +206,7 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
                         endIndent: 10,
                       ),
                       SizedBox(
-                        height: 150,
+                        height: 170,
                         child: ListView.builder(
                           physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
                           itemCount: 3,

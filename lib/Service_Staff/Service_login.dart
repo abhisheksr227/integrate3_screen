@@ -26,33 +26,18 @@ class _ServiceLoginState extends State<ServiceLogin> {
                 icon: const Icon(Icons.refresh_outlined,color: Colors.deepPurple,)),
           )
         ],
-        toolbarHeight: 110,
+        toolbarHeight: 50,
         backgroundColor: Colors.white,
-        title: Center(
-            child: Column(
-              children: const [
-                Text('LOGO',style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple
-                ),),
-                Padding(
-                  padding: EdgeInsets.all(15),
-                  child: Text('Welcome Back Deepesh !',
-                    style: TextStyle(fontSize: 18,color: Colors.deepPurple),),
-                )
-              ],
-            )),
       ),
       body: Column(
         children: [
           Center(
               child: Padding(
                 padding: const EdgeInsets.all(15),
-                child: Text('Service Login',
+                child: Text('SERVICE LOGIN',
                   style: TextStyle(fontWeight: FontWeight.bold,
                       fontSize: 20,
-                      color: Colors.blue[900]
+                      color: Colors.deepPurple
                   ),),
               )),
           Padding(
