@@ -199,9 +199,9 @@ SizedBox(height: 20,),
                 Text("All"),
               ],
             ),
-            SizedBox(
-              height: 30,
-            ),
+            // SizedBox(
+            //   height: 10,
+            // ),
               SizedBox(
                 height: 500,
                 child: Container(

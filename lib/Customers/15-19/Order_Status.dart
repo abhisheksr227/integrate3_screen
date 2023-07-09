@@ -14,39 +14,8 @@ class Orderstushistory extends StatefulWidget {
 class _OrderstushistoryState extends State<Orderstushistory> {
   Color color = Color(0xff0d2bd4);
 
-  DateTime? fromDate;
-  DateTime? toDate;
 
-  Future<void> selectFromDate(BuildContext context) async {
-    final DateTime? selectedDate = await showDatePicker(
-      context: context,
-      initialDate: fromDate ?? DateTime.now(),
-      firstDate: DateTime(1900),
-      lastDate: DateTime(2100),
-    );
 
-    if (selectedDate != null) {
-      setState(() {
-        fromDate = selectedDate;
-      });
-    }
-  }
-
-  Future<void> selectToDate(BuildContext context) async {
-    final DateTime? selectedDate = await showDatePicker(
-      context: context,
-      initialDate: toDate ?? DateTime.now(),
-      firstDate: DateTime(1900),
-      lastDate: DateTime(2100),
-    );
-
-    if (selectedDate != null) {
-      setState(() {
-        toDate = selectedDate;
-      });
-    }
-  }
-  final DateFormat dateFormat = DateFormat('dd-MM-yyyy');
   @override
   Widget build(BuildContext context) {
 
@@ -94,7 +63,7 @@ class _OrderstushistoryState extends State<Orderstushistory> {
             ),
             Center(
               child: Text(
-                "ORDER HISTORY",
+                "ORDER STATUS",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -105,80 +74,8 @@ class _OrderstushistoryState extends State<Orderstushistory> {
             SizedBox(
               height: 50,
             ),
-        Padding(
-          padding: const EdgeInsets.all(25.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [SizedBox(width: 20,),
-              Expanded(
-                child: Container(
-                  height: MediaQuery.of(context).size.height * .06,
-                  width: MediaQuery.of(context).size.width * .26,
-                  child: TextField(
-                    readOnly: true,
-                    onTap: () => selectFromDate(context),
-                    decoration: InputDecoration(
-                      labelText:"From Date",
-                      hintText: fromDate != null ? dateFormat.format(fromDate!) : "From Date", // Format the fromDate
-                      border: OutlineInputBorder(),
-                      suffixIcon: Icon(Icons.date_range),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                child: Container(
-                  height: MediaQuery.of(context).size.height * .06,
-                  width: MediaQuery.of(context).size.width * .26,
-                  child: TextField(
-                    readOnly: true,
-                    onTap: () => selectToDate(context),
-                    decoration: InputDecoration(
-                      labelText: "To Date",
-                      hintText: toDate != null ? toDate.toString() : "To Date",
-                      border: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
-                      suffixIcon: Icon(Icons.date_range),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 20,
-              ),
 
-            ],
-          ),
-        ),
-            Padding(
-              padding: const EdgeInsets.only(right: 45),
-              child: Row(mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.circular(10)),
-                    height: MediaQuery.of(context).size.height * .04,
-                    width: MediaQuery.of(context).size.width * .18,
-                    child: OutlinedButton(
-                      style: ElevatedButton.styleFrom(),
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) {
-                          return Itemdetails();
-                        },));
-                      },
-                      child: Text(
-                        "Load",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
+
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Card(

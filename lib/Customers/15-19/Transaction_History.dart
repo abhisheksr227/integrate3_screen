@@ -98,70 +98,59 @@ class _TransactionhistoryState extends State<Transactionhistory> {
               padding: const EdgeInsets.all(25.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [SizedBox(width: 20,),
-                  Expanded(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * .06,
-                      width: MediaQuery.of(context).size.width * .26,
-                      child: TextField(
-                        readOnly: true,
-                        onTap: () => selectFromDate(context),
-                        decoration: InputDecoration(
-                          labelText:"From Date",
-                          hintText: fromDate != null ? dateFormat.format(fromDate!) : "From Date", // Format the fromDate
-                          border: OutlineInputBorder(),
-                          suffixIcon: Icon(Icons.date_range),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Expanded(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * .06,
-                      width: MediaQuery.of(context).size.width * .26,
-                      child: TextField(
-                        readOnly: true,
-                        onTap: () => selectToDate(context),
-                        decoration: InputDecoration(
-                          labelText: "To Date",
-                          hintText: toDate != null ? toDate.toString() : "To Date",
-                          border: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
-                          suffixIcon: Icon(Icons.date_range),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 45),
-              child: Row(mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.circular(10)),
-                    height: MediaQuery.of(context).size.height * .04,
-                    width: MediaQuery.of(context).size.width * .18,
-                    child: OutlinedButton(
-                      style: ElevatedButton.styleFrom(),
-                      onPressed: () {
-                      },
-                      child: Text(
-                        "Load",
-                        style: TextStyle(color: Colors.white),
+                  Expanded(
+                    child: IntrinsicWidth(
+                      child: Container(
+                        margin: const EdgeInsets.only(right: 20),
+                        child: TextField(
+                          readOnly: true,
+                          onTap: () => selectFromDate(context),
+                          decoration: InputDecoration(
+                            labelText: "From Date",
+                            hintText: fromDate != null ? dateFormat.format(fromDate!) : "From Date",
+                            border: OutlineInputBorder(),
+                            suffixIcon: Icon(Icons.date_range),
+                            contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16), // Adjust the vertical padding here
+                          ),
+                        ),
                       ),
+                    ),
+                  ),
+                  Expanded(
+                    child: IntrinsicWidth(
+                      child: Container(
+                        margin: const EdgeInsets.only(right: 20),
+                        child: TextField(
+                          readOnly: true,
+                          onTap: () => selectToDate(context),
+                          decoration: InputDecoration(
+                            labelText: "To Date",
+                            hintText: toDate != null ? toDate.toString() : "To Date",
+                            border: OutlineInputBorder(),
+                            suffixIcon: Icon(Icons.date_range),
+                            contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16), // Adjust the vertical padding here
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.blue),
+                    onPressed: () {
+                      // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      //   return ItemDetails();
+                      // }));
+                    },
+                    child: Text(
+                      "Load",
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ],
               ),
             ),
+
             SizedBox(
               height: 10,
             ),
@@ -211,7 +200,20 @@ class _TransactionhistoryState extends State<Transactionhistory> {
                               height: 40,
                               alignment: Alignment.center,
                               child: Text(
-                                "Type",
+                                "Credit",
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              width: 80,
+                              height: 40,
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Debit",
                                 style: TextStyle(
                                   fontSize: 13,
                                   color: Colors.black,
@@ -225,19 +227,6 @@ class _TransactionhistoryState extends State<Transactionhistory> {
                               alignment: Alignment.center,
                               child: Text(
                                 "Amount",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              width: 80,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Remark",
                                 style: TextStyle(
                                   fontSize: 13,
                                   color: Colors.black,

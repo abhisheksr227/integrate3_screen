@@ -130,7 +130,7 @@ class _ItemdetailsState extends State<Itemdetails> {
                         ,SizedBox(
                           height: 30,
                         ),Text("PRESS & HANG"),
-                        SizedBox(height: 30,),
+                        SizedBox(height: 10,),
                         Center(child: Text("Shirts - 2")),
                         Center(child: Text("Pant - 4")),
                         SizedBox(height: 10,),
