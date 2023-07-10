@@ -12,7 +12,7 @@ class CustomerNewOrder extends StatefulWidget {
 
 class _CustomerNewOrderState extends State<CustomerNewOrder> {
   String Complaint = 'Select';
-  List<String> elements = ['Select','9:00 am to 11:00 am','11:00 am to 01:00 pm','01:00 pm to 03:00 pm'];
+  List<String> elements = ['9:00 am to 11:00 am','11:00 am to 01:00 pm','01:00 pm to 03:00 pm'];
   String selectedOption = '';
   bool expressSelected = false;
   bool normalSelected = false;
@@ -58,22 +58,21 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
         ),
         centerTitle: true,
       ),
-      body: Container(
-        padding: EdgeInsets.all(20),
-        color: Colors.white,
+      body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(height: 20),
-            Text(
-              'Available Offers',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
+            SizedBox(height: 60),
+            Center(
+              child: Text(
+                'Available Offers',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue,
+                ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             ListTile(
               leading: Radio(
                 activeColor: Colors.blue,
@@ -127,9 +126,9 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
                 Text('Contactless'),
               ],
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 50),
             Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'Picking Time',
@@ -139,7 +138,7 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
                     color: Colors.blue,
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 30),
                 Container(
                   width: 200,
                   height: 40,
@@ -171,40 +170,42 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
                 ),
               ],
             ),
-            SizedBox(height: 60),
-            ElevatedButton(
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: Text('Order Confirmation'),
-                      content: Text('Your order has been confirmed.'),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: Text('OK'),
-                        ),
-                      ],
-                    );
-                  },
-                );
-              },
-              child: Text(
-                'ORDER NOW',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+            SizedBox(height: 120),
+            SizedBox(width: 150,
+              child: ElevatedButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text('Order Confirmation'),
+                        content: Text('Your order has been confirmed.'),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: Text('OK'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+                child: Text(
+                  'ORDER NOW',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blue[800],
-                padding: EdgeInsets.symmetric(vertical: 15),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue[800],
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
                 ),
               ),
             ),
