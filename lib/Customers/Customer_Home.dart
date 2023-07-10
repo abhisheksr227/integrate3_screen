@@ -532,7 +532,7 @@ class CustomerHomeScreen extends StatelessWidget {
                              child: Column(
                                children: [
                                  Card(
-                                   elevation: 10,
+                                   elevation: 2,
                                    shape: RoundedRectangleBorder(
                                      borderRadius: BorderRadius.circular(30),
                                    ),

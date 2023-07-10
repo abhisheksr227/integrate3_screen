@@ -52,19 +52,7 @@ class _InvoiceState extends State<Invoice> {
                 )),
           )
         ],
-        title: Center(
-            child: Column(
-              children: const [
-                Text('LOGO', style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue
-                ),),
-                Text('Welcome Back Deepesh !',
-                  style: TextStyle(fontSize: 18, color: Colors.blue),)
-              ],
-            )),
-        toolbarHeight: 100,
+        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -120,12 +108,12 @@ class _InvoiceState extends State<Invoice> {
                     ],
                   ),
                 ),
-                ElevatedButton(onPressed: () {
+               /* ElevatedButton(onPressed: () {
                  // Navigator.push(context, MaterialPageRoute(builder: (context) => Wallet(),));
                 },
                     child: Text('Pay Now',style: TextStyle(color: Colors.white),),
                   style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.redAccent[700])),
-                ),
+                ),*/
               ],
             ),
             SizedBox(
@@ -227,7 +215,7 @@ class _InvoiceState extends State<Invoice> {
                                         ],
                                       ),
                                     ),
-                                    ElevatedButton(onPressed: () {
+                                    /*ElevatedButton(onPressed: () {
                                      // Navigator.push(context, MaterialPageRoute(builder: (context) => Payment(),));
                                     },
                                       child: Text('Pay Now',
@@ -235,7 +223,7 @@ class _InvoiceState extends State<Invoice> {
                                       style: ButtonStyle(
                                           backgroundColor: MaterialStateProperty.all(
                                               Colors.redAccent[700])),
-                                    ),
+                                    ),*/
                                   ],
                                 ),
                               ],
