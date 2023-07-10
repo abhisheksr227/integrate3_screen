@@ -31,50 +31,25 @@ class _ListAllState extends State<ListAll> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(MediaQuery.of(context).size.height * 0.10),
-        child: AppBar(
-          elevation: 0,
-          backgroundColor: CupertinoColors.white,
-          leading: Icon(
-            Icons.menu,
-            color: Colors.blue[800],
-            size: 30,
-          ),
-          title: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(height: 10,),
-                Text(
-                  "LOGO",
-                  style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),SizedBox(height: 10,),Text(
-                  "Welcome Back Deepesh!",
-                  style: TextStyle(
-                      color: Colors.blue[800],
-                      fontSize: 15
-                  ),
-                ),
-                SizedBox(width: 10),
-              ],
-            ),
-          ),
-          actions: [
-            Row(
-              children: [
-                Icon(
-                  Icons.circle_outlined,
-                  color: Colors.blue[800],
-                ),
-                SizedBox(width: 10,)
-              ],
-            ),
-          ],
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        leading: Icon(
+          Icons.menu,
+          color: Colors.blue[800],
+          size: 30,
         ),
+        actions: [
+          Row(
+            children: [
+              Icon(
+                Icons.circle_outlined,
+                color: Colors.blue[800],
+              ),
+              SizedBox(width: 10,)
+            ],
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -192,11 +167,11 @@ class _ListAllState extends State<ListAll> {
                   //     },
                   //     child: Icon(Icons.search,color: Colors.blue,)
                   // ),
-                  ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.blue[800]),
+                  ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.blue[500]),
                       onPressed: () {
                         // Handle search button click
                       },
-                      child: Text("Load")
+                      child: Text("Load",style: TextStyle(color: Colors.white),)
                   ),
                 ],
               ),
@@ -363,7 +338,7 @@ Row(mainAxisAlignment: MainAxisAlignment.end,
           onPressed: () {
             // Handle search button click
           },
-          child: Text("View")
+          child: Text("View",style: TextStyle(color: Colors.white))
       ),
     ),SizedBox(width: 10,)
     , SizedBox(height: 30,
@@ -371,7 +346,7 @@ Row(mainAxisAlignment: MainAxisAlignment.end,
           onPressed: () {
             // Handle search button click
           },
-          child: Text("Edit")
+          child: Text("Edit",style: TextStyle(color: Colors.white))
       ),
     ),SizedBox(width: 10,), SizedBox(
       height: 30,
@@ -380,7 +355,7 @@ Row(mainAxisAlignment: MainAxisAlignment.end,
           onPressed: () {
             // Handle search button click
           },
-          child: Text("Delete")
+          child: Text("Delete",style: TextStyle(color: Colors.white))
       ),
     ),SizedBox(width: 20,),
 

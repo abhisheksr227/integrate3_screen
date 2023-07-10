@@ -62,56 +62,28 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize:
-        Size.fromHeight(MediaQuery.of(context).size.height * 0.10),
-        child: AppBar(
-          elevation: 0,
-          backgroundColor: CupertinoColors.white,
-          leading: Icon(
-            Icons.menu,
-            color: Colors.blue[800],
-            size: 30,
-          ),
-          title: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "LOGO",
-                  style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  "Welcome Back Deepesh!",
-                  style: TextStyle(color: Colors.blue[800], fontSize: 15),
-                ),
-                SizedBox(width: 10),
-              ],
-            ),
-          ),
-          actions: [
-            Row(
-              children: [
-                Icon(
-                  Icons.circle_outlined,
-                  color: Colors.blue[800],
-                ),
-                SizedBox(
-                  width: 10,
-                )
-              ],
-            ),
-          ],
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        leading: Icon(
+          Icons.menu,
+          color: Colors.blue[800],
+          size: 30,
         ),
+        
+        actions: [
+          Row(
+            children: [
+              Icon(
+                Icons.circle_outlined,
+                color: Colors.blue[800],
+              ),
+              SizedBox(
+                width: 10,
+              )
+            ],
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -183,7 +155,7 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                     child: Column(
                       children: [
                         Container(
-                          width: 200,
+                          width: MediaQuery.of(context).size.width*0.45,
                           height: 200,
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
@@ -197,7 +169,7 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                                   ])),
                           child: Center(
                             child: Container(
-                              width: 150,
+                              width: MediaQuery.of(context).size.width*0.90,
                               height: 150,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
@@ -207,21 +179,21 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "Total   ",
+                                    "Total",
                                     style: TextStyle(
-                                      fontSize: 30,
-                                      color: Colors.lightBlueAccent,
+                                      fontSize: 20,
+                                      color: Colors.blue[900],
                                     ),
                                   ),
                                   Text(
-                                    " Collection  ",
+                                    "Collection",
                                     style: TextStyle(
-                                      fontSize: 30,
-                                      color: Colors.lightBlueAccent,
+                                      fontSize: 20,
+                                      color: Colors.blue[900],
                                     ),
                                   ),
                                   Text(
-                                    "1000  ",
+                                    "1000",
                                     style: TextStyle(
                                       fontSize: 30,
                                       color: Colors.lightBlueAccent,
@@ -239,55 +211,60 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                   SizedBox(
                     width: 30,
                   ),
-                  Column(
-                    children: [
-                      SizedBox(
-                          width: 100,
-                          height: 30,
-                          child: Card(
-                              color: Colors.teal,
-                              child: Center(
-                                  child: Text(
-                                "Staff 1 -250",
-                                style: TextStyle(color: CupertinoColors.white),
-                              )))),
-                      SizedBox(
-                        height: 15,
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                              width: 100,
+                              height: 30,
+                              child: Card(
+                                  color: Colors.teal,
+                                  child: Center(
+                                      child: Text(
+                                    "Staff 1 -250",
+                                    style: TextStyle(color: CupertinoColors.white),
+                                  )))),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          SizedBox(
+                              width: 100,
+                              height: 30,
+                              child: Card(
+                                  color: Colors.teal,
+                                  child: Center(
+                                      child: Text("Staff 2 -250",
+                                          style: TextStyle(
+                                              color: CupertinoColors.white))))),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          SizedBox(
+                              width: 100,
+                              height: 30,
+                              child: Card(
+                                  color: Colors.teal,
+                                  child: Center(
+                                      child: Text("Staff 3 -250",
+                                          style: TextStyle(
+                                              color: CupertinoColors.white))))),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          SizedBox(
+                              width: 100,
+                              height: 30,
+                              child: Card(
+                                  color: Colors.teal,
+                                  child: Center(
+                                      child: Text("Staff 4 -250",
+                                          style: TextStyle(
+                                              color: CupertinoColors.white)))))
+                        ],
                       ),
-                      SizedBox(
-                          width: 100,
-                          height: 30,
-                          child: Card(
-                              color: Colors.teal,
-                              child: Center(
-                                  child: Text("Staff 2 -250",
-                                      style: TextStyle(
-                                          color: CupertinoColors.white))))),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      SizedBox(
-                          width: 100,
-                          height: 30,
-                          child: Card(
-                              color: Colors.teal,
-                              child: Center(
-                                  child: Text("Staff 3 -250",
-                                      style: TextStyle(
-                                          color: CupertinoColors.white))))),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      SizedBox(
-                          width: 100,
-                          height: 30,
-                          child: Card(
-                              color: Colors.teal,
-                              child: Center(
-                                  child: Text("Staff 4 -250",
-                                      style: TextStyle(
-                                          color: CupertinoColors.white)))))
-                    ],
+                    ),
                   )
                 ],
               ),
@@ -315,7 +292,7 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                               ? dateFormat.format(fromDate!)
                               : Date, // Format the fromDate
                           border: OutlineInputBorder(),
-                          suffixIcon: Icon(Icons.date_range),
+                          suffixIcon: Icon(Icons.date_range,color: Colors.blue,),
                         ),
                       ),
                     ),

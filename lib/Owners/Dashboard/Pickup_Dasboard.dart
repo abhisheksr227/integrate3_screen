@@ -56,70 +56,37 @@ class _PickupdashboardState extends State<Pickupdashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize:
-            Size.fromHeight(MediaQuery.of(context).size.height * 0.10),
-        child: AppBar(
-          elevation: 0,
-          backgroundColor: CupertinoColors.white,
-          leading: Icon(
-            Icons.menu,
-            color: Colors.blue[800],
-            size: 30,
-          ),
-          title: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "LOGO",
-                  style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  "Welcome Back Deepesh!",
-                  style: TextStyle(color: Colors.blue[800], fontSize: 15),
-                ),
-                SizedBox(width: 10),
-              ],
-            ),
-          ),
-          actions: [
-            Row(
-              children: [
-                Icon(
-                  Icons.circle_outlined,
-                  color: Colors.blue[800],
-                ),
-                SizedBox(
-                  width: 10,
-                )
-              ],
-            ),
-          ],
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        leading: Icon(
+          Icons.menu,
+          color: Colors.blue[800],
+          size: 30,
         ),
+        actions: [
+          Row(
+            children: [
+              Icon(
+                Icons.circle_outlined,
+                color: Colors.blue[800],
+              ),
+              SizedBox(
+                width: 10,
+              )
+            ],
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Center(
             child: Column(children: [
-          SizedBox(
-            height: 70,
-            width: MediaQuery.of(context).size.width,
-            child: Center(
-                child: Text("Pickup Dashboard",
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.blue[900],
-                        fontWeight: FontWeight.bold))),
-          ),
+          Center(
+              child: Text("Pickup Dashboard",
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.blue[900],
+                      fontWeight: FontWeight.bold))),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -131,7 +98,7 @@ class _PickupdashboardState extends State<Pickupdashboard> {
               Padding(
                 padding: const EdgeInsets.only(top: 15, bottom: 15),
                 child: Container(
-                  width: 100,
+                  width: MediaQuery.of(context).size.width*0.30,
                   height: 30,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
@@ -202,66 +169,77 @@ class _PickupdashboardState extends State<Pickupdashboard> {
             ),
           ),
 
-          Container(
-            padding: EdgeInsets.all(16.0),
-            child: Card(
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      children: [
-                        SizedBox(
-                          height: 60,
-                          width: 50,
-                          child: Icon(Icons.phone,color: Colors.blue),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text("Via call"),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text("10/10")
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          height: 60,
-                          width: 50,
-                          child: Icon(Icons.apps,color: Colors.blue),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text("Via App"),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text("10/10")
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          height: 60,
-                          width: 50,
-                          child: Icon(Icons.people,color: Colors.blue,),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text("Via Staff"),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text("10/10")
-                      ],
-                    ),
-                  ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Color(0xFF48a3c2), Color(0xFF1A344F)],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              padding: EdgeInsets.all(16.0),
+              child: Card(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        children: [
+                          SizedBox(
+                            height: 60,
+                            width: 50,
+                            child: Icon(Icons.phone,color: Colors.blue),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text("Via call"),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text("10/10")
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            height: 60,
+                            width: 50,
+                            child: Icon(Icons.apps,color: Colors.blue),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text("Via App"),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text("10/10")
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            height: 60,
+                            width: 50,
+                            child: Icon(Icons.people,color: Colors.blue,),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text("Via Staff"),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text("10/10")
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

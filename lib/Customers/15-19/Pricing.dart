@@ -132,11 +132,7 @@ class _PricingState extends State<Pricing> {
                   ],
                 ),
               ),
-            ),ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return Transactionhistory();
-              },));
-            }, child: Text("Next"))
+            ),
           ]
           ),
         ),

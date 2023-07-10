@@ -70,62 +70,37 @@ class _sampleState extends State<sample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(MediaQuery.of(context).size.height * 0.10),
-          child: AppBar(
-            elevation: 0,
-            backgroundColor: CupertinoColors.white,
-            leading: Icon(
-              Icons.menu,
-              color: Colors.blue[800],
-              size: 30,
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: CupertinoColors.white,
+          leading: Icon(
+            Icons.menu,
+            color: Colors.blue,
+            size: 30,
+          ),title: Center(child: Text("Order Dashboard",style: TextStyle(color: Colors.blue),)),
+          actions: [
+            Row(
+              children: [
+                Icon(
+                  Icons.circle_outlined,
+                  color: Colors.blue,
+                ),
+                SizedBox(width: 10,)
+              ],
             ),
-            title: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(height: 10,),
-                  Text(
-                    "LOGO",
-                    style: TextStyle(
-                      color: Colors.blue[800],
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),SizedBox(height: 5,),Text(
-                    "Welcome Back Deepesh!",
-                    style: TextStyle(
-                        color: Colors.blue[800],
-                        fontSize: 15
-                    ),
-                  ),
-                  SizedBox(width: 10),
-                ],
-              ),
-            ),
-            actions: [
-              Row(
-                children: [
-                  Icon(
-                    Icons.circle_outlined,
-                    color: Colors.blue[800],
-                  ),
-                  SizedBox(width: 10,)
-                ],
-              ),
-            ],
-          ),
+          ],
         ),
         body: SingleChildScrollView(
             child: Center(
           child: Column(children: [
-SizedBox(height: 20,),
-            Text("Order Dashboard",
-                style: TextStyle(
-                  fontSize: 20,
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.bold)),
+            // SizedBox(height: 20,),
+            // Text("Order Dashboard",
+            //     style: TextStyle(
+            //       fontSize: 20,
+            //         color: Colors.blue[800],
+            //         fontWeight: FontWeight.bold)),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
             Padding(
               padding: const EdgeInsets.only(top: 15),
@@ -137,7 +112,7 @@ SizedBox(height: 20,),
                           Icon(Icons.arrow_right_outlined,size: 35,color: Colors.blue,),
                           Container(
                               height: 30,
-                              width: 100,
+                              width: MediaQuery.of(context).size.width*0.30,
                               decoration: BoxDecoration(border: Border.all(color: Colors.blue),
                                 borderRadius: BorderRadius.circular(5),
                               ),
@@ -203,7 +178,7 @@ SizedBox(height: 20,),
             //   height: 10,
             // ),
               SizedBox(
-                height: 500,
+                height: 450,
                 child: Container(
                   padding: EdgeInsets.all(16.0),
                   child: Column(
@@ -334,7 +309,7 @@ SizedBox(height: 20,),
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue[800]),
                       onPressed: () {},
-                      child: Text("New Order")),
+                      child: Text("New Order",style: TextStyle(color: Colors.white),)),
                 ),
                 SizedBox(
                   width: 130,
@@ -344,8 +319,8 @@ SizedBox(height: 20,),
                       onPressed: () {},
                       child: Column(
                         children: [
-                          Text("Cancel ",),
-                          Text(" Order",),
+                          Text("Cancel ",style: TextStyle(color: Colors.white),),
+                          Text(" Order",style: TextStyle(color: Colors.white),),
                         ],
                       )),
                 )
@@ -363,7 +338,7 @@ SizedBox(height: 20,),
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue[800]),
                       onPressed: () {},
-                      child: Text("Assign Staff")),
+                      child: Text("Assign Staff",style: TextStyle(color: Colors.white))),
                 ),
                 SizedBox(
                   width: 130,
@@ -371,7 +346,7 @@ SizedBox(height: 20,),
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue[800]),
                       onPressed: () {},
-                      child: Text("Complaint")),
+                      child: Text("Complaint",style: TextStyle(color: Colors.white))),
                 )
               ],
             ),SizedBox(

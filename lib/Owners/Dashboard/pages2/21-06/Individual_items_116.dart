@@ -269,12 +269,12 @@ class _IndividualItemsState extends State<IndividualItems> {
                 ),
               ),
             ),
-            ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return ListAll();
-              },));
-            }, child: Text("Next"))
-            ,
+            // ElevatedButton(onPressed: () {
+            //   Navigator.push(context, MaterialPageRoute(builder: (context) {
+            //     return ListAll();
+            //   },));
+            // }, child: Text("Next"))
+            // ,
           ],
         ),
       ),

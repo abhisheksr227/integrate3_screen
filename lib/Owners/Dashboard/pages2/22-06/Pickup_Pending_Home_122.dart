@@ -42,28 +42,7 @@ class _PickupPendingState extends State<PickupPending> {
             color: Colors.blue[800],
             size: 30,
           ),
-          title: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(height: 10,),
-                Text(
-                  "LOGO",
-                  style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),SizedBox(height: 10,),Text(
-                  "Welcome Back Deepesh!",
-                  style: TextStyle(
-                      color: Colors.blue[800],
-                      fontSize: 15
-                  ),
-                ),
-                SizedBox(width: 10),
-              ],
-            ),
-          ),
+
           actions: [
             Row(
               children: [

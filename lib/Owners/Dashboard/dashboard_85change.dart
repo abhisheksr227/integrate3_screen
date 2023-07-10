@@ -5,7 +5,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:integrate_3screens/Customers/Customer_Home.dart';
 import 'package:integrate_3screens/Owners/Dashboard/pages2/21-06/Individual_items_116.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pages2/21-06/Listall_117.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pages2/21-06/Order_Statistics_120.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pages2/21-06/Order_details_115.dart';
 import 'package:integrate_3screens/Owners/Dashboard/pages2/21-06/Order_status_121.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pages2/21-06/Pending_Orders_118.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Ageing_Report_129.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Bags_125.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Bags_Master_124.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Outstanding%20127.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Over_dues_300.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Payment_Collection_128.dart';
+import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Pickup_Pending_Home_122.dart';
 import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Pickup_pending_123.dart';
 import 'package:integrate_3screens/Owners/Pages/Activity_Monitor.dart';
 import 'package:integrate_3screens/Owners/Pages/Assign_Staff.dart';
@@ -68,6 +79,7 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavigationDrawer(
+        backgroundColor: Colors.white,
         elevation: 10,
         children: [
           DrawerHeader(
@@ -160,6 +172,79 @@ class _DashboardState extends State<Dashboard> {
           ),
           Divider(),
           ListTile(
+            leading: Icon(Icons.pending,color: Colors.blue,size: 20,),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentCollection(),)),
+            title: Text('Payment Collection',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.pending,color: Colors.blue,size: 20,),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => OutStanding(),)),
+            title: Text('Outstanding',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          ),
+          Divider(),
+          ListTile(
+            leading:
+            Icon(Icons.pending,color: Colors.blue,size: 20,),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => BagsMaster(),)),
+            title: Text('Bags Master',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.pending,color: Colors.blue,size: 20,),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Bags(),)),
+            title: Text('Bags',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.pending,color: Colors.blue,size: 20,),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AgeingReport(),)),
+            title: Text('Ageing Report',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.pending,color: Colors.blue,size: 20,),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AgeingReport(),)),
+            title: Text('Ageing Report',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.pending,color: Colors.blue,size: 20,),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => OverDues(),)),
+            title: Text('Over Dues',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.pending,color: Colors.blue,size: 20,),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ListAll(),)),
+            title: Text('List All',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.pending,color: Colors.blue,size: 20,),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => CreateInvoice(),)),
+            title: Text('Create Invoice',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.pending,color: Colors.blue,size: 20,),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => OrderStatistics(),)),
+            title: Text('Order Statistics',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.pending,color: Colors.blue,size: 20,),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => OrderDetails(),)),
+            title: Text('Order Details',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.pending,color: Colors.blue,size: 20,),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PendingOrders(),)),
+            title: Text('Pending Orders ',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          ),
+          Divider(),
+          ListTile(
             leading: Icon(Icons.logout,color: Colors.blue,size: 20,),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(),)),
             title: Text('Logout',style: TextStyle(color: Colors.blue,fontSize: 15),),
@@ -167,16 +252,9 @@ class _DashboardState extends State<Dashboard> {
             ],
       ),
         appBar: AppBar(
-          leading: Builder(
-            builder: (context) {
-              return IconButton(
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-                icon: const Icon(Icons.menu, color: Colors.blue),
-              );
-            }
-          ),
+          elevation: 0,
+          iconTheme: IconThemeData(color: Colors.blue),
+          title: Center(child: Text("Owners Dashboard",style: TextStyle(color: Colors.blue),)),
           actions: [
             IconButton(
                 onPressed: () {},
@@ -190,10 +268,6 @@ class _DashboardState extends State<Dashboard> {
         body: SingleChildScrollView(
             child: Column(
                 children: [
-                  const Text('OWNERS DASHBOARD',
-                    style: TextStyle(
-                        fontSize: 20,fontWeight: FontWeight.bold,color: Colors.blue),),
-                  SizedBox(height: 20,),
                   Row(mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
@@ -203,10 +277,10 @@ class _DashboardState extends State<Dashboard> {
                       Padding(
                         padding: const EdgeInsets.only(top: 15,bottom: 15),
                         child: Container(
-                          width: 150,
-                          height: 40,
+                          width: MediaQuery.of(context).size.width*0.30,
+                          height: 30,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
+                              borderRadius: BorderRadius.circular(20),
                               border: Border.all(color: Colors.blue)),
                           child: DropdownButtonFormField(
                             decoration: InputDecoration(
@@ -240,26 +314,27 @@ class _DashboardState extends State<Dashboard> {
                       Text('All'),
                     ],
                   ),
+                Column(children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 30,right: 30),
+                    padding: const EdgeInsets.only(left: 50,right: 50),
                     child: Container(
-                      height: 50,
+                      height: 30,
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey),
+                        border: Border.all(color: Colors.blue),
                         borderRadius: BorderRadius.circular(30),
                         color: Colors.white,
                       ),
                       child: Center(
-                          child: Text('At a Glance',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
+                          child: Text('At a Glance',style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.bold),)),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 30,right: 30,top: 25),
+                    padding: const EdgeInsets.only(left: 30,right: 30,top: 10),
                     child: Stack(
                         children: [
                           Container(
-                            height: 50,
+                            height: 40,
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
@@ -281,7 +356,7 @@ class _DashboardState extends State<Dashboard> {
                             elevation: 3,
                             child: CircleAvatar(
                               backgroundColor: Colors.white,
-                              radius: 25,
+                              radius: 20,
                               child: Text('25',style: TextStyle(color: Colors.deepPurple,
                                   fontWeight: FontWeight.bold,fontSize: 18),),
                             ),
@@ -294,7 +369,7 @@ class _DashboardState extends State<Dashboard> {
                     child: Stack(
                         children: [
                           Container(
-                            height: 50,
+                            height: 40,
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
@@ -316,7 +391,7 @@ class _DashboardState extends State<Dashboard> {
                             elevation: 3,
                             child: CircleAvatar(
                               backgroundColor: Colors.white,
-                              radius: 25,
+                              radius: 20,
                               child: Text('18',style: TextStyle(color: Colors.deepPurpleAccent,
                                   fontWeight: FontWeight.bold,fontSize: 18),),
                             ),
@@ -329,7 +404,7 @@ class _DashboardState extends State<Dashboard> {
                     child: Stack(
                         children: [
                           Container(
-                            height: 50,
+                            height: 40,
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
@@ -351,7 +426,7 @@ class _DashboardState extends State<Dashboard> {
                             elevation: 3,
                             child: CircleAvatar(
                               backgroundColor: Colors.white,
-                              radius: 25,
+                              radius: 20,
                               child: Text('30',style: TextStyle(color: Colors.indigo[400],
                                   fontWeight: FontWeight.bold,fontSize: 18),),
                             ),
@@ -364,7 +439,7 @@ class _DashboardState extends State<Dashboard> {
                     child: Stack(
                         children: [
                           Container(
-                            height: 50,
+                            height: 40,
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
@@ -386,7 +461,7 @@ class _DashboardState extends State<Dashboard> {
                             elevation: 3,
                             child: CircleAvatar(
                               backgroundColor: Colors.white,
-                              radius: 25,
+                              radius: 20,
                               child: Text('23',style: TextStyle(color: Colors.blue[400],
                                   fontWeight: FontWeight.bold,fontSize: 18),),
                             ),
@@ -399,7 +474,7 @@ class _DashboardState extends State<Dashboard> {
                     child: Stack(
                         children: [
                           Container(
-                            height: 50,
+                            height: 40,
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
@@ -421,7 +496,7 @@ class _DashboardState extends State<Dashboard> {
                             elevation: 3,
                             child: CircleAvatar(
                               backgroundColor: Colors.white,
-                              radius: 25,
+                              radius: 20,
                               child: Text('20',style: TextStyle(color: Colors.orange[900],
                                   fontWeight: FontWeight.bold,fontSize: 18),),
                             ),
@@ -434,7 +509,7 @@ class _DashboardState extends State<Dashboard> {
                     child: Stack(
                         children: [
                           Container(
-                            height: 50,
+                            height: 40,
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
@@ -456,7 +531,7 @@ class _DashboardState extends State<Dashboard> {
                             elevation: 3,
                             child: CircleAvatar(
                               backgroundColor: Colors.white,
-                              radius: 25,
+                              radius: 20,
                               child: Text('250',style: TextStyle(color: Colors.orange,
                                   fontWeight: FontWeight.bold,fontSize: 18),),
                             ),
@@ -469,7 +544,7 @@ class _DashboardState extends State<Dashboard> {
                     child: Stack(
                         children: [
                           Container(
-                            height: 50,
+                            height: 40,
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
@@ -491,7 +566,7 @@ class _DashboardState extends State<Dashboard> {
                             elevation: 3,
                             child: CircleAvatar(
                               backgroundColor: Colors.white,
-                              radius: 25,
+                              radius: 20,
                               child: Text('50',style: TextStyle(color: Colors.lightGreenAccent[700],
                                   fontWeight: FontWeight.bold,fontSize: 18),),
                             ),
@@ -504,7 +579,7 @@ class _DashboardState extends State<Dashboard> {
                     child: Stack(
                         children: [
                           Container(
-                            height: 50,
+                            height: 40,
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
@@ -526,7 +601,7 @@ class _DashboardState extends State<Dashboard> {
                             elevation: 3,
                             child: CircleAvatar(
                               backgroundColor: Colors.white,
-                              radius: 25,
+                              radius: 20,
                               child: Text('65',style: TextStyle(color: Colors.lightGreen[700],
                                   fontWeight: FontWeight.bold,fontSize: 18),),
                             ),
@@ -534,6 +609,7 @@ class _DashboardState extends State<Dashboard> {
                         ]
                     ),
                   ),
+                ],),
                   Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
