@@ -1,10 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'Order_Statistics_120.dart';
-import 'Order_details_115.dart';
-import 'Pending_Orders_118.dart';
-
 class OrderStatus extends StatefulWidget {
   const OrderStatus({Key? key}) : super(key: key);
 
@@ -36,28 +32,6 @@ class _OrderStatusState extends State<OrderStatus> {
             Icons.menu,
             color: Colors.blue[800],
             size: 30,
-          ),
-          title: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(height: 10,),
-                Text(
-                  "LOGO",
-                  style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),SizedBox(height: 10,),Text(
-                  "Welcome Back Deepesh!",
-                  style: TextStyle(
-                      color: Colors.blue[800],
-                      fontSize: 15
-                  ),
-                ),
-                SizedBox(width: 10),
-              ],
-            ),
           ),
           actions: [
             Row(
@@ -141,31 +115,7 @@ SizedBox(
               ),SizedBox(
                 height: 30,
               ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return OrderStatistics();
-                    },));
-                  }, child: Text("order statistics")),
 
-                  ElevatedButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return OrderDetails();
-                    },));
-                  }, child: Text("orderdetails"))
-                ],
-              ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-
-                  ElevatedButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return PendingOrders();
-                    },));
-                  }, child: Text("pending orders"))
-                ],
-              )
             ]),
       ),
     );

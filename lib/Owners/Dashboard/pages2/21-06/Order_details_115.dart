@@ -9,19 +9,7 @@ class OrderDetails extends StatefulWidget {
 }
 
 class _OrderDetailsState extends State<OrderDetails> {
-
-
-
-
-
-
-
-
-
   final ScrollController _horizontal = ScrollController();
-
-
-
 
   List<Color> colorList = [
     Color(0xffD95AF3),
@@ -29,11 +17,7 @@ class _OrderDetailsState extends State<OrderDetails> {
     Color(0xffFE9539)
   ];
 
-
-
-
-
-  int neworderradio=0;
+  int neworderradio = 0;
 
   int _selectedIndex = 0;
 
@@ -45,72 +29,51 @@ class _OrderDetailsState extends State<OrderDetails> {
 
   Color color = Color(0xff0d2bd4);
   String? selectedOption;
-  int allradionutton=0;
+  int allradionutton = 0;
 
   bool isButtonVisible = false;
   int selectedRowIndex = -1;
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(MediaQuery.of(context).size.height * 0.10),
-        child: AppBar(
-          elevation: 0,
-          backgroundColor: CupertinoColors.white,
-          leading: Icon(
-            Icons.menu,
-            color: Colors.blue[800],
-            size: 30,
-          ),
-          title: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(height: 10,),
-                Text(
-                  "LOGO",
-                  style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),SizedBox(height: 10,),Text(
-                  "Welcome Back Deepesh!",
-                  style: TextStyle(
-                      color: Colors.blue[800],
-                      fontSize: 15
-                  ),
-                ),
-                SizedBox(width: 10),
-              ],
-            ),
-          ),
-          actions: [
-            Row(
-              children: [
-                Icon(
-                  Icons.circle_outlined,
-                  color: Colors.blue[800],
-                ),
-                SizedBox(width: 10,)
-              ],
-            ),
-          ],
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        leading: Icon(
+          Icons.menu,
+          color: Colors.blue[800],
+          size: 30,
         ),
-      ),
-      body:
-      SingleChildScrollView(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.center,
+        actions: [
+          Row(
             children: [
-              SizedBox(height: 20,),
+              Icon(
+                Icons.circle_outlined,
+                color: Colors.blue[800],
+              ),
+              SizedBox(
+                width: 10,
+              )
+            ],
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 20,
+              ),
               Center(
                 child: Text(
                   "ORDER DETAILS  ",
                   style: TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue[800]),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue[800]),
                 ),
               ),
               SizedBox(
@@ -122,7 +85,10 @@ class _OrderDetailsState extends State<OrderDetails> {
                   Text("Branch"),
                   SizedBox(width: 30),
                   DropdownButton<String>(
-                    hint: Text("Select",style: TextStyle(fontSize: 10,color: Colors.grey),),
+                    hint: Text(
+                      "Select",
+                      style: TextStyle(fontSize: 10, color: Colors.grey),
+                    ),
                     value: selectedOption,
                     onChanged: (String? newValue) {
                       setState(() {
@@ -143,9 +109,9 @@ class _OrderDetailsState extends State<OrderDetails> {
                   ),
                 ],
               ),
-              Row(mainAxisAlignment: MainAxisAlignment.center,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-
                   Radio<int>(
                     activeColor: Colors.lightBlue,
                     value: 0,
@@ -162,11 +128,14 @@ class _OrderDetailsState extends State<OrderDetails> {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 25),
-                child: Row(mainAxisAlignment: MainAxisAlignment.start,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.blue[800]),onPressed: () {
-
-                    }, child: Text("Remind")),
+                    ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue[500]),
+                        onPressed: () {},
+                        child: Text("Remind",style: TextStyle(color: Colors.white),)),
                   ],
                 ),
               ),
@@ -183,8 +152,9 @@ class _OrderDetailsState extends State<OrderDetails> {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               SizedBox(
-                                height: MediaQuery.of(context).size.height*0.30,
-                                width: MediaQuery.of(context).size.width*2,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.30,
+                                width: MediaQuery.of(context).size.width * 2,
                                 child: ListView.builder(
                                   itemCount: 1,
                                   padding: EdgeInsets.zero,
@@ -194,8 +164,14 @@ class _OrderDetailsState extends State<OrderDetails> {
                                     return Column(
                                       children: [
                                         SizedBox(
-                                          height: MediaQuery.of(context).size.height*0.06,
-                                          width: MediaQuery.of(context).size.width*2,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.06,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              2,
                                           child: Row(
                                             children: [
                                               Expanded(
@@ -203,7 +179,10 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                   alignment: Alignment.center,
                                                   child: Text(
                                                     "Sl No",
-                                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontWeight:
+                                                            FontWeight.bold),
                                                   ),
                                                 ),
                                               ),
@@ -212,7 +191,10 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                   alignment: Alignment.center,
                                                   child: Text(
                                                     "Order No",
-                                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontWeight:
+                                                            FontWeight.bold),
                                                   ),
                                                 ),
                                               ),
@@ -221,7 +203,10 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                   alignment: Alignment.center,
                                                   child: Text(
                                                     "Staff",
-                                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontWeight:
+                                                            FontWeight.bold),
                                                   ),
                                                 ),
                                               ),
@@ -230,7 +215,10 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                   alignment: Alignment.center,
                                                   child: Text(
                                                     "Client",
-                                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontWeight:
+                                                            FontWeight.bold),
                                                   ),
                                                 ),
                                               ),
@@ -239,15 +227,22 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                   alignment: Alignment.center,
                                                   child: Text(
                                                     "Area",
-                                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontWeight:
+                                                            FontWeight.bold),
                                                   ),
                                                 ),
-                                              ),Expanded(
+                                              ),
+                                              Expanded(
                                                 child: Container(
                                                   alignment: Alignment.center,
                                                   child: Text(
                                                     "No of Items",
-                                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontWeight:
+                                                            FontWeight.bold),
                                                   ),
                                                 ),
                                               ),
@@ -256,17 +251,22 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                   alignment: Alignment.center,
                                                   child: Text(
                                                     "Order Value",
-                                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontWeight:
+                                                            FontWeight.bold),
                                                   ),
                                                 ),
                                               ),
                                               Expanded(
                                                 child: Container(
                                                   alignment: Alignment.center,
-
                                                   child: Text(
                                                     "Current Status",
-                                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontWeight:
+                                                            FontWeight.bold),
                                                   ),
                                                 ),
                                               ),
@@ -275,7 +275,10 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                   alignment: Alignment.center,
                                                   child: Text(
                                                     "Pick Time",
-                                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontWeight:
+                                                            FontWeight.bold),
                                                   ),
                                                 ),
                                               ),
@@ -283,11 +286,17 @@ class _OrderDetailsState extends State<OrderDetails> {
                                           ),
                                         ),
                                         Container(
-                                          height: MediaQuery.of(context).size.height*0.20,
-                                          width: MediaQuery.of(context).size.width*2,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.20,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              2,
                                           child: ListView.separated(
                                             separatorBuilder: (context, index) {
-                                              return  Divider(
+                                              return Divider(
                                                 color: Colors.grey,
                                                 thickness: .3,
                                                 indent: 10,
@@ -295,103 +304,153 @@ class _OrderDetailsState extends State<OrderDetails> {
                                               );
                                             },
                                             padding: EdgeInsets.zero,
-                                            physics: const ClampingScrollPhysics(),
+                                            physics:
+                                                const ClampingScrollPhysics(),
                                             itemCount: 6,
-                                            itemBuilder: (BuildContext context, int rowIndex) {
-                                              final isEvenRow = rowIndex % 2 == 0;
-                                              final backgroundColor = isEvenRow ? Colors.yellow : Colors.white;
+                                            itemBuilder: (BuildContext context,
+                                                int rowIndex) {
+                                              final isEvenRow =
+                                                  rowIndex % 2 == 0;
+                                              final backgroundColor = isEvenRow
+                                                  ? Colors.yellow
+                                                  : Colors.white;
 
                                               return SizedBox(
                                                 height: 40,
-                                                width: MediaQuery.of(context).size.width*2,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    2,
                                                 child: ListView.builder(
                                                   itemCount: 1,
-                                                  scrollDirection: Axis.horizontal,
-                                                  itemBuilder: (context, index) {
+                                                  scrollDirection:
+                                                      Axis.horizontal,
+                                                  itemBuilder:
+                                                      (context, index) {
                                                     return Container(
                                                       height: 40,
-                                                      width: MediaQuery.of(context).size.width*2,
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              2,
                                                       color: backgroundColor,
                                                       child: Row(
                                                         children: [
                                                           Expanded(
                                                             child: Container(
-                                                              alignment: Alignment.center,
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
                                                               child: Text(
                                                                 "",
-                                                                style: TextStyle(color: Colors.black),
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
                                                               ),
                                                             ),
                                                           ),
                                                           Expanded(
                                                             child: Container(
-                                                              alignment: Alignment.center,
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
                                                               child: Text(
                                                                 "",
-                                                                style: TextStyle(color: Colors.black),
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
                                                               ),
                                                             ),
                                                           ),
                                                           Expanded(
                                                             child: Container(
-                                                              alignment: Alignment.center,
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
                                                               child: Text(
                                                                 "",
-                                                                style: TextStyle(color: Colors.black),
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
                                                               ),
                                                             ),
                                                           ),
                                                           Expanded(
                                                             child: Container(
-                                                              alignment: Alignment.center,
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
                                                               child: Text(
                                                                 "",
-                                                                style: TextStyle(color: Colors.black),
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
                                                               ),
                                                             ),
                                                           ),
                                                           Expanded(
                                                             child: Container(
-                                                              alignment: Alignment.center,
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
                                                               child: Text(
                                                                 "",
-                                                                style: TextStyle(color: Colors.black),
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
                                                               ),
                                                             ),
                                                           ),
                                                           Expanded(
                                                             child: Container(
-                                                              alignment: Alignment.center,
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
                                                               child: Text(
                                                                 "",
-                                                                style: TextStyle(color: Colors.black),
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
                                                               ),
                                                             ),
                                                           ),
                                                           Expanded(
                                                             child: Container(
-                                                              alignment: Alignment.center,
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
                                                               child: Text(
                                                                 "",
-                                                                style: TextStyle(color: Colors.black),
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
                                                               ),
                                                             ),
                                                           ),
                                                           Expanded(
                                                             child: Container(
-                                                              alignment: Alignment.center,
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
                                                               child: Text(
                                                                 "",
-                                                                style: TextStyle(color: Colors.black),
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
                                                               ),
                                                             ),
                                                           ),
                                                           Expanded(
                                                             child: Container(
-                                                              alignment: Alignment.center,
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
                                                               child: Text(
                                                                 "",
-                                                                style: TextStyle(color: Colors.black),
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
                                                               ),
                                                             ),
                                                           ),
@@ -411,8 +470,10 @@ class _OrderDetailsState extends State<OrderDetails> {
                               ),
                             ],
                           ),
-                        ), Padding(
-                          padding:  EdgeInsets.only(top: 30, left: 15, right: 15),
+                        ),
+                        Padding(
+                          padding:
+                              EdgeInsets.only(top: 30, left: 15, right: 15),
                           child: Scrollbar(
                             trackVisibility: true,
                             controller: _horizontal,
@@ -426,7 +487,8 @@ class _OrderDetailsState extends State<OrderDetails> {
                                     width: 150,
                                     decoration: BoxDecoration(
                                         color: Colors.lightBlue,
-                                        borderRadius: BorderRadius.circular(30)),
+                                        borderRadius:
+                                            BorderRadius.circular(30)),
                                   ),
                                 ],
                               ),
@@ -438,31 +500,32 @@ class _OrderDetailsState extends State<OrderDetails> {
                   ),
                 ),
               ),
-
             ]),
-      )  ,bottomNavigationBar: Container(
-      color: Colors.lightBlue,
-      child: BottomNavigationBar(
-        backgroundColor: Colors.blue[800],
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white.withOpacity(0.6),
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        items:  <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.location_pin),
-            label: 'Track',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notification_important_rounded),
-            label: 'Complaint',
-          ),
-        ],
       ),
-    ),);
+      bottomNavigationBar: Container(
+        color: Colors.lightBlue,
+        child: BottomNavigationBar(
+          backgroundColor: Colors.blue[800],
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white.withOpacity(0.6),
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.location_pin),
+              label: 'Track',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.notification_important_rounded),
+              label: 'Complaint',
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

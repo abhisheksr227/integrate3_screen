@@ -11,13 +11,6 @@ class Clientdashboard extends StatefulWidget {
 class _ClientdashboardState extends State<Clientdashboard> {
   int selectedRow = -1;
 
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   Color color = Color(0xff0d2bd4);
   String? selectedOption;
@@ -29,56 +22,27 @@ class _ClientdashboardState extends State<Clientdashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize:
-            Size.fromHeight(MediaQuery.of(context).size.height * 0.10),
-        child: AppBar(
-          elevation: 0,
-          backgroundColor: CupertinoColors.white,
-          leading: Icon(
-            Icons.menu,
-            color: Colors.blue[800],
-            size: 30,
-          ),
-          title: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "LOGO",
-                  style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  "Welcome Back Deepesh!",
-                  style: TextStyle(color: Colors.blue[800], fontSize: 15),
-                ),
-                SizedBox(width: 10),
-              ],
-            ),
-          ),
-          actions: [
-            Row(
-              children: [
-                Icon(
-                  Icons.circle_outlined,
-                  color: Colors.blue[800],
-                ),
-                SizedBox(
-                  width: 10,
-                )
-              ],
-            ),
-          ],
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        leading: Icon(
+          Icons.menu,
+          color: Colors.blue[800],
+          size: 30,
         ),
+        actions: [
+          Row(
+            children: [
+              Icon(
+                Icons.circle_outlined,
+                color: Colors.blue[800],
+              ),
+              SizedBox(
+                width: 10,
+              )
+            ],
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -111,9 +75,9 @@ class _ClientdashboardState extends State<Clientdashboard> {
                           padding: const EdgeInsets.only(top: 12),
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue[800]),
+                                  backgroundColor: Colors.blue[500]),
                               onPressed: () {},
-                              child: Text("Add New")),
+                              child: Text("Add New",style: TextStyle(color: Colors.white),)),
                         ),
                       ],
                     ),SizedBox(width: 40,),
@@ -251,10 +215,10 @@ class _ClientdashboardState extends State<Clientdashboard> {
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        backgroundColor: Colors.blue[800],
+                        backgroundColor: Colors.blue[500],
                       ),
                       onPressed: () {},
-                      child: Text("Edit"),
+                      child: Text("Edit",style: TextStyle(color: Colors.white)),
                     ),
                   ],
                 ),

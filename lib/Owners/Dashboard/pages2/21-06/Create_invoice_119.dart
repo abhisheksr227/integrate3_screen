@@ -195,56 +195,27 @@ class _CreateInvoiceState extends State<CreateInvoice> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize:
-            Size.fromHeight(MediaQuery.of(context).size.height * 0.10),
-        child: AppBar(
-          elevation: 0,
-          backgroundColor: CupertinoColors.white,
-          leading: Icon(
-            Icons.menu,
-            color: Colors.blue[800],
-            size: 30,
-          ),
-          title: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "LOGO",
-                  style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "Welcome Back Deepesh!",
-                  style: TextStyle(color: Colors.blue[800], fontSize: 15),
-                ),
-                SizedBox(width: 10),
-              ],
-            ),
-          ),
-          actions: [
-            Row(
-              children: [
-                Icon(
-                  Icons.circle_outlined,
-                  color: Colors.blue[800],
-                ),
-                SizedBox(
-                  width: 10,
-                )
-              ],
-            ),
-          ],
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        leading: Icon(
+          Icons.menu,
+          color: Colors.blue[800],
+          size: 30,
         ),
+        actions: [
+          Row(
+            children: [
+              Icon(
+                Icons.circle_outlined,
+                color: Colors.blue[800],
+              ),
+              SizedBox(
+                width: 10,
+              )
+            ],
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -378,9 +349,9 @@ class _CreateInvoiceState extends State<CreateInvoice> {
                   SizedBox(
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue[800]),
+                            backgroundColor: Colors.blue[500]),
                         onPressed: () {},
-                        child: Text("Load")),
+                        child: Text("Load",style: TextStyle(color: Colors.white),)),
                   ),
                   SizedBox(
                     width: 10,
@@ -396,11 +367,11 @@ class _CreateInvoiceState extends State<CreateInvoice> {
                   children: [
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue[800]),
+                            backgroundColor: Colors.blue[500]),
                         onPressed: () {
                           _showSearchDialog();
                         },
-                        child: Text("New")),
+                        child: Text("New",style: TextStyle(color: Colors.white))),
                   ],
                 ),
               ),
@@ -476,11 +447,11 @@ class _CreateInvoiceState extends State<CreateInvoice> {
               ),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue[800]),
+                      backgroundColor: Colors.blue[500]),
                   onPressed: () {
                     _aadditem();
                   },
-                  child: Text("Add Items")),
+                  child: Text("Add Items",style: TextStyle(color: Colors.white))),
               SizedBox(
                 height: 30,
               ),
@@ -721,30 +692,8 @@ class _CreateInvoiceState extends State<CreateInvoice> {
               )
             ]),
       ),
-      bottomNavigationBar: Container(
-        color: Colors.lightBlue,
-        child: BottomNavigationBar(
-          backgroundColor: Colors.blue[800],
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white.withOpacity(0.6),
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.location_pin),
-              label: 'Track',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notification_important_rounded),
-              label: 'Complaint',
-            ),
-          ],
-        ),
-      ),
+
+
     );
   }
 }
