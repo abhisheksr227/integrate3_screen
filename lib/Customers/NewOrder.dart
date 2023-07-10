@@ -11,6 +11,8 @@ class CustomerNewOrder extends StatefulWidget {
 }
 
 class _CustomerNewOrderState extends State<CustomerNewOrder> {
+  String Complaint = 'Select';
+  List<String> elements = ['Select','9:00 am to 11:00 am','11:00 am to 01:00 pm','01:00 pm to 03:00 pm'];
   String selectedOption = '';
   bool expressSelected = false;
   bool normalSelected = false;
@@ -138,22 +140,33 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
                   ),
                 ),
                 SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () {
-                    _selectTime(context);
-                  },
-                  child: Text(
-                    selectedTime == null
-                        ? 'Select Time'
-                        : selectedTime!.format(context),
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.blue,
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
+                Container(
+                  width: 200,
+                  height: 40,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Colors.blue)),
+                  child: DropdownButtonFormField(
+                      validator: (d) {
+                        if (d!.contains('Select')) {
+                          return 'Select';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.only(bottom: 10),
+                        prefix: SizedBox(
+                          width: 10,
+                        ),
+                        hintText: 'Select',
+                      ), value: Complaint,
+                      items: elements.map((e) => DropdownMenuItem(value: e,child: Text(e),)).toList(),
+                      onChanged: (v) {
+                        setState(() {
+                          Complaint = v!;
+                        });
+                      }
                   ),
                 ),
               ],

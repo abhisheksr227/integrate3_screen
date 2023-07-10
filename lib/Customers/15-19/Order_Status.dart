@@ -12,6 +12,17 @@ class Orderstushistory extends StatefulWidget {
 }
 
 class _OrderstushistoryState extends State<Orderstushistory> {
+  List<String> statusList = [
+    'Pending Confirmation',
+    'Confirmed',
+    'Items Collected',
+    'Pending',
+    'In Process',
+    'Processed',
+    'Ready for Collection',
+    'In Transit',
+    'Delivered',
+  ];
 
   Color color = Color(0xff0d2bd4);
 
@@ -186,7 +197,7 @@ class _OrderstushistoryState extends State<Orderstushistory> {
                                           width: 80,
                                           height: 40,
                                           alignment: Alignment.center,
-                                          child: Text("2"),
+                                          child:Text(statusList[rowIndex])
                                         ),
                                       ],
                                     ),
