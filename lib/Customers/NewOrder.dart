@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '15-19/Contactless_Mode.dart';
-
 class CustomerNewOrder extends StatefulWidget {
   const CustomerNewOrder({Key? key}) : super(key: key);
 
@@ -11,25 +9,13 @@ class CustomerNewOrder extends StatefulWidget {
 }
 
 class _CustomerNewOrderState extends State<CustomerNewOrder> {
-  String Complaint = 'Select';
-  List<String> elements = ['9:00 am to 11:00 am','11:00 am to 01:00 pm','01:00 pm to 03:00 pm'];
+
   String selectedOption = '';
   bool expressSelected = false;
   bool normalSelected = false;
-  TimeOfDay? selectedTime;
+  String Time = 'Select Time';
+  List<String> Timerange = ['Select Time','09:00am to 11:00am','11:00am to 01:00pm','01:00pm to 03:00pm',];
 
-  Future<void> _selectTime(BuildContext context) async {
-    final TimeOfDay? pickedTime = await showTimePicker(
-      context: context,
-      initialTime: TimeOfDay.now(),
-    );
-
-    if (pickedTime != null) {
-      setState(() {
-        selectedTime = pickedTime;
-      });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +77,7 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
                 ),
                 padding: EdgeInsets.all(12),
                 child: Text(
-                  'Place Order Via Valet and Get 10% Discount',
+                  'Place Order Via Wallet and Get 10% Discount',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.blue,
@@ -127,48 +113,43 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
               ],
             ),
             SizedBox(height: 50),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'Picking Time',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+            Text(
+              'Picking Time',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
+            ),
+            SizedBox(height: 30),
+            Container(
+              height: 40,
+              width: 200,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.blue)),
+              child: DropdownButtonFormField(
+                  validator: (d) {
+                    if (d!.contains('Select Your Time')) {
+                      return 'Select Your Time';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(borderSide: BorderSide.none),
+                    contentPadding: EdgeInsets.only(),
+                    prefix: SizedBox(
+                      width: 10,
+                    ),
+                    hintText: 'Select Your TIme',
                   ),
-                ),
-                SizedBox(height: 30),
-                Container(
-                  width: 200,
-                  height: 40,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(color: Colors.blue)),
-                  child: DropdownButtonFormField(
-                      validator: (d) {
-                        if (d!.contains('Select')) {
-                          return 'Select';
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.only(bottom: 10),
-                        prefix: SizedBox(
-                          width: 10,
-                        ),
-                        hintText: 'Select',
-                      ), value: Complaint,
-                      items: elements.map((e) => DropdownMenuItem(value: e,child: Text(e),)).toList(),
-                      onChanged: (v) {
-                        setState(() {
-                          Complaint = v!;
-                        });
-                      }
-                  ),
-                ),
-              ],
+                  value: Time,
+                  items: Timerange.map((e) => DropdownMenuItem(value: e,child: Text(e),)).toList(),
+                  onChanged: (v) {
+                    setState(() {
+                      Time = v!;
+                    });
+                  }),
             ),
             SizedBox(height: 120),
             SizedBox(width: 150,
