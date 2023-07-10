@@ -9,19 +9,18 @@ class NewComplaint extends StatefulWidget {
 }
 
 class _NewComplaintState extends State<NewComplaint> {
-  bool isChecked = false;
 
-  Color getColor(Set<MaterialState> states) {
-    const Set<MaterialState> interactiveStates = <MaterialState>{
-      MaterialState.pressed,
-      MaterialState.hovered,
-      MaterialState.focused,
-    };
-    if (states.any(interactiveStates.contains)) {
-      return Colors.red;
-    }
-    return Colors.blue;
+  int selectedRowIndex = -1;
+
+  void selectRow(int index) {
+    setState(() {
+      selectedRowIndex = index;
+    });
   }
+
+  String Complaint = 'Select';
+  List<String> elements = ['Select','Item Missing','Damaged','Not Pressed properly','Dirty','Poorly Packed','Wrinkled Clothes'];
+
 
   @override
   Widget build(BuildContext context) {
@@ -45,26 +44,14 @@ class _NewComplaintState extends State<NewComplaint> {
                 )),
           )
         ],
-        title: Center(
-            child: Column(
-              children: const [
-                Text('LOGO', style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue
-                ),),
-                Text('Welcome Back Deepesh !',
-                  style: TextStyle(fontSize: 18, color: Colors.blue),)
-              ],
-            )),
-        toolbarHeight: 100,
+        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.only(top: 10,bottom: 20),
                 child: Text(
                   'NEW COMPLAINT',
                   style: TextStyle(
@@ -127,15 +114,6 @@ class _NewComplaintState extends State<NewComplaint> {
                                                 color: Colors.black,
                                                 fontWeight: FontWeight.bold),
                                           ))),
-                                  Expanded(
-                                      child: Container(
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            "Select",
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold),
-                                          ))),
                                 ])),
                             Padding(
                               padding: const EdgeInsets.all(10),
@@ -156,69 +134,61 @@ class _NewComplaintState extends State<NewComplaint> {
                                     return SizedBox(
                                         height: 40,
                                         width: MediaQuery.of(context).size.width,
-                                        child: ListView.builder(
-                                            itemCount: 1,
-                                            itemBuilder: (context, index) {
-                                              return Container(
-                                                  height: 40,
-                                                  width: MediaQuery.of(context).size.width,
-                                                  child: Row(children: [
-                                                    Expanded(
-                                                        child: Container(
-                                                            alignment:
-                                                            Alignment.center,
-                                                            child: Text(
-                                                              "1",
-                                                              style: TextStyle(
-                                                                  color: Colors
-                                                                      .black),
-                                                            ))),
-                                                    Expanded(
-                                                        child: Container(
-                                                            alignment:
-                                                            Alignment.center,
-                                                            child: Text(
-                                                              "102",
-                                                              style: TextStyle(
-                                                                  color: Colors
-                                                                      .black),
-                                                            ))),
-                                                    Expanded(
-                                                        child: Container(
-                                                            alignment:
-                                                            Alignment.center,
-                                                            child: Text(
-                                                              "Normal",
-                                                              style: TextStyle(
-                                                                  color: Colors
-                                                                      .black),
-                                                            ))),
-                                                    Expanded(
-                                                        child: Container(
-                                                            alignment:
-                                                            Alignment.center,
-                                                            child: Text(
-                                                              "1-2-2023",
-                                                              style: TextStyle(
-                                                                  color: Colors
-                                                                      .black),
-                                                            ))),
-                                                    Expanded(
-                                                        child: Container(
-                                                            alignment:
-                                                            Alignment.center,
-                                                            child: Checkbox(
-                                                              checkColor: Colors.white,
-                                                              fillColor: MaterialStateProperty.resolveWith(getColor),
-                                                              value: isChecked,
-                                                              onChanged: (bool? value) {
-                                                                setState(() {
-                                                                  isChecked = value!;
-                                                                });
-                                                              },
-                                                            ))),
-                                                  ]));
-                                            }));
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            selectRow(rowIndex);
+                                          },
+                                          child: ListView.builder(
+                                              itemCount: 1,
+                                              itemBuilder: (context, index) {
+                                                return Container(
+                                                    height: 40,
+                                                    width: MediaQuery.of(context).size.width,
+                                                    color: selectedRowIndex == rowIndex ? Colors.grey : null,
+                                                    child: Row(children: [
+                                                      Expanded(
+                                                          child: Container(
+                                                              alignment:
+                                                              Alignment.center,
+                                                              child: Text(
+                                                                "1",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
+                                                              ))),
+                                                      Expanded(
+                                                          child: Container(
+                                                              alignment:
+                                                              Alignment.center,
+                                                              child: Text(
+                                                                "102",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
+                                                              ))),
+                                                      Expanded(
+                                                          child: Container(
+                                                              alignment:
+                                                              Alignment.center,
+                                                              child: Text(
+                                                                "Normal",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
+                                                              ))),
+                                                      Expanded(
+                                                          child: Container(
+                                                              alignment:
+                                                              Alignment.center,
+                                                              child: Text(
+                                                                "1-2-2023",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
+                                                              ))),
+                                                    ]));
+                                              }),
+                                        ));
                                   }),
                             ),
                           ]);
@@ -235,12 +205,18 @@ class _NewComplaintState extends State<NewComplaint> {
                     child: Text('Complaint Type'),
                   ),
                   Container(
-                    width: 100,
-                    height: 30,
+                    width: 200,
+                    height: 40,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(5),
                         border: Border.all(color: Colors.blue)),
                     child: DropdownButtonFormField(
+                      validator: (d) {
+                        if (d!.contains('Select')) {
+                          return 'Select';
+                        }
+                        return null;
+                      },
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.only(bottom: 10),
@@ -248,43 +224,36 @@ class _NewComplaintState extends State<NewComplaint> {
                           width: 10,
                         ),
                         hintText: 'Select',
-                      ), items: [
-                      DropdownMenuItem(child: Text('select'))
-                    ],
-                      onChanged: (value) {  },
+                      ), value: Complaint,
+                        items: elements.map((e) => DropdownMenuItem(value: e,child: Text(e),)).toList(),
+                        onChanged: (v) {
+                          setState(() {
+                            Complaint = v!;
+                          });
+                        }
                     ),
                   ),
                 ],
               ),
             ),
+            SizedBox(height: 20,),
+            Text('Remarks'),
             Padding(
               padding: const EdgeInsets.all(20),
-              child: Row(crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                      width: 60,child: Text('Remark')),
-                  Expanded(
-                    child: SizedBox(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20,),
-                        child: Container(
-                          height: 100,
-                          decoration: BoxDecoration(border: Border.all(color: Colors.blue),
-                              borderRadius: BorderRadius.circular(10)),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+              child: Container(
+                height: 100,
+                decoration: BoxDecoration(border: Border.all(color: Colors.blue),
+                    borderRadius: BorderRadius.circular(10)),
+                child: TextFormField(
+                  decoration: InputDecoration(border: InputBorder.none),
+                ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(10),
               child: ElevatedButton(
                 style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blue[700])),
-                onPressed: () {
-                 // Navigator.push(context, MaterialPageRoute(builder: (context) => Expense(),));
-                },
+                onPressed: () { },
                 child: Text('SAVE',style: TextStyle(color: Colors.white),),
               ),
             ),

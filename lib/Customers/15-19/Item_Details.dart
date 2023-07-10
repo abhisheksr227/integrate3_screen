@@ -22,21 +22,6 @@ class _ItemdetailsState extends State<Itemdetails> {
             color: Colors.blue[800],
             size: 30,
           ),
-          title: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "LOGO",
-                  style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(width: 10),
-              ],
-            ),
-          ),
           actions: [
             Row(
               children: [
@@ -51,9 +36,6 @@ class _ItemdetailsState extends State<Itemdetails> {
         ),
         body: SingleChildScrollView(
           child: Column(children: [
-            SizedBox(
-              height: 20,
-            ),
             Center(
               child: Text(
                 "ITEM DETAILS",

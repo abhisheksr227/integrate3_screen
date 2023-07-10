@@ -25,8 +25,6 @@ class _IssueInvoiceState extends State<IssueInvoice> {
       isButtonVisible = !isButtonVisible;
     });
   }
-
-  final ScrollController _horizontal = ScrollController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

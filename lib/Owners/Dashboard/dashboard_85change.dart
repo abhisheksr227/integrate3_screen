@@ -747,7 +747,7 @@ class _DashboardState extends State<Dashboard> {
                                   scrollDirection: Axis.vertical,
                                   padding: EdgeInsets.zero,
                                   itemCount: 50,
-                                  physics: ClampingScrollPhysics(),
+                                  physics: const ClampingScrollPhysics(),
                                   itemBuilder: (BuildContext context, int index) {
                                     return SizedBox(
                                       height: 40,

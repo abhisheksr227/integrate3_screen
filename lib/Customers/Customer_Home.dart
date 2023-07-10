@@ -144,48 +144,6 @@ class CustomerHomeScreen extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                trailing: Icon(Icons.shopping_bag),
-                title: Text(
-                  'Bags',
-                  style: TextStyle(fontSize: 16),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Bag()),
-                  );
-                },
-              ),
-              Divider(),
-              ListTile(
-                trailing: Icon(Icons.attach_money),
-                title: Text(
-                  'Pricing',
-                  style: TextStyle(fontSize: 16),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Pricing()),
-                  );
-                },
-              ),
-              Divider(),
-              ListTile(
-                trailing: Icon(Icons.details),
-                title: Text(
-                  'Item Details',
-                  style: TextStyle(fontSize: 16),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Itemdetails()),
-                  );
-                },
-              ),
-              Divider(),
-              ListTile(
                 trailing: Icon(Icons.history),
                 title: Text(
                   'Transaction History',
@@ -216,9 +174,9 @@ class CustomerHomeScreen extends StatelessWidget {
               ),
               Divider(),
               ListTile(
-                trailing: Icon(Icons.receipt),
+                trailing: Icon(Icons.share),
                 title: Text(
-                  'Receipt',
+                  'Share',
                   style: TextStyle(fontSize: 16),
                 ),
                 onTap: () {
@@ -394,9 +352,8 @@ class CustomerHomeScreen extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 32.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          SizedBox(height: 50),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               InkWell(
                 onTap: () {
@@ -407,10 +364,16 @@ class CustomerHomeScreen extends StatelessWidget {
                     ),
                   );
                 },
-                child: HomeCard(
-                  title: 'Order Status',
-                  icon: Icons.assignment,
-                  color: Colors.blue,
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.blue,
+                      child: Icon(Icons.assignment,color: Colors.white,size: 30,),
+                    ),
+                    SizedBox(height: 10,),
+                    Text('Order Status',style: TextStyle(fontWeight: FontWeight.bold),)
+                  ],
                 ),
               ),
               InkWell(
@@ -422,27 +385,38 @@ class CustomerHomeScreen extends StatelessWidget {
                     ),
                   );
                 },
-                child: HomeCard(
-                  title: 'New Order',
-                  icon: Icons.add_shopping_cart,
-                  color: Colors.orange,
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.orange,
+                      child: Icon(Icons.add_shopping_cart,color: Colors.white,size: 30,),
+                    ),
+                    SizedBox(height: 10,),
+                    Text('New Order',style: TextStyle(fontWeight: FontWeight.bold),)
+                  ],
                 ),
               ),
               InkWell(
                 onTap: () {
-                  // Handle Payment option
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Pricing(),));
                 },
-                child: HomeCard(
-                  title: 'Payment',
-                  icon: Icons.payment,
-                  color: Colors.blue,
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.blue,
+                      child: Icon(Icons.payment,color: Colors.white,size: 30,),
+                    ),
+                    SizedBox(height: 10,),
+                    Text('Our Rates',style: TextStyle(fontWeight: FontWeight.bold),)
+                  ],
                 ),
               ),
             ],
           ),
-          SizedBox(height: 16.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          SizedBox(height: 30),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               InkWell(
                 onTap: () {
@@ -453,30 +427,48 @@ class CustomerHomeScreen extends StatelessWidget {
                     ),
                   );
                 },
-                child: HomeCard(
-                  title: 'Promotions',
-                  icon: Icons.local_offer,
-                  color: Colors.purple,
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.purple,
+                      child: Icon(Icons.local_offer,color: Colors.white,size: 30,),
+                    ),
+                    SizedBox(height: 10,),
+                    Text('Promotions',style: TextStyle(fontWeight: FontWeight.bold),)
+                  ],
                 ),
               ),
               InkWell(
                 onTap: () {
                   // Handle Services option
                 },
-                child: HomeCard(
-                  title: 'Services',
-                  icon: Icons.local_laundry_service_outlined,
-                  color: Colors.teal,
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.teal,
+                      child: Icon(Icons.local_laundry_service_outlined,color: Colors.white,size: 30,),
+                    ),
+                    SizedBox(height: 10,),
+                    Text('Services',style: TextStyle(fontWeight: FontWeight.bold),)
+                  ],
                 ),
               ),
               InkWell(
                 onTap: () {
                   // Handle Contact option
                 },
-                child: HomeCard(
-                  title: 'Contact',
-                  icon: Icons.phone,
-                  color: Colors.redAccent,
+                child:  Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.redAccent,
+                      child: Icon(Icons.phone,color: Colors.white,size: 30,),
+                    ),
+                    SizedBox(height: 10,),
+                    Text('Contact',style: TextStyle(fontWeight: FontWeight.bold),)
+                  ],
                 ),
               ),
             ],
