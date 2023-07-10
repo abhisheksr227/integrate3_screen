@@ -353,127 +353,214 @@ class CustomerHomeScreen extends StatelessWidget {
             ],
           ),
           SizedBox(height: 50),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Orderstushistory(),
-                    ),
-                  );
-                },
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundColor: Colors.blue,
-                      child: Icon(Icons.assignment,color: Colors.white,size: 30,),
-                    ),
-                    SizedBox(height: 10,),
-                    Text('Order Status',style: TextStyle(fontWeight: FontWeight.bold),)
-                  ],
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CustomerNewOrder(),
-                    ),
-                  );
-                },
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundColor: Colors.orange,
-                      child: Icon(Icons.add_shopping_cart,color: Colors.white,size: 30,),
-                    ),
-                    SizedBox(height: 10,),
-                    Text('New Order',style: TextStyle(fontWeight: FontWeight.bold),)
-                  ],
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Pricing(),));
-                },
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundColor: Colors.blue,
-                      child: Icon(Icons.payment,color: Colors.white,size: 30,),
-                    ),
-                    SizedBox(height: 10,),
-                    Text('Our Rates',style: TextStyle(fontWeight: FontWeight.bold),)
-                  ],
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 30),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Promotions(),
-                    ),
-                  );
-                },
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundColor: Colors.purple,
-                      child: Icon(Icons.local_offer,color: Colors.white,size: 30,),
-                    ),
-                    SizedBox(height: 10,),
-                    Text('Promotions',style: TextStyle(fontWeight: FontWeight.bold),)
-                  ],
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  // Handle Services option
-                },
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundColor: Colors.teal,
-                      child: Icon(Icons.local_laundry_service_outlined,color: Colors.white,size: 30,),
-                    ),
-                    SizedBox(height: 10,),
-                    Text('Services',style: TextStyle(fontWeight: FontWeight.bold),)
-                  ],
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  // Handle Contact option
-                },
-                child:  Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundColor: Colors.redAccent,
-                      child: Icon(Icons.phone,color: Colors.white,size: 30,),
-                    ),
-                    SizedBox(height: 10,),
-                    Text('Contact',style: TextStyle(fontWeight: FontWeight.bold),)
-                  ],
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 32.0),
+           Card(
+             elevation: 10,
+             child: Padding(
+               padding: const EdgeInsets.all(8.0),
+               child: Column(
+                 children: [
+                   Card(
+                     elevation: 10,
+                     child: Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                       children: [
+                         InkWell(
+                           onTap: () {
+                             Navigator.push(
+                               context,
+                               MaterialPageRoute(
+                                 builder: (context) => Orderstushistory(),
+                               ),
+                             );
+                           },
+                           child: Column(
+                             children: [
+                               Card(
+                                 elevation: 2,
+                                 shape: RoundedRectangleBorder(
+                                   borderRadius: BorderRadius.circular(30),
+                                 ),
+                                 child: CircleAvatar(
+                                   radius: 30,
+                                   backgroundColor: Colors.blue,
+                                   child: Icon(
+                                     Icons.assignment,
+                                     color: Colors.white,
+                                     size: 30,
+                                   ),
+                                 ),
+                               ),
+                               SizedBox(height: 10),
+                               Text('Order Status', style: TextStyle(fontWeight: FontWeight.bold)),
+                             ],
+                           ),
+                         ),
+                         InkWell(
+                           onTap: () {
+                             Navigator.push(
+                               context,
+                               MaterialPageRoute(
+                                 builder: (context) => CustomerNewOrder(),
+                               ),
+                             );
+                           },
+                           child: Column(
+                             children: [
+                               Card(
+                                 elevation: 2,
+                                 shape: RoundedRectangleBorder(
+                                   borderRadius: BorderRadius.circular(30),
+                                 ),
+                                 child: CircleAvatar(
+                                   radius: 30,
+                                   backgroundColor: Colors.orange,
+                                   child: Icon(
+                                     Icons.add_shopping_cart,
+                                     color: Colors.white,
+                                     size: 30,
+                                   ),
+                                 ),
+                               ),
+                               SizedBox(height: 10),
+                               Text('New Order', style: TextStyle(fontWeight: FontWeight.bold)),
+                             ],
+                           ),
+                         ),
+                         InkWell(
+                           onTap: () {
+                             Navigator.push(
+                               context,
+                               MaterialPageRoute(
+                                 builder: (context) => Pricing(),
+                               ),
+                             );
+                           },
+                           child: Column(
+                             children: [
+                               Card(
+                                 elevation: 2,
+                                 shape: RoundedRectangleBorder(
+                                   borderRadius: BorderRadius.circular(30),
+                                 ),
+                                 child: CircleAvatar(
+                                   radius: 30,
+                                   backgroundColor: Colors.blue,
+                                   child: Icon(
+                                     Icons.payment,
+                                     color: Colors.white,
+                                     size: 30,
+                                   ),
+                                 ),
+                               ),
+                               SizedBox(height: 10),
+                               Text('Our Rates', style: TextStyle(fontWeight: FontWeight.bold)),
+                             ],
+                           ),
+                         ),
+                       ],
+                     ),
+                   ),
+                   SizedBox(height: 30),
+                   Card(
+                     elevation: 10,
+                     child: Padding(
+                       padding: const EdgeInsets.all(8.0),
+                       child: Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                         children: [
+                           InkWell(
+                             onTap: () {
+                               Navigator.push(
+                                 context,
+                                 MaterialPageRoute(
+                                   builder: (context) => Promotions(),
+                                 ),
+                               );
+                             },
+                             child: Column(
+                               children: [
+                                 Card(
+                                   elevation: 2,
+                                   shape: RoundedRectangleBorder(
+                                     borderRadius: BorderRadius.circular(30),
+                                   ),
+                                   child: CircleAvatar(
+                                     radius: 30,
+                                     backgroundColor: Colors.purple,
+                                     child: Icon(
+                                       Icons.local_offer,
+                                       color: Colors.white,
+                                       size: 30,
+                                     ),
+                                   ),
+                                 ),
+                                 SizedBox(height: 10),
+                                 Text('Promotions', style: TextStyle(fontWeight: FontWeight.bold)),
+                               ],
+                             ),
+                           ),
+                           InkWell(
+                             onTap: () {
+                               // Handle Services option
+                             },
+                             child: Column(
+                               children: [
+                                 Card(
+                                   elevation: 2,
+                                   shape: RoundedRectangleBorder(
+                                     borderRadius: BorderRadius.circular(30),
+                                   ),
+                                   child: CircleAvatar(
+                                     radius: 30,
+                                     backgroundColor: Colors.teal,
+                                     child: Icon(
+                                       Icons.local_laundry_service_outlined,
+                                       color: Colors.white,
+                                       size: 30,
+                                     ),
+                                   ),
+                                 ),
+                                 SizedBox(height: 10),
+                                 Text('Services', style: TextStyle(fontWeight: FontWeight.bold)),
+                               ],
+                             ),
+                           ),
+                           InkWell(
+                             onTap: () {
+                               // Handle Contact option
+                             },
+                             child: Column(
+                               children: [
+                                 Card(
+                                   elevation: 10,
+                                   shape: RoundedRectangleBorder(
+                                     borderRadius: BorderRadius.circular(30),
+                                   ),
+                                   child: CircleAvatar(
+                                     radius: 30,
+                                     backgroundColor: Colors.redAccent,
+                                     child: Icon(
+                                       Icons.phone,
+                                       color: Colors.white,
+                                       size: 30,
+                                     ),
+                                   ),
+                                 ),
+                                 SizedBox(height: 10),
+                                 Text('Contact', style: TextStyle(fontWeight: FontWeight.bold)),
+                               ],
+                             ),
+                           ),
+                         ],
+                       ),
+                     ),
+                   ),
+                 ],
+               ),
+             ),
+           )
+,
+            SizedBox(height: 32.0),
           ],
         ),
       ),
@@ -481,53 +568,6 @@ class CustomerHomeScreen extends StatelessWidget {
     ),
     ),
     ),
-    );
-  }
-}
-
-class HomeCard extends StatelessWidget {
-  final String title;
-  final IconData icon;
-  final Color color;
-
-  const HomeCard({
-    required this.title,
-    required this.icon,
-    required this.color,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 2,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            CircleAvatar(
-              radius: 30,
-              backgroundColor: color,
-              child: Icon(
-                icon,
-                size: 32,
-                color: Colors.white,
-              ),
-            ),
-            SizedBox(height: 8.0),
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
