@@ -98,7 +98,7 @@ class _OrderstushistoryState extends State<Orderstushistory> {
                         child: Row(
                           children: [
                             Container(
-                              width: 60,
+                              width:30,
                               height: 40,
                               alignment: Alignment.center,
                               child: Text(
@@ -138,7 +138,7 @@ class _OrderstushistoryState extends State<Orderstushistory> {
                               ),
                             ),
                             Container(
-                              width: 80,
+                              width: 150,
                               height: 40,
                               alignment: Alignment.center,
                               child: Text(
@@ -175,7 +175,7 @@ class _OrderstushistoryState extends State<Orderstushistory> {
                                     child: Row(
                                       children: [
                                         Container(
-                                          width: 60,
+                                          width: 30,
                                           height: 40,
                                           alignment: Alignment.center,
                                           child: Text("1"),
@@ -194,10 +194,10 @@ class _OrderstushistoryState extends State<Orderstushistory> {
                                           child: Text("2"),
                                         ),
                                         Container(
-                                          width: 80,
+                                          width: 150,
                                           height: 40,
                                           alignment: Alignment.center,
-                                          child:Text(statusList[rowIndex])
+                                          child:Center(child: Text(statusList[rowIndex]))
                                         ),
                                       ],
                                     ),
