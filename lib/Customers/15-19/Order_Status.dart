@@ -221,6 +221,7 @@ class _OrderstushistoryState extends State<Orderstushistory> {
             ),
             SizedBox(height: 20,),
             if(isVisible)
+              Icon(Icons.keyboard_double_arrow_down_outlined,color: Colors.blue,),
             SizedBox(
               child: Column(
                 children: [
