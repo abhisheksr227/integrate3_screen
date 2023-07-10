@@ -78,29 +78,47 @@ class _NewComplaintState extends State<NewComplaint> {
                                 height: 40,
                                 width: MediaQuery.of(context).size.width,
                                 child: Row(children: [
-                                  Expanded(
-                                      child: Container(
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            "Sl. No",
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold),
-                                          ))),
-                                  Expanded(
-                                      child: Container(
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            "Order. No",
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold),
-                                          ))),
+                                  Container(
+                                    width: 60,
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        "Sl. No",
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold),
+                                      )),
+                                  Container(
+                                    width: 40,
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        "Order. No",
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold),
+                                      )),
                                   Expanded(
                                       child: Container(
                                           alignment: Alignment.center,
                                           child: Text(
                                             "Order",
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold),
+                                          ))),
+                                  Expanded(
+                                      child: Container(
+                                          alignment: Alignment.center,
+                                          child: Text(
+                                            "Status",
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold),
+                                          ))),
+                                  Expanded(
+                                      child: Container(
+                                          alignment: Alignment.center,
+                                          child: Text(
+                                            "No. Of Items",
                                             style: TextStyle(
                                                 color: Colors.black,
                                                 fontWeight: FontWeight.bold),
@@ -146,32 +164,52 @@ class _NewComplaintState extends State<NewComplaint> {
                                                     width: MediaQuery.of(context).size.width,
                                                     color: selectedRowIndex == rowIndex ? Colors.grey : null,
                                                     child: Row(children: [
-                                                      Expanded(
-                                                          child: Container(
-                                                              alignment:
-                                                              Alignment.center,
-                                                              child: Text(
-                                                                "1",
-                                                                style: TextStyle(
-                                                                    color: Colors
-                                                                        .black),
-                                                              ))),
-                                                      Expanded(
-                                                          child: Container(
-                                                              alignment:
-                                                              Alignment.center,
-                                                              child: Text(
-                                                                "102",
-                                                                style: TextStyle(
-                                                                    color: Colors
-                                                                        .black),
-                                                              ))),
+                                                      Container(
+                                                        width: 60,
+                                                          alignment:
+                                                          Alignment.center,
+                                                          child: Text(
+                                                            "1",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black),
+                                                          )),
+                                                      Container(
+                                                        width: 40,
+                                                          alignment:
+                                                          Alignment.center,
+                                                          child: Text(
+                                                            "102",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black),
+                                                          )),
                                                       Expanded(
                                                           child: Container(
                                                               alignment:
                                                               Alignment.center,
                                                               child: Text(
                                                                 "Normal",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
+                                                              ))),
+                                                      Expanded(
+                                                          child: Container(
+                                                              alignment:
+                                                              Alignment.center,
+                                                              child: Text(
+                                                                "delivered",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
+                                                              ))),
+                                                      Expanded(
+                                                          child: Container(
+                                                              alignment:
+                                                              Alignment.center,
+                                                              child: Text(
+                                                                "5",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
