@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:integrate_3screens/Owners/Dashboard/Navigation.dart';
-
 import 'Customers/Customer_Home.dart';
-import 'Owners/Dashboard/Navigation.dart';
-import 'Owners/Dashboard/Owner_dashboard.dart';
 import 'Service_Staff/Service_staff_dashboard_75.dart';
+import 'main.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -75,10 +73,10 @@ class _LoginPageState extends State<LoginPage> {
         context,
         MaterialPageRoute(builder: (context) => Navigation()),
       );
-    } else if (username == '333' && password == '333') {
+    } else if (username == '444' && password == '444') {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => CustomerHomeScreen()),
+        MaterialPageRoute(builder: (context) => MyHomePage()),
       );
     } else {
       setState(() {
