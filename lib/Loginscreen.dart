@@ -106,6 +106,8 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text("Welcome",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25)),
+                SizedBox(height: 20,),
                 TextFormField(
                   controller: _usernameController,
                   decoration: InputDecoration(
@@ -167,6 +169,8 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
+                SizedBox(height: 90,),
+                Text("Powered By Mobiz")
               ],
             ),
           ),

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'Customer_Home.dart';
+
 class CustomerNewOrder extends StatefulWidget {
   const CustomerNewOrder({Key? key}) : super(key: key);
 
@@ -57,9 +59,9 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(15.0),
               child: Card(
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
@@ -125,7 +127,6 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.blue,
               ),
             ),
             SizedBox(height: 30),
@@ -158,7 +159,7 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
                     });
                   }),
             ),
-            SizedBox(height: 120),
+            SizedBox(height: 50),
             SizedBox(width: 150,
               child: ElevatedButton(
                 onPressed: () {
@@ -171,7 +172,7 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
                         actions: [
                           TextButton(
                             onPressed: () {
-                              Navigator.of(context).pop();
+                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => CustomerHomeScreen(),));
                             },
                             child: Text('OK'),
                           ),
@@ -181,7 +182,7 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
                   );
                 },
                 child: Text(
-                  'ORDER NOW',
+                  'SUBMIT',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,

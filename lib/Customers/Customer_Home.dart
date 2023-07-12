@@ -43,7 +43,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
             TextButton(
               child: Text('Logout'),
               onPressed: () {
-                Navigator.pushReplacement(
+                Navigator.pop(
                   context,
                   MaterialPageRoute(
                     builder: (context) => LoginPage(),
