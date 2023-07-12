@@ -85,6 +85,8 @@ flutter:
     - Assets/Images/icon8.png
     - Assets/Images/logo.png
     - Assets/Images/vector_new.png
+    - Assets/Images/customer_homescreen.png
+    - Assets/Images/customer_homescreen_reward.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

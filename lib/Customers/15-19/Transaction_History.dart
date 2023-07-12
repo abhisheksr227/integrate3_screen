@@ -154,8 +154,8 @@ class _TransactionhistoryState extends State<Transactionhistory> {
                         child: Row(
                           children: [
                             Container(
-                              width: 60,
                               height: 40,
+                              width: 40,
                               alignment: Alignment.center,
                               child: Text(
                                 "Sl No.",
@@ -180,42 +180,31 @@ class _TransactionhistoryState extends State<Transactionhistory> {
                                 ),
                               ),
                             ),
-                            Container(
-                              width: 80,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Credit",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: Container(
+                                height: 40,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Credit/Debit",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
-                            Container(
-                              width: 80,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Debit",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              width: 80,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Amount",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: Container(
+                                height: 40,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Amount",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
@@ -231,48 +220,35 @@ class _TransactionhistoryState extends State<Transactionhistory> {
                         height: 150,
                         child: ListView.builder(
                           physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
-                          itemCount: 3,
+                          itemCount: 1,
                           itemBuilder: (context, index) {
                             return Column(
                               children: [
                                 Row(
                                   children: [
                                     Container(
-                                      width: 60,
+                                      width: 40,
                                       height: 40,
                                       alignment: Alignment.center,
-                                      child: Text(""),
+                                      child: Text("1"),
                                     ),
                                     Expanded(
                                       child: Container(
                                         height: 40,
                                         alignment: Alignment.center,
-                                        child: Text(""),
+                                        child: Text("01/06/2023"),
                                       ),
                                     ),
                                     Container(
-                                      width: 80,
                                       height: 40,
                                       alignment: Alignment.center,
-                                      child: Text(""),
+                                      child: Text("Credit"),
                                     ),Expanded(
                                       child: Container(
                                         height: 40,
                                         alignment: Alignment.center,
-                                        child: Text(""),
+                                        child: Text("80"),
                                       ),
-                                    ),
-                                    Container(
-                                      width: 80,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text(""),
-                                    ),
-                                    Container(
-                                      width: 80,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text(""),
                                     ),
                                   ],
                                 ),
@@ -294,10 +270,10 @@ class _TransactionhistoryState extends State<Transactionhistory> {
             ),
 
             Padding(
-              padding: const EdgeInsets.only(right: 50),
+              padding: const EdgeInsets.only(right: 40),
               child: Row(mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text("Net : 0")
+                  Text("Net : 80")
                 ],
               ),
             )
