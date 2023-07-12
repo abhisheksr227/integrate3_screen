@@ -9,6 +9,7 @@ import 'package:integrate_3screens/Customers/Language.dart';
 import 'package:integrate_3screens/Customers/Password.dart';
 import 'package:integrate_3screens/Customers/Promotions.dart';
 import 'package:integrate_3screens/Customers/Receipt.dart';
+import 'package:integrate_3screens/Customers/Share_screen.dart';
 import 'package:integrate_3screens/Customers/Wallet.dart';
 
 import '../Loginscreen.dart';
@@ -18,7 +19,12 @@ import '15-19/Pricing.dart';
 import 'NewOrder.dart';
 import 'Notifications.dart';
 
-class CustomerHomeScreen extends StatelessWidget {
+class CustomerHomeScreen extends StatefulWidget {
+  @override
+  State<CustomerHomeScreen> createState() => _CustomerHomeScreenState();
+}
+
+class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
   Future<void> showLogoutConfirmationDialog(BuildContext context) async {
     return showDialog<void>(
       context: context,
@@ -51,9 +57,49 @@ class CustomerHomeScreen extends StatelessWidget {
     );
   }
 
+  Future<bool> showExitPopup() async {
+    return await showDialog(
+      context: context,
+      builder: (context) => AlertDialog(actionsAlignment: MainAxisAlignment.center,
+        title: Center(child: Text('Exit App !',style: TextStyle(color: Colors.pinkAccent[400]),)),
+        content: SizedBox(
+            height: 50,
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Column(
+                  children: [
+                    const Text('Do you Really Want to'),
+                    const Text('Close the App ?')
+                  ],
+                ),
+              ),
+
+            )),
+        actions:[
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text('No',style: TextStyle(color: Colors.green[700]),),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text('Yes',style: TextStyle(color: Colors.pinkAccent[400]),),
+            ),
+          ),
+        ],
+      ),
+    )??false;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return WillPopScope(
+      onWillPop: showExitPopup,
       child: Scaffold(
         appBar: AppBar(
           actions: [
@@ -182,7 +228,7 @@ class CustomerHomeScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Receipt()),
+                    MaterialPageRoute(builder: (context) => ShareScreen()),
                   );
                 },
               ),
@@ -565,9 +611,9 @@ class CustomerHomeScreen extends StatelessWidget {
         ),
       ),
       ],
-    ),
-    ),
-    ),
+      ),
+      ),
+      ),
     );
   }
 }
