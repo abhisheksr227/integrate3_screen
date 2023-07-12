@@ -519,7 +519,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                          children: [
                            CircleAvatar(
                              radius: 30,
-                             backgroundColor: Colors.blue,
+                             backgroundColor: Colors.indigo,
                              child: Icon(
                                Icons.payment,
                                color: Colors.white,
@@ -634,24 +634,31 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                 Row(mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                      height: 50,
-                      width: MediaQuery.of(context).size.width*0.4,
+                      height: 40,
+                      width: 70,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10)),color: Colors.blue),
+                              topLeft: Radius.circular(20),bottomLeft: Radius.circular(20)),
+                          color: Colors.blue),
+                      child: Center(child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset('Assets/Images/coin.png'),
+                          Text('50',style: TextStyle(color: Colors.white),),
+                        ],
+                      )),
                     ),
                   ],
-                )
+                ),
+                Container(
+                  height: 150,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('Assets/Images/Wash1.png'), fit: BoxFit.fill),
+                  ),
+                ),
       ],
       ),
       ),
-        bottomNavigationBar: Container(
-          height: 150,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('Assets/Images/Wash1.png'), fit: BoxFit.fill),
-          ),
-        ),
       ),
     );
   }
