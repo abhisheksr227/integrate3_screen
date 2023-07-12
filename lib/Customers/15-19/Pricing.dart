@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 import 'Transaction_History.dart';
 
 class Pricing extends StatefulWidget {
@@ -12,114 +11,241 @@ class Pricing extends StatefulWidget {
 }
 
 class _PricingState extends State<Pricing> {
+  String selectedCategory = 'Select Category';
+  List<String> categoryList = ['Select Category', 'Washing', 'Pressing', 'Folding'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: CupertinoColors.white,
+        backgroundColor: Colors.white,
         leading: Icon(
           Icons.menu,
           color: Colors.blue[800],
           size: 30,
         ),
         actions: [
-          Row(
-            children: [
-              Icon(
-                Icons.circle_outlined,
-                color: Colors.blue[800],
-              ),
-              SizedBox(width: 10,)
-            ],
+          Icon(
+            Icons.circle_outlined,
+            color: Colors.blue[800],
           ),
+          SizedBox(width: 10),
         ],
       ),
-        body: SingleChildScrollView(
-          child: Column(children: [
-            Center(
-              child: Text(
-                "PRICING",
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue[800]),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
             Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.3,
-                color: CupertinoColors.extraLightBackgroundGray,
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height * .05,
-                      width: MediaQuery.of(context).size.width * .45,
-                      decoration: BoxDecoration(
-                        border: Border.all(),
-                        color: Colors.white,
-                      ),
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.white),
-                          onPressed: () {},
-                          child: Text(
-                            "Select Category",
-                            style: TextStyle(color: Colors.black),
-                          )),
-                    ),
-                    SizedBox(
-                      height: 65,
-                    ),
-                    Row( mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 20),
-                              child: Container(
-                                height:
-                                    MediaQuery.of(context).size.height * .13,
-                                width: MediaQuery.of(context).size.width * .22,
-                                decoration: BoxDecoration(border: Border.all()),
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(width: 10,),
-                         Column(mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SizedBox(height: 10,),
-                            Text("Sub category name",style: TextStyle(fontSize: 18),),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 50,
-                        ),
-                        Column(
-                          children: [
-                            SizedBox(height: 10,),
-                            Text("Rate",style: TextStyle(fontSize: 18),)
-                          ],
-                        )
-                      ],
-                    )
-                  ],
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Text(
+                'PRICING',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue[800],
                 ),
               ),
             ),
-          ]
-          ),
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                height: 40,
+                width: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.blue),
+                ),
+                child: DropdownButtonFormField(
+                  validator: (value) {
+                    if (value == 'Select Category') {
+                      return 'Select Category';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(borderSide: BorderSide.none),
+                    contentPadding: EdgeInsets.only(left: 10),
+                  ),
+                  value: selectedCategory,
+                  items: categoryList.map((category) {
+                    return DropdownMenuItem(
+                      value: category,
+                      child: Text(category),
+                    );
+                  }).toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      selectedCategory = value.toString();
+                    });
+                  },
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.all(12),
+              child: Card(
+                elevation: 10,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                color: Colors.blue[100],
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              child: Image.asset("Assets/Images/customer_pricing_shirt.jpg",fit: BoxFit.fill,)
+                            ),
+                            SizedBox(width: 20),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Shirt Men',
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  ' AED 6.93',
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        // Add more pricing items here
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(12),
+              child: Card(
+                elevation: 10,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                color: Colors.blue[100],
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Image.asset("Assets/Images/customer_pricing_trouser.jpg",fit: BoxFit.fill,)
+                            ),
+                            SizedBox(width: 20),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Trouser Men',
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  ' AED 6.93',
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        // Add more pricing items here
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),Padding(
+              padding: const EdgeInsets.all(12),
+              child: Card(
+                elevation: 10,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                color: Colors.blue[100],
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Image.asset("Assets/Images/customer_pricing_pyjama.jpeg",fit: BoxFit.fill,)
+                            ),
+                            SizedBox(width: 20),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'PYJAMA SET',
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  ' AED 6.93',
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        // Add more pricing items here
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
+      ),
     );
   }
 }

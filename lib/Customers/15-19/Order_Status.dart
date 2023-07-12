@@ -161,7 +161,7 @@ class _OrderstushistoryState extends State<Orderstushistory> {
                       SizedBox(
                         height: 170,
                         child: ListView.builder(
-                          itemCount: 5,
+                          itemCount: 1,
                           itemBuilder: (BuildContext context, int rowIndex) {
                             return Column(
                               children: [
@@ -184,7 +184,7 @@ class _OrderstushistoryState extends State<Orderstushistory> {
                                           child: Container(
                                             height: 40,
                                             alignment: Alignment.center,
-                                            child: Text("2"),
+                                            child: Text("1002"),
                                           ),
                                         ),
                                         Container(

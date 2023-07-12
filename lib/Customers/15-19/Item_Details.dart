@@ -122,11 +122,7 @@ class _ItemdetailsState extends State<Itemdetails> {
                 ),
               ),
             ),
-            ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return Pricing();
-              },));
-            }, child: Text("Next"))
+
           ]),
         ));
   }

@@ -54,33 +54,40 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.blue,
                 ),
               ),
             ),
             SizedBox(height: 20),
-            ListTile(
-              leading: Radio(
-                activeColor: Colors.blue,
-                value: 'Normal',
-                groupValue: selectedOption,
-                onChanged: (value) {
-                  setState(() {
-                    selectedOption = value.toString();
-                  });
-                },
-              ),
-              title: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.blue),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                padding: EdgeInsets.all(12),
-                child: Text(
-                  'Place Order Via Wallet and Get 10% Discount',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.blue,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: ListTile(
+                    leading: Radio(
+                      activeColor: Colors.blue,
+                      value: 'Normal',
+                      groupValue: selectedOption,
+                      onChanged: (value) {
+                        setState(() {
+                          selectedOption = value.toString();
+                        });
+                      },
+                    ),
+                    title: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.blue),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Place Order Via Wallet and Get 10% Discount',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
