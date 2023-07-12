@@ -102,6 +102,9 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
       onWillPop: showExitPopup,
       child: Scaffold(
         appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.blue),
+          toolbarHeight: 80,
+          title: Center(child: Text('Mobiz Laundry',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
           actions: [
             IconButton(
               onPressed: () {
@@ -112,7 +115,10 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                   ),
                 );
               },
-              icon: Icon(Icons.notifications),
+              icon: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Icon(Icons.notifications,color: Colors.blue,),
+              ),
             )
           ],
         ),
@@ -136,7 +142,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        'ABHISHEK',
+                        'ABHISHEK - HOME',
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
@@ -148,10 +154,10 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                 ),
               ),
               ListTile(
-                trailing: Icon(Icons.edit),
+                leading: Icon(Icons.edit,color: Colors.blue,),
                 title: Text(
                   'Edit Profile',
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: 16,),
                 ),
                 onTap: () {
                   Navigator.push(
@@ -160,9 +166,13 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                   );
                 },
               ),
-              Divider(),
+              Divider(
+                height: 0.1,
+                indent: 10,
+                endIndent: 10,
+              ),
               ListTile(
-                trailing: Icon(Icons.language),
+                leading: Icon(Icons.language,color: Colors.blue,),
                 title: Text(
                   'Language',
                   style: TextStyle(fontSize: 16),
@@ -174,9 +184,13 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                   );
                 },
               ),
-              Divider(),
+              Divider(
+                height: 0.1,
+                indent: 10,
+                endIndent: 10,
+              ),
               ListTile(
-                trailing: Icon(Icons.history_sharp),
+                leading: Icon(Icons.history_sharp,color: Colors.blue,),
                 title: Text(
                   'Order History',
                   style: TextStyle(fontSize: 16),
@@ -188,9 +202,13 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                   );
                 },
               ),
-              Divider(),
+              Divider(
+                height: 0.1,
+                indent: 10,
+                endIndent: 10,
+              ),
               ListTile(
-                trailing: Icon(Icons.history),
+                leading: Icon(Icons.history,color: Colors.blue,),
                 title: Text(
                   'Transaction History',
                   style: TextStyle(fontSize: 16),
@@ -204,9 +222,13 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                   );
                 },
               ),
-              Divider(),
+              Divider(
+                height: 0.1,
+                indent: 10,
+                endIndent: 10,
+              ),
               ListTile(
-                trailing: Icon(Icons.error),
+                leading: Icon(Icons.error,color: Colors.blue,),
                 title: Text(
                   'Customer Complaint',
                   style: TextStyle(fontSize: 16),
@@ -218,9 +240,13 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                   );
                 },
               ),
-              Divider(),
+              Divider(
+                height: 0.1,
+                indent: 10,
+                endIndent: 10,
+              ),
               ListTile(
-                trailing: Icon(Icons.share),
+                leading: Icon(Icons.share,color: Colors.blue,),
                 title: Text(
                   'Share',
                   style: TextStyle(fontSize: 16),
@@ -232,9 +258,13 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                   );
                 },
               ),
-              Divider(),
+              Divider(
+                height: 0.1,
+                indent: 10,
+                endIndent: 10,
+              ),
               ListTile(
-                trailing: Icon(Icons.lock),
+                leading: Icon(Icons.lock,color: Colors.blue,),
                 title: Text(
                   'Change Password',
                   style: TextStyle(fontSize: 16),
@@ -246,9 +276,13 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                   );
                 },
               ),
-              Divider(),
+              Divider(
+                height: 0.1,
+                indent: 10,
+                endIndent: 10,
+              ),
               ListTile(
-                trailing: Icon(Icons.description),
+                leading: Icon(Icons.description,color: Colors.blue,),
                 title: Text(
                   'Terms and Conditions',
                   style: TextStyle(fontSize: 16),
@@ -257,9 +291,13 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                   // Handle terms and conditions option
                 },
               ),
-              Divider(),
+              Divider(
+                height: 0.1,
+                indent: 10,
+                endIndent: 10,
+              ),
               ListTile(
-                trailing: Icon(
+                leading: Icon(
                   Icons.exit_to_app,
                   color: Colors.blue,
                 ),
@@ -285,27 +323,15 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
           child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-          SizedBox(height: 16.0),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              InkWell(
-                onTap: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => Wallet(),
-                  //   ),
-                  // );
-                },
+              Card(
+                elevation: 5,
                 child: Container(
                   padding: const EdgeInsets.all(16.0),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Color(0xFF48a3c2), Color(0xFF1A344F)],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),
+                    color: Colors.blue.shade100,
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: Column(
@@ -320,299 +346,312 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: Colors.black,
                             ),
                           ),
                           Icon(
                             Icons.account_balance_wallet,
-                            color: Colors.white,
+                            color: Colors.blue,
                           ),
                         ],
                       ),
                       SizedBox(height: 16.0),
-                      Text(
-                        'AED 0',
-                        style: TextStyle(
-                          fontSize: 24,
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      Row(mainAxisAlignment:
+                      MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'AED 80',
+                            style: TextStyle(
+                              fontSize: 24,
+                              color: Colors.green,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          ElevatedButton(onPressed: () {},
+                            child: Text('TOP UP',style: TextStyle(color: Colors.white),),
+                            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blue[700])),
+                          ),
+                        ],
                       ),
                     ],
                   ),
                 ),
               ),
               SizedBox(height: 16.0),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Invoice(),
+              Card(
+                elevation: 5,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Invoice(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: Colors.blue.shade100,
+                      borderRadius: BorderRadius.circular(8.0),
                     ),
-                  );
-                },
-                child: Container(
-                  padding: const EdgeInsets.all(16.0),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Color(0xFF48a3c2), Color(0xFF1A344F)],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment:
-                        MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Current Outstanding',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment:
+                          MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Current Outstanding',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
                             ),
-                          ),
-                          Icon(
-                            Icons.warning,
-                            color: Colors.white,
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 16.0),
-                      Text(
-                        'AED 0',
-                        style: TextStyle(
-                          fontSize: 24,
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
+                            Icon(
+                              Icons.warning,
+                              color: Colors.red,
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
+                        SizedBox(height: 16.0),
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'AED 20',
+                              style: TextStyle(
+                                fontSize: 24,
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          /*  ElevatedButton(onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Invoice(),
+                                ),
+                              );
+                            },
+                              child: Text('Pay Now',style: TextStyle(color: Colors.white),),
+                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blue[700])),
+                            ),*/
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 50),
-           Card(
-             elevation: 10,
-             child: Padding(
-               padding: const EdgeInsets.all(8.0),
-               child: Column(
-                 children: [
-                   Card(
-                     elevation: 10,
-                     child: Row(
-                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                       children: [
-                         InkWell(
-                           onTap: () {
-                             Navigator.push(
-                               context,
-                               MaterialPageRoute(
-                                 builder: (context) => Orderstushistory(),
-                               ),
-                             );
-                           },
-                           child: Column(
-                             children: [
-                               Card(
-                                 elevation: 2,
-                                 shape: RoundedRectangleBorder(
-                                   borderRadius: BorderRadius.circular(30),
-                                 ),
-                                 child: CircleAvatar(
-                                   radius: 30,
-                                   backgroundColor: Colors.blue,
-                                   child: Icon(
-                                     Icons.assignment,
-                                     color: Colors.white,
-                                     size: 30,
-                                   ),
-                                 ),
-                               ),
-                               SizedBox(height: 10),
-                               Text('Order Status', style: TextStyle(fontWeight: FontWeight.bold)),
-                             ],
+          SizedBox(height: 30),
+           Padding(
+             padding: const EdgeInsets.all(8.0),
+             child: Column(
+               children: [
+                 SizedBox(height: 10,),
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                   children: [
+                     InkWell(
+                       onTap: () {
+                         Navigator.push(
+                           context,
+                           MaterialPageRoute(
+                             builder: (context) => Orderstushistory(),
                            ),
-                         ),
-                         InkWell(
-                           onTap: () {
-                             Navigator.push(
-                               context,
-                               MaterialPageRoute(
-                                 builder: (context) => CustomerNewOrder(),
-                               ),
-                             );
-                           },
-                           child: Column(
-                             children: [
-                               Card(
-                                 elevation: 2,
-                                 shape: RoundedRectangleBorder(
-                                   borderRadius: BorderRadius.circular(30),
-                                 ),
-                                 child: CircleAvatar(
-                                   radius: 30,
-                                   backgroundColor: Colors.orange,
-                                   child: Icon(
-                                     Icons.add_shopping_cart,
-                                     color: Colors.white,
-                                     size: 30,
-                                   ),
-                                 ),
-                               ),
-                               SizedBox(height: 10),
-                               Text('New Order', style: TextStyle(fontWeight: FontWeight.bold)),
-                             ],
-                           ),
-                         ),
-                         InkWell(
-                           onTap: () {
-                             Navigator.push(
-                               context,
-                               MaterialPageRoute(
-                                 builder: (context) => Pricing(),
-                               ),
-                             );
-                           },
-                           child: Column(
-                             children: [
-                               Card(
-                                 elevation: 2,
-                                 shape: RoundedRectangleBorder(
-                                   borderRadius: BorderRadius.circular(30),
-                                 ),
-                                 child: CircleAvatar(
-                                   radius: 30,
-                                   backgroundColor: Colors.blue,
-                                   child: Icon(
-                                     Icons.payment,
-                                     color: Colors.white,
-                                     size: 30,
-                                   ),
-                                 ),
-                               ),
-                               SizedBox(height: 10),
-                               Text('Our Rates', style: TextStyle(fontWeight: FontWeight.bold)),
-                             ],
-                           ),
-                         ),
-                       ],
-                     ),
-                   ),
-                   SizedBox(height: 30),
-                   Card(
-                     elevation: 10,
-                     child: Padding(
-                       padding: const EdgeInsets.all(8.0),
-                       child: Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                         );
+                       },
+                       child: Column(
                          children: [
-                           InkWell(
-                             onTap: () {
-                               Navigator.push(
-                                 context,
-                                 MaterialPageRoute(
-                                   builder: (context) => Promotions(),
-                                 ),
-                               );
-                             },
-                             child: Column(
-                               children: [
-                                 Card(
-                                   elevation: 2,
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(30),
-                                   ),
-                                   child: CircleAvatar(
-                                     radius: 30,
-                                     backgroundColor: Colors.purple,
-                                     child: Icon(
-                                       Icons.local_offer,
-                                       color: Colors.white,
-                                       size: 30,
-                                     ),
-                                   ),
-                                 ),
-                                 SizedBox(height: 10),
-                                 Text('Promotions', style: TextStyle(fontWeight: FontWeight.bold)),
-                               ],
+                           CircleAvatar(
+                             radius: 30,
+                             backgroundColor: Colors.blue,
+                             child: Icon(
+                               Icons.assignment,
+                               color: Colors.white,
+                               size: 30,
                              ),
                            ),
-                           InkWell(
-                             onTap: () {
-                               // Handle Services option
-                             },
-                             child: Column(
-                               children: [
-                                 Card(
-                                   elevation: 2,
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(30),
-                                   ),
-                                   child: CircleAvatar(
-                                     radius: 30,
-                                     backgroundColor: Colors.teal,
-                                     child: Icon(
-                                       Icons.local_laundry_service_outlined,
-                                       color: Colors.white,
-                                       size: 30,
-                                     ),
-                                   ),
-                                 ),
-                                 SizedBox(height: 10),
-                                 Text('Services', style: TextStyle(fontWeight: FontWeight.bold)),
-                               ],
-                             ),
-                           ),
-                           InkWell(
-                             onTap: () {
-                               // Handle Contact option
-                             },
-                             child: Column(
-                               children: [
-                                 Card(
-                                   elevation: 2,
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(30),
-                                   ),
-                                   child: CircleAvatar(
-                                     radius: 30,
-                                     backgroundColor: Colors.redAccent,
-                                     child: Icon(
-                                       Icons.phone,
-                                       color: Colors.white,
-                                       size: 30,
-                                     ),
-                                   ),
-                                 ),
-                                 SizedBox(height: 10),
-                                 Text('Contact', style: TextStyle(fontWeight: FontWeight.bold)),
-                               ],
-                             ),
-                           ),
+                           SizedBox(height: 10),
+                           Text('Order Status', style: TextStyle(fontWeight: FontWeight.bold)),
                          ],
                        ),
                      ),
+                     InkWell(
+                       onTap: () {
+                         Navigator.push(
+                           context,
+                           MaterialPageRoute(
+                             builder: (context) => CustomerNewOrder(),
+                           ),
+                         );
+                       },
+                       child: Column(
+                         children: [
+                           CircleAvatar(
+                             radius: 30,
+                             backgroundColor: Colors.orange,
+                             child: Icon(
+                               Icons.add_shopping_cart,
+                               color: Colors.white,
+                               size: 30,
+                             ),
+                           ),
+                           SizedBox(height: 10),
+                           Text('New Order', style: TextStyle(fontWeight: FontWeight.bold)),
+                         ],
+                       ),
+                     ),
+                     InkWell(
+                       onTap: () {
+                         Navigator.push(
+                           context,
+                           MaterialPageRoute(
+                             builder: (context) => Pricing(),
+                           ),
+                         );
+                       },
+                       child: Column(
+                         children: [
+                           CircleAvatar(
+                             radius: 30,
+                             backgroundColor: Colors.blue,
+                             child: Icon(
+                               Icons.payment,
+                               color: Colors.white,
+                               size: 30,
+                             ),
+                           ),
+                           SizedBox(height: 10),
+                           Text('Our Rates', style: TextStyle(fontWeight: FontWeight.bold)),
+                         ],
+                       ),
+                     ),
+                   ],
+                 ),
+                 SizedBox(height: 30),
+                 Padding(
+                   padding: const EdgeInsets.all(8.0),
+                   child: Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                     children: [
+                       InkWell(
+                         onTap: () {
+                           Navigator.push(
+                             context,
+                             MaterialPageRoute(
+                               builder: (context) => Promotions(),
+                             ),
+                           );
+                         },
+                         child: Column(
+                           children: [
+                             Card(
+                               elevation: 2,
+                               shape: RoundedRectangleBorder(
+                                 borderRadius: BorderRadius.circular(30),
+                               ),
+                               child: CircleAvatar(
+                                 radius: 30,
+                                 backgroundColor: Colors.purple,
+                                 child: Icon(
+                                   Icons.local_offer,
+                                   color: Colors.white,
+                                   size: 30,
+                                 ),
+                               ),
+                             ),
+                             SizedBox(height: 10),
+                             Text('Promotions', style: TextStyle(fontWeight: FontWeight.bold)),
+                           ],
+                         ),
+                       ),
+                       InkWell(
+                         onTap: () {
+                           // Handle Services option
+                         },
+                         child: Column(
+                           children: [
+                             Card(
+                               elevation: 2,
+                               shape: RoundedRectangleBorder(
+                                 borderRadius: BorderRadius.circular(30),
+                               ),
+                               child: CircleAvatar(
+                                 radius: 30,
+                                 backgroundColor: Colors.teal,
+                                 child: Icon(
+                                   Icons.local_laundry_service_outlined,
+                                   color: Colors.white,
+                                   size: 30,
+                                 ),
+                               ),
+                             ),
+                             SizedBox(height: 10),
+                             Text('Services', style: TextStyle(fontWeight: FontWeight.bold)),
+                           ],
+                         ),
+                       ),
+                       InkWell(
+                         onTap: () {
+                           // Handle Contact option
+                         },
+                         child: Column(
+                           children: [
+                             Card(
+                               elevation: 2,
+                               shape: RoundedRectangleBorder(
+                                 borderRadius: BorderRadius.circular(30),
+                               ),
+                               child: CircleAvatar(
+                                 radius: 30,
+                                 backgroundColor: Colors.redAccent,
+                                 child: Icon(
+                                   Icons.phone,
+                                   color: Colors.white,
+                                   size: 30,
+                                 ),
+                               ),
+                             ),
+                             SizedBox(height: 10),
+                             Text('Contact', style: TextStyle(fontWeight: FontWeight.bold)),
+                           ],
+                         ),
+                       ),
+                     ],
                    ),
-                 ],
-               ),
+                 ),
+               ],
              ),
            )
-,
-            SizedBox(height: 32.0),
           ],
         ),
       ),
+                Row(mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      height: 50,
+                      width: MediaQuery.of(context).size.width*0.4,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10)),color: Colors.blue),
+                    ),
+                  ],
+                )
       ],
       ),
       ),
+        bottomNavigationBar: Container(
+          height: 150,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('Assets/Images/Wash1.png'), fit: BoxFit.fill),
+          ),
+        ),
       ),
     );
   }
