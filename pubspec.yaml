@@ -86,8 +86,9 @@ flutter:
     - Assets/Images/icon8.png
     - Assets/Images/logo.png
     - Assets/Images/vector_new.png
-    - Assets/Images/Wash.jpg
     - Assets/Images/Wash1.png
+    - Assets/Images/Share.jpg
+    - Assets/Images/coin.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
