@@ -122,7 +122,7 @@ class _InvoiceState extends State<Invoice> {
             SizedBox(
               height: MediaQuery.of(context).size.height*0.64,
               child: ListView.builder(
-                itemCount: 6,
+                itemCount: 1,
                 itemBuilder: (BuildContext context, int index) {
                   final isSelected = selectedRows.contains(index);
                   return
@@ -180,7 +180,7 @@ class _InvoiceState extends State<Invoice> {
                                       child: Row(
                                         children: [
                                           Text('Balance : '),
-                                          Text('50'),
+                                          Text('20'),
                                         ],
                                       ),
                                     ),

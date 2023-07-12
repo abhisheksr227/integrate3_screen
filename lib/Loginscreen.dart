@@ -11,7 +11,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController _emailController = TextEditingController();
+  TextEditingController _usernameController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   String _errorMessage = '';
 
@@ -55,21 +55,21 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _login() {
-    String username = _emailController.text;
+    String username = _usernameController.text;
     String password = _passwordController.text;
 
     if (username == '111' && password == '111') {
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => CustomerHomeScreen()),
       );
     } else if (username == '222' && password == '222') {
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => StaffServiceDashboard()),
       );
     } else if (username == '333' && password == '333') {
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => Navigation()),
       );
@@ -107,14 +107,14 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextFormField(
-                  controller: _emailController,
+                  controller: _usernameController,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white.withOpacity(0.2),
                     labelText: 'User name',
                     labelStyle: TextStyle(color: Colors.white),
                     prefixIcon: Icon(
-                      Icons.email,
+                      Icons.account_circle,
                       color: Colors.white,
                     ),
                     border: OutlineInputBorder(
