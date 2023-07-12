@@ -140,12 +140,12 @@ class _ComplaintState extends State<Complaint> {
                           ),
                         ),
                         SizedBox(
-                          height: 200,
+                          height: 100,
                           width: MediaQuery.of(context).size.width,
                           child: ListView.builder(
                             scrollDirection: Axis.vertical,
                               padding: EdgeInsets.zero,
-                              itemCount: 9,
+                              itemCount: 1,
                               itemBuilder: (BuildContext context, int rowIndex) {
                                 return SizedBox(
                                     height: 40,
@@ -185,7 +185,7 @@ class _ComplaintState extends State<Complaint> {
                                                           alignment:
                                                               Alignment.center,
                                                           child: Text(
-                                                            "Normal",
+                                                            "Damaged",
                                                             style: TextStyle(
                                                                 color: Colors
                                                                     .black),
@@ -241,19 +241,19 @@ class _ComplaintState extends State<Complaint> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 20,bottom: 15),
-                        child: Text('Complaint No : ',style: TextStyle(fontSize: 16),),
+                        child: Text('Complaint No : 102',style: TextStyle(fontSize: 16),),
                       ),
                   Padding(
                     padding: const EdgeInsets.only(left: 20,bottom: 15),
-                    child: Text('Complaint Date : ',style: TextStyle(fontSize: 16)),
+                    child: Text('Complaint Date : 1-2-2023',style: TextStyle(fontSize: 16)),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 20,bottom: 15),
-                    child: Text('Order No : ',style: TextStyle(fontSize: 16)),
+                    child: Text('Order No : 50',style: TextStyle(fontSize: 16)),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 20,bottom: 15),
-                    child: Text('Complaint Type : ',style: TextStyle(fontSize: 16)),
+                    child: Text('Complaint Type : Damaged',style: TextStyle(fontSize: 16)),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 20,bottom: 30),
@@ -279,6 +279,10 @@ class _ComplaintState extends State<Complaint> {
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(border: Border.all(color: Colors.blue),
                 borderRadius: BorderRadius.circular(10)),
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text('We recieved Your Complaint, It will be Resolved Soon'),
+                ),
               ),
             ),
             Center(

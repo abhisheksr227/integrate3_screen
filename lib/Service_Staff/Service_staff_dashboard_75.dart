@@ -22,6 +22,75 @@ class StaffServiceDashboard extends StatefulWidget {
 
 class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
 
+  Future<void> showLogoutConfirmationDialog(BuildContext context) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Logout'),
+          content: Text('Are you sure you want to logout?'),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: Text('Logout'),
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+                    builder: (context) => LoginPage()
+                ),(route) => false
+                );
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<bool> showExitPopup() async {
+    return await showDialog(
+      context: context,
+      builder: (context) => AlertDialog(actionsAlignment: MainAxisAlignment.center,
+        title: Center(child: Text('Exit App !',style: TextStyle(color: Colors.pinkAccent[400]),)),
+        content: SizedBox(
+            height: 50,
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Column(
+                  children: [
+                    const Text('Do you Really Want to'),
+                    const Text('Close the App ?')
+                  ],
+                ),
+              ),
+
+            )),
+        actions:[
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text('No',style: TextStyle(color: Colors.green[700]),),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text('Yes',style: TextStyle(color: Colors.pinkAccent[400]),),
+            ),
+          ),
+        ],
+      ),
+    )??false;
+  }
+
   void _onItemTapped(int index) {
     switch (index) {
       case 0:
@@ -122,10 +191,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
               leading: Icon(Icons.logout,color: Colors.deepPurple,size: 20,),
               title: Text('Logout',style: TextStyle(color: Colors.deepPurple,fontSize: 15)),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
-                );
+                showLogoutConfirmationDialog(context);
               },
             ),
           ],
