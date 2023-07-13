@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:integrate_3screens/Owners/Pages/Create_NewOrder.dart';
 import 'package:intl/intl.dart';
 
 import 'Complaint.dart';
@@ -19,42 +18,21 @@ class _NewOrderState extends State<NewOrder> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 30),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.blue),
-          ),
-        ),
+        iconTheme: IconThemeData(color: Colors.blue),
+        title: Center(child: Text('New Order',style: TextStyle(color: Colors.blue,fontSize: 20,fontWeight: FontWeight.bold),)),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.refresh_outlined,
-                  color: Colors.blue,
-                )),
-          )
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.refresh_outlined,
+                color: Colors.blue,
+              ))
         ],
-        toolbarHeight: 50,
+        toolbarHeight: 80,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Container(
-                  height: 40,
-                  width: 150,
-                  decoration: BoxDecoration(border: Border.all(color: Colors.blue),
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Center(child: Text('New Order',style: TextStyle(color: Colors.blue,fontSize: 20,fontWeight: FontWeight.bold),)),
-                ),
-              ),
-            ),
             SizedBox(
               height: 20,
             ),

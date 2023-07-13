@@ -172,7 +172,7 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
                         actions: [
                           TextButton(
                             onPressed: () {
-                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => CustomerHomeScreen(),));
+                              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => CustomerHomeScreen(),),(route) => false);
                             },
                             child: Text('OK'),
                           ),

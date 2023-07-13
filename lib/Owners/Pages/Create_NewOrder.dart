@@ -16,42 +16,21 @@ class _CreateNewOrderState extends State<CreateNewOrder> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 30),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.blue),
-          ),
-        ),
+        iconTheme: IconThemeData(color: Colors.blue),
+        title: Center(child: Text('Create New Order',style: TextStyle(color: Colors.blue,fontSize: 20,fontWeight: FontWeight.bold),)),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.refresh_outlined,
-                  color: Colors.blue,
-                )),
-          )
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.refresh_outlined,
+                color: Colors.blue,
+              ))
         ],
-        toolbarHeight: 50,
+        toolbarHeight: 80,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(30),
-                child: Container(
-                  height: 40,
-                  width: 200,
-                  decoration: BoxDecoration(border: Border.all(color: Colors.blue),
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Center(child: Text('Create New Order',style: TextStyle(color: Colors.blue,fontSize: 20,fontWeight: FontWeight.bold),)),
-                ),
-              ),
-            ),
             Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
@@ -61,10 +40,10 @@ class _CreateNewOrderState extends State<CreateNewOrder> {
                 Padding(
                   padding: const EdgeInsets.only(top: 15,bottom: 15),
                   child: Container(
-                    width: 100,
-                    height: 30,
+                    width: MediaQuery.of(context).size.width*0.4,
+                    height: 40,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Colors.blue)),
                     child: DropdownButtonFormField(
                       decoration: InputDecoration(

@@ -87,8 +87,15 @@ flutter:
     - Assets/Images/logo.png
     - Assets/Images/vector_new.png
     - Assets/Images/Wash1.png
-    - Assets/Images/coin.png
     - Assets/Images/Share.jpg
+    - Assets/Images/coin.png
+    - Assets/Images/customer_pricing_shirt.jpg
+    - Assets/Images/customer_pricing_trouser.jpg
+    - Assets/Images/customer_pricing_pyjama.jpeg
+    - Assets/Images/washingdrying.jpg
+    - Assets/Images/waldemar-brandt-Db4d6MRIXJc-unsplash.jpg
+    - Assets/Images/ironing-clothes-ideas.jpeg
+    - Assets/Images/Carpet.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

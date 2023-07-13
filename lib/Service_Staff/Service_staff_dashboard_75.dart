@@ -124,22 +124,19 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
       onWillPop: showExitPopup,
       child: Scaffold(
         appBar: AppBar(
+          title:  Center(
+            child: const Text('Service Staff Dashboard',
+              style: TextStyle(
+                  fontSize: 20,fontWeight: FontWeight.bold,color: Colors.deepPurple),),
+          ),
+          iconTheme: IconThemeData(color: Colors.deepPurple),
           elevation: 0,
-          // leading: Padding(
-          //   padding: const EdgeInsets.only(bottom: 55),
-          //   child: IconButton(onPressed: () {},
-          //     icon: const Icon(Icons.menu,color: Colors.deepPurple),),
-          // ),
-          // actions: [
-          //   Padding(
-          //     padding: const EdgeInsets.only(bottom: 55),
-          //     child: IconButton(onPressed: () {},
-          //         icon: const Icon(Icons.refresh_outlined,color: Colors.deepPurple,)),
-          //   )
-          // ],
-          // toolbarHeight: 110,
+          actions: [
+            IconButton(onPressed: () {},
+                icon: const Icon(Icons.refresh_outlined,color: Colors.deepPurple,))
+           ],
+          toolbarHeight: 80,
           backgroundColor: Colors.white,
-          toolbarHeight: 50,
         ),
         drawer: Drawer(
           child: ListView(
@@ -202,15 +199,8 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
        body: SingleChildScrollView(
           child: Column(
             children: [
-              const Text('Service Staff Dashboard',
-                style: TextStyle(
-                    fontSize: 20,fontWeight: FontWeight.bold,color: Colors.deepPurple),),
-              SizedBox(height: 15,),
-              const Padding(
-                padding: EdgeInsets.all(5),
-                child: Text('Order Summary', style: TextStyle(fontSize: 14,),),
-              ),
-              SizedBox(height: 15,),
+              Text('Order Summary', style: TextStyle(fontSize: 18,),),
+              SizedBox(height: 30,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
@@ -255,7 +245,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                   ),
                 ],
               ),
-              SizedBox(height: 15,),
+              SizedBox(height: 30,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(

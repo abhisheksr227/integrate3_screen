@@ -22,13 +22,19 @@ class _ComplaintState extends State<Complaint> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 30),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.blue),
+        title:  Center(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Text(
+              'COMPLAINT',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.blue[900]),
+            ),
           ),
         ),
+        iconTheme: IconThemeData(color: Colors.blue),
         actions: [
           Padding(
             padding: const EdgeInsets.only(bottom: 30),
@@ -40,23 +46,11 @@ class _ComplaintState extends State<Complaint> {
                 )),
           )
         ],
-        toolbarHeight: 50,
+        toolbarHeight: 80,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Text(
-                  'COMPLAINT',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.blue[900]),
-                ),
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.only(top: 20,bottom: 10),
               child: ElevatedButton(

@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:integrate_3screens/Customers/Customer_Home.dart';
 import 'package:integrate_3screens/Owners/Dashboard/pages2/21-06/Individual_items_116.dart';
 import 'package:integrate_3screens/Owners/Dashboard/pages2/21-06/Listall_117.dart';
 import 'package:integrate_3screens/Owners/Dashboard/pages2/21-06/Order_Statistics_120.dart';
@@ -16,7 +15,6 @@ import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Bags_Master_124
 import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Outstanding%20127.dart';
 import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Over_dues_300.dart';
 import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Payment_Collection_128.dart';
-import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Pickup_Pending_Home_122.dart';
 import 'package:integrate_3screens/Owners/Dashboard/pages2/22-06/Pickup_pending_123.dart';
 import 'package:integrate_3screens/Owners/Pages/Activity_Monitor.dart';
 import 'package:integrate_3screens/Owners/Pages/Assign_Staff.dart';
@@ -35,9 +33,7 @@ import 'package:intl/intl.dart';
 import '../../Loginscreen.dart';
 import '../Pages/Add_clients.dart';
 import '../Pages/Delivered.dart';
-import '../Pages/New_Order.dart';
 import '../Pages/Payment_history.dart';
-import '../Pages/Price.dart';
 import '../Pages/Serviceable_areas.dart';
 
 class DataItem {
@@ -296,7 +292,7 @@ class _DashboardState extends State<Dashboard> {
           appBar: AppBar(
             elevation: 0,
             iconTheme: IconThemeData(color: Colors.blue),
-            title: Center(child: Text("Owners Dashboard",style: TextStyle(color: Colors.blue),)),
+            title: Center(child: Text("Owners Dashboard",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
             actions: [
               IconButton(
                   onPressed: () {},
@@ -305,7 +301,7 @@ class _DashboardState extends State<Dashboard> {
                     color: Colors.blue,
                   ))
             ],
-            toolbarHeight: 50,
+            toolbarHeight: 80,
           ),
           body: SingleChildScrollView(
               child: Column(
@@ -319,10 +315,10 @@ class _DashboardState extends State<Dashboard> {
                         Padding(
                           padding: const EdgeInsets.only(top: 15,bottom: 15),
                           child: Container(
-                            width: MediaQuery.of(context).size.width*0.30,
-                            height: 30,
+                            width: MediaQuery.of(context).size.width*0.40,
+                            height: 40,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(10),
                                 border: Border.all(color: Colors.blue)),
                             child: DropdownButtonFormField(
                               decoration: InputDecoration(
@@ -356,21 +352,20 @@ class _DashboardState extends State<Dashboard> {
                         Text('All'),
                       ],
                     ),
+                  SizedBox(height: 15,),
                   Column(children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50,right: 50),
-                      child: Container(
-                        height: 30,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.blue),
-                          borderRadius: BorderRadius.circular(30),
-                          color: Colors.white,
-                        ),
-                        child: Center(
-                            child: Text('At a Glance',style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.bold),)),
+                    Container(
+                      height: 40,
+                      width: MediaQuery.of(context).size.width*0.6,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.blue),
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.white,
                       ),
+                      child: Center(
+                          child: Text('At a Glance',style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.bold),)),
                     ),
+                    SizedBox(height: 15,),
                     Padding(
                       padding: const EdgeInsets.only(left: 30,right: 30,top: 10),
                       child: Stack(

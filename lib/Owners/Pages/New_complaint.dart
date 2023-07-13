@@ -27,13 +27,19 @@ class _NewComplaintState extends State<NewComplaint> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 30),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.blue),
+        title: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Text(
+              'NEW COMPLAINT',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.blue[900]),
+            ),
           ),
         ),
+        iconTheme: IconThemeData(color: Colors.blue),
         actions: [
           Padding(
             padding: const EdgeInsets.only(bottom: 30),
@@ -45,23 +51,11 @@ class _NewComplaintState extends State<NewComplaint> {
                 )),
           )
         ],
-        toolbarHeight: 50,
+        toolbarHeight: 80,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Text(
-                  'NEW COMPLAINT',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.blue[900]),
-                ),
-              ),
-            ),
             SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.all(15),
@@ -224,10 +218,10 @@ class _NewComplaintState extends State<NewComplaint> {
                     child: Text('Complaint Type'),
                   ),
                   Container(
-                    width: 100,
-                    height: 30,
+                    width: MediaQuery.of(context).size.width*0.4,
+                    height: 40,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Colors.blue)),
                     child: DropdownButtonFormField(
                       decoration: InputDecoration(

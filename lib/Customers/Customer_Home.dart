@@ -9,6 +9,7 @@ import 'package:integrate_3screens/Customers/Language.dart';
 import 'package:integrate_3screens/Customers/Password.dart';
 import 'package:integrate_3screens/Customers/Promotions.dart';
 import 'package:integrate_3screens/Customers/Receipt.dart';
+import 'package:integrate_3screens/Customers/Services_screen.dart';
 import 'package:integrate_3screens/Customers/Share_screen.dart';
 import 'package:integrate_3screens/Customers/Wallet.dart';
 
@@ -43,11 +44,10 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
             TextButton(
               child: Text('Logout'),
               onPressed: () {
-                Navigator.pop(
+                Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => LoginPage(),
-                  ),
+                    builder: (context) => LoginPage(),),(route) => false
                 );
               },
             ),
@@ -581,13 +581,18 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                                shape: RoundedRectangleBorder(
                                  borderRadius: BorderRadius.circular(30),
                                ),
-                               child: CircleAvatar(
-                                 radius: 30,
-                                 backgroundColor: Colors.teal,
-                                 child: Icon(
-                                   Icons.local_laundry_service_outlined,
-                                   color: Colors.white,
-                                   size: 30,
+                               child: InkWell(
+                                 onTap: () {
+                                   Navigator.push(context, MaterialPageRoute(builder: (context) => ServicesScreen(),));
+                                 },
+                                 child: CircleAvatar(
+                                   radius: 30,
+                                   backgroundColor: Colors.teal,
+                                   child: Icon(
+                                     Icons.local_laundry_service_outlined,
+                                     color: Colors.white,
+                                     size: 30,
+                                   ),
                                  ),
                                ),
                              ),

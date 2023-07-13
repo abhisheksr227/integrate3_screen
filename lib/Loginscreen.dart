@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:integrate_3screens/Owners/Dashboard/Navigation.dart';
 import 'Customers/Customer_Home.dart';
+import 'Owners/Dashboard/Owner_dashboard.dart';
 import 'Service_Staff/Service_staff_dashboard_75.dart';
 import 'main.dart';
 
@@ -71,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
     } else if (username == '333' && password == '333') {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Navigation()),
+        MaterialPageRoute(builder: (context) => OwnerDashboard()),
       );
     } else if (username == '444' && password == '444') {
       Navigator.pushReplacement(
