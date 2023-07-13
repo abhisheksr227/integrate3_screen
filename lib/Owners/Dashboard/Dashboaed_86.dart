@@ -411,7 +411,6 @@ class _sampleState extends State<sample> {
                                       Alignment.center,
                                       child: Icon(Icons.arrow_right_outlined,size: 35,color: Colors.blue,),
                                     ),
-
                                     Expanded(
                                         child: Container(
                                             child: Padding(
