@@ -72,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
     } else if (username == '333' && password == '333') {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => OwnerDashboard()),
+        MaterialPageRoute(builder: (context) => Navigation()),
       );
     } else if (username == '444' && password == '444') {
       Navigator.pushReplacement(
