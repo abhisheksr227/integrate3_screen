@@ -10,14 +10,6 @@ class ViewOrderDetails extends StatefulWidget {
 }
 
 class _ViewOrderDetailsState extends State<ViewOrderDetails> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +17,6 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
         iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        toolbarHeight: 80,
         title: Center(child: Text("SERVICE LOGIN",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
         actions: [
           Padding(
@@ -119,7 +110,7 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Card(
-                elevation: 10,
+                elevation: 5,
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),

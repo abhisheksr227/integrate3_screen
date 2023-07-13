@@ -14,41 +14,9 @@ class Orderhistory extends StatefulWidget {
 class _OrderhistoryState extends State<Orderhistory> {
   Color color = Color(0xff0d2bd4);
 
-  DateTime? fromDate;
-  DateTime? toDate;
-
-  Future<void> selectFromDate(BuildContext context) async {
-    final DateTime? selectedDate = await showDatePicker(
-      context: context,
-      initialDate: fromDate ?? DateTime.now(),
-      firstDate: DateTime(1900),
-      lastDate: DateTime(2100),
-    );
-
-    if (selectedDate != null) {
-      setState(() {
-        fromDate = selectedDate;
-      });
-    }
-  }
-
-  Future<void> selectToDate(BuildContext context) async {
-    final DateTime? selectedDate = await showDatePicker(
-      context: context,
-      initialDate: toDate ?? DateTime.now(),
-      firstDate: DateTime(1900),
-      lastDate: DateTime(2100),
-    );
-
-    if (selectedDate != null) {
-      setState(() {
-        toDate = selectedDate;
-      });
-    }
-  }
-
-  final DateFormat dateFormat = DateFormat('dd-MM-yyyy');
-
+  TextEditingController From = TextEditingController(text: DateFormat('dd-MM-yyyy').format(DateTime.now()));
+  TextEditingController To = TextEditingController();
+  String character = 'All' ;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +24,6 @@ class _OrderhistoryState extends State<Orderhistory> {
         iconTheme: IconThemeData(color: Colors.blue,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        toolbarHeight: 80,
         title: Center(child: Text("ORDER HISTORY",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
           Padding(
@@ -76,54 +43,99 @@ class _OrderhistoryState extends State<Orderhistory> {
               height: 50,
             ),
             Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              padding: const EdgeInsets.all(15),
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Expanded(
-                    child: IntrinsicWidth(
-                      child: Container(
-                        margin: const EdgeInsets.only(right: 20),
-                        child: TextField(
-                          style: TextStyle(),
-                          readOnly: true,
-                          onTap: () => selectFromDate(context),
-                          decoration: InputDecoration(
-                            hintText: fromDate != null
-                                ? dateFormat.format(fromDate!)
-                                : "From Date",
-                            border: OutlineInputBorder(),
-                            suffixIcon: Icon(Icons.date_range,color: Colors.blue),
-                            contentPadding: EdgeInsets.symmetric(
-                              vertical: 12,
-                              horizontal: 16,
-                            ),
-                          ),
+                  Column(crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0,bottom: 5),
+                        child: Text('From'),
+                      ),
+                      Container(
+                        height: MediaQuery.of(context).size.height*0.05,
+                        width: MediaQuery.of(context).size.width*0.40,
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.blue)),
+                        child: TextFormField(
+                          style: TextStyle(fontSize: 14),
+                          controller: From,
+                          onTap: () async {
+
+                            FocusScope.of(context).requestFocus(FocusNode());
+                            var pickedDate = await showDatePicker(
+                                builder: (context, child) {
+                                  return Theme(
+                                      data: ThemeData().copyWith(
+                                        colorScheme: ColorScheme.light(
+                                          primary: Colors.blue,
+                                          onPrimary: Colors.white,
+                                          surface: Colors.blue,
+                                          onSurface: Colors.black,
+                                        ),
+                                        dialogBackgroundColor:Colors.blue.shade50,
+                                      ), child: child!);
+
+                                },
+                                context: context,
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime(2000,01,01),
+                                lastDate: DateTime(2050,12,31));
+                            From.text = DateFormat('dd-MM-yyyy').format(pickedDate!);
+                          }, decoration: InputDecoration(
+                          border: InputBorder.none,
+                          prefixIcon: Icon(CupertinoIcons.calendar,color: Colors.blue,),
+                          contentPadding: EdgeInsets.only(top: 1),
+                        ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                  Expanded(
-                    child: IntrinsicWidth(
-                      child: Container(
-                        margin: const EdgeInsets.only(right: 10),
-                        child: TextField(
-                          readOnly: true,
-                          onTap: () => selectToDate(context),
-                          decoration: InputDecoration(
-                            hintText: toDate != null
-                                ? toDate.toString()
-                                : "To Date",
-                            border: OutlineInputBorder(),
-                            suffixIcon: Icon(Icons.date_range,color: Colors.blue),
-                            contentPadding: EdgeInsets.symmetric(
-                              vertical: 12,
-                              horizontal: 16,
-                            ),
-                          ),
+                  Column(crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0,bottom: 5),
+                        child: Text('To'),
+                      ),
+                      Container(
+                        height: MediaQuery.of(context).size.height*0.05,
+                        width: MediaQuery.of(context).size.width*0.40,
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.blue)),
+                        child: TextFormField(
+                          style: TextStyle(fontSize: 14),
+                          controller: To,
+                          onTap: () async {
+
+                            FocusScope.of(context).requestFocus(FocusNode());
+                            var pickedDate = await showDatePicker(
+                                builder: (context, child) {
+                                  return Theme(
+                                      data: ThemeData().copyWith(
+                                        colorScheme: ColorScheme.light(
+                                          primary: Colors.blue,
+                                          onPrimary: Colors.white,
+                                          surface: Colors.blue,
+                                          onSurface: Colors.black,
+                                        ),
+                                        dialogBackgroundColor:Colors.blue.shade50,
+                                      ), child: child!);
+
+                                },
+                                context: context,
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime(2000,01,01),
+                                lastDate: DateTime(2050,12,31));
+                            To.text = DateFormat('dd-MM-yyyy').format(pickedDate!);
+                          }, decoration: InputDecoration(
+                          hintText: 'Select date',
+                          border: InputBorder.none,
+                          prefixIcon: Icon(CupertinoIcons.calendar,color: Colors.blue,),
+                          contentPadding: EdgeInsets.only(top: 1),
+                        ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ],
               ),
@@ -134,7 +146,8 @@ class _OrderhistoryState extends State<Orderhistory> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
-                elevation: 10,
+                elevation: 5,
+                color: Colors.white,
                 child: SingleChildScrollView(
                   child: Column(
                     children: [

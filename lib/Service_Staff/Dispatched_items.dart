@@ -9,14 +9,6 @@ class Dispatcheditems extends StatefulWidget {
 }
 
 class _DispatcheditemsState extends State<Dispatcheditems> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,8 +16,7 @@ class _DispatcheditemsState extends State<Dispatcheditems> {
         iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        toolbarHeight: 80,
-        title: Center(child: Text("Dispatched",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
+        title: Center(child: Text("DISPATCHED",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20),
@@ -41,7 +32,7 @@ class _DispatcheditemsState extends State<Dispatcheditems> {
         Padding(
           padding: const EdgeInsets.all(15.0),
           child: Card(
-            elevation: 10,
+            elevation: 5,
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),

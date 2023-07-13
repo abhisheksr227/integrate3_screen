@@ -103,7 +103,6 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.blue),
-          toolbarHeight: 80,
           title: Center(child: Text('Mobiz Laundry',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
           actions: [
             IconButton(
@@ -167,7 +166,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                 },
               ),
               Divider(
-                height: 0.1,
+thickness: .5,
                 indent: 10,
                 endIndent: 10,
               ),
@@ -185,6 +184,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                 },
               ),
               Divider(
+                thickness: .5,
                 height: 0.1,
                 indent: 10,
                 endIndent: 10,
@@ -203,6 +203,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                 },
               ),
               Divider(
+                thickness: .5,
                 height: 0.1,
                 indent: 10,
                 endIndent: 10,
@@ -223,6 +224,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                 },
               ),
               Divider(
+                thickness: .5,
                 height: 0.1,
                 indent: 10,
                 endIndent: 10,
@@ -241,6 +243,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                 },
               ),
               Divider(
+                thickness: .5,
                 height: 0.1,
                 indent: 10,
                 endIndent: 10,
@@ -259,6 +262,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                 },
               ),
               Divider(
+                thickness: .5,
                 height: 0.1,
                 indent: 10,
                 endIndent: 10,
@@ -277,6 +281,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                 },
               ),
               Divider(
+                thickness: .5,
                 height: 0.1,
                 indent: 10,
                 endIndent: 10,
@@ -292,6 +297,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
                 },
               ),
               Divider(
+                thickness: .5,
                 height: 0.1,
                 indent: 10,
                 endIndent: 10,

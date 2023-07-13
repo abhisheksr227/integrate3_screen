@@ -127,7 +127,6 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
           iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
           elevation: 0,
           backgroundColor: CupertinoColors.white,
-          toolbarHeight: 80,
           title: Center(child: Text("Service Staff Dashboard",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
           actions: [
             Padding(
@@ -208,7 +207,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
               Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(right: 30),
+                    padding: const EdgeInsets.only(right: 40),
                     child: Column(
                       children: [
                         CircleAvatar(
@@ -233,7 +232,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 20),
+                    padding: const EdgeInsets.only(left: 40),
                     child: Column(
                       children: [
                         CircleAvatar(
@@ -249,7 +248,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                   ),
                 ],
               ),
-              SizedBox(height: 15,),
+              SizedBox(height: 20,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
@@ -259,8 +258,8 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                          Navigator.push(context, MaterialPageRoute(builder: (context) => IssueInvoice(),));
                        },
                       child: Container(
-                        height: 30,
-                        width: 120,
+                        height: MediaQuery.of(context).size.height*0.045,
+                        width: MediaQuery.of(context).size.width*0.30,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.deepPurple
@@ -270,7 +269,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 15,),
+                  SizedBox(width: 30,),
                   Padding(
                     padding: const EdgeInsets.only(top: 5),
                     child: InkWell(
@@ -278,8 +277,8 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => Orderstatus(),));
                       },
                       child: Container(
-                        height: 30,
-                        width: 120,
+                        height: MediaQuery.of(context).size.height*0.045,
+                        width: MediaQuery.of(context).size.width*0.30,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.deepPurple
@@ -301,8 +300,8 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceLogin(),));
                    },
                   child: Container(
-                    height: 30,
-                    width: 120,
+                    height: MediaQuery.of(context).size.height*0.045,
+                    width: MediaQuery.of(context).size.width*0.30,
                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
                         color: Colors.deepPurple
                     ),
@@ -311,97 +310,95 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                           style: TextStyle(color: Colors.white),)),
                   ),
                 ),
-              ),
-              SizedBox(height: 15,),
+              ),SizedBox(height: 20,),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Card(
                   elevation: 5,
                   color: Colors.white,
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Expanded(
-                              child: SizedBox(
-                                height: 40,
-                                child: Center(child: Text('Order Type',style: TextStyle(fontWeight: FontWeight.bold))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                child: SizedBox(
+                                  child: Center(child: Text('Order Type',style: TextStyle(fontWeight: FontWeight.bold))),
+                                ),
                               ),
-                            ),
-                            Expanded(
-                              child: SizedBox(
-                                height: 40,
-                                child: Center(child: Text('Name',style: TextStyle(fontWeight: FontWeight.bold))),
+                              Expanded(
+                                child: SizedBox(
+                                  child: Center(child: Text('Name',style: TextStyle(fontWeight: FontWeight.bold))),
+                                ),
                               ),
-                            ),
-                            Expanded(
-                              child: SizedBox(
-                                height: 40,
-                                child: Center(child: Text('Pending',style: TextStyle(fontWeight: FontWeight.bold))),
+                              Expanded(
+                                child: SizedBox(
+                                  child: Center(child: Text('Pending',style: TextStyle(fontWeight: FontWeight.bold))),
+                                ),
                               ),
-                            ),
-                            Expanded(
-                              child: SizedBox(
-                                height: 40,
-                                child: Center(child: Text('Completed',style: TextStyle(fontWeight: FontWeight.bold))),
+                              Expanded(
+                                child: SizedBox(
+                                  child: Center(child: Text('Completed',style: TextStyle(fontWeight: FontWeight.bold))),
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Container(
-                              height: 0.5,
-                              width: MediaQuery.of(context).size.width,
-                              color: Colors.deepPurple,
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Container(
+                                height: 0.5,
+                                width: MediaQuery.of(context).size.width,
+                                color: Colors.deepPurple,
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 100,
-                          child: ListView.builder(
-                            itemCount: 2,
-                            itemBuilder: (context, index) {
-                              return
-                                Row(
-                                  children: [
-                                    Expanded(
-                                      child: SizedBox(
-                                        height: 40,
-                                        child: Center(
-                                            child: Text('Normal')),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height*0.20,
+                            child: ListView.builder(
+                              itemCount: 2,
+                              itemBuilder: (context, index) {
+                                return
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: SizedBox(
+                                          height: 40,
+                                          child: Center(
+                                              child: Text('Normal')),
+                                        ),
                                       ),
-                                    ),
-                                    Expanded(
-                                      child: SizedBox(
-                                        height: 40,
-                                        child: Center(
-                                            child: Text('Abdu')),
+                                      Expanded(
+                                        child: SizedBox(
+                                          height: 40,
+                                          child: Center(
+                                              child: Text('Abdu')),
+                                        ),
                                       ),
-                                    ),
-                                    Expanded(
-                                      child: SizedBox(
-                                        height: 40,
-                                        child: Center(
-                                            child: Text('100')),
+                                      Expanded(
+                                        child: SizedBox(
+                                          height: 40,
+                                          child: Center(
+                                              child: Text('100')),
+                                        ),
                                       ),
-                                    ),
-                                    Expanded(
-                                      child: SizedBox(
-                                        height: 40,
-                                        child: Center(
-                                            child: Text('50')),
+                                      Expanded(
+                                        child: SizedBox(
+                                          height: 40,
+                                          child: Center(
+                                              child: Text('50')),
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                );
-                            },),
-                        )
-                      ],
+                                    ],
+                                  );
+                              },),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -420,103 +417,107 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                 child: Card(
                   elevation: 5,
                   color: Colors.white,
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            SizedBox(
-                              height: 40,
-                              width: 50,
-                              child: Center(child: Text('Sl.No',style: TextStyle(fontWeight: FontWeight.bold))),
-                            ),
-                            SizedBox(
-                              height: 40,
-                              width: 60,
-                              child: Center(child: Text('Order No',style: TextStyle(fontWeight: FontWeight.bold))),
-                            ),
-                            SizedBox(
-                              height: 40,
-                              width: 60,
-                              child: Center(child: Text('Staff',style: TextStyle(fontWeight: FontWeight.bold))),
-                            ),
-                            Expanded(
-                              child: SizedBox(
-                                height: 40,
-                                child: Center(child: Text('Delivery Time',style: TextStyle(fontWeight: FontWeight.bold))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                child: SizedBox(
+                                  child: Center(child: Text('Sl.No',style: TextStyle(fontWeight: FontWeight.bold))),
+                                ),
+                              ),
+                              Expanded(
+                                child: SizedBox(
+                                  child: Center(child: Text('Order No',style: TextStyle(fontWeight: FontWeight.bold))),
+                                ),
+                              ),
+                              Expanded(
+                                child: SizedBox(
+                                  child: Center(child: Text('Staff',style: TextStyle(fontWeight: FontWeight.bold))),
+                                ),
+                              ),
+                              Expanded(
+                                flex:2,
+                                child: SizedBox(
+                                  child: Center(child: Text('Delivery Time',style: TextStyle(fontWeight: FontWeight.bold))),
+                                ),
+                              ),
+                              Expanded(
+                                child: SizedBox(
+                                ),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Container(
+                                height: 0.5,
+                                width: MediaQuery.of(context).size.width,
+                                color: Colors.deepPurple,
                               ),
                             ),
-                            SizedBox(
-                              width: 60,
-                              height: 40,
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Container(
-                              height: 0.5,
-                              width: MediaQuery.of(context).size.width,
-                              color: Colors.deepPurple,
-                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 100,
-                          child: ListView.builder(
-                            itemCount: 2,
-                            itemBuilder: (context, index) {
-                              return
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      height: 40,
-                                      width: 50,
-                                      child: Center(
-                                          child: Text('1')),
-                                    ),
-                                    SizedBox(
-                                      height: 40,
-                                      width: 60,
-                                      child: Center(
-                                          child: Text('108')),
-                                    ),
-                                    SizedBox(
-                                      height: 40,
-                                      width: 60,
-                                      child: Center(
-                                          child: Text('Abdu')),
-                                    ),
-                                    Expanded(
-                                      child: SizedBox(
-                                        height: 40,
-                                        child: Center(
-                                            child: Text('Today 4 : 00 pm')),
+                          SizedBox(
+                            height: 100,
+                            child: ListView.builder(
+                              itemCount: 2,
+                              itemBuilder: (context, index) {
+                                return
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: SizedBox(
+                                          child: Center(
+                                              child: Text('1')),
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: 40,
-                                      width: 60,
-                                      child: Center(
-                                        child:  InkWell(onTap: () {
-                                          Navigator.push(context, MaterialPageRoute(builder: (context) => ReadyForDelivery(),));
-                                        },
-                                          child: Container(
-                                            height: 20,
-                                            width: 50,
-                                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.deepPurple),
-                                            child: const Center(child: Text('Engage',style: TextStyle(color: Colors.white,fontSize: 10),)),
-                                          ),
-                                        ),),
-                                    ),
-                                  ],
-                                );
-                            },),
-                        )
-                      ],
+                                      Expanded(
+                                        child: SizedBox(
+                                          child: Center(
+                                              child: Text('108')),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: SizedBox(
+                                          child: Center(
+                                              child: Text('Abdu')),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        flex:2,
+                                        child: SizedBox(
+                                          height:40,
+                                          child: Center(
+                                              child: Text('Today 4 : 00 pm')),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: SizedBox(
+                                          child: Center(
+                                            child:  InkWell(onTap: () {
+                                              Navigator.push(context, MaterialPageRoute(builder: (context) => ReadyForDelivery(),));
+                                            },
+                                              child: Container(
+                                                height: 20,
+                                                width: 50,
+                                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.deepPurple),
+                                                child: const Center(child: Text('Engage',style: TextStyle(color: Colors.white,fontSize: 10),)),
+                                              ),
+                                            ),),
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                              },),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

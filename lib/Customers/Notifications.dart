@@ -48,7 +48,6 @@ class _NotificationsState extends State<Notifications> {
         iconTheme: IconThemeData(color: Colors.blue,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        toolbarHeight: 80,
         title: Center(child: Text("NOTIFICATIONS",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
           Padding(

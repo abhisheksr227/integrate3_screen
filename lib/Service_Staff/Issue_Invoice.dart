@@ -32,7 +32,6 @@ class _IssueInvoiceState extends State<IssueInvoice> {
         iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        toolbarHeight: 80,
         title: Center(child: Text("ISSUE INVOICE",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
         actions: [
           Padding(
@@ -58,8 +57,8 @@ class _IssueInvoiceState extends State<IssueInvoice> {
                       elevation: 5,
                       color: Colors.white,
                       child: SizedBox(
-                          height: 170,
-                          width: 600,
+                          height: 300,
+                          width: MediaQuery.of(context).size.width/0.9,
                           child:ListView.builder(
                               itemCount: 1,
                               padding: EdgeInsets.zero,
@@ -68,8 +67,8 @@ class _IssueInvoiceState extends State<IssueInvoice> {
                               itemBuilder: (context,index) {
                                 return Column(children: [
                                   SizedBox(
-                                      height: 70,
-                                      width: 600,
+                                      height: 100,
+                                    width: MediaQuery.of(context).size.width/0.9,
                                       child: Column(
                                         children: [
                                           Padding(
@@ -101,7 +100,7 @@ class _IssueInvoiceState extends State<IssueInvoice> {
                                               scrollDirection: Axis.horizontal,
                                               child: Container(
                                                 height: 0.5,
-                                                width: 600,
+                                                width: MediaQuery.of(context).size.width/0.9,
                                                 color: Colors.deepPurple,
                                               ),
                                             ),
@@ -110,16 +109,16 @@ class _IssueInvoiceState extends State<IssueInvoice> {
                                       ),
                                   ),
                                   SizedBox(
-                                    height: 100,
-                                    width:600,
+                                    height: 200,
+                                    width: MediaQuery.of(context).size.width/0.9,
                                     child: ListView.builder(
                                         padding: EdgeInsets.zero,
                                         physics: const ClampingScrollPhysics(),
-                                        itemCount: 2,
+                                        itemCount: 5,
                                         itemBuilder: (BuildContext context,int rowIndex){
                                           return  SizedBox(
                                               height: 40,
-                                              width: 600,
+                                              width: MediaQuery.of(context).size.width/0.9,
                                               child:GestureDetector(
                                                 onTap: () {
                                                   toggleButtonVisibility();
@@ -131,7 +130,7 @@ class _IssueInvoiceState extends State<IssueInvoice> {
                                                     itemBuilder: (context,index) {
                                                       return Container(
                                                           height: 40,
-                                                          width: 600,
+                                                          width: MediaQuery.of(context).size.width/0.9,
                                                           color: selectedRowIndex == rowIndex ? Colors.grey : null,
                                                           child: Row(children: [
                                                             Expanded(child: Container(

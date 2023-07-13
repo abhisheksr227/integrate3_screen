@@ -18,7 +18,6 @@ class _ShareScreenState extends State<ShareScreen> {
             iconTheme: IconThemeData(color: Colors.blue,size: 30),
             elevation: 0,
             backgroundColor: CupertinoColors.white,
-            toolbarHeight: 80,
             title: Center(child: Text("SHARE APP",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
             actions: [
               Padding(
