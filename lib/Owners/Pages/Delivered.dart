@@ -14,40 +14,24 @@ class _DeliveredState extends State<Delivered> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 30),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.blue),
-          ),
-        ),
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        title: Center(child: Text("DELIVERED",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.refresh_outlined,
-                  color: Colors.blue,
-                )),
-          )
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
+          ),
         ],
-        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text('DELIVERED',
-                  style: TextStyle(
-                    fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blue[900]
-                  ),),
-              ),
-            ),
             Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
@@ -57,10 +41,10 @@ class _DeliveredState extends State<Delivered> {
                 Padding(
                   padding: const EdgeInsets.only(top: 15,bottom: 15),
                   child: Container(
-                    width: 100,
-                    height: 30,
+                    width: MediaQuery.of(context).size.width*0.4,
+                    height: 40,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Colors.blue)),
                     child: DropdownButtonFormField(
                       decoration: InputDecoration(

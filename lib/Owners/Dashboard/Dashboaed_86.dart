@@ -71,22 +71,19 @@ class _sampleState extends State<sample> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          leading: Icon(Icons.menu),
+          iconTheme: IconThemeData(color: Colors.blue,size: 30),
           elevation: 0,
           backgroundColor: CupertinoColors.white,
-          leading: Icon(
-            Icons.menu,
-            color: Colors.blue,
-            size: 30,
-          ),title: Center(child: Text("Order Dashboard",style: TextStyle(color: Colors.blue),)),
+          title: Center(child: Text("ORDER DASHBOARD",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
           actions: [
-            Row(
-              children: [
-                Icon(
-                  Icons.circle_outlined,
-                  color: Colors.blue,
-                ),
-                SizedBox(width: 10,)
-              ],
+            Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: Icon(
+                Icons.refresh_outlined,
+                color: Colors.blue,
+                size: 30,
+              ),
             ),
           ],
         ),

@@ -33,22 +33,19 @@ class _OutStandingState extends State<OutStanding> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(Icons.menu),
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.blue[800],
-          size: 30,
-        ),
+        title: Center(child: Text("OUTSTANDING",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
-          Row(
-            children: [
-              Icon(
-                Icons.circle_outlined,
-                color: Colors.blue[800],
-              ),
-              SizedBox(width: 10,)
-            ],
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
           ),
         ],
       ),
@@ -59,17 +56,6 @@ class _OutStandingState extends State<OutStanding> {
           children: [SizedBox(
             height: 20,
           ),
-            Center(
-              child: Text(
-                "OUTSTANDING",
-                style: TextStyle(
-                  fontSize: screenWidth * 0.05,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue[800],
-                ),
-              ),
-            ),
-            SizedBox(height: screenHeight * 0.04),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -232,15 +218,10 @@ class _OutStandingState extends State<OutStanding> {
                 ],
               ),
             ),
-            ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return BagsMaster();
-              },));
-            }, child: Text("Next"))
           ],
         ),
       ),
-      bottomNavigationBar: Container(
+     /* bottomNavigationBar: Container(
         color: Colors.lightBlue,
         child: BottomNavigationBar(
           backgroundColor: Colors.blue[800],
@@ -263,7 +244,7 @@ class _OutStandingState extends State<OutStanding> {
             ),
           ],
         ),
-      ),
+      ),*/
     );
   }
 }

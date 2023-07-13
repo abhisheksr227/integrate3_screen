@@ -63,25 +63,19 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(Icons.menu),
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.blue[800],
-          size: 30,
-        ),
-        
+        title: Center(child: Text("COLLECTION DASHBOARD",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
-          Row(
-            children: [
-              Icon(
-                Icons.circle_outlined,
-                color: Colors.blue[800],
-              ),
-              SizedBox(
-                width: 10,
-              )
-            ],
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
           ),
         ],
       ),
@@ -91,13 +85,6 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: 20),
-              Center(
-                child: Text(
-                  "Collection Dashboard  ",
-                  style: TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold, color: color),
-                ),
-              ),
               SizedBox(
                 height: 20,
               ),

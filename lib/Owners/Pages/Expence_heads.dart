@@ -14,41 +14,24 @@ class _ExpenceState extends State<Expense> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 30),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.blue),
-          ),
-        ),
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        title: Center(child: Text("EXPENSE HEADS",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.refresh_outlined,
-                  color: Colors.blue,
-                )),
-          )
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
+          ),
         ],
-        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Text(
-                  'EXPENSE HEADS',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.blue[900]),
-                ),
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.all(20),
               child: SizedBox(
@@ -76,99 +59,96 @@ class _ExpenceState extends State<Expense> {
               child: Card(
                 elevation: 5,
                 color: Colors.white,
-                child: SizedBox(
-                  height: 200,
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                              width: 60,
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                            width: 60,
+                            height: 40,
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Sl No.",
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        Expanded(
+                          child: Container(
                               height: 40,
                               alignment: Alignment.center,
                               child: Text(
-                                "Sl No.",
+                                "Heads",
                                 style: TextStyle(
                                     fontSize: 13,
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
                               )),
-                          Expanded(
-                            child: Container(
-                                height: 40,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "Heads",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                          ),
-                          Container(
-                              width: 120,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "",
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Container(
-                          color: Colors.blue,
-                          height: 0.5,
-                          width: MediaQuery.of(context).size.width,
                         ),
+                        Container(
+                            width: 120,
+                            height: 40,
+                            alignment: Alignment.center,
+                            child: Text(
+                              "",
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        color: Colors.blue,
+                        height: 0.5,
+                        width: MediaQuery.of(context).size.width,
                       ),
-                      SizedBox(
-                        height: 120,
-                        child: ListView.builder(
-                          itemCount: 3,
-                          itemBuilder: (context, index) {
-                            return
-                              Row(
-                                children: [
-                                  Container(
-                                      width: 60,
+                    ),
+                    SizedBox(
+                      height: 200,
+                      child: ListView.builder(
+                        itemCount: 3,
+                        itemBuilder: (context, index) {
+                          return
+                            Row(
+                              children: [
+                                Container(
+                                    width: 60,
+                                    height: 40,
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "1",
+                                    )),
+                                Expanded(
+                                  child: Container(
                                       height: 40,
                                       alignment: Alignment.center,
                                       child: Text(
-                                        "1",
+                                        "Deepesh",
                                       )),
-                                  Expanded(
-                                    child: Container(
-                                        height: 40,
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          "Deepesh",
-                                        )),
-                                  ),
-                                  Container(
-                                      width: 120,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Icon(Icons.edit,size: 15,color: Colors.blue,),
-                                          ),
-                                          Icon(Icons.delete,size: 15,color: Colors.blue,)
-                                        ],
-                                      )
-                                  ),
-                                ],
-                              );
-                          },),
-                      )
-                    ],
-                  ),
+                                ),
+                                Container(
+                                    width: 120,
+                                    height: 40,
+                                    alignment: Alignment.center,
+                                    child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Icon(Icons.edit,size: 15,color: Colors.blue,),
+                                        ),
+                                        Icon(Icons.delete,size: 15,color: Colors.blue,)
+                                      ],
+                                    )
+                                ),
+                              ],
+                            );
+                        },),
+                    )
+                  ],
                 ),
               ),
             ),
@@ -178,9 +158,9 @@ class _ExpenceState extends State<Expense> {
             if(isPressed)
             Container(
               height: 150,
-              width: 250,
+              width: MediaQuery.of(context).size.width*0.7,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: Colors.blue),
               ),
               child: Column(
@@ -193,7 +173,7 @@ class _ExpenceState extends State<Expense> {
                         height: 30,
                         width: 150,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(5),
                           border: Border.all(color: Colors.blue)
                         ),
                         child: TextFormField(

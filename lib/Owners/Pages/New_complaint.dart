@@ -27,31 +27,20 @@ class _NewComplaintState extends State<NewComplaint> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: Text(
-              'NEW COMPLAINT',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                  color: Colors.blue[900]),
-            ),
-          ),
-        ),
-        iconTheme: IconThemeData(color: Colors.blue),
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        title: Center(child: Text("NEW COMPLAINT",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.refresh_outlined,
-                  color: Colors.blue,
-                )),
-          )
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
+          ),
         ],
-        toolbarHeight: 80,
       ),
       body: SingleChildScrollView(
         child: Column(

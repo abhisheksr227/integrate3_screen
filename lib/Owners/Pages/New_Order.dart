@@ -18,17 +18,20 @@ class _NewOrderState extends State<NewOrder> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.blue),
-        title: Center(child: Text('New Order',style: TextStyle(color: Colors.blue,fontSize: 20,fontWeight: FontWeight.bold),)),
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        title: Center(child: Text("NEW ORDER",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.refresh_outlined,
-                color: Colors.blue,
-              ))
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
+          ),
         ],
-        toolbarHeight: 80,
       ),
       body: SingleChildScrollView(
         child: Column(

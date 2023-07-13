@@ -25,22 +25,19 @@ class _OverDuesState extends State<OverDues> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(Icons.menu),
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.blue[800],
-          size: 30,
-        ),
+        title: Center(child: Text("OVER DUES",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
-          Row(
-            children: [
-              Icon(
-                Icons.circle_outlined,
-                color: Colors.blue[800],
-              ),
-              SizedBox(width: 10,)
-            ],
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
           ),
         ],
       ),
@@ -50,19 +47,9 @@ class _OverDuesState extends State<OverDues> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: 20,),
-            Center(
-              child: Text(
-                "Over Dues",
-                style: TextStyle(
-                  fontSize: screenWidth * 0.07,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue[800],
-                ),
-              ),
-            ),
-            SizedBox(height: screenHeight * 0.03),
             Container(
-              width: screenWidth * 0.8,
+              height: 50,
+              width: screenWidth * 0.65,
               child: TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(

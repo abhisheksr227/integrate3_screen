@@ -14,40 +14,24 @@ class _ReadyForDispatchState extends State<ReadyForDispatch> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 30),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.blue),
-          ),
-        ),
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        title: Center(child: Text("READY FOR DISPATCH",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.refresh_outlined,
-                  color: Colors.blue,
-                )),
-          )
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
+          ),
         ],
-        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text('READY FOR DISPATCH',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.blue[900]
-                  ),),
-              ),
-            ),
             Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
@@ -57,10 +41,10 @@ class _ReadyForDispatchState extends State<ReadyForDispatch> {
                 Padding(
                   padding: const EdgeInsets.only(top: 15,bottom: 15),
                   child: Container(
-                    width: 100,
-                    height: 30,
+                    width: MediaQuery.of(context).size.width*0.4,
+                    height: 40,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Colors.blue)),
                     child: DropdownButtonFormField(
                       decoration: InputDecoration(
@@ -98,164 +82,161 @@ class _ReadyForDispatchState extends State<ReadyForDispatch> {
               child: Card(
                 elevation: 5,
                 color: Colors.white,
-                child: SizedBox(
-                  height: 150,
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            width: 40,
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          width: 40,
+                            height: 40,
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Sl No.",
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        Container(
+                            width: 65,
+                            height: 40,
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Order No.",
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        Expanded(
+                          child: Container(
                               height: 40,
                               alignment: Alignment.center,
                               child: Text(
-                                "Sl No.",
+                                "Client",
                                 style: TextStyle(
                                     fontSize: 13,
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
                               )),
-                          Container(
-                              width: 65,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Order No.",
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                          Expanded(
-                            child: Container(
-                                height: 40,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "Client",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                          ),
-                          Expanded(
-                            child: Container(
-                                height: 40,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "Staff",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                          ),
-                          Container(
-                              width: 70,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Order Type",
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                          Container(
-                              width: 30,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Inv",
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                          Container(
-                              width: 50,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Inv Amt",
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 0.5,
-                          width: MediaQuery.of(context).size.width,
-                          color: Colors.blue,
                         ),
+                        Expanded(
+                          child: Container(
+                              height: 40,
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Staff",
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              )),
+                        ),
+                        Container(
+                            width: 70,
+                            height: 40,
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Order Type",
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        Container(
+                            width: 30,
+                            height: 40,
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Inv",
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        Container(
+                            width: 50,
+                            height: 40,
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Inv Amt",
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 0.5,
+                        width: MediaQuery.of(context).size.width,
+                        color: Colors.blue,
                       ),
-                      SizedBox(
-                        height: 90,
-                        child: ListView.builder(
-                          itemCount: 2,
-                          itemBuilder: (context, index) {
-                            return
-                              Row(
-                                children: [
-                                  Container(
-                                    width: 40,
+                    ),
+                    SizedBox(
+                      height: 200,
+                      child: ListView.builder(
+                        itemCount: 5,
+                        itemBuilder: (context, index) {
+                          return
+                            Row(
+                              children: [
+                                Container(
+                                  width: 40,
+                                    height: 40,
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "1",
+                                    )),
+                                Container(
+                                    width: 65,
+                                    height: 40,
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "10",
+                                    )),
+                                Expanded(
+                                  child: Container(
                                       height: 40,
                                       alignment: Alignment.center,
-                                      child: Text(
-                                        "1",
-                                      )),
-                                  Container(
-                                      width: 65,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        "10",
-                                      )),
-                                  Expanded(
-                                    child: Container(
-                                        height: 40,
-                                        alignment: Alignment.center,
-                                        child: Text('Noor')
-                                    ),
+                                      child: Text('Noor')
                                   ),
-                                  Expanded(
-                                    child: Container(
-                                        height: 40,
-                                        alignment: Alignment.center,
-                                        child: Text('Abdu')
-                                    ),
+                                ),
+                                Expanded(
+                                  child: Container(
+                                      height: 40,
+                                      alignment: Alignment.center,
+                                      child: Text('Abdu')
                                   ),
-                                  Container(
-                                      width: 70,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        "Normal",
-                                      )),
-                                  Container(
-                                      width: 30,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        "10",
-                                      )),
-                                  Container(
-                                      width: 50,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        "10",
-                                      )),
-                                ],
-                              );
-                          },),
-                      )
-                    ],
-                  ),
+                                ),
+                                Container(
+                                    width: 70,
+                                    height: 40,
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "Normal",
+                                    )),
+                                Container(
+                                    width: 30,
+                                    height: 40,
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "10",
+                                    )),
+                                Container(
+                                    width: 50,
+                                    height: 40,
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "10",
+                                    )),
+                              ],
+                            );
+                        },),
+                    )
+                  ],
                 ),
               ),
             ),

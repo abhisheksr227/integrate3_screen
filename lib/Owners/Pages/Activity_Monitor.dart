@@ -13,42 +13,25 @@ class _ActivityState extends State<Activity> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.menu, color: Colors.blue),
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        title: Center(child: Text("ACTIVITY MONITOR",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
             ),
           ),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 30),
-              child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.refresh_outlined,
-                    color: Colors.blue,
-                  )),
-            )
-          ],
-          toolbarHeight: 50,
-        ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10,bottom: 20),
-                child: Text(
-                  'ACTIVITY MONITOR',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.blue[900]),
-                ),
-              ),
-            ),
             Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
@@ -58,10 +41,10 @@ class _ActivityState extends State<Activity> {
                 Padding(
                   padding: const EdgeInsets.only(top: 15,bottom: 15),
                   child: Container(
-                    width: 100,
-                    height: 30,
+                    width: MediaQuery.of(context).size.width*0.4,
+                    height: 40,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Colors.blue)),
                     child: DropdownButtonFormField(
                       decoration: InputDecoration(
@@ -94,6 +77,7 @@ class _ActivityState extends State<Activity> {
                 Text('All'),
               ],
             ),
+            SizedBox(height: 20,),
             Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('Date : ',style: TextStyle(fontWeight: FontWeight.bold)),

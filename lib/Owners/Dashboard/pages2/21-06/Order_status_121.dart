@@ -23,28 +23,21 @@ class _OrderStatusState extends State<OrderStatus> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(MediaQuery.of(context).size.height * 0.10),
-        child: AppBar(
-          elevation: 0,
-          backgroundColor: CupertinoColors.white,
-          leading: Icon(
-            Icons.menu,
-            color: Colors.blue[800],
-            size: 30,
-          ),
-          actions: [
-            Row(
-              children: [
-                Icon(
-                  Icons.circle_outlined,
-                  color: Colors.blue[800],
-                ),
-                SizedBox(width: 10,)
-              ],
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        title: Center(child: Text("ORDER STATUS",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -52,21 +45,17 @@ class _OrderStatusState extends State<OrderStatus> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: 20,),
-              Center(
-                child: Text(
-                  "ORDER STATUS",
-                  style: TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue[800]),
-                ),
-              ),SizedBox(
-                height: 20,
-              ),
-
               Container(
-                width: MediaQuery.of(context).size.width * 0.8,
+                height: 50,
+                width: MediaQuery.of(context).size.width * 0.6,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.blue)),
                 child: TextField(
+                  textAlign: TextAlign.center,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+                    contentPadding: EdgeInsets.only(),
+                    border: OutlineInputBorder(borderSide: BorderSide.none),
                     hintText: 'Mobile No/Order No',
                     suffixIcon: Icon(Icons.search),
                   ),
@@ -76,7 +65,7 @@ class _OrderStatusState extends State<OrderStatus> {
               ),
               ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),onPressed: () {
 
-              }, child: Text("View Items")),
+              }, child: Text("View Items",style: TextStyle(color: Colors.white),)),
 SizedBox(
   height: 20,
 ),

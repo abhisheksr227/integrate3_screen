@@ -13,40 +13,25 @@ class _PaymentState extends State<Payment> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 30),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.blue),
-          ),
-        ),
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        title: Center(child: Text("PAYMENT HISTORY",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.refresh_outlined,
-                  color: Colors.blue,
-                )),
-          )
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
+          ),
         ],
-        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(30),
-                child: Text('PAYMENT HISTORY',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.blue[900]
-                  ),),
-              ),
-            ),
+            SizedBox(height: 30,),
             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
               Text('Current Wallet'),
@@ -73,116 +58,113 @@ class _PaymentState extends State<Payment> {
               padding: const EdgeInsets.all(15),
               child: Card(elevation: 5,
                 color: Colors.white,
-                child: SizedBox(
-                  height: 160,
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                                height: 40,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "Date",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                          ),
-                          Expanded(
-                            child: Container(
-                                height: 40,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "Type",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                          ),
-                          Expanded(
-                            child: Container(
-                                height: 40,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "Amount",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                          ),
-                          Expanded(
-                            child: Container(
-                                height: 40,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "Balance",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 0.5,
-                          width: MediaQuery.of(context).size.width,
-                          color: Colors.blue,
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                              height: 40,
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Date",
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              )),
                         ),
+                        Expanded(
+                          child: Container(
+                              height: 40,
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Type",
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              )),
+                        ),
+                        Expanded(
+                          child: Container(
+                              height: 40,
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Amount",
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              )),
+                        ),
+                        Expanded(
+                          child: Container(
+                              height: 40,
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Balance",
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              )),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 0.5,
+                        width: MediaQuery.of(context).size.width,
+                        color: Colors.blue,
                       ),
-                      SizedBox(
-                        height: 100,
-                        child: ListView.builder(
-                          itemCount: 2,
-                          itemBuilder: (context, index) {
-                            return
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: Container(
-                                        height: 40,
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          "01-10-2023",
-                                        )),
-                                  ),
-                                  Expanded(
-                                    child: Container(
-                                        height: 40,
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          "Credit",
-                                        )),
-                                  ),
-                                  Expanded(
-                                    child: Container(
-                                        height: 40,
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          "50",
-                                        )),
-                                  ),
-                                  Expanded(
-                                    child: Container(
-                                        height: 40,
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          "60",
-                                        )),
-                                  ),
-                                ],
-                              );
-                          },),
-                      )
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height*0.3,
+                      child: ListView.builder(
+                        itemCount: 7,
+                        itemBuilder: (context, index) {
+                          return
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                      height: 40,
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        "01-10-2023",
+                                      )),
+                                ),
+                                Expanded(
+                                  child: Container(
+                                      height: 40,
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        "Credit",
+                                      )),
+                                ),
+                                Expanded(
+                                  child: Container(
+                                      height: 40,
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        "50",
+                                      )),
+                                ),
+                                Expanded(
+                                  child: Container(
+                                      height: 40,
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        "60",
+                                      )),
+                                ),
+                              ],
+                            );
+                        },),
+                    )
+                  ],
                 ),
               ),
             ),

@@ -32,22 +32,19 @@ class _ListAllState extends State<ListAll> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(Icons.menu),
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.blue[800],
-          size: 30,
-        ),
+        title: Center(child: Text("LIST ALL",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
-          Row(
-            children: [
-              Icon(
-                Icons.circle_outlined,
-                color: Colors.blue[800],
-              ),
-              SizedBox(width: 10,)
-            ],
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
           ),
         ],
       ),
@@ -57,16 +54,6 @@ class _ListAllState extends State<ListAll> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: 20,),
-              Center(
-                child: Text(
-                  "List All",
-                  style: TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue[800]),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -360,36 +347,8 @@ Row(mainAxisAlignment: MainAxisAlignment.end,
     ),SizedBox(width: 20,),
 
   ],
-),SizedBox(height: 20,),ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return CreateInvoice();
-                },));
-              }, child: Text("Next"))
+),
             ]),
-      ),
-      bottomNavigationBar: Container(
-        color: Colors.lightBlue,
-        child: BottomNavigationBar(
-          backgroundColor: Colors.blue[700],
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white.withOpacity(0.6),
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.location_pin),
-              label: 'Track',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notification_important_rounded),
-              label: 'Complaint',
-            ),
-          ],
-        ),
       ),
     );
   }

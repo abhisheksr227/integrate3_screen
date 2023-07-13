@@ -14,111 +14,105 @@ class _OrdersMapState extends State<OrdersMap> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 30),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.blue),
-          ),
-        ),
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        title: Center(child: Text("ORDERS MAP",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.refresh_outlined,
-                  color: Colors.blue,
-                )),
-          )
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
+          ),
         ],
-        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10,bottom: 20),
-                child: Text(
-                  'ORDERS MAP',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.blue[900]),
-                ),
+            SizedBox(
+              width: 210,
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Text('Filter by'),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15,bottom: 15),
+                        child: Container(
+                          width: 100,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.blue)),
+                          child: DropdownButtonFormField(
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(borderSide: BorderSide.none),
+                              contentPadding: EdgeInsets.only(),
+                              prefix: SizedBox(
+                                width: 10,
+                              ),
+                              hintText: 'Select',
+                            ), items: [
+                            DropdownMenuItem(child: Text('select'))
+                          ],
+                            onChanged: (value) {  },
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 4.0),
+                        child: Container(
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.blue)),
+                          child: Center(
+                            child: InkWell(onTap: () { },
+                                child: Icon(Icons.search_rounded)),),
+                        ),
+                      ),
+                    ],
+                  ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Text('Branch'),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15,bottom: 15,left: 5),
+                    child: Container(
+                      width: 100,
+                      height: 30,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: Colors.blue)),
+                      child: DropdownButtonFormField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(borderSide: BorderSide.none),
+                          contentPadding: EdgeInsets.only(),
+                          prefix: SizedBox(
+                            width: 10,
+                          ),
+                          hintText: 'Select',
+                        ), items: [
+                        DropdownMenuItem(child: Text('select'))
+                      ],
+                        onChanged: (value) {  },
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ),
-            Row(mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Text('Filter by'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 15,bottom: 15),
-                  child: Container(
-                    width: 100,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Colors.blue)),
-                    child: DropdownButtonFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(borderSide: BorderSide.none),
-                        contentPadding: EdgeInsets.only(),
-                        prefix: SizedBox(
-                          width: 10,
-                        ),
-                        hintText: 'Select',
-                      ), items: [
-                      DropdownMenuItem(child: Text('select'))
-                    ],
-                      onChanged: (value) {  },
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 4.0),
-                  child: Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Colors.blue)),
-                    child: Center(
-                      child: InkWell(onTap: () { },
-                          child: Icon(Icons.search_rounded)),),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Text('Branch'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 15,bottom: 15),
-                  child: Container(
-                    width: 100,
-                    height: 30,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Colors.blue)),
-                    child: DropdownButtonFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(borderSide: BorderSide.none),
-                        contentPadding: EdgeInsets.only(),
-                        prefix: SizedBox(
-                          width: 10,
-                        ),
-                        hintText: 'Select',
-                      ), items: [
-                      DropdownMenuItem(child: Text('select'))
-                    ],
-                      onChanged: (value) {  },
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
             SizedBox(
               height: 40,

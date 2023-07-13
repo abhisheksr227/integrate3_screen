@@ -19,42 +19,25 @@ class _CreateInvoiceState extends State<CreateInvoice> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 30),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.blue),
-          ),
-        ),
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        title: Center(child: Text("CREATE INVOICE",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.refresh_outlined,
-                  color: Colors.blue,
-                )),
-          )
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
+          ),
         ],
-        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 10,top: 10),
-                child: Text(
-                  'CREATE INVOICE',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.blue[900]),
-                ),
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.all(15),
               child: Container(
@@ -88,7 +71,7 @@ class _CreateInvoiceState extends State<CreateInvoice> {
             ),
             Padding(
               padding: const EdgeInsets.all(10),
-              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Column(crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -135,7 +118,7 @@ class _CreateInvoiceState extends State<CreateInvoice> {
                       ),
                     ],
                   ),
-                  Expanded(child: SizedBox()),
+                  SizedBox(width: 20,),
                   Column(crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
@@ -181,14 +164,6 @@ class _CreateInvoiceState extends State<CreateInvoice> {
                         ),
                       ),
                     ],
-                  ),
-                  Expanded(child: SizedBox()),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-                        onPressed: () { },
-                        child: Text('Load',style: TextStyle(color: Colors.white),)),
                   ),
                 ],
               ),
@@ -470,111 +445,108 @@ class _CreateInvoiceState extends State<CreateInvoice> {
               child: Card(
                 elevation: 5,
                 color: Colors.white,
-                child: SizedBox(
-                  height: 145,
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            width: 60,
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          width: 60,
+                            height: 40,
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Sl No.",
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        Expanded(
+                          child: Container(
                               height: 40,
                               alignment: Alignment.center,
                               child: Text(
-                                "Sl No.",
+                                "Particulars",
                                 style: TextStyle(
                                     fontSize: 13,
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
                               )),
-                          Expanded(
-                            child: Container(
-                                height: 40,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "Particulars",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                          ),
-                          Container(
-                            width: 80,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Qty",
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                          Container(
-                            width: 80,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Total",
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Container(
-                          color: Colors.blue,
-                          height: 0.5,
-                          width: MediaQuery.of(context).size.width,
                         ),
+                        Container(
+                          width: 80,
+                            height: 40,
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Qty",
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        Container(
+                          width: 80,
+                            height: 40,
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Total",
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        color: Colors.blue,
+                        height: 0.5,
+                        width: MediaQuery.of(context).size.width,
                       ),
-                      SizedBox(
-                        height: 80,
-                        child: ListView.builder(
-                          physics: ClampingScrollPhysics(),
-                          itemCount: 6,
-                          itemBuilder: (context, index) {
-                            return
-                              Row(
-                                children: [
-                                  Container(
-                                    width: 60,
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.width*0.6,
+                      child: ListView.builder(
+                        physics: ClampingScrollPhysics(),
+                        itemCount: 6,
+                        itemBuilder: (context, index) {
+                          return
+                            Row(
+                              children: [
+                                Container(
+                                  width: 60,
+                                    height: 40,
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "1",
+                                    )),
+                                Expanded(
+                                  child: Container(
                                       height: 40,
                                       alignment: Alignment.center,
                                       child: Text(
-                                        "1",
+                                        "Credit",
                                       )),
-                                  Expanded(
-                                    child: Container(
-                                        height: 40,
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          "Credit",
-                                        )),
-                                  ),
-                                  Container(
-                                    width: 80,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        "50",
-                                      )),
-                                  Container(
-                                    width: 80,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        "60",
-                                      )),
-                                ],
-                              );
-                          },),
-                      )
-                    ],
-                  ),
+                                ),
+                                Container(
+                                  width: 80,
+                                    height: 40,
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "50",
+                                    )),
+                                Container(
+                                  width: 80,
+                                    height: 40,
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "60",
+                                    )),
+                              ],
+                            );
+                        },),
+                    )
+                  ],
                 ),
               ),
             ),
