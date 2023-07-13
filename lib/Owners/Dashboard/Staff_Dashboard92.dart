@@ -141,41 +141,42 @@ class _StaffdashboardState extends State<Staffdashboard> {
                         child: Row(
                           children: [
                             Icon(Icons.arrow_right_outlined,size: 35,color: Colors.blue,),
-                            Container(
-                                height: 30,
-                                width: 100,
-                                decoration: BoxDecoration(border: Border.all(color: Colors.blue),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                child: TextFormField(
-                                  textAlign: TextAlign.center,
-                                  controller: Date,
-                                  style: TextStyle(fontSize: 14),
-                                  onTap: () async {
-                                    FocusScope.of(context).requestFocus(FocusNode());
-                                    var pickedDate = await showDatePicker(
-                                        builder: (context, child) {
-                                          return Theme(
-                                              data: ThemeData().copyWith(
-                                                colorScheme: ColorScheme.light(
-                                                  primary: Colors.blue,
-                                                  onPrimary: Colors.white,
-                                                  surface: Colors.blue,
-                                                  onSurface: Colors.black,
-                                                ),
-                                                dialogBackgroundColor:Colors.blueGrey.shade50,
-                                              ), child: child!);
+                            SizedBox(
+                              width: 100,
+                              height: 40,
+                              child: TextFormField(
+                                textAlign: TextAlign.center,
+                                controller: Date,
+                                style: TextStyle(fontSize: 14),
+                                onTap: () async {
+                                  FocusScope.of(context).requestFocus(FocusNode());
+                                  var pickedDate = await showDatePicker(
+                                      builder: (context, child) {
+                                        return Theme(
+                                            data: ThemeData().copyWith(
+                                              colorScheme: ColorScheme.light(
+                                                primary: Colors.blue,
+                                                onPrimary: Colors.white,
+                                                surface: Colors.blue,
+                                                onSurface: Colors.black,
+                                              ),
+                                              dialogBackgroundColor:Colors.blueGrey.shade50,
+                                            ), child: child!);
 
-                                        },
-                                        context: context,
-                                        initialDate: DateTime.now(),
-                                        firstDate: DateTime(2000,01,01),
-                                        lastDate: DateTime(2050,12,31));
-                                    Date.text = DateFormat('dd-MM-yyyy').format(pickedDate!);
-                                  },
-                                  decoration: InputDecoration(border: InputBorder.none,
-                                  ),
-                                )
+                                      },
+                                      context: context,
+                                      initialDate: DateTime.now(),
+                                      firstDate: DateTime(2000,01,01),
+                                      lastDate: DateTime(2050,12,31));
+                                  Date.text = DateFormat('dd-MM-yyyy').format(pickedDate!);
+                                },
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.blue),
+                                      borderRadius: BorderRadius.circular(10)),
+                                  contentPadding: EdgeInsets.only(),
+                                ),
+                              ),
                             ),
                             Icon(Icons.arrow_left_outlined,size: 35,color: Colors.blue,),
                           ],
@@ -199,7 +200,7 @@ class _StaffdashboardState extends State<Staffdashboard> {
                             children: [
                               SizedBox(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.20,
+                                    MediaQuery.of(context).size.height * 0.4,
                                 width: MediaQuery.of(context).size.width,
                                 child: ListView.builder(
                                   itemCount: 1,
@@ -290,14 +291,14 @@ class _StaffdashboardState extends State<Staffdashboard> {
                                           ),
                                         ),
                                         Container(
-                                          height: MediaQuery.of(context).size.height * 0.14,
+                                          height: MediaQuery.of(context).size.height * 0.34,
                                           width:
                                               MediaQuery.of(context).size.width*2,
                                           child: ListView.builder(
                                             padding: EdgeInsets.zero,
                                             physics:
                                                 const ClampingScrollPhysics(),
-                                            itemCount: 6,
+                                            itemCount: 9,
                                             itemBuilder: (BuildContext context,
                                                 int rowIndex) {
                                               final isEvenRow =
@@ -486,7 +487,7 @@ class _StaffdashboardState extends State<Staffdashboard> {
               ),
               Padding(
                 padding: const EdgeInsets.only(right:20),
-                child: Row(mainAxisAlignment: MainAxisAlignment.end,
+                child: Row(mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
                       height: 250,
@@ -533,7 +534,6 @@ class _StaffdashboardState extends State<Staffdashboard> {
                             const FlSpot(5, 13),
                             const FlSpot(6, 17),
                             const FlSpot(7, 15),
-                            const FlSpot(8, 20)
                           ],
                           dotData: FlDotData(show: false))
                     ]),

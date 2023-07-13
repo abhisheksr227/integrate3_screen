@@ -573,6 +573,7 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                       width: 180,
                       child: TextField(
                           decoration: InputDecoration(
+                            contentPadding: EdgeInsets.only(left: 10),
                               hintText: "Select",
                               border: OutlineInputBorder())),
                     ),

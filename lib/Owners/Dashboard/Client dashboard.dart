@@ -41,89 +41,68 @@ class _ClientdashboardState extends State<Clientdashboard> {
       ),
       body: SingleChildScrollView(
         child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 15.0, left: 15),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 12),
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue[500]),
-                              onPressed: () {},
-                              child: Text("Add New",style: TextStyle(color: Colors.white),)),
-                        ),
-                      ],
-                    ),SizedBox(width: 40,),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 20),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              SizedBox(height: 10,),
-                              Text("Branch"),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              Container(
-                                height: 50,
-                                child: DropdownButton<String>(
-                                  hint: Text(
-                                    "Select",
-                                    style: TextStyle(
-                                        fontSize: 10, color: Colors.grey),
-                                  ),
-                                  value: selectedOption,
-                                  onChanged: (String? newValue) {
-                                    setState(() {
-                                      selectedOption = newValue;
-                                    });
-                                  },
-                                  items: <String>[
-                                    'Option 1',
-                                    'Option 2',
-                                    'Option 3',
-                                    'Option 4'
-                                  ].map<DropdownMenuItem<String>>(
-                                      (String value) {
-                                    return DropdownMenuItem<String>(
-                                      value: value,
-                                      child: Text(value),
-                                    );
-                                  }).toList(),
-                                ),
-                              )
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Radio<int>(
-                                activeColor: Colors.lightBlue,
-                                value: 0,
-                                groupValue: allradionutton,
-                                onChanged: (value) {
-                                  setState(() {
-                                    allradionutton = value ?? 0;
-                                  });
-                                },
-                              ),
-                              SizedBox(width: 10),
-                              Text("All"),
-                            ],
-                          ),
-                        ],
+              SizedBox(height: 25,),
+              Row(mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(height: 10,),
+                  Text("Branch"),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Container(
+                    height: 50,
+                    child: DropdownButton<String>(
+                      hint: Text(
+                        "Select",
+                        style: TextStyle(
+                            fontSize: 10, color: Colors.grey),
                       ),
-                    )
-                  ],
-                ),
+                      value: selectedOption,
+                      onChanged: (String? newValue) {
+                        setState(() {
+                          selectedOption = newValue;
+                        });
+                      },
+                      items: <String>[
+                        'Option 1',
+                        'Option 2',
+                        'Option 3',
+                        'Option 4'
+                      ].map<DropdownMenuItem<String>>(
+                          (String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                    ),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Radio<int>(
+                    activeColor: Colors.lightBlue,
+                    value: 0,
+                    groupValue: allradionutton,
+                    onChanged: (value) {
+                      setState(() {
+                        allradionutton = value ?? 0;
+                      });
+                    },
+                  ),
+                  Text("All"),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 12),
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue[500]),
+                    onPressed: () {},
+                    child: Text("Add New",style: TextStyle(color: Colors.white),)),
               ),
               SizedBox(
                 height: 30,
@@ -175,6 +154,7 @@ class _ClientdashboardState extends State<Clientdashboard> {
                     width: 250,
                     child: TextField(
                       decoration: InputDecoration(
+                        contentPadding: EdgeInsets.only(left: 10),
                           suffixIcon: Icon(Icons.search),
                           hintText: "Client Name",
                           border: OutlineInputBorder(
@@ -186,22 +166,19 @@ class _ClientdashboardState extends State<Clientdashboard> {
               SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 30),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        backgroundColor: Colors.blue[500],
-                      ),
-                      onPressed: () {},
-                      child: Text("Edit",style: TextStyle(color: Colors.white)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      backgroundColor: Colors.blue[500],
                     ),
-                  ],
-                ),
+                    onPressed: () {},
+                    child: Text("Edit",style: TextStyle(color: Colors.white)),
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
@@ -213,54 +190,28 @@ class _ClientdashboardState extends State<Clientdashboard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(height: 20),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 5),
-                          child: Row(
-                            children: [
-                              SizedBox(width: 10),
-                              Text(
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Text(
                                 "Client Name",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16,
                                 ),
                               ),
-                              SizedBox(width: 15),
-                              Expanded(
-                                child: TextFormField(
-                                  decoration: InputDecoration(
-                                    filled: true,
-                                    fillColor: Colors.white,
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(8),
-                                      borderSide: BorderSide.none,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        Row(
-                          children: [
-                            SizedBox(width: 20),
-                            Text(
-                              "Client Id",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
                             ),
                             SizedBox(width: 15),
-                            Expanded(
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width*0.5,
+                              height: 40,
                               child: TextFormField(
                                 decoration: InputDecoration(
-                                  filled: true,
-                                  fillColor: Colors.white,
+                                  contentPadding: EdgeInsets.only(left: 10),
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(8),
-                                    borderSide: BorderSide.none,
+                                    borderSide: BorderSide(color: Colors.blue),
                                   ),
                                 ),
                               ),
@@ -268,248 +219,256 @@ class _ClientdashboardState extends State<Clientdashboard> {
                           ],
                         ),
                         SizedBox(height: 20),
-                        Row(
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            SizedBox(width: 20),
-                            Expanded(
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "Address",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                  SizedBox(width: 5),
-                                  Expanded(
-                                    child: TextFormField(
-                                      decoration: InputDecoration(
-                                        filled: true,
-                                        fillColor: Colors.white,
-                                        border: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          borderSide: BorderSide.none,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(width: 20),
-                            Expanded(
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "Location",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                  SizedBox(width: 15),
-                                  Expanded(
-                                    child: TextFormField(
-                                      decoration: InputDecoration(
-                                        filled: true,
-                                        fillColor: Colors.white,
-                                        border: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          borderSide: BorderSide.none,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 20),
-                        Row(
-                          children: [
-                            SizedBox(width: 20),
-                            Expanded(
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "Mob No",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                  SizedBox(width: 5),
-                                  Expanded(
-                                    child: TextFormField(
-                                      decoration: InputDecoration(
-                                        filled: true,
-                                        fillColor: Colors.white,
-                                        border: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          borderSide: BorderSide.none,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(width: 20),
-                            Expanded(
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "WhatsApp",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                  SizedBox(width: 15),
-                                  Expanded(
-                                    child: TextFormField(
-                                      decoration: InputDecoration(
-                                        filled: true,
-                                        fillColor: Colors.white,
-                                        border: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          borderSide: BorderSide.none,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 20),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10),
-                          child: Row(
-                            children: [
-                              SizedBox(width: 10),
-                              Text(
-                                "Alternate Number",
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Client Id",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16,
                                 ),
                               ),
-                              SizedBox(width: 15),
-                              Expanded(
-                                child: TextFormField(
-                                  decoration: InputDecoration(
-                                    filled: true,
-                                    fillColor: Colors.white,
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(8),
-                                      borderSide: BorderSide.none,
-                                    ),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width*0.5,
+                              height: 40,
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.only(left: 10),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: BorderSide(color: Colors.blue),
                                   ),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                         SizedBox(height: 20),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 12),
-                          child: Row(
-                            children: [
-                              SizedBox(width: 10),
-                              Expanded(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      "Staff",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                    SizedBox(width: 5),
-                                    Expanded(
-                                      child: TextFormField(
-                                        decoration: InputDecoration(
-                                          filled: true,
-                                          fillColor: Colors.white,
-                                          border: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            borderSide: BorderSide.none,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Address",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
                                 ),
                               ),
-                              SizedBox(width: 20),
-                              Expanded(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      "Outstanding",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                    SizedBox(width: 15),
-                                    Expanded(
-                                      child: TextFormField(
-                                        decoration: InputDecoration(
-                                          filled: true,
-                                          fillColor: Colors.white,
-                                          border: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            borderSide: BorderSide.none,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width*0.5,
+                              height: 40,
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.only(left: 10),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  ),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                         SizedBox(height: 20),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 11),
-                          child: Row(
-                            children: [
-                              SizedBox(width: 10),
-                              Text(
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Location",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width*0.5,
+                              height: 40,
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.only(left: 10),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Mob No.",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width*0.5,
+                              height: 40,
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.only(left: 10),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Whatsapp No.",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width*0.5,
+                              height: 40,
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.only(left: 10),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Alternate No.",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width*0.5,
+                              height: 40,
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.only(left: 10),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Staff",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width*0.5,
+                              height: 40,
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.only(left: 10),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Outstanding",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width*0.5,
+                              height: 40,
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.only(left: 10),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Text(
                                 "Email Id",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16,
                                 ),
                               ),
-                              SizedBox(width: 15),
-                              Expanded(
-                                child: TextFormField(
-                                  decoration: InputDecoration(
-                                    filled: true,
-                                    fillColor: Colors.white,
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(8),
-                                      borderSide: BorderSide.none,
-                                    ),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width*0.5,
+                              height: 40,
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.only(left: 10),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: BorderSide(color: Colors.blue),
                                   ),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                         SizedBox(height: 20),
                         Padding(
@@ -529,14 +488,15 @@ class _ClientdashboardState extends State<Clientdashboard> {
                                     ),
                                     SizedBox(width: 5),
                                     Expanded(
-                                      child: TextFormField(
-                                        decoration: InputDecoration(
-                                          filled: true,
-                                          fillColor: Colors.white,
-                                          border: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            borderSide: BorderSide.none,
+                                      child: SizedBox(
+                                        height: 40,
+                                        child: TextFormField(
+                                          decoration: InputDecoration(
+                                            contentPadding: EdgeInsets.only(left: 10),
+                                            border: OutlineInputBorder(
+                                              borderRadius: BorderRadius.circular(8),
+                                              borderSide: BorderSide(color: Colors.blue),
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -659,11 +619,11 @@ class _ClientdashboardState extends State<Clientdashboard> {
                           endIndent: 10,
                         ),
                         SizedBox(
-                          height: 110,
+                          height: 200,
                           child: ListView.builder(
                             physics: ClampingScrollPhysics(
                                 parent: FixedExtentScrollPhysics()),
-                            itemCount: 3,
+                            itemCount: 6,
                             itemBuilder: (context, index) {
                               return Column(
                                 children: [
@@ -678,13 +638,13 @@ class _ClientdashboardState extends State<Clientdashboard> {
                                       Expanded(
                                         child: Container(
                                           alignment: Alignment.center,
-                                          child: Text("2"),
+                                          child: Text("Aswin"),
                                         ),
                                       ),
                                       Expanded(
                                         child: Container(
                                           alignment: Alignment.center,
-                                          child: Text("2"),
+                                          child: Text("6"),
                                         ),
                                       ),
                                     ],
@@ -796,11 +756,11 @@ class _ClientdashboardState extends State<Clientdashboard> {
                           endIndent: 10,
                         ),
                         SizedBox(
-                          height: 110,
+                          height: 200,
                           child: ListView.builder(
                             physics: ClampingScrollPhysics(
                                 parent: FixedExtentScrollPhysics()),
-                            itemCount: 3,
+                            itemCount: 6,
                             itemBuilder: (context, index) {
                               return Column(
                                 children: [
@@ -815,19 +775,19 @@ class _ClientdashboardState extends State<Clientdashboard> {
                                       Expanded(
                                         child: Container(
                                           alignment: Alignment.center,
-                                          child: Text("2"),
+                                          child: Text("Al Nadha"),
                                         ),
                                       ),
                                       Expanded(
                                         child: Container(
                                           alignment: Alignment.center,
-                                          child: Text("2"),
+                                          child: Text("5"),
                                         ),
                                       ),
                                       Expanded(
                                         child: Container(
                                           alignment: Alignment.center,
-                                          child: Text("2"),
+                                          child: Text("1"),
                                         ),
                                       ),
                                     ],

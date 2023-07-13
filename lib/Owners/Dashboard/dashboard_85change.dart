@@ -700,41 +700,42 @@ class _DashboardState extends State<Dashboard> {
                               child: Row(
                                 children: [
                                   Icon(Icons.arrow_right_outlined,size: 35,color: Colors.blue,),
-                                  Container(
-                                      height: 30,
-                                      width: 100,
-                                      decoration: BoxDecoration(border: Border.all(color: Colors.blue),
-                                        borderRadius: BorderRadius.circular(5),
-                                      ),
-                                      child: TextFormField(
-                                        textAlign: TextAlign.center,
-                                        controller: Date,
-                                        style: TextStyle(fontSize: 14),
-                                        onTap: () async {
-                                          FocusScope.of(context).requestFocus(FocusNode());
-                                          var pickedDate = await showDatePicker(
-                                              builder: (context, child) {
-                                                return Theme(
-                                                    data: ThemeData().copyWith(
-                                                      colorScheme: ColorScheme.light(
-                                                        primary: Colors.blue,
-                                                        onPrimary: Colors.white,
-                                                        surface: Colors.blue,
-                                                        onSurface: Colors.black,
-                                                      ),
-                                                      dialogBackgroundColor:Colors.blueGrey.shade50,
-                                                    ), child: child!);
+                                  SizedBox(
+                                    width: 100,
+                                    height: 40,
+                                    child: TextFormField(
+                                      textAlign: TextAlign.center,
+                                      controller: Date,
+                                      style: TextStyle(fontSize: 14),
+                                      onTap: () async {
+                                        FocusScope.of(context).requestFocus(FocusNode());
+                                        var pickedDate = await showDatePicker(
+                                            builder: (context, child) {
+                                              return Theme(
+                                                  data: ThemeData().copyWith(
+                                                    colorScheme: ColorScheme.light(
+                                                      primary: Colors.blue,
+                                                      onPrimary: Colors.white,
+                                                      surface: Colors.blue,
+                                                      onSurface: Colors.black,
+                                                    ),
+                                                    dialogBackgroundColor:Colors.blueGrey.shade50,
+                                                  ), child: child!);
 
-                                              },
-                                              context: context,
-                                              initialDate: DateTime.now(),
-                                              firstDate: DateTime(2000,01,01),
-                                              lastDate: DateTime(2050,12,31));
-                                          Date.text = DateFormat('dd-MM-yyyy').format(pickedDate!);
-                                        },
-                                        decoration: InputDecoration(border: InputBorder.none,
-                                        ),
-                                      )
+                                            },
+                                            context: context,
+                                            initialDate: DateTime.now(),
+                                            firstDate: DateTime(2000,01,01),
+                                            lastDate: DateTime(2050,12,31));
+                                        Date.text = DateFormat('dd-MM-yyyy').format(pickedDate!);
+                                      },
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                            borderSide: BorderSide(color: Colors.blue),
+                                            borderRadius: BorderRadius.circular(10)),
+                                        contentPadding: EdgeInsets.only(),
+                                      ),
+                                    ),
                                   ),
                                   Icon(Icons.arrow_left_outlined,size: 35,color: Colors.blue,),
                                 ],
@@ -1213,7 +1214,6 @@ class _DashboardState extends State<Dashboard> {
                                 children: [
                                   Container(
                                     width: 140,
-                                    height: 100,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
                                         border: Border.all(color: Colors.blue)),
@@ -1346,7 +1346,6 @@ class _DashboardState extends State<Dashboard> {
                                 children: [
                                   Container(
                                     width: 140,
-                                    height: 100,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
                                         border: Border.all(color: Colors.blue)),
@@ -1531,7 +1530,6 @@ class _DashboardState extends State<Dashboard> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            height: 150,
                             width: 140,
                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
                                 border: Border.all(color: Colors.blue)),
@@ -1587,7 +1585,7 @@ class _DashboardState extends State<Dashboard> {
                     SizedBox(
                       height: 20,
                     ),
-                    Row(
+                    Row(mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
                           height: 250,
