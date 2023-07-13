@@ -59,14 +59,6 @@ class _sampleState extends State<sample> {
 
   String? selectedOption;
   int allradionutton = 0;
-  Widget bigCircle = new Container(
-    width: 300.0,
-    height: 300.0,
-    decoration: new BoxDecoration(
-      color: Colors.white,
-      shape: BoxShape.circle,
-    ),
-  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,12 +82,6 @@ class _sampleState extends State<sample> {
         body: SingleChildScrollView(
             child: Center(
           child: Column(children: [
-            // SizedBox(height: 20,),
-            // Text("Order Dashboard",
-            //     style: TextStyle(
-            //       fontSize: 20,
-            //         color: Colors.blue[800],
-            //         fontWeight: FontWeight.bold)),
             SizedBox(
               height: 10,
             ),
@@ -113,33 +99,36 @@ class _sampleState extends State<sample> {
                               decoration: BoxDecoration(border: Border.all(color: Colors.blue),
                                 borderRadius: BorderRadius.circular(5),
                               ),
-                              child: TextFormField(
-                                textAlign: TextAlign.center,
-                                controller: Date,
-                                style: TextStyle(fontSize: 14),
-                                onTap: () async {
-                                  FocusScope.of(context).requestFocus(FocusNode());
-                                  var pickedDate = await showDatePicker(
-                                      builder: (context, child) {
-                                        return Theme(
-                                            data: ThemeData().copyWith(
-                                              colorScheme: ColorScheme.light(
-                                                primary: Colors.blue,
-                                                onPrimary: Colors.white,
-                                                surface: Colors.blue,
-                                                onSurface: Colors.black,
-                                              ),
-                                              dialogBackgroundColor:Colors.blueGrey.shade50,
-                                            ), child: child!);
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: TextFormField(
+                                  textAlign: TextAlign.center,
+                                  controller: Date,
+                                  style: TextStyle(fontSize: 14),
+                                  onTap: () async {
+                                    FocusScope.of(context).requestFocus(FocusNode());
+                                    var pickedDate = await showDatePicker(
+                                        builder: (context, child) {
+                                          return Theme(
+                                              data: ThemeData().copyWith(
+                                                colorScheme: ColorScheme.light(
+                                                  primary: Colors.blue,
+                                                  onPrimary: Colors.white,
+                                                  surface: Colors.blue,
+                                                  onSurface: Colors.black,
+                                                ),
+                                                dialogBackgroundColor:Colors.blueGrey.shade50,
+                                              ), child: child!);
 
-                                      },
-                                      context: context,
-                                      initialDate: DateTime.now(),
-                                      firstDate: DateTime(2000,01,01),
-                                      lastDate: DateTime(2050,12,31));
-                                  Date.text = DateFormat('dd-MM-yyyy').format(pickedDate!);
-                                },
-                                decoration: InputDecoration(border: InputBorder.none,
+                                        },
+                                        context: context,
+                                        initialDate: DateTime.now(),
+                                        firstDate: DateTime(2000,01,01),
+                                        lastDate: DateTime(2050,12,31));
+                                    Date.text = DateFormat('dd-MM-yyyy').format(pickedDate!);
+                                  },
+                                  decoration: InputDecoration(contentPadding: EdgeInsets.all(10),border: InputBorder.none,
+                                  ),
                                 ),
                               )
                           ),
@@ -479,241 +468,227 @@ Text("Staff Wise Orders")
               padding: const EdgeInsets.all(8.0),
               child: Card(
                 elevation: 5,
-                child: Padding(
-                  padding: const EdgeInsets.all(15),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        SizedBox(
-                          height: 140,
-                          width: 600,
-                          child: ListView.builder(
-                            itemCount: 1,
-                            padding: EdgeInsets.zero,
-                            scrollDirection: Axis.horizontal,
-                            physics: const ClampingScrollPhysics(),
-                            itemBuilder: (context, index) {
-                              return Column(
-                                children: [
-                                  SizedBox(
-                                    height: 40,
-                                    width: 600,
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                          child: Container(
-                                            alignment: Alignment.center,
-                                            child: Text(
-                                              "",
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      SizedBox(
+                        height: 250,
+                        width: MediaQuery.of(context).size.width*2,
+                        child: ListView.builder(
+                          itemCount: 1,
+                          padding: EdgeInsets.zero,
+                          scrollDirection: Axis.horizontal,
+                          physics: const ClampingScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Column(
+                              children: [
+                                SizedBox(
+                                  height: 40,
+                                  width: MediaQuery.of(context).size.width*2,
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: Container(
+                                          child: Text(
+                                            "",
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
                                             ),
                                           ),
                                         ),
-                                        SizedBox(width: 20), // Add space between columns
-                                        Expanded(
-                                          child: Container(
-                                            alignment: Alignment.center,
-                                            child: Text(
-                                              "Staff Name",
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                                      ),
+                                      // Add space between columns
+                                      Expanded(
+                                        child: Container(
+                                          child: Text(
+                                            "Staff Name",
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
                                             ),
                                           ),
                                         ),
-                                        SizedBox(width: 20), // Add space between columns
-                                        Expanded(
-                                          child: Container(
-                                            alignment: Alignment.center,
-                                            child: Text(
-                                              "Visited",
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                                      ),
+                                      Expanded(
+                                        child: Container(
+                                          child: Text(
+                                            "Visited",
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
                                             ),
                                           ),
                                         ),
-                                        SizedBox(width: 20), // Add space between columns
-                                        Expanded(
-                                          child: Container(
-                                            alignment: Alignment.center,
-                                            child: Text(
-                                              "New Clients",
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                                      ),
+                                       // Add space between columns
+                                      Expanded(
+                                        child: Container(
+                                          child: Text(
+                                            "New Clients",
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
                                             ),
                                           ),
                                         ),
-                                        SizedBox(width: 20), // Add space between columns
-                                        Expanded(
-                                          child: Container(
-                                            alignment: Alignment.center,
-                                            child: Text(
-                                              "New Orders",
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                                      ),
+                                       // Add space between columns
+                                      Expanded(
+                                        child: Container(
+                                          child: Text(
+                                            "New Orders",
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
                                             ),
                                           ),
                                         ),
-                                        SizedBox(width: 20), // Add space between columns
-                                        Expanded(
-                                          child: Container(
-                                            alignment: Alignment.center,
-                                            child: Text(
-                                              "Confirmed",
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                                      ),
+                                      // Add space between columns
+                                      Expanded(
+                                        child: Container(
+                                          child: Text(
+                                            "Confirmed",
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
                                             ),
                                           ),
                                         ),
-                                        SizedBox(width: 20), // Add space between columns
-                                        Expanded(
-                                          child: Container(
-                                            alignment: Alignment.center,
-                                            child: Text(
-                                              "Picked",
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                                      ),
+                                     // Add space between columns
+                                      Expanded(
+                                        child: Container(
+                                          child: Text(
+                                            "Picked",
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
                                             ),
                                           ),
                                         ),
-                                        SizedBox(width: 20), // Add space between columns
-                                        Expanded(
-                                          child: Container(
-                                            alignment: Alignment.center,
-                                            child: Text(
-                                              "Picked",
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                                      ),
+                                       // Add space between columns
+                                      Expanded(
+                                        child: Container(
+                                          child: Text(
+                                            "Delivered",
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
                                             ),
                                           ),
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
-                                  Container(
-                                    height: 100,
-                                    width: 600,
-                                    child: ListView.builder(
-                                      padding: EdgeInsets.zero,
-                                      physics: const ClampingScrollPhysics(),
-                                      itemCount: 6,
-                                      itemBuilder: (BuildContext context, int rowIndex) {
-                                        return Column(
-                                          children: [
-                                            SizedBox(
-                                              height: 40,
-                                              width: 600,
-                                              child: Row(
-                                                children: [
-                                                  Expanded(
-                                                    child: Container(
-                                                      alignment: Alignment.center,
-                                                      child: Icon(
-                                                        Icons.arrow_right_alt,
-                                                        color: Colors.blue,
-                                                      ),
+                                ),
+                                Container(
+                                  height: 200,
+                                  width: MediaQuery.of(context).size.width*2,
+                                  child: ListView.builder(
+                                    padding: EdgeInsets.zero,
+                                    physics: const ClampingScrollPhysics(),
+                                    itemCount:4,
+                                    itemBuilder: (BuildContext context, int rowIndex) {
+                                      return Column(
+                                        children: [
+                                          SizedBox(
+                                            height: 40,
+                                            width: MediaQuery.of(context).size.width*2,
+                                            child: Row(
+                                              children: [
+                                                Expanded(
+                                                  child: Container(
+                                                    child: Icon(
+                                                      Icons.arrow_right_alt,
+                                                      color: Colors.blue,
                                                     ),
                                                   ),
-                                                  SizedBox(width: 20), // Add space between columns
-                                                  Expanded(
-                                                    child: Container(
-                                                      alignment: Alignment.center,
-                                                      child: Text(
-                                                        "",
-                                                        style: TextStyle(color: Colors.black),
-                                                      ),
+                                                ),
+                                                // Add space between columns
+                                                Expanded(
+                                                  child: Container(
+                                                    child: Text(
+                                                      "Noor",
+                                                      style: TextStyle(color: Colors.black),
                                                     ),
                                                   ),
-                                                  SizedBox(width: 20), // Add space between columns
-                                                  Expanded(
-                                                    child: Container(
-                                                      alignment: Alignment.center,
-                                                      child: Text(
-                                                        "",
-                                                        style: TextStyle(color: Colors.black),
-                                                      ),
+                                                ),
+                                                // Add space between columns
+                                                Expanded(
+                                                  child: Container(
+                                                    child: Text(
+                                                      "20",
+                                                      style: TextStyle(color: Colors.black),
                                                     ),
                                                   ),
-                                                  SizedBox(width: 20), // Add space between columns
-                                                  Expanded(
-                                                    child: Container(
-                                                      alignment: Alignment.center,
-                                                      child: Text(
-                                                        "",
-                                                        style: TextStyle(color: Colors.black),
-                                                      ),
+                                                ),
+                                                 // Add space between columns
+                                                Expanded(
+                                                  child: Container(
+                                                    child: Text(
+                                                      "30",
+                                                      style: TextStyle(color: Colors.black),
                                                     ),
                                                   ),
-                                                  SizedBox(width: 20), // Add space between columns
-                                                  Expanded(
-                                                    child: Container(
-                                                      alignment: Alignment.center,
-                                                      child: Text(
-                                                        "",
-                                                        style: TextStyle(color: Colors.black),
-                                                      ),
+                                                ), // Add space between columns
+                                                Expanded(
+                                                  child: Container(
+                                                    child: Text(
+                                                      "10",
+                                                      style: TextStyle(color: Colors.black),
                                                     ),
                                                   ),
-                                                  SizedBox(width: 20), // Add space between columns
-                                                  Expanded(
-                                                    child: Container(
-                                                      alignment: Alignment.center,
-                                                      child: Text(
-                                                        "",
-                                                        style: TextStyle(color: Colors.black),
-                                                      ),
+                                                ),
+                                                // Add space between columns
+                                                Expanded(
+                                                  child: Container(
+                                                    child: Text(
+                                                      "20",
+                                                      style: TextStyle(color: Colors.black),
                                                     ),
                                                   ),
-                                                  SizedBox(width: 20), // Add space between columns
-                                                  Expanded(
-                                                    child: Container(
-                                                      alignment: Alignment.center,
-                                                      child: Text(
-                                                        "",
-                                                        style: TextStyle(color: Colors.black),
-                                                      ),
+                                                ), // Add space between columns
+                                                Expanded(
+                                                  child: Container(
+                                                    child: Text(
+                                                      "15",
+                                                      style: TextStyle(color: Colors.black),
                                                     ),
                                                   ),
-                                                  SizedBox(width: 20), // Add space between columns
-                                                ],
-                                              ),
+                                                ),
+                                                Expanded(
+                                                  child: Container(
+                                                    child: Text(
+                                                      "15",
+                                                      style: TextStyle(color: Colors.black),
+                                                    ),
+                                                  ),
+                                                ),// Add space between columns
+                                              ],
                                             ),
-                                            Divider(
-                                              color: Colors.grey,
-                                              thickness: .3,
-                                              indent: 10,
-                                              endIndent: 10,
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    ),
+                                          ),
+                                          Divider(
+                                            color: Colors.grey,
+                                            thickness: .3,
+                                            indent: 10,
+                                            endIndent: 10,
+                                          ),
+                                        ],
+                                      );
+                                    },
                                   ),
-                                ],
-                              );
-                            },
-                          ),
+                                ),
+                              ],
+                            );
+                          },
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -768,7 +743,7 @@ SizedBox(
   height: 50,
 ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(15.0),
               child: Card(
                 elevation: 5,
                 child: Row(
@@ -782,7 +757,7 @@ SizedBox(
                           children: [
                             SizedBox(
                               height: 240,
-                              width: 300,
+                              width: MediaQuery.of(context).size.width*0.70,
                               child: ListView.builder(
                                 itemCount: 1,
                                 padding: EdgeInsets.zero,
@@ -793,12 +768,11 @@ SizedBox(
                                     children: [
                                       SizedBox(
                                         height: 40,
-                                        width: 300,
+                                        width: MediaQuery.of(context).size.width*0.70,
                                         child: Row(
                                           children: [
                                             Expanded(
                                               child: Container(
-                                                alignment: Alignment.center,
                                                 child: Text(
                                                   "Orders",
                                                   style: TextStyle(
@@ -810,7 +784,6 @@ SizedBox(
                                             ),
                                             Expanded(
                                               child: Container(
-                                                alignment: Alignment.center,
                                                 child: Text(
                                                   "Express",
                                                   style: TextStyle(
@@ -822,7 +795,6 @@ SizedBox(
                                             ),
                                             Expanded(
                                               child: Container(
-                                                alignment: Alignment.center,
                                                 child: Text(
                                                   "Normal",
                                                   style: TextStyle(
@@ -837,7 +809,7 @@ SizedBox(
                                       ),
                                       Container(
                                         height: 200,
-                                        width: 300,
+                                        width: MediaQuery.of(context).size.width*0.70,
                                         child: ListView.builder(
                                           padding: EdgeInsets.zero,
                                           physics: const ClampingScrollPhysics(),
@@ -847,12 +819,11 @@ SizedBox(
                                               children: [
                                                 SizedBox(
                                                   height: 40,
-                                                  width: 300,
+                                                  width: MediaQuery.of(context).size.width*0.70,
                                                   child: Row(
                                                     children: [
                                                       Expanded(
                                                         child: Container(
-                                                          alignment: Alignment.center,
                                                           child: Text(
                                                             orderStagessecond[rowIndex],
                                                             style: TextStyle(
@@ -863,7 +834,6 @@ SizedBox(
                                                       ),
                                                       Expanded(
                                                         child: Container(
-                                                          alignment: Alignment.center,
                                                           child: Text(
                                                             "",
                                                             style: TextStyle(
@@ -874,7 +844,6 @@ SizedBox(
                                                       ),
                                                       Expanded(
                                                         child: Container(
-                                                          alignment: Alignment.center,
                                                           child: Text(
                                                             "",
                                                             style: TextStyle(

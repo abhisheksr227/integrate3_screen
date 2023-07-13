@@ -116,12 +116,12 @@ class _ServicedashboardState extends State<Servicedashboard> {
                       Text("Date",),
                      SizedBox(width: 20,),
                       Container(
-                        height: MediaQuery.of(context).size.height * .05,
+                        height: MediaQuery.of(context).size.height * .04,
                         width: MediaQuery.of(context).size.width * .40,
                         child: TextField(
                           readOnly: true,
                           onTap: () => selectFromDate(context),
-                          decoration: InputDecoration(
+                          decoration: InputDecoration(contentPadding: EdgeInsets.all(10),
                             hintText: fromDate != null ? dateFormat.format(fromDate!) : Date , // Format the fromDate
                             border: OutlineInputBorder(),
                             suffixIcon: Icon(Icons.date_range,color: Colors.blue),
@@ -135,8 +135,11 @@ class _ServicedashboardState extends State<Servicedashboard> {
                 ,  Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Card(
+                    color: Colors.white,
                     elevation: 10,
                     child: Container(
+                      height: 230,
+                      width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -150,7 +153,7 @@ class _ServicedashboardState extends State<Servicedashboard> {
                                   child: Container(
                                     alignment: Alignment.center,
                                     child: Text(
-                                      "Sl No",
+                                      "Category",
                                       style: TextStyle(
                                         fontSize: 13,
                                         color: Colors.black,
@@ -194,10 +197,10 @@ class _ServicedashboardState extends State<Servicedashboard> {
                             endIndent: 10,
                           ),
                           SizedBox(
-                            height: 110,
+                            height: 170,
                             child: ListView.builder(
                               physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
-                              itemCount: 3,
+                              itemCount: 6,
                               itemBuilder: (context, index) {
                                 return Column(
                                   children: [
@@ -206,19 +209,19 @@ class _ServicedashboardState extends State<Servicedashboard> {
                                         Expanded(
                                           child: Container(
                                             alignment: Alignment.center,
-                                            child: Text("2"),
+                                            child: Text("Dry Cleaning"),
                                           ),
                                         ),
                                         Expanded(
                                           child: Container(
                                             alignment: Alignment.center,
-                                            child: Text("2"),
+                                            child: Text("20"),
                                           ),
                                         ),
                                         Expanded(
                                           child: Container(
                                             alignment: Alignment.center,
-                                            child: Text("2"),
+                                            child: Text("50"),
                                           ),
                                         ),
                                       ],
@@ -243,236 +246,232 @@ class _ServicedashboardState extends State<Servicedashboard> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
+                    color: CupertinoColors.white,
                     elevation: 5,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(15),
-                              child: SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    SizedBox(
-                                      height: MediaQuery.of(context).size.height*0.20,
-                                      width: MediaQuery.of(context).size.width*2,
-                                      child: ListView.builder(
-                                        itemCount: 1,
-                                        padding: EdgeInsets.zero,
-                                        scrollDirection: Axis.horizontal,
-                                        physics: const ClampingScrollPhysics(),
-                                        itemBuilder: (context, index) {
-                                          return Column(
-                                            children: [
-                                              SizedBox(
-                                                height: MediaQuery.of(context).size.height*0.06,
-                                                width: MediaQuery.of(context).size.width*2,
-                                                child: Row(
-                                                  children: [
-                                                    Expanded(
-                                                      child: Container(
-                                                        alignment: Alignment.center,
-                                                        child: Text(
-                                                          "Order No",
-                                                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Expanded(
-                                                      child: Container(
-                                                        alignment: Alignment.center,
-                                                        child: Text(
-                                                          "New",
-                                                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Expanded(
-                                                      child: Container(
-                                                        alignment: Alignment.center,
-                                                        child: Text(
-                                                          "Processed",
-                                                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Expanded(
-                                                      child: Container(
-                                                        alignment: Alignment.center,
-                                                        child: Text(
-                                                          "Pending",
-                                                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Expanded(
-                                                      child: Container(
-                                                        alignment: Alignment.center,
-                                                        child: Text(
-                                                          "Invoiced",
-                                                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                                        ),
-                                                      ),
-                                                    ),Expanded(
-                                                      child: Container(
-                                                        alignment: Alignment.center,
-                                                        child: Text(
-                                                          "Dispatched",
-                                                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Expanded(
-                                                      child: Container(
-                                                        alignment: Alignment.center,
-                                                        child: Text(
-                                                          "Delivered",
-                                                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                                        ),
-                                                      ),
-                                                    ),
-
-                                                  ],
-                                                ),
-                                              ),
-                                              Container(
-                                                height: MediaQuery.of(context).size.height*0.10,
-                                                width: MediaQuery.of(context).size.width*2,
-                                                child: ListView.separated(
-                                                  separatorBuilder: (context, index) {
-                                                    return  Divider(
-                                                      color: Colors.grey,
-                                                      thickness: .3,
-                                                      indent: 10,
-                                                      endIndent: 10,
-                                                    );
-                                                  },
-                                                  padding: EdgeInsets.zero,
-                                                  physics: const ClampingScrollPhysics(),
-                                                  itemCount: 6,
-                                                  itemBuilder: (BuildContext context, int rowIndex) {
-
-                                                    return SizedBox(
-                                                      height: 40,
-                                                      width: MediaQuery.of(context).size.width*2,
-                                                      child: ListView.builder(
-                                                        itemCount: 1,
-                                                        scrollDirection: Axis.horizontal,
-                                                        itemBuilder: (context, index) {
-                                                          return Container(
-                                                            height: 40,
-                                                            width: MediaQuery.of(context).size.width*2,
-                                                            child: Row(
-                                                              children: [
-                                                                Expanded(
-                                                                  child: Container(
-                                                                    alignment: Alignment.center,
-                                                                    child: Text(
-                                                                      "",
-                                                                      style: TextStyle(color: Colors.black),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Expanded(
-                                                                  child: Container(
-                                                                    alignment: Alignment.center,
-                                                                    child: Text(
-                                                                      "",
-                                                                      style: TextStyle(color: Colors.black),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Expanded(
-                                                                  child: Container(
-                                                                    alignment: Alignment.center,
-                                                                    child: Text(
-                                                                      "",
-                                                                      style: TextStyle(color: Colors.black),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Expanded(
-                                                                  child: Container(
-                                                                    alignment: Alignment.center,
-                                                                    child: Text(
-                                                                      "",
-                                                                      style: TextStyle(color: Colors.black),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Expanded(
-                                                                  child: Container(
-                                                                    alignment: Alignment.center,
-                                                                    child: Text(
-                                                                      "",
-                                                                      style: TextStyle(color: Colors.black),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Expanded(
-                                                                  child: Container(
-                                                                    alignment: Alignment.center,
-                                                                    child: Text(
-                                                                      "",
-                                                                      style: TextStyle(color: Colors.black),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Expanded(
-                                                                  child: Container(
-                                                                    alignment: Alignment.center,
-                                                                    child: Text(
-                                                                      "",
-                                                                      style: TextStyle(color: Colors.black),
-                                                                    ),
-                                                                  ),
-                                                                ),
-
-                                                              ],
-                                                            ),
-                                                          );
-                                                        },
-                                                      ),
-                                                    );
-                                                  },
-                                                ),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ), Text("Orders In process"),Padding(
-                              padding:  EdgeInsets.only( top:5,left: 15, right: 15),
-                              child: Scrollbar(
-                                trackVisibility: true,
-                                controller: _horizontal,
-                                child: SizedBox(
-                                  height: 5,
-                                  width: MediaQuery.of(context).size.width,
-                                  child: ListView(
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(5),
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                SizedBox(
+                                  height: MediaQuery.of(context).size.height*0.40,
+                                  width: MediaQuery.of(context).size.width*2,
+                                  child: ListView.builder(
+                                    itemCount: 1,
+                                    padding: EdgeInsets.zero,
                                     scrollDirection: Axis.horizontal,
-                                    children: [
-                                      Container(
-                                        width: 150,
-                                        decoration: BoxDecoration(
-                                            color: Colors.lightBlue,
-                                            borderRadius: BorderRadius.circular(30)),
-                                      ),
-                                    ],
+                                    physics: const ClampingScrollPhysics(),
+                                    itemBuilder: (context, index) {
+                                      return Column(
+                                        children: [
+                                          SizedBox(
+                                            height: MediaQuery.of(context).size.height*0.06,
+                                            width: MediaQuery.of(context).size.width*2,
+                                            child: Row(
+                                              children: [
+                                                Expanded(
+                                                  child: Container(
+                                                    alignment: Alignment.center,
+                                                    child: Text(
+                                                      "Order No",
+                                                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  child: Container(
+                                                    alignment: Alignment.center,
+                                                    child: Text(
+                                                      "New",
+                                                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  child: Container(
+                                                    alignment: Alignment.center,
+                                                    child: Text(
+                                                      "Processed",
+                                                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  child: Container(
+                                                    alignment: Alignment.center,
+                                                    child: Text(
+                                                      "Pending",
+                                                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  child: Container(
+                                                    alignment: Alignment.center,
+                                                    child: Text(
+                                                      "Invoiced",
+                                                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    ),
+                                                  ),
+                                                ),Expanded(
+                                                  child: Container(
+                                                    alignment: Alignment.center,
+                                                    child: Text(
+                                                      "Dispatched",
+                                                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  child: Container(
+                                                    alignment: Alignment.center,
+                                                    child: Text(
+                                                      "Delivered",
+                                                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                    ),
+                                                  ),
+                                                ),
+
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            height: MediaQuery.of(context).size.height*0.30,
+                                            width: MediaQuery.of(context).size.width*2,
+                                            child: ListView.separated(
+                                              separatorBuilder: (context, index) {
+                                                return  Divider(
+                                                  color: Colors.grey,
+                                                  thickness: .3,
+                                                  indent: 10,
+                                                  endIndent: 10,
+                                                );
+                                              },
+                                              padding: EdgeInsets.zero,
+                                              physics: const ClampingScrollPhysics(),
+                                              itemCount: 6,
+                                              itemBuilder: (BuildContext context, int rowIndex) {
+
+                                                return SizedBox(
+                                                  height: 40,
+                                                  width: MediaQuery.of(context).size.width*2,
+                                                  child: ListView.builder(
+                                                    itemCount: 1,
+                                                    scrollDirection: Axis.horizontal,
+                                                    itemBuilder: (context, index) {
+                                                      return Container(
+                                                        height: 40,
+                                                        width: MediaQuery.of(context).size.width*2,
+                                                        child: Row(
+                                                          children: [
+                                                            Expanded(
+                                                              child: Container(
+                                                                alignment: Alignment.center,
+                                                                child: Text(
+                                                                  "1002",
+                                                                  style: TextStyle(color: Colors.black),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              child: Container(
+                                                                alignment: Alignment.center,
+                                                                child: Text(
+                                                                  "200",
+                                                                  style: TextStyle(color: Colors.black),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              child: Container(
+                                                                alignment: Alignment.center,
+                                                                child: Text(
+                                                                  "23",
+                                                                  style: TextStyle(color: Colors.black),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              child: Container(
+                                                                alignment: Alignment.center,
+                                                                child: Text(
+                                                                  "34",
+                                                                  style: TextStyle(color: Colors.black),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              child: Container(
+                                                                alignment: Alignment.center,
+                                                                child: Text(
+                                                                  "45",
+                                                                  style: TextStyle(color: Colors.black),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              child: Container(
+                                                                alignment: Alignment.center,
+                                                                child: Text(
+                                                                  "56",
+                                                                  style: TextStyle(color: Colors.black),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              child: Container(
+                                                                alignment: Alignment.center,
+                                                                child: Text(
+                                                                  "62",
+                                                                  style: TextStyle(color: Colors.black),
+                                                                ),
+                                                              ),
+                                                            ),
+
+                                                          ],
+                                                        ),
+                                                      );
+                                                    },
+                                                  ),
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      );
+                                    },
                                   ),
                                 ),
+                              ],
+                            ),
+                          ),
+                        ), Text("Orders In process"),Padding(
+                          padding:  EdgeInsets.only( top:5,left: 15, right: 15),
+                          child: Scrollbar(
+                            trackVisibility: true,
+                            controller: _horizontal,
+                            child: SizedBox(
+                              height: 5,
+                              width: MediaQuery.of(context).size.width,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: [
+                                  Container(
+                                    width: 150,
+                                    decoration: BoxDecoration(
+                                        color: Colors.lightBlue,
+                                        borderRadius: BorderRadius.circular(30)),
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
+                          ),
                         ),
-                      ),
+                      ],
                     ),
                   ),
                 ),
@@ -480,220 +479,206 @@ class _ServicedashboardState extends State<Servicedashboard> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Card(elevation: 5,
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          const SizedBox(height: 20,),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  SizedBox(
-                                    height: 140,
-                                    width: 600,
-                                    child: ListView.builder(
-                                      itemCount: 1,
-                                      padding: EdgeInsets.zero,
-                                      scrollDirection: Axis.horizontal,
-                                      physics: const ClampingScrollPhysics(),
-                                      itemBuilder: (context, index) {
-                                        return Column(
-                                          children: [
-                                            SizedBox(
-                                              height: 40,
-                                              width: 600,
-                                              child: Row(
-                                                children: [
-                                                  Expanded(
-                                                    child: Container(
-                                                      alignment: Alignment.center,
+                    color: Colors.white,
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 20,),
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              SizedBox(
+                                height: 280,
+                                width: MediaQuery.of(context).size.width+130,
+                                child: ListView.builder(
+                                  itemCount: 1,
+                                  padding: EdgeInsets.zero,
+                                  scrollDirection: Axis.horizontal,
+                                  physics: const ClampingScrollPhysics(),
+                                  itemBuilder: (context, index) {
+                                    return Column(
+                                      children: [
+                                        SizedBox(
+                                          height: 40,
+                                          width: MediaQuery.of(context).size.width+130,
+                                          child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  alignment: Alignment.center,
 
-                                                      child: Text(
-                                                        "Order N.o",
-                                                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                                      ),
-                                                    ),
+                                                  child: Text(
+                                                    "Order N.o",
+                                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                                                   ),
-                                                  Expanded(
-                                                    child: Container(
-                                                      alignment: Alignment.center,
-
-                                                      child: Text(
-                                                        "New",
-                                                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Container(
-                                                      alignment: Alignment.center,
-
-                                                      child: Text(
-                                                        "Processed",
-                                                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Container(
-                                                      alignment: Alignment.center,
-
-                                                      child: Text(
-                                                        "Pending",
-                                                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Container(
-                                                      alignment: Alignment.center,
-
-                                                      child: Text(
-                                                        "Invoiced",
-                                                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Container(
-                                                      alignment: Alignment.center,
-
-                                                      child: Text(
-                                                        "Dispatched",
-                                                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Container(
-                                                      alignment: Alignment.center,
-
-                                                      child: Text(
-                                                        "Delivered",
-                                                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
+                                                ),
                                               ),
-                                            ),
-                                            Container(
-                                              height: 100,
-                                              width: 600,
-                                              child: ListView.builder(
-                                                padding: EdgeInsets.zero,
-                                                physics: const ClampingScrollPhysics(),
-                                                itemCount: 6,
-                                                itemBuilder: (BuildContext context, int rowIndex) {
-                                                  final isEvenRow = rowIndex % 2 == 0;
-                                                  final backgroundColor = isEvenRow ? Colors.yellow : Colors.redAccent;
+                                              Expanded(
+                                                child: Container(
+                                                  alignment: Alignment.center,
 
-                                                  return SizedBox(
-                                                    height: 40,
-                                                    width: 600,
-                                                    child: ListView.builder(
-                                                      itemCount: 1,
-                                                      scrollDirection: Axis.horizontal,
-                                                      itemBuilder: (context, index) {
-                                                        return Container(
-                                                          height: 40,
-                                                          width: 600,
-                                                          color: backgroundColor,
-                                                          child: Row(
-                                                            children: [
-                                                              Expanded(
-                                                                child: Container(
-                                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                    "Staff ",
+                                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                  ),
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Container(
+                                                  alignment: Alignment.center,
 
-                                                                  child: Text(
-                                                                    "",
-                                                                    style: TextStyle(color: Colors.black),
-                                                                  ),
-                                                                ),
+                                                  child: Text(
+                                                    "Client",
+                                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                  ),
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Container(
+                                                  alignment: Alignment.center,
+
+                                                  child: Column(
+                                                    children: [
+                                                      Text(
+                                                        "No of",
+                                                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                      ), Text(
+                                                        "Items",
+                                                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Container(
+                                                  alignment: Alignment.center,
+
+                                                  child: Text(
+                                                    "Category",
+                                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                  ),
+                                                ),
+                                              ),
+                                              Expanded(
+                                                flex:2,
+                                                child: Container(
+                                                  alignment: Alignment.center,
+
+                                                  child: Text(
+                                                    "Delivery Commetion",
+                                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                                  ),
+                                                ),
+                                              ),
+
+                                            ],
+                                          ),
+                                        ),
+                                        Container(
+                                          height: 200,
+                                          width: MediaQuery.of(context).size.width+130,
+                                          child: ListView.builder(
+                                            padding: EdgeInsets.zero,
+                                            physics: const ClampingScrollPhysics(),
+                                            itemCount: 6,
+                                            itemBuilder: (BuildContext context, int rowIndex) {
+                                              final isEvenRow = rowIndex % 2 == 0;
+                                              final backgroundColor = isEvenRow ? Colors.yellow : Colors.redAccent;
+
+                                              return SizedBox(
+                                                height: 40,
+                                                width: MediaQuery.of(context).size.width+130,
+                                                child: ListView.builder(
+                                                  itemCount: 1,
+                                                  scrollDirection: Axis.horizontal,
+                                                  itemBuilder: (context, index) {
+                                                    return Container(
+                                                      height: 40,
+                                                      width: MediaQuery.of(context).size.width+130,
+                                                      color: backgroundColor,
+                                                      child: Row(
+                                                        children: [
+                                                          Expanded(
+                                                            child: Container(
+                                                              alignment: Alignment.center,
+
+                                                              child: Text(
+                                                                "3209",
+                                                                style: TextStyle(color: Colors.black),
                                                               ),
-                                                              Expanded(
-                                                                child: Container(
-                                                                  alignment: Alignment.center,
-
-                                                                  child: Text(
-                                                                    "",
-                                                                    style: TextStyle(color: Colors.black),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Expanded(
-                                                                child: Container(
-                                                                  alignment: Alignment.center,
-
-                                                                  child: Text(
-                                                                    "",
-                                                                    style: TextStyle(color: Colors.black),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Expanded(
-                                                                child: Container(
-                                                                  alignment: Alignment.center,
-
-                                                                  child: Text(
-                                                                    "",
-                                                                    style: TextStyle(color: Colors.black),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Expanded(
-                                                                child: Container(
-                                                                  alignment: Alignment.center,
-
-                                                                  child: Text(
-                                                                    "",
-                                                                    style: TextStyle(color: Colors.black),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Expanded(
-                                                                child: Container(
-                                                                  alignment: Alignment.center,
-
-                                                                  child: Text(
-                                                                    "",
-                                                                    style: TextStyle(color: Colors.black),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Expanded(
-                                                                child: Container(
-                                                                  alignment: Alignment.center,
-
-                                                                  child: Text(
-                                                                    "",
-                                                                    style: TextStyle(color: Colors.black),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
+                                                            ),
                                                           ),
-                                                        );
-                                                      },
-                                                    ),
-                                                  );
-                                                },
-                                              ),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                ],
+                                                          Expanded(
+                                                            child: Container(
+                                                              alignment: Alignment.center,
+
+                                                              child: Text(
+                                                                "Noor",
+                                                                style: TextStyle(color: Colors.black),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Expanded(
+                                                            child: Container(
+                                                              alignment: Alignment.center,
+
+                                                              child: Text(
+                                                                "sha",
+                                                                style: TextStyle(color: Colors.black),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Expanded(
+                                                            child: Container(
+                                                              alignment: Alignment.center,
+
+                                                              child: Text(
+                                                                "320",
+                                                                style: TextStyle(color: Colors.black),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Expanded(
+                                                            child: Container(
+                                                              alignment: Alignment.center,
+
+                                                              child: Text(
+                                                                "Dry Clean",
+                                                                style: TextStyle(color: Colors.black),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Expanded(
+                                                            flex:2,
+                                                            child: Container(
+                                                              alignment: Alignment.center,
+
+                                                              child: Text(
+                                                                "320",
+                                                                style: TextStyle(color: Colors.black),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    );
+                                                  },
+                                                ),
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                ),
                               ),
-                            ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

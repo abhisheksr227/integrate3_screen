@@ -11,6 +11,22 @@ class CollectionDashboard extends StatefulWidget {
 }
 
 class _CollectionDashboardState extends State<CollectionDashboard> {
+  final List<String> items = [
+    'Opening Balance',
+    'Today\'s Collection',
+    'Today\'s Deposit',
+    'Closing Balance'
+  ];
+  final List<String> staffnamebalance = [
+    '100',
+    '200',
+    '300',
+    '300'
+  ];
+  final List<String> ordertype = [
+    'Online',
+    'COD'
+  ];
   final List<String> _items = ["Online", "COD"];
   final Date =  DateFormat('dd-MM-yyyy').format(DateTime.now());
   Map<String, double> dataMap = {
@@ -269,12 +285,13 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                   Padding(
                     padding: const EdgeInsets.only(right:30),
                     child: Container(
-                      height: MediaQuery.of(context).size.height * .05,
+                      height: MediaQuery.of(context).size.height * .04,
                       width: MediaQuery.of(context).size.width * .40,
                       child: TextField(
                         readOnly: true,
                         onTap: () => selectFromDate(context),
                         decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(10),
                           hintText: fromDate != null
                               ? dateFormat.format(fromDate!)
                               : Date, // Format the fromDate
@@ -289,7 +306,8 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Card(
-                  elevation: 10,
+                  color: CupertinoColors.white,
+                  elevation: 5,
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -300,16 +318,16 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                           padding: EdgeInsets.all(10),
                           child: Row(
                             children: [
-                              Container(
-                                width: 60,
-                                height: 40,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "",
-                                  style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
+                              Expanded(
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    "",
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -327,29 +345,29 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                                   ),
                                 ),
                               ),
-                              Container(
-                                width: 80,
-                                height: 40,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "Collection",
-                                  style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
+                              Expanded(
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    "Collection",
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ),
-                              Container(
-                                width: 80,
-                                height: 40,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "Outstanding",
-                                  style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
+                              Expanded(
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    "Outstanding",
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -373,32 +391,32 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                                 children: [
                                   Row(
                                     children: [
-                                      Container(
-                                          width: 60,
-                                          height: 40,
-                                          alignment: Alignment.center,
-                                          child: Icon(
-                                            Icons.arrow_right,
-                                            color: Colors.blue,
-                                          )),
+                                      Expanded(
+                                        child: Container(
+                                            alignment: Alignment.center,
+                                            child: Icon(
+                                              Icons.arrow_right,
+                                              color: Colors.blue,
+                                            )),
+                                      ),
                                       Expanded(
                                         child: Container(
                                           height: 40,
                                           alignment: Alignment.center,
-                                          child: Text(""),
+                                          child: Text("Noor"),
                                         ),
                                       ),
-                                      Container(
-                                        width: 80,
-                                        height: 40,
-                                        alignment: Alignment.center,
-                                        child: Text(""),
+                                      Expanded(
+                                        child: Container(
+                                          alignment: Alignment.center,
+                                          child: Text("200"),
+                                        ),
                                       ),
-                                      Container(
-                                        width: 80,
-                                        height: 40,
-                                        alignment: Alignment.center,
-                                        child: Text(""),
+                                      Expanded(
+                                        child: Container(
+                                          alignment: Alignment.center,
+                                          child: Text("100"),
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -437,111 +455,112 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                 child: Row(
                   children: [
                     Card(
-
-                      child: SizedBox(
-                          height: 160,
-                          width: MediaQuery.of(context).size.width / 2.5,
-                          child: ListView.builder(
-                              itemCount: 1,
-                              padding: EdgeInsets.zero,
-                              scrollDirection: Axis.horizontal,
-                              physics: const ClampingScrollPhysics(),
-                              itemBuilder: (context, index) {
-                                return Column(children: [
-                                  SizedBox(
-                                      height: 40,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                            height: 260,
+                            width: MediaQuery.of(context).size.width / 2.5,
+                            child: ListView.builder(
+                                itemCount: 1,
+                                padding: EdgeInsets.zero,
+                                scrollDirection: Axis.horizontal,
+                                physics: const ClampingScrollPhysics(),
+                                itemBuilder: (context, index) {
+                                  return Column(children: [
+                                    SizedBox(
+                                        height: 40,
+                                        width:
+                                            MediaQuery.of(context).size.width / 2.5,
+                                        child: Row(children: [
+                                          Expanded(
+                                              child: Container(
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                    "Staff Name",
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  ))),
+                                          Expanded(
+                                              child: Container(
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                    "Noor",
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  ))),
+                                        ])),
+                                    Container(
+                                      height: 220,
                                       width:
                                           MediaQuery.of(context).size.width / 2.5,
-                                      child: Row(children: [
-                                        Expanded(
-                                            child: Container(
-                                                alignment: Alignment.center,
-                                                child: Text(
-                                                  "Staff Name",
-                                                  style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                ))),
-                                        Expanded(
-                                            child: Container(
-                                                alignment: Alignment.center,
-                                                child: Text(
-                                                  "Noor",
-                                                  style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                ))),
-                                      ])),
-                                  Container(
-                                    height: 120,
-                                    width:
-                                        MediaQuery.of(context).size.width / 2.5,
-                                    child: ListView.separated(
-                                      separatorBuilder: (context, index) {
-                                        return Divider(
-                                          color: Colors.grey,
-                                          thickness: .3,
-                                          indent: 10,
-                                          endIndent: 10,
-                                        );
-                                      },
-                                        padding: EdgeInsets.zero,
-                                        physics: const ClampingScrollPhysics(),
-                                        itemCount: 3,
-                                        itemBuilder:
-                                            (BuildContext context, int rowIndex) {
-                                          return SizedBox(
-                                            height: 40,
-                                            width:
-                                                MediaQuery.of(context).size.width,
-                                            child: ListView.builder(
-                                                itemCount: 1,
-                                                scrollDirection: Axis.horizontal,
-                                                itemBuilder: (context, index) {
-                                                  return Container(
-                                                      height: 40,
-                                                      width:
-                                                          MediaQuery.of(context)
-                                                                  .size
-                                                                  .width /
-                                                              2.5,
-                                                      child: Row(children: [
-                                                        Expanded(
-                                                            child: Container(
-                                                                alignment:
-                                                                    Alignment
-                                                                        .center,
-                                                                child: Text(
-                                                                  "",
-                                                                  style: TextStyle(
-                                                                      color: Colors
-                                                                          .black),
-                                                                ))),
-                                                        Expanded(
-                                                            child: Container(
-                                                                alignment:
-                                                                    Alignment
-                                                                        .center,
-                                                                child: Text(
-                                                                  "",
-                                                                  style: TextStyle(
-                                                                      color: Colors
-                                                                          .black),
-                                                                ))),
-                                                      ]));
-                                                }),
+                                      child: ListView.separated(
+                                        separatorBuilder: (context, index) {
+                                          return Divider(
+                                            color: Colors.grey,
+                                            thickness: .3,
+                                            indent: 10,
+                                            endIndent: 10,
                                           );
-                                        }),
-                                  )
-                                ]);
-                              })),
-                    ),
+                                        },
+                                          padding: EdgeInsets.zero,
+                                          physics: const ClampingScrollPhysics(),
+                                          itemCount: 4,
+                                          itemBuilder:
+                                              (BuildContext context, int rowIndex) {
+                                            return SizedBox(
+                                              height: 40,
+                                              width:
+                                                  MediaQuery.of(context).size.width,
+                                              child: ListView.builder(
+                                                  itemCount: 1,
+                                                  scrollDirection: Axis.horizontal,
+                                                  itemBuilder: (context, index) {
+                                                    return Container(
+                                                        height: 40,
+                                                        width:
+                                                            MediaQuery.of(context)
+                                                                    .size
+                                                                    .width /
+                                                                2.5,
+                                                        child: Row(children: [
+                                                          Expanded(
+                                                              child: Container(
+                                                                  alignment:
+                                                                      Alignment
+                                                                          .center,
+                                                                  child: Text(items[rowIndex],
+                                                                    style: TextStyle(
+                                                                        color: Colors
+                                                                            .black),
+                                                                  ))),
+                                                          Expanded(
+                                                              child: Container(
+                                                                  alignment:
+                                                                      Alignment
+                                                                          .center,
+                                                                  child: Text(
+                                                                    staffnamebalance[rowIndex],
+                                                                    style: TextStyle(
+                                                                        color: Colors
+                                                                            .black),
+                                                                  ))),
+                                                        ]));
+                                                  }),
+                                            );
+                                          }),
+                                    )
+                                  ]);
+                                })),
+                      ),
+                    ),SizedBox(height: 20,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        SizedBox(width: MediaQuery.of(context).size.width*0.5,
+                        SizedBox(width: MediaQuery.of(context).size.width*0.4,
                           child: PieChart(
                             dataMap: dataMap,
                             colorList: colorList,
@@ -570,10 +589,10 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                     padding: const EdgeInsets.only(left: 30),
                     child: SizedBox(
                       height: 40,
-                      width: 180,
+                     width: MediaQuery.of(context).size.width*0.50,
                       child: TextField(
                           decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(left: 10),
+                            contentPadding: EdgeInsets.all(10),
                               hintText: "Select",
                               border: OutlineInputBorder())),
                     ),
@@ -731,7 +750,8 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Card(
-                  elevation: 10,
+                  color: CupertinoColors.white,
+                  elevation: 5,
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -793,7 +813,7 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                           height: 100,
                           child: ListView.builder(
                             physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
-                            itemCount: 3,
+                            itemCount: 2,
                             itemBuilder: (context, index) {
                               return Column(
                                 children: [
@@ -802,7 +822,7 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                                       Expanded(
                                         child: Container(
                                           alignment: Alignment.center,
-                                          child: Text("1"),
+                                          child: Text(ordertype[index]),
                                         ),
                                       ),
 
@@ -815,7 +835,7 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                                       Expanded(
                                         child: Container(
                                           alignment: Alignment.center,
-                                          child: Text("2"),
+                                          child: Text("100"),
                                         ),
                                       ),
                                     ],
