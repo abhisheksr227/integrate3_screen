@@ -124,19 +124,20 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
       onWillPop: showExitPopup,
       child: Scaffold(
         appBar: AppBar(
-          title:  Center(
-            child: const Text('Service Staff Dashboard',
-              style: TextStyle(
-                  fontSize: 20,fontWeight: FontWeight.bold,color: Colors.deepPurple),),
-          ),
-          iconTheme: IconThemeData(color: Colors.deepPurple),
+          iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
           elevation: 0,
-          actions: [
-            IconButton(onPressed: () {},
-                icon: const Icon(Icons.refresh_outlined,color: Colors.deepPurple,))
-           ],
+          backgroundColor: CupertinoColors.white,
           toolbarHeight: 80,
-          backgroundColor: Colors.white,
+          title: Center(child: Text("Service Staff Dashboard",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: Icon(
+                Icons.refresh_outlined,
+                size: 30,
+              ),
+            ),
+          ],
         ),
         drawer: Drawer(
           child: ListView(
@@ -199,8 +200,11 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
        body: SingleChildScrollView(
           child: Column(
             children: [
-              Text('Order Summary', style: TextStyle(fontSize: 18,),),
-              SizedBox(height: 30,),
+              const Padding(
+                padding: EdgeInsets.all(5),
+                child: Text('Order Summary', style: TextStyle(fontSize: 18),),
+              ),
+              SizedBox(height: 15,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
@@ -245,7 +249,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                   ),
                 ],
               ),
-              SizedBox(height: 30,),
+              SizedBox(height: 15,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(

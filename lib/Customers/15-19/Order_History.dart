@@ -53,24 +53,19 @@ class _OrderhistoryState extends State<Orderhistory> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.blue[800],
-          size: 30,
-        ),
+        toolbarHeight: 80,
+        title: Center(child: Text("ORDER HISTORY",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
-          Row(
-            children: [
-              Icon(
-                Icons.circle_outlined,
-                color: Colors.blue[800],
-              ),
-              SizedBox(
-                width: 10,
-              )
-            ],
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
           ),
         ],
       ),
@@ -78,30 +73,17 @@ class _OrderhistoryState extends State<Orderhistory> {
         child: Column(
           children: [
             SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: Text(
-                "ORDER HISTORY",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue[800],
-                ),
-              ),
-            ),
-            SizedBox(
               height: 50,
             ),
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(15.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: IntrinsicWidth(
                       child: Container(
-                        margin: const EdgeInsets.only(right: 10),
+                        margin: const EdgeInsets.only(right: 20),
                         child: TextField(
                           style: TextStyle(),
                           readOnly: true,
@@ -111,7 +93,7 @@ class _OrderhistoryState extends State<Orderhistory> {
                                 ? dateFormat.format(fromDate!)
                                 : "From Date",
                             border: OutlineInputBorder(),
-                            suffixIcon: Icon(Icons.date_range),
+                            suffixIcon: Icon(Icons.date_range,color: Colors.blue),
                             contentPadding: EdgeInsets.symmetric(
                               vertical: 12,
                               horizontal: 16,
@@ -124,7 +106,7 @@ class _OrderhistoryState extends State<Orderhistory> {
                   Expanded(
                     child: IntrinsicWidth(
                       child: Container(
-                        margin: const EdgeInsets.only(right: 20),
+                        margin: const EdgeInsets.only(right: 10),
                         child: TextField(
                           readOnly: true,
                           onTap: () => selectToDate(context),
@@ -133,7 +115,7 @@ class _OrderhistoryState extends State<Orderhistory> {
                                 ? toDate.toString()
                                 : "To Date",
                             border: OutlineInputBorder(),
-                            suffixIcon: Icon(Icons.date_range),
+                            suffixIcon: Icon(Icons.date_range,color: Colors.blue),
                             contentPadding: EdgeInsets.symmetric(
                               vertical: 12,
                               horizontal: 16,
@@ -141,18 +123,6 @@ class _OrderhistoryState extends State<Orderhistory> {
                           ),
                         ),
                       ),
-                    ),
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: Colors.blue),
-                    onPressed: () {
-                      // Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      //   return Itemdetails();
-                      // }));
-                    },
-                    child: Text(
-                      "Load",
-                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ],

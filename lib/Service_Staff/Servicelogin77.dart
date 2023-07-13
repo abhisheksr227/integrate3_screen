@@ -22,41 +22,27 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.deepPurple[800],
-          size: 30,
-        ),
+        toolbarHeight: 80,
+        title: Center(child: Text("SERVICE LOGIN",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
         actions: [
-          Row(
-            children: [
-              Icon(
-                Icons.circle_outlined,
-                color: Colors.deepPurple[800],
-              ),
-              SizedBox(width: 10,)
-            ],
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              size: 30,
+            ),
           ),
         ],
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Text(
-                "SERVICE LOGIN",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.deepPurple,
-                ),
-              ),
-            ),
             SizedBox(height: 30,),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(12.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -225,14 +211,14 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
                                       child: Container(
                                         height: 40,
                                         alignment: Alignment.center,
-                                        child: Text("2"),
+                                        child: Text("cat"),
                                       ),
                                     ),
                                     Container(
                                       width: 80,
                                       height: 40,
                                       alignment: Alignment.center,
-                                      child: Text("2"),
+                                      child: Text("Normal"),
                                     ),
                                     Container(
                                       width: 80,
@@ -289,27 +275,6 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
             // }, child: Text("Next"))
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.deepPurple,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white.withOpacity(0.5),
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Complaint',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications_outlined),
-            label: 'pending',
-          ),
-        ],
       ),
     );
   }

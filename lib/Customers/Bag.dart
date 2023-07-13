@@ -32,7 +32,7 @@ class _BagState extends State<Bag> {
                 )),
           )
         ],
-        toolbarHeight: 50,
+        toolbarHeight: 80,
       ),
       body: SingleChildScrollView(
         child: Column(

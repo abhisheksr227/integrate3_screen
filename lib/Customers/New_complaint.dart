@@ -26,43 +26,27 @@ class _NewComplaintState extends State<NewComplaint> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 30),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.blue),
-          ),
-        ),
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        toolbarHeight: 80,
+        title: Center(child: Text("NEW COMPLAINT",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.refresh_outlined,
-                  color: Colors.blue,
-                )),
-          )
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
+          ),
         ],
-        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10,bottom: 20),
-                child: Text(
-                  'NEW COMPLAINT',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.blue[900]),
-                ),
-              ),
-            ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(15.0),
               child: Card(
                 elevation: 5,
                 child: SingleChildScrollView(
@@ -302,7 +286,7 @@ class _NewComplaintState extends State<NewComplaint> {
             SizedBox(height: 20,),
             Text('Remarks'),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.only(left: 30,right: 30,top: 5),
               child: Container(
                 height: 100,
                 decoration: BoxDecoration(border: Border.all(color: Colors.blue),
@@ -315,7 +299,7 @@ class _NewComplaintState extends State<NewComplaint> {
             Padding(
               padding: const EdgeInsets.all(10),
               child: ElevatedButton(
-                style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blue[700])),
+                style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blue)),
                 onPressed: () { },
                 child: Text('SAVE',style: TextStyle(color: Colors.white),),
               ),

@@ -16,34 +16,24 @@ class OrdersNewUI extends State{
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
         elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 55),
-          child: IconButton(onPressed: () {},
-            icon: const Icon(Icons.menu,color: Colors.deepPurple),),
-        ),
+        backgroundColor: CupertinoColors.white,
+        toolbarHeight: 80,
+        title: Center(child: Text("READY FOR DELIVERY",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 55),
-            child: IconButton(onPressed: () {},
-                icon: const Icon(Icons.refresh_outlined,color: Colors.deepPurple,)),
-          )
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              size: 30,
+            ),
+          ),
         ],
-        toolbarHeight: 50,
-        backgroundColor: Colors.white,
       ),
       body:SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(15),
-                  child: Text('READY FOR DELIVERY',
-                    style: TextStyle(color: Colors.deepPurple,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        ),),
-                )),
             const SizedBox(height:  20,),
             Padding(
               padding: const EdgeInsets.all(15),

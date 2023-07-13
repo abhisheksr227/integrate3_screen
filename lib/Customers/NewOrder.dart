@@ -23,28 +23,21 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.menu, color: Colors.blue),
-        ),
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        toolbarHeight: 80,
+        title: Center(child: Text("NEW ORDER",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
               Icons.refresh_outlined,
               color: Colors.blue,
+              size: 30,
             ),
           ),
         ],
-        title: Text(
-          'New Order',
-          style: TextStyle(
-            fontSize: 24,
-            color: Colors.blue,
-          ),
-        ),
-        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(

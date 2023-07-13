@@ -16,37 +16,23 @@ class _OrderstatusState extends State<Orderstatus> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.deepPurple[800],
-          size: 30,
-        ),
+        toolbarHeight: 80,
+        title: Center(child: Text("ORDER STATUS",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
         actions: [
-          Row(
-            children: [
-              Icon(
-                Icons.refresh_outlined,
-                color: Colors.deepPurple[800],
-              ),
-              SizedBox(width: 10,)
-            ],
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              size: 30,
+            ),
           ),
         ],
       ),
       body: Column(
         children: [
-          Center(
-            child: Text(
-              "ORDER STATUS",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.deepPurple,
-              ),
-            ),
-          ),
           SizedBox(
             height: 30,
           ),

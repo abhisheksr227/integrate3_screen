@@ -23,37 +23,23 @@ class _PendinglistState extends State<Pendinglist> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.deepPurple[800],
-          size: 30,
-        ),
+        toolbarHeight: 80,
+        title: Center(child: Text("PENDING LIST",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
         actions: [
-          Row(
-            children: [
-              Icon(
-                Icons.circle_outlined,
-                color: Colors.deepPurple[800],
-              ),
-              SizedBox(width: 10,)
-            ],
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              size: 30,
+            ),
           ),
         ],
       ),
       body: Column(
         children: [
-          Center(
-            child: Text(
-              "PENDING LIST",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.deepPurple,
-              ),
-            ),
-          ),
           SizedBox(height: 50),
           Padding(
             padding: const EdgeInsets.all(15.0),
@@ -70,7 +56,7 @@ class _PendinglistState extends State<Pendinglist> {
                       child: Row(
                         children: [
                           Container(
-                            width: 60,
+                            width: 40,
                             height: 40,
                             alignment: Alignment.center,
                             child: Text(
@@ -83,6 +69,7 @@ class _PendinglistState extends State<Pendinglist> {
                             ),
                           ),
                           Expanded(
+                            flex:2,
                             child: Container(
                               height: 40,
                               alignment: Alignment.center,
@@ -96,42 +83,44 @@ class _PendinglistState extends State<Pendinglist> {
                               ),
                             ),
                           ),
-                          Container(
-                            width: 80,
-                            height: 40,
-                            alignment: Alignment.center,
-                            child: Text(
-                              "Order Type",
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
+                          Expanded(
+                            flex:2,
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Order Type",
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
-                          Container(
-                            width: 80,
-                            height: 40,
-                            alignment: Alignment.center,
-                            child: Text(
-                              "Staff",
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
+                          Expanded(
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Staff",
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
-                          Container(
-                            width: 80,
-                            height: 40,
-                            alignment: Alignment.center,
-                            child: Text(
-                              "Delivery Date",
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
+                          Expanded(
+                            flex:2,
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Delivery Date",
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
@@ -155,36 +144,39 @@ class _PendinglistState extends State<Pendinglist> {
                               Row(
                                 children: [
                                   Container(
-                                    width: 60,
+                                    width: 40,
                                     height: 40,
                                     alignment: Alignment.center,
                                     child: Text("1"),
                                   ),
                                   Expanded(
+                                    flex:2,
                                     child: Container(
                                       height: 40,
                                       alignment: Alignment.center,
-                                      child: Text("2"),
+                                      child: Text("1002"),
 
                                     ),
                                   ),
-                                  Container(
-                                    width: 80,
-                                    height: 40,
-                                    alignment: Alignment.center,
-                                    child: Text("2"),
+                                  Expanded(
+                                    flex:2,
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      child: Text("Normal"),
+                                    ),
                                   ),
-                                  Container(
-                                    width: 80,
-                                    height: 40,
-                                    alignment: Alignment.center,
-                                    child: Text("2"),
+                                  Expanded(
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      child: Text("Noor"),
+                                    ),
                                   ),
-                                  Container(
-                                    width: 80,
-                                    height: 40,
-                                    alignment: Alignment.center,
-                                    child: Text("2"),
+                                  Expanded(
+                                    flex:2,
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      child: Text("21-2-23"),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -214,30 +206,6 @@ class _PendinglistState extends State<Pendinglist> {
           //   },));
           // }, child: Text("Next"))
         ],
-      ),
-      bottomNavigationBar: Container(
-        color: Colors.deepPurple,
-        child: BottomNavigationBar(
-          backgroundColor: Colors.deepPurple,
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white.withOpacity(0.6),
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.ac_unit),
-              label: 'Complaint',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notification_important_rounded),
-              label: 'pending',
-            ),
-          ],
-        ),
       ),
 
     );

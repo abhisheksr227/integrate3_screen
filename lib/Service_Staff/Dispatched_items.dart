@@ -21,36 +21,22 @@ class _DispatcheditemsState extends State<Dispatcheditems> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.deepPurple[800],
-          size: 30,
-        ),
+        toolbarHeight: 80,
+        title: Center(child: Text("Dispatched",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
         actions: [
-          Row(
-            children: [
-              Icon(
-                Icons.circle_outlined,
-                color: Colors.deepPurple[800],
-              ),
-              SizedBox(width: 10,)
-            ],
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              size: 30,
+            ),
           ),
         ],
       ),
       body: Column(children: [
-        Center(
-          child: Text(
-            "DISPATCHED",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.deepPurple,
-            ),
-          ),
-        ),
         SizedBox(height: 20,),
         Padding(
           padding: const EdgeInsets.all(15.0),
@@ -147,20 +133,20 @@ class _DispatcheditemsState extends State<Dispatcheditems> {
                                   child: Container(
                                     height: 40,
                                     alignment: Alignment.center,
-                                    child: Text("2"),
+                                    child: Text("1003"),
                                   ),
                                 ),
                                 Container(
                                   width: 80,
                                   height: 40,
                                   alignment: Alignment.center,
-                                  child: Text("2"),
+                                  child: Text("Normal"),
                                 ),
                                 Container(
                                   width: 80,
                                   height: 40,
                                   alignment: Alignment.center,
-                                  child: Text("2"),
+                                  child: Text("Noor"),
                                 ),
                               ],
                             ),
@@ -183,37 +169,7 @@ class _DispatcheditemsState extends State<Dispatcheditems> {
 
         SizedBox(height: 30,),
 
-
-        // ElevatedButton(onPressed: () {
-        //   Navigator.push(context, MaterialPageRoute(builder: (context) {
-        //     return Orderstatus();
-        //   },));
-        // }, child: Text("Next"))
       ]),
-      bottomNavigationBar: Container(
-        color: Colors.deepPurple,
-        child: BottomNavigationBar(
-          backgroundColor: Colors.deepPurple,
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white.withOpacity(0.6),
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.ac_unit),
-              label: 'Complaint',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notification_important_rounded),
-              label: 'pending',
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

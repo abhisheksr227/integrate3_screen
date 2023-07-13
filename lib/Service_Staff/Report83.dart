@@ -17,53 +17,36 @@ class _RevenueReportState extends State<RevenueReport> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 30),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.deepPurple),
-          ),
-        ),
+        iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        toolbarHeight: 80,
+        title: Center(child: Text("REPORTS",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.refresh_outlined,
-                  color: Colors.deepPurple,
-                )),
-          )
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              size: 30,
+            ),
+          ),
         ],
-        toolbarHeight: 50,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text(' REPORTS',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.deepPurple[900]
-                  ),),
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.all(10),
               child: Text('Work report',
                 style: TextStyle(
-
-
-                    color: Colors.deepPurple[900]
+                  fontSize: 18,
+                    color: Colors.deepPurple
                 ),),
             ),
 SizedBox(height: 10,),
             Padding(
               padding: const EdgeInsets.all(15),
-              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -110,7 +93,6 @@ SizedBox(height: 10,),
                       ),
                     ],
                   ),
-                  Expanded(child: SizedBox()),
                   Column(crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
@@ -157,14 +139,6 @@ SizedBox(height: 10,),
                       ),
                     ],
                   ),
-                  Expanded(child: SizedBox()),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
-                        onPressed: () { },
-                        child: Text('Load',style: TextStyle(color: Colors.white),)),
-                  ),
                 ],
               ),
             ),
@@ -182,16 +156,16 @@ SizedBox(height: 10,),
                         padding: EdgeInsets.all(10),
                         child: Row(
                           children: [
-                            Container(
-                              width: 60,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Sl No.",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: Container(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Sl No.",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
@@ -209,31 +183,32 @@ SizedBox(height: 10,),
                                 ),
                               ),
                             ),
-                            Container(
-                              width: 80,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Center(
+                            Expanded(flex: 2,
+                              child: Container(
+                                height: 40,
+                                alignment: Alignment.center,
+                                child: Center(
+                                  child: Text(
+                                    "Sub Category",
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Container(
+                                alignment: Alignment.center,
                                 child: Text(
-                                  "Sub Category",
+                                  "Completed",
                                   style: TextStyle(
                                     fontSize: 13,
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                   ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              width: 80,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Completed",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
@@ -255,30 +230,32 @@ SizedBox(height: 10,),
                               children: [
                                 Row(
                                   children: [
-                                    Container(
-                                      width: 60,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text("1"),
+                                    Expanded(
+                                      child: Container(
+                                        height: 40,
+                                        alignment: Alignment.center,
+                                        child: Text("1"),
+                                      ),
                                     ),
                                     Expanded(
                                       child: Container(
                                         height: 40,
                                         alignment: Alignment.center,
-                                        child: Text("2"),
+                                        child: Text("Washing"),
                                       ),
                                     ),
-                                    Container(
-                                      width: 80,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text("2"),
+                                    Expanded(
+                                      flex:2,
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        child: Text("Shirt"),
+                                      ),
                                     ),
-                                    Container(
-                                      width: 80,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text("2"),
+                                    Expanded(
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        child: Text("Yes"),
+                                      ),
                                     ),
                                   ],
                                 ),

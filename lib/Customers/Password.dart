@@ -13,100 +13,76 @@ class _PasswordState extends State<Password> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(bottom: 30),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.blue),
-          ),
-        ),
+        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        elevation: 0,
+        backgroundColor: CupertinoColors.white,
+        toolbarHeight: 80,
+        title: Center(child: Text("CHANGE PASSWORD",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.refresh_outlined,
-                  color: Colors.blue,
-                )),
-          )
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.refresh_outlined,
+              color: Colors.blue,
+              size: 30,
+            ),
+          ),
         ],
-        title: Center(
-            child: Column(
-              children: const [
-                Text('LOGO', style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue
-                ),),
-                Text('Welcome Back Deepesh !',
-                  style: TextStyle(fontSize: 18, color: Colors.blue),)
-              ],
-            )),
-        toolbarHeight: 100,
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(40),
-                child: Text('CHANGE PASSWORD',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.blue[900]
-                  ),),
-              ),
-            ),
-            Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.blue)),
-              child: TextFormField(textAlign: TextAlign.center,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(borderSide: BorderSide.none),
-                  contentPadding: EdgeInsets.only(),
-                  hintText: 'New Password',
-                    ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Container(
-                height: 40,
-                width: 200,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: Colors.blue)),
+        child: Center(
+          child: Column(
+            children: [
+              SizedBox(height: 50,),
+              Container(
+                height: MediaQuery.of(context).size.height*0.06,
+                width: MediaQuery.of(context).size.width*0.50,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: Colors.blue)),
                 child: TextFormField(textAlign: TextAlign.center,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(borderSide: BorderSide.none),
                     contentPadding: EdgeInsets.only(),
-                    hintText: 'Re Enter',
-                  ),
+                    hintText: 'New Password',
+                      ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: InkWell(onTap: () {
-              },
+              Padding(
+                padding: const EdgeInsets.all(20),
                 child: Container(
-                  height: 50,
-                  width: 150,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
-                    color: Colors.blue[700],
-                  ),
-                  child: Center(
-                    child: Text('SAVE',style: TextStyle(color: Colors.white,
-                        fontSize: 18,fontWeight: FontWeight.bold),),
+                  height: MediaQuery.of(context).size.height*0.06,
+                  width: MediaQuery.of(context).size.width*0.50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: Colors.blue)),
+                  child: TextFormField(textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(borderSide: BorderSide.none),
+                      contentPadding: EdgeInsets.only(),
+                      hintText: 'Re Enter',
+                    ),
                   ),
                 ),
               ),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: InkWell(onTap: () {
+                },
+                  child: Container(
+                    height: 50,
+                    width: 150,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
+                      color: Colors.blue[700],
+                    ),
+                    child: Center(
+                      child: Text('SAVE',style: TextStyle(color: Colors.white,
+                          fontSize: 18,fontWeight: FontWeight.bold),),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
