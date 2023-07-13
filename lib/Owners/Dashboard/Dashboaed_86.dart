@@ -11,13 +11,9 @@ class sample extends StatefulWidget {
   @override
   _sampleState createState() => _sampleState();
 }
-
 class _sampleState extends State<sample> {
 
   TextEditingController Date = TextEditingController(text: DateFormat('dd-MM-yyyy').format(DateTime.now()));
-
-
-
 
   final ScrollController _horizontal = ScrollController();
   final List<String> orderStages = [
@@ -55,8 +51,6 @@ class _sampleState extends State<sample> {
     Color(0xffFA4A42),
     Color(0xffFE9539)
   ];
-
-
   String? selectedOption;
   int allradionutton = 0;
   @override
@@ -361,7 +355,6 @@ class _sampleState extends State<sample> {
                                   )),
                               Expanded(
                                   child: Container(
-                                      alignment: Alignment.center,
                                       child: Text(
                                         "Particulars",
                                         style: TextStyle(
@@ -405,7 +398,7 @@ class _sampleState extends State<sample> {
                           child: ListView.builder(
                               scrollDirection: Axis.vertical,
                               padding: EdgeInsets.zero,
-                              itemCount: 50,
+                              itemCount: orderStages.length,
                               physics: ClampingScrollPhysics(),
                               itemBuilder: (BuildContext context, int index) {
                                 return SizedBox(
@@ -421,13 +414,14 @@ class _sampleState extends State<sample> {
 
                                     Expanded(
                                         child: Container(
-                                            alignment:
-                                            Alignment.center,
-                                            child: Text(
-                                              "Express Orders",
-                                              style: TextStyle(
-                                                  color: Colors
-                                                      .black),
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(left: 30),
+                                              child: Text(
+                                                "${orderStages[index]}",
+                                                style: TextStyle(
+                                                    color: Colors
+                                                        .black),
+                                              ),
                                             ))),
                                     Container(
                                         width: 60,
@@ -722,16 +716,18 @@ SizedBox(height: 40,),
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 20),
-                  child: Container(
-                    height:
-                    MediaQuery.of(context).size.height * .13,
-                    width: MediaQuery.of(context).size.width * .22,
-                    decoration: BoxDecoration(border: Border.all()),
+                  child: Card(
+                    child: Container(
+                      height:
+                      MediaQuery.of(context).size.height * .13,
+                      width: MediaQuery.of(context).size.width * .22,
+                      child: Icon(Icons.account_circle,size: 70,),
+                    ),
                   ),
                 ),SizedBox(
                   width: 30,
                 ),
-                Column(
+                Column(crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Name:"),
                     Text("Emp Id :"),
@@ -835,7 +831,7 @@ SizedBox(
                                                       Expanded(
                                                         child: Container(
                                                           child: Text(
-                                                            "",
+                                                            "9",
                                                             style: TextStyle(
                                                               color: Colors.black,
                                                             ),
@@ -845,7 +841,7 @@ SizedBox(
                                                       Expanded(
                                                         child: Container(
                                                           child: Text(
-                                                            "",
+                                                            "5",
                                                             style: TextStyle(
                                                               color: Colors.black,
                                                             ),
@@ -891,73 +887,51 @@ SizedBox(
             padding: const EdgeInsets.all(8.0),
             child: Card(
               elevation: 10,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Confirmed:"),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text("Picked:")
-                          ],
-                        ),
-                      ],
-                    ),SizedBox(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width*0.7,
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Confirmed:"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("Picked:"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("Delivered:"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("Opening Balance:"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("Deposited:"),
+                    SizedBox(
                       height: 10,
                     ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Column(crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text("Ready for dispatch:"),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text("Delivered:"),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text("Opening Balance:"),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text("Deposited:")
-                            ],
-                          ),
-                        )
-                        ,Column(
-                          children: [
-                            Text("Total Inv Value:"),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text("Collected:"),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text("Closing Balance:"),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text("Delivered:")
-                          ],
-                        ),
-                        Expanded(
-                          child: Column(
-                            children: [
-                              Text("Expense:")
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
+                      Text("Total Inv Value:"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("Collected:"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("Closing Balance:"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("Delivered:"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("Expense:"),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -978,7 +952,7 @@ SizedBox(
             ),
             Padding(
               padding: const EdgeInsets.only(right:20),
-              child: Row(mainAxisAlignment: MainAxisAlignment.end,
+              child: Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
                     height: 250,
