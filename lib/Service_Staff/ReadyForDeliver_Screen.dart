@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ReadyForDeliver extends StatefulWidget {
-  const ReadyForDeliver({Key? key}) : super(key: key);
+class ServiceReadyForDeliver extends StatefulWidget {
+  const ServiceReadyForDeliver({Key? key}) : super(key: key);
 
   @override
-  State<ReadyForDeliver> createState() => _ReadyForDeliverState();
+  State<ServiceReadyForDeliver> createState() => _ServiceReadyForDeliverState();
 }
 
-class _ReadyForDeliverState extends State<ReadyForDeliver> {
+class _ServiceReadyForDeliverState extends State<ServiceReadyForDeliver> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

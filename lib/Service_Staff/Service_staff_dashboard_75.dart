@@ -1,11 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:integrate_3screens/Service_Staff/Completed_Screen.dart';
+import 'package:integrate_3screens/Service_Staff/InProcessed_Screen.dart';
+import 'package:integrate_3screens/Service_Staff/ServiceNewOrder_Screen.dart';
+import 'package:integrate_3screens/Service_Staff/ServicePending_screen.dart';
+import 'package:integrate_3screens/Service_Staff/ServiceUndelivered_Screen.dart';
 import '../Loginscreen.dart';
 import 'Dispatched_items.dart';
 import 'Issue_Invoice.dart';
 import 'Language84.dart';
 import 'Order_status.dart';
 import 'Pending_list.dart';
+import 'ReadyForDeliver_Screen.dart';
 import 'ReadyForDelivery.dart';
 import 'Report83.dart';
 import 'Reprint_invoice.dart';
@@ -258,12 +264,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                       children: [
                         InkWell(
                           onTap: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (context) => (),
-                            //   ),
-                            // );
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => ServicePendingScreen(),));
                           },
                           child: Column(
                             children: [
@@ -286,12 +287,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                         ),
                         InkWell(
                           onTap: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (context) => (),
-                            //   ),
-                            // );
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceNewOrderScreen(),));
                           },
                           child: Column(
                             children: [
@@ -314,12 +310,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                         ),
                         InkWell(
                           onTap: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (context) => (),
-                            //   ),
-                            // );
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => InprocessedScreen(),));
                           },
                           child: Column(
                             children: [
@@ -350,12 +341,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                         children: [
                           InkWell(
                             onTap: () {
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => (),
-                              //   ),
-                              // );
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => CompletedScreen(),));
                             },
                             child: Column(
                               children: [
@@ -382,43 +368,38 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                               ],
                             ),
                           ),
-                          InkWell(
-                            onTap: () {
-                              // Handle Services option
-                            },
-                            child: Column(
-                              children: [
-                                Card(
-                                  elevation: 2,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  child: InkWell(
-                                    onTap: () {
-                                      // Navigator.push(context, MaterialPageRoute(builder: (context) => (),));
-                                    },
-                                    child: CircleAvatar(
-                                        radius: 30,
-                                        backgroundColor: Colors.teal,
-                                        child: Text(
-                                          "10",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 20),
-                                        )),
-                                  ),
+                          Column(
+                            children: [
+                              Card(
+                                elevation: 2,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
                                 ),
-                                SizedBox(height: 10),
-                                Text('Ready for Delivery',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
-                              ],
-                            ),
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceReadyForDeliver(),));
+                                  },
+                                  child: CircleAvatar(
+                                      radius: 30,
+                                      backgroundColor: Colors.teal,
+                                      child: Text(
+                                        "10",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 20),
+                                      )),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Text('Ready for Delivery',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
+                            ],
                           ),
                           InkWell(
                             onTap: () {
-                              // Handle Contact option
+                             Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceUndeliveredScreen(),));
                             },
                             child: Column(
                               children: [

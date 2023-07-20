@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class NewOrderScreen extends StatefulWidget {
-  const NewOrderScreen({Key? key}) : super(key: key);
+class ServiceUndeliveredScreen extends StatefulWidget {
+  const ServiceUndeliveredScreen({Key? key}) : super(key: key);
 
   @override
-  State<NewOrderScreen> createState() => _NewOrderScreenState();
+  State<ServiceUndeliveredScreen> createState() => _ServiceUndeliveredScreenState();
 }
 
-class _NewOrderScreenState extends State<NewOrderScreen> {
+class _ServiceUndeliveredScreenState extends State<ServiceUndeliveredScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
         iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        title: Center(child: Text("NEW ORDERS",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
+        title: Center(child: Text("UNDELIVERED",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20),

@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class PendingScreen extends StatefulWidget {
-  const PendingScreen({Key? key}) : super(key: key);
+class ServiceNewOrderScreen extends StatefulWidget {
+  const ServiceNewOrderScreen({Key? key}) : super(key: key);
 
   @override
-  State<PendingScreen> createState() => _PendingScreenState();
+  State<ServiceNewOrderScreen> createState() => _ServiceNewOrderScreenState();
 }
 
-class _PendingScreenState extends State<PendingScreen> {
+class _ServiceNewOrderScreenState extends State<ServiceNewOrderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class _PendingScreenState extends State<PendingScreen> {
         iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        title: Center(child: Text("PENDING",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
+        title: Center(child: Text("NEW ORDERS",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500,))),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20),
