@@ -170,37 +170,36 @@ class Reprint_invoice extends StatelessWidget {
                                         Expanded(
                                           flex:3,
                                           child: SizedBox(
-                                            child: Center(
-                                              child: InkWell(
-                                                onTap: () {
-                                                },
-                                                child: Container(
-                                                  height: 20,
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                      BorderRadius
-                                                          .circular(30),
-                                                      color: Colors
-                                                          .deepPurple),
-                                                  child: const Center(
-                                                      child: Row(
-                                                        children: [
-                                                          Padding(
-                                                            padding: EdgeInsets.only(left: 5),
-                                                            child: Text(
-                                                              'Reprint Invoice',
-                                                              style: TextStyle(
-                                                                  color: Colors.white,
-                                                                  fontSize: 10),
-                                                            ),
+                                            child: InkWell(
+                                              onTap: () {
+                                              },
+                                              child: Row(
+                                                children: [
+                                                  Container(
+                                                    height: 20,
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                        BorderRadius
+                                                            .circular(30),
+                                                        color: Colors
+                                                            .deepPurple),
+                                                    child: const Center(
+                                                        child: Padding(
+                                                          padding: EdgeInsets.only(left: 5,right: 5),
+                                                          child: Text(
+                                                            'Reprint Invoice',
+                                                            style: TextStyle(
+                                                                color: Colors.white,
+                                                                fontSize: 10),
                                                           ),
-                                                          CircleAvatar(
-                                                            radius: 20,
-                                                            child: Image(image: AssetImage("Assets/Images/whatsapp-icon-logo-8CA4FB831E-seeklogo.com.png")),
-                                                          )
-                                                        ],
-                                                      )),
-                                                ),
+                                                        )),
+                                                  ),
+                                                  SizedBox(width: 10,),
+                                                  CircleAvatar(
+                                                    radius: 10,
+                                                    child: Image(image: AssetImage("Assets/Images/whatsapp-icon-logo-8CA4FB831E-seeklogo.com.png"),),
+                                                  )
+                                                ],
                                               ),
                                             ),
                                           ),

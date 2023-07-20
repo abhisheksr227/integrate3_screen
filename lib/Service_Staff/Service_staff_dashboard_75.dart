@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:integrate_3screens/Service_Staff/Completed_Screen.dart';
 import 'package:integrate_3screens/Service_Staff/InProcessed_Screen.dart';
 import 'package:integrate_3screens/Service_Staff/ServiceNewOrder_Screen.dart';
+import 'package:integrate_3screens/Service_Staff/ServiceNotifications.dart';
 import 'package:integrate_3screens/Service_Staff/ServicePending_screen.dart';
 import 'package:integrate_3screens/Service_Staff/ServiceUndelivered_Screen.dart';
 import '../Loginscreen.dart';
@@ -123,7 +124,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
       case 2:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Pendinglist()),
+          MaterialPageRoute(builder: (context) => ServiceNotifications()),
         );
         break;
     }
