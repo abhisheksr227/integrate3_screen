@@ -8,6 +8,7 @@ import 'Order_status.dart';
 import 'Pending_list.dart';
 import 'ReadyForDelivery.dart';
 import 'Report83.dart';
+import 'Reprint_invoice.dart';
 import 'Service_login.dart';
 import 'Servicelogin77.dart';
 
@@ -522,23 +523,45 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                           builder: (context) => ServiceLogin(),
                         ));
                   },
-                  child: Container(
-                    height: MediaQuery.of(context).size.height * 0.045,
-                    width: MediaQuery.of(context).size.width * 0.30,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.deepPurple),
-                    child: const Center(
-                        child: Text(
-                      'Reprint Invoice',
-                      style: TextStyle(color: Colors.white),
-                    )),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Reprint_invoice(),));
+                    },
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.045,
+                      width: MediaQuery.of(context).size.width * 0.30,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.deepPurple),
+                      child: const Center(
+                          child: Text(
+                        'Reprint Invoice',
+                        style: TextStyle(color: Colors.white),
+                      )),
+                    ),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
+             Padding(
+               padding: const EdgeInsets.only(top:30,bottom: 10),
+               child: Container(
+                  height: MediaQuery.of(context).size.height / 30,
+                  width: MediaQuery.of(context).size.width / 1.8,
+                  decoration: BoxDecoration(border: Border.all(color: Colors.purple),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.all(10),
+                      border: InputBorder.none,
+                      suffixIcon: Container(decoration: BoxDecoration(color: Colors.purpleAccent,
+                          borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(20),
+                              topRight: Radius.circular(20))),
+                          child: Icon(Icons.search)),
+                    ),
+                  ),
+                ),
+             ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
@@ -547,14 +570,14 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
-                      width: MediaQuery.of(context).size.width + 100,
+                      width: MediaQuery.of(context).size.width + 200,
                       child: Column(
                         children: [
                           SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: SizedBox(
                               width: MediaQuery.of(context).size.width +
-                                  100, // Ensure it has a width
+                                  200, // Ensure it has a width
                               child: Column(
                                 children: [
                                   Row(
@@ -562,7 +585,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                       Expanded(
                                         child: SizedBox(
                                           child: Center(
-                                              child: Text('Sl.No',
+                                              child: Text('J.No',
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.bold))),
@@ -576,6 +599,16 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.bold))),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        flex: 2,
+                                        child: SizedBox(
+                                          child: Center(
+                                              child: Text('Order Type',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                      FontWeight.bold))),
                                         ),
                                       ),
                                       Expanded(
@@ -618,15 +651,15 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                     padding: const EdgeInsets.all(10),
                                     child: Container(
                                       height: 0.5,
-                                      width: MediaQuery.of(context).size.width,
+                                      width: MediaQuery.of(context).size.width+200,
                                       color: Colors.deepPurple,
                                     ),
                                   ),
                                   // Add the ListView inside a SizedBox with a specific height
                                   SizedBox(
-                                    height: 100,
+                                    height: 300,
                                     child: ListView.builder(
-                                      itemCount: 2,
+                                      itemCount: 10,
                                       itemBuilder: (context, index) {
                                         return Row(
                                           children: [
@@ -640,6 +673,13 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                               child: SizedBox(
                                                 child:
                                                     Center(child: Text('1678')),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              flex:2,
+                                              child: SizedBox(
+                                                child:
+                                                Center(child: Text('Normal')),
                                               ),
                                             ),
                                             Expanded(
