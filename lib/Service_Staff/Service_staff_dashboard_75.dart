@@ -256,79 +256,107 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: 10,
-                    ),
+                    SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => ServicePendingScreen(),));
-                          },
-                          child: Column(
-                            children: [
-                              CircleAvatar(
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (context) => (),
+                              //   ),
+                              // );
+                            },
+                            child: Column(
+                              children: [
+                                CircleAvatar(
                                   radius: 30,
                                   backgroundColor: Colors.blue,
                                   child: Text(
                                     "80",
                                     style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 20),
-                                  )),
-                              SizedBox(height: 10),
-                              Text('Pending',
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold)),
-                            ],
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  'Pending',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceNewOrderScreen(),));
-                          },
-                          child: Column(
-                            children: [
-                              CircleAvatar(
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (context) => (),
+                              //   ),
+                              // );
+                            },
+                            child: Column(
+                              children: [
+                                CircleAvatar(
                                   radius: 30,
                                   backgroundColor: Colors.orange,
                                   child: Text(
                                     "50",
                                     style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 20),
-                                  )),
-                              SizedBox(height: 10),
-                              Text('New Orders',
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold)),
-                            ],
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  'New Orders',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => InprocessedScreen(),));
-                          },
-                          child: Column(
-                            children: [
-                              CircleAvatar(
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (context) => (),
+                              //   ),
+                              // );
+                            },
+                            child: Column(
+                              children: [
+                                CircleAvatar(
                                   radius: 30,
                                   backgroundColor: Colors.indigo,
                                   child: Text(
                                     "60",
                                     style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 20),
-                                  )),
-                              SizedBox(height: 10),
-                              Text('In Processed',
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold)),
-                            ],
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  'In Processed',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -339,91 +367,116 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => CompletedScreen(),));
-                            },
-                            child: Column(
-                              children: [
-                                Card(
-                                  elevation: 2,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  child: CircleAvatar(
+                          Expanded(
+                            child: InkWell(
+                              onTap: () {
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //     builder: (context) => (),
+                                //   ),
+                                // );
+                              },
+                              child: Column(
+                                children: [
+                                  Card(
+                                    elevation: 2,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: CircleAvatar(
                                       radius: 30,
                                       backgroundColor: Colors.purple,
                                       child: Text(
                                         "50",
                                         style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 20),
-                                      )),
-                                ),
-                                SizedBox(height: 10),
-                                Text('Completed',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
-                              ],
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text(
+                                    'Completed',
+                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                          Column(
-                            children: [
-                              Card(
-                                elevation: 2,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                child: InkWell(
-                                  onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceReadyForDeliver(),));
-                                  },
-                                  child: CircleAvatar(
-                                      radius: 30,
-                                      backgroundColor: Colors.teal,
-                                      child: Text(
-                                        "10",
-                                        style: TextStyle(
+                          Expanded(
+                            child: InkWell(
+                              onTap: () {
+                                // Handle Services option
+                              },
+                              child: Column(
+                                children: [
+                                  Card(
+                                    elevation: 2,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: InkWell(
+                                      onTap: () {
+                                        // Navigator.push(context, MaterialPageRoute(builder: (context) => (),));
+                                      },
+                                      child: CircleAvatar(
+                                        radius: 30,
+                                        backgroundColor: Colors.teal,
+                                        child: Text(
+                                          "10",
+                                          style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w500,
-                                            fontSize: 20),
-                                      )),
-                                ),
-                              ),
-                              SizedBox(height: 10),
-                              Text('Ready for Delivery',
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold)),
-                            ],
-                          ),
-                          InkWell(
-                            onTap: () {
-                             Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceUndeliveredScreen(),));
-                            },
-                            child: Column(
-                              children: [
-                                Card(
-                                  elevation: 2,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30),
+                                            fontSize: 20,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
                                   ),
-                                  child: CircleAvatar(
+                                  SizedBox(height: 10),
+                                  Text(
+                                    'Ready for Delivery',
+                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: InkWell(
+                              onTap: () {
+                                // Handle Contact option
+                              },
+                              child: Column(
+                                children: [
+                                  Card(
+                                    elevation: 2,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: CircleAvatar(
                                       radius: 30,
                                       backgroundColor: Colors.redAccent,
                                       child: Text(
                                         "2",
                                         style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 20),
-                                      )),
-                                ),
-                                SizedBox(height: 10),
-                                Text('Undelivered',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
-                              ],
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text(
+                                    'Undelivered',
+                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
@@ -432,6 +485,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                   ],
                 ),
               ),
+
               SizedBox(
                 height: 20,
               ),
