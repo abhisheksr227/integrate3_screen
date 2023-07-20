@@ -257,7 +257,7 @@ class InprocessedScreen extends StatelessWidget {
                                               },
                                               child: Container(
                                                 height: 20,
-                                                width: 50,
+                                                width: 60,
                                                 decoration: BoxDecoration(
                                                   borderRadius: BorderRadius.circular(10),
                                                   color: Colors.deepPurple,

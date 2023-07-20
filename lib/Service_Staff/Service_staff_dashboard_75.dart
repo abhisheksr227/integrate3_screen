@@ -11,11 +11,11 @@ import 'Dispatched_items.dart';
 import 'Issue_Invoice.dart';
 import 'Language84.dart';
 import 'Order_status.dart';
-import 'Pending_list.dart';
 import 'ReadyForDeliver_Screen.dart';
 import 'ReadyForDelivery.dart';
 import 'Report83.dart';
 import 'Reprint_invoice.dart';
+import 'ServiceItem_Details.dart';
 import 'Service_login.dart';
 import 'Servicelogin77.dart';
 
@@ -49,6 +49,27 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                     context,
                     MaterialPageRoute(builder: (context) => LoginPage()),
                     (route) => false);
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> showItemDetails(BuildContext context) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Item Details'),
+          content: ServiceItemdetails(),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Close'),
+              onPressed: () {
+                Navigator.of(context).pop();
               },
             ),
           ],
@@ -131,6 +152,14 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
   }
 
   int _selectedIndex = 0;
+
+  int selectedRowIndex = -1;
+
+  void selectRow(int index) {
+    setState(() {
+      selectedRowIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -696,86 +725,95 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                     height: 300,
                                     child: ListView.builder(
                                       itemCount: 10,
-                                      itemBuilder: (context, index) {
-                                        return Row(
-                                          children: [
-                                            Expanded(
-                                              child: SizedBox(
-                                                child: Center(child: Text('1')),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              flex:2,
-                                              child: SizedBox(
-                                                child:
-                                                    Center(child: Text('1678')),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              flex:2,
-                                              child: SizedBox(
-                                                child:
-                                                Center(child: Text('Normal')),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              flex:3,
-                                              child: SizedBox(
-                                                child:
-                                                    Center(child: Text('Abu')),
-                                              ),
-                                            ),SizedBox(width: 5,),
-                                            Expanded(
-                                              flex:2,
-                                              child: SizedBox(
-                                                child:
-                                                Center(child: Text('Noor')),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              flex: 3,
-                                              child: SizedBox(
-                                                height: 40,
-                                                child: Center(
-                                                    child: Text(
-                                                        'Today 4 : 00 pm')),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              flex:2,
-                                              child: SizedBox(
-                                                child: Center(
-                                                  child: InkWell(
-                                                    onTap: () {
-                                                      Navigator.push(
-                                                          context,
-                                                          MaterialPageRoute(
-                                                            builder: (context) =>
-                                                                ReadyForDelivery(),
-                                                          ));
-                                                    },
-                                                    child: Container(
-                                                      height: 20,
-                                                      width: 50,
-                                                      decoration: BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(10),
-                                                          color: Colors
-                                                              .deepPurple),
-                                                      child: const Center(
-                                                          child: Text(
-                                                        'Engage',
-                                                        style: TextStyle(
-                                                            color: Colors.white,
-                                                            fontSize: 10),
-                                                      )),
+                                      itemBuilder: (BuildContext context,int rowIndex) {
+                                        return GestureDetector(
+                                          onTap: () {
+                                            selectRow(rowIndex);
+                                            showItemDetails(context);
+                                          },
+                                          child: Container(
+                                            color: selectedRowIndex == rowIndex ? Colors.grey : null,
+                                            child: Row(
+                                              children: [
+                                                Expanded(
+                                                  child: SizedBox(
+                                                    child: Center(child: Text('1')),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  flex:2,
+                                                  child: SizedBox(
+                                                    child:
+                                                        Center(child: Text('1678')),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  flex:2,
+                                                  child: SizedBox(
+                                                    child:
+                                                    Center(child: Text('Normal')),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  flex:3,
+                                                  child: SizedBox(
+                                                    child:
+                                                        Center(child: Text('Abu')),
+                                                  ),
+                                                ),SizedBox(width: 5,),
+                                                Expanded(
+                                                  flex:2,
+                                                  child: SizedBox(
+                                                    child:
+                                                    Center(child: Text('Noor')),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  flex: 3,
+                                                  child: SizedBox(
+                                                    height: 40,
+                                                    child: Center(
+                                                        child: Text(
+                                                            'Today 4 : 00 pm')),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  flex:2,
+                                                  child: SizedBox(
+                                                    child: Center(
+                                                      child: InkWell(
+                                                        onTap: () {
+                                                          Navigator.push(
+                                                              context,
+                                                              MaterialPageRoute(
+                                                                builder: (context) =>
+                                                                    ReadyForDelivery(),
+                                                              ));
+                                                        },
+                                                        child: Container(
+                                                          height: 20,
+                                                          width: 50,
+                                                          decoration: BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(10),
+                                                              color: Colors
+                                                                  .deepPurple),
+                                                          child: const Center(
+                                                              child: Text(
+                                                            'Engage',
+                                                            style: TextStyle(
+                                                                color: Colors.white,
+                                                                fontSize: 10),
+                                                          )),
+                                                        ),
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
-                                              ),
+                                              ],
                                             ),
-                                          ],
+                                          ),
                                         );
 
                                         // ... Your previous code ...
