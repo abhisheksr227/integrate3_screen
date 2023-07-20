@@ -264,7 +264,7 @@ class ServicePendingScreen extends StatelessWidget {
                                                 ),
                                                 child: const Center(
                                                   child: Text(
-                                                    'Completed',
+                                                    'engaged',
                                                     style: TextStyle(
                                                       color: Colors.white,
                                                       fontSize: 10,

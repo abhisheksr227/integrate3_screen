@@ -264,7 +264,7 @@ class InprocessedScreen extends StatelessWidget {
                                                 ),
                                                 child: const Center(
                                                   child: Text(
-                                                    'Engage',
+                                                    'Completed',
                                                     style: TextStyle(
                                                       color: Colors.white,
                                                       fontSize: 10,
