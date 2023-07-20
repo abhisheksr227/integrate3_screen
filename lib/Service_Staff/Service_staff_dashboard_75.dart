@@ -423,20 +423,15 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30),
                                     ),
-                                    child: InkWell(
-                                      onTap: () {
-                                        Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceUndeliveredScreen(),));
-                                      },
-                                      child: CircleAvatar(
-                                        radius: 30,
-                                        backgroundColor: Colors.teal,
-                                        child: Text(
-                                          "10",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 20,
-                                          ),
+                                    child: CircleAvatar(
+                                      radius: 30,
+                                      backgroundColor: Colors.teal,
+                                      child: Text(
+                                        "10",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 20,
                                         ),
                                       ),
                                     ),
@@ -453,7 +448,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                           Expanded(
                             child: InkWell(
                               onTap: () {
-                                // Handle Contact option
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceUndeliveredScreen(),));
                               },
                               child: Column(
                                 children: [
