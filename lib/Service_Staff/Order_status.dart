@@ -67,45 +67,130 @@ class _OrderstatusState extends State<Orderstatus> {
           Container(
             height: MediaQuery.of(context).size.height / 20,
             width: MediaQuery.of(context).size.width / 1.2,
+            decoration: BoxDecoration(border: Border.all(color: Colors.deepPurple),
+                borderRadius: BorderRadius.circular(20)),
             child: TextField(
-              decoration: InputDecoration(suffixIcon: Container(decoration: BoxDecoration(color: Colors.grey,borderRadius: BorderRadius.only(bottomRight: Radius.circular(20),topRight: Radius.circular(20))),child: Icon(Icons.search)),
-                enabledBorder:
-                    OutlineInputBorder(borderSide: BorderSide(color: Colors.deepPurple),borderRadius: BorderRadius.circular(50)),
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.only(left: 10,top: 5),
+                border: InputBorder.none,
+                suffixIcon: Container(decoration: BoxDecoration(color: Colors.grey,
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(20),
+                        topRight: Radius.circular(20))),
+                    child: Icon(Icons.search)),
               ),
             ),
           ),
-          SizedBox(
-            height: 20,
-          ),
-          Text("The Order Status is pending")
+          SizedBox(height: 30,),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Card(
+                    elevation: 5,
+                    color: Colors.white,
+                    child: Column(children: [
+                      SizedBox(
+                        height: 100,
+                        width: MediaQuery.of(context).size.width*2.2,
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 15,bottom: 10),
+                              child: Row(children: [
+                                Container(
+                                  width: 60,
+                                    alignment: Alignment.center,
+                                    child: Text("Sl.No", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),)),
+                                Expanded(child: Container(
+                                    alignment: Alignment.center,
+                                    child: Text("Customer Name", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
+                                Container(
+                                    alignment: Alignment.center,
+                                    child: Text("Order Type", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),)),
+                                Expanded(child: Container(
+                                    alignment: Alignment.center,
+                                    child: Text("Area", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
+                                Expanded(child: Container(
+                                    alignment: Alignment.center,
+                                    child: Text("Location", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
+                                Container(
+                                  width: 60,
+                                    alignment: Alignment.center,
+                                    child: Text("Order No", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),)),
+                                Expanded(child: Container(
+                                    alignment: Alignment.center,
+                                    child: Text("Order Date", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
+                                Expanded(child: Container(
+                                    alignment: Alignment.center,
+                                    child: Text("Status", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
+                                Expanded(child: Container(
+                                    alignment: Alignment.center,
+                                    child: Text("   ", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
+                              ]),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Container(
+                                  height: 0.5,
+                                  width: MediaQuery.of(context).size.width/0.9,
+                                  color: Colors.deepPurple,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 200,
+                        width: MediaQuery.of(context).size.width/0.9,
+                        child: ListView.builder(
+                            padding: EdgeInsets.zero,
+                            physics: const ClampingScrollPhysics(),
+                            itemCount: 10,
+                            itemBuilder: (BuildContext context,int rowIndex){
+                              return  SizedBox(
+                                  height: 40,
+                                  width: MediaQuery.of(context).size.width/0.9,
+                                  child:Container(
+                                      height: 40,
+                                      width: MediaQuery.of(context).size.width/0.9,
+                                      child: Row(children: [
+                                        Expanded(child: Container(
+                                            alignment: Alignment.center,
+                                            child: Text("1", style: TextStyle(color: Colors.black),))),
+                                        Expanded(child: Container(
+                                            alignment: Alignment.center,
+                                            child: Text("102", style: TextStyle(color: Colors.black),))),
+                                        Expanded(child: Container(
+                                            alignment: Alignment.center,
+                                            child: Text("Normal", style: TextStyle(color: Colors.black),))),
+                                        Expanded(child: Container(
+                                            alignment: Alignment.center,
+                                            child: Text("Aswin", style: TextStyle(color: Colors.black),))),
+                                        Expanded(child: Container(
+                                            alignment: Alignment.center,
+                                            child: Text("Normal", style: TextStyle(color: Colors.black),))),
+                                        Expanded(child: Container(
+                                            alignment: Alignment.center,
+                                            child: Text("103", style: TextStyle(color: Colors.black),))),
+                                      ])));
 
-          ,SizedBox(height: 30,),
+
+                            }),)
+
+                    ]),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
-      // bottomNavigationBar: Container(
-      //   color: Colors.deepPurple,
-      //   child: BottomNavigationBar(
-      //     backgroundColor: Colors.deepPurple,
-      //     selectedItemColor: Colors.white,
-      //     unselectedItemColor: Colors.white.withOpacity(0.6),
-      //     currentIndex: _selectedIndex,
-      //     onTap: _onItemTapped,
-      //     items: const <BottomNavigationBarItem>[
-      //       BottomNavigationBarItem(
-      //         icon: Icon(Icons.home),
-      //         label: 'Home',
-      //       ),
-      //       BottomNavigationBarItem(
-      //         icon: Icon(Icons.ac_unit),
-      //         label: 'Complaint',
-      //       ),
-      //       BottomNavigationBarItem(
-      //         icon: Icon(Icons.notification_important_rounded),
-      //         label: 'pending',
-      //       ),
-      //     ],
-      //   ),
-      // ),
     );
   }
 }
