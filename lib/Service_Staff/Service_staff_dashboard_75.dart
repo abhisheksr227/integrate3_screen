@@ -2,13 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:integrate_3screens/Service_Staff/Completed_Screen.dart';
 import 'package:integrate_3screens/Service_Staff/InProcessed_Screen.dart';
+import 'package:integrate_3screens/Service_Staff/ServiceComplaint.dart';
 import 'package:integrate_3screens/Service_Staff/ServiceNewOrder_Screen.dart';
 import 'package:integrate_3screens/Service_Staff/ServiceNotifications.dart';
 import 'package:integrate_3screens/Service_Staff/ServicePending_screen.dart';
 import 'package:integrate_3screens/Service_Staff/ServiceUndelivered_Screen.dart';
 import '../Loginscreen.dart';
 import 'Dispatched_items.dart';
-import 'Issue_Invoice.dart';
 import 'Language84.dart';
 import 'Order_status.dart';
 import 'ReadyForDeliver_Screen.dart';
@@ -138,10 +138,10 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
         // );
         break;
       case 1:
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(builder: (context) => ComplaintScreen()),
-        // );
+         Navigator.push(
+           context,
+           MaterialPageRoute(builder: (context) => ServiceComplaint()),
+         );
         break;
       case 2:
         Navigator.push(
@@ -611,19 +611,19 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
              Padding(
                padding: const EdgeInsets.only(top:30,bottom: 10),
                child: Container(
-                  height: MediaQuery.of(context).size.height / 30,
+                  height: MediaQuery.of(context).size.height / 25,
                   width: MediaQuery.of(context).size.width / 1.8,
                   decoration: BoxDecoration(border: Border.all(color: Colors.deepPurple),
                       borderRadius: BorderRadius.circular(20)),
                   child: TextField(
                     decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(10),
+                      contentPadding: EdgeInsets.only(left: 10,bottom: 16),
                       border: InputBorder.none,
-                      suffixIcon: Container(decoration: BoxDecoration(color: Colors.deepPurple,
+                      suffixIcon: Container(decoration: BoxDecoration(color: Colors.grey,
                           borderRadius: BorderRadius.only(
                               bottomRight: Radius.circular(20),
                               topRight: Radius.circular(20))),
-                          child: Icon(Icons.search,color: Colors.white,)),
+                          child: Icon(Icons.search,)),
                     ),
                   ),
                 ),

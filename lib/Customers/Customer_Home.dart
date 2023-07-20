@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:integrate_3screens/Customers/15-19/Item_Details.dart';
 import 'package:integrate_3screens/Customers/15-19/Transaction_History.dart';
-import 'package:integrate_3screens/Customers/Bag.dart';
 import 'package:integrate_3screens/Customers/Complaint.dart';
 import 'package:integrate_3screens/Customers/Edit.dart';
 import 'package:integrate_3screens/Customers/Invoice.dart';
 import 'package:integrate_3screens/Customers/Language.dart';
 import 'package:integrate_3screens/Customers/Password.dart';
 import 'package:integrate_3screens/Customers/Promotions.dart';
-import 'package:integrate_3screens/Customers/Receipt.dart';
 import 'package:integrate_3screens/Customers/Services_screen.dart';
 import 'package:integrate_3screens/Customers/Share_screen.dart';
-import 'package:integrate_3screens/Customers/Wallet.dart';
 
 import '../Loginscreen.dart';
 import '15-19/Order_History.dart';
@@ -322,7 +318,7 @@ thickness: .5,
           ),
         ),
         body: SingleChildScrollView(
-          child: Column(
+          child: Column(mainAxisAlignment: MainAxisAlignment.end,
               children: [
           Padding(
           padding: const EdgeInsets.all(16.0),
@@ -660,6 +656,7 @@ thickness: .5,
                     ),
                   ],
                 ),
+                SizedBox(height: 10,),
                 Container(
                   height: 150,
                   decoration: BoxDecoration(
