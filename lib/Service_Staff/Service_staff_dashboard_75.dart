@@ -263,12 +263,12 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                         Expanded(
                           child: InkWell(
                             onTap: () {
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => (),
-                              //   ),
-                              // );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ServicePendingScreen(),
+                                ),
+                              );
                             },
                             child: Column(
                               children: [
@@ -296,12 +296,12 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                         Expanded(
                           child: InkWell(
                             onTap: () {
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => (),
-                              //   ),
-                              // );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ServiceNewOrderScreen(),
+                                ),
+                              );
                             },
                             child: Column(
                               children: [
@@ -329,12 +329,12 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                         Expanded(
                           child: InkWell(
                             onTap: () {
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => (),
-                              //   ),
-                              // );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => InprocessedScreen(),
+                                ),
+                              );
                             },
                             child: Column(
                               children: [
@@ -370,12 +370,12 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                           Expanded(
                             child: InkWell(
                               onTap: () {
-                                // Navigator.push(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //     builder: (context) => (),
-                                //   ),
-                                // );
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => CompletedScreen(),
+                                  ),
+                                );
                               },
                               child: Column(
                                 children: [
@@ -409,7 +409,12 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                           Expanded(
                             child: InkWell(
                               onTap: () {
-                                // Handle Services option
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ServiceReadyForDeliver(),
+                                  ),
+                                );
                               },
                               child: Column(
                                 children: [
@@ -420,7 +425,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                     ),
                                     child: InkWell(
                                       onTap: () {
-                                        // Navigator.push(context, MaterialPageRoute(builder: (context) => (),));
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceUndeliveredScreen(),));
                                       },
                                       child: CircleAvatar(
                                         radius: 30,
