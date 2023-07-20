@@ -16,6 +16,7 @@ import 'ReadyForDelivery.dart';
 import 'Report83.dart';
 import 'Reprint_invoice.dart';
 import 'ServiceItem_Details.dart';
+import 'ServiceNewOrder.dart';
 import 'Service_login.dart';
 import 'Servicelogin77.dart';
 
@@ -529,7 +530,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => IssueInvoice(),
+                              builder: (context) => ServiceNewOrder(),
                             ));
                       },
                       child: Container(
@@ -612,17 +613,17 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                child: Container(
                   height: MediaQuery.of(context).size.height / 30,
                   width: MediaQuery.of(context).size.width / 1.8,
-                  decoration: BoxDecoration(border: Border.all(color: Colors.purple),
+                  decoration: BoxDecoration(border: Border.all(color: Colors.deepPurple),
                       borderRadius: BorderRadius.circular(20)),
                   child: TextField(
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.all(10),
                       border: InputBorder.none,
-                      suffixIcon: Container(decoration: BoxDecoration(color: Colors.purpleAccent,
+                      suffixIcon: Container(decoration: BoxDecoration(color: Colors.deepPurple,
                           borderRadius: BorderRadius.only(
                               bottomRight: Radius.circular(20),
                               topRight: Radius.circular(20))),
-                          child: Icon(Icons.search)),
+                          child: Icon(Icons.search,color: Colors.white,)),
                     ),
                   ),
                 ),
