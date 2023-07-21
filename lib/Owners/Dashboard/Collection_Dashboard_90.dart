@@ -304,10 +304,10 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(8),
                 child: Card(
-                  color: CupertinoColors.white,
-                  elevation: 5,
+                  surfaceTintColor: CupertinoColors.white,
+                  elevation: 2,
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -381,7 +381,7 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                           endIndent: 10,
                         ),
                         SizedBox(
-                          height: 150,
+                          height: MediaQuery.of(context).size.height*0.45,
                           child: ListView.builder(
                             physics: ClampingScrollPhysics(
                                 parent: FixedExtentScrollPhysics()),
@@ -603,7 +603,7 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                 height: 20,
               ),
               SizedBox(
-                height: 300,
+                height: MediaQuery.of(context).size.height*0.45,
                 width: MediaQuery.of(context).size.width,
                 child: ListView.builder(
                     itemCount: 2,
@@ -667,15 +667,11 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                                        Padding(
                                          padding: const EdgeInsets.only(
                                              left: 10, right: 10),
-                                         child: SizedBox(
-                                           width: 110,
-                                           height: 40,
-                                           child: ElevatedButton(
-                                               style: ElevatedButton.styleFrom(
-                                                   backgroundColor: Colors.blue),
-                                               onPressed: () {},
-                                               child: Text("Not Updated")),
-                                         ),
+                                         child: ElevatedButton(
+                                             style: ElevatedButton.styleFrom(
+                                                 backgroundColor: Colors.blue),
+                                             onPressed: () {},
+                                             child: Text("Not Updated")),
                                        ),
                                      ],
                                    ),
@@ -748,10 +744,10 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                 style: TextStyle(fontSize: 20, color: Colors.blue[800]),
               ),
               Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(8),
                 child: Card(
-                  color: CupertinoColors.white,
-                  elevation: 5,
+                  surfaceTintColor: CupertinoColors.white,
+                  elevation: 2,
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -810,7 +806,7 @@ class _CollectionDashboardState extends State<CollectionDashboard> {
                           endIndent: 10,
                         ),
                         SizedBox(
-                          height: 100,
+                          height: MediaQuery.of(context).size.height*0.5,
                           child: ListView.builder(
                             physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
                             itemCount: 2,

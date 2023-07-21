@@ -121,7 +121,7 @@ class _ServicedashboardState extends State<Servicedashboard> {
                         child: TextField(
                           readOnly: true,
                           onTap: () => selectFromDate(context),
-                          decoration: InputDecoration(contentPadding: EdgeInsets.all(10),
+                          decoration: InputDecoration(contentPadding: EdgeInsets.only(left: 10),
                             hintText: fromDate != null ? dateFormat.format(fromDate!) : Date , // Format the fromDate
                             border: OutlineInputBorder(),
                             suffixIcon: Icon(Icons.date_range,color: Colors.blue),
@@ -133,12 +133,12 @@ class _ServicedashboardState extends State<Servicedashboard> {
                 ),
                 SizedBox(height: 5,)
                 ,  Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.all(8),
                   child: Card(
-                    color: Colors.white,
-                    elevation: 10,
+                    surfaceTintColor: Colors.white,
+                    elevation: 2,
                     child: Container(
-                      height: 230,
+                      height: MediaQuery.of(context).size.height*0.5,
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -197,10 +197,10 @@ class _ServicedashboardState extends State<Servicedashboard> {
                             endIndent: 10,
                           ),
                           SizedBox(
-                            height: 170,
+                            height: MediaQuery.of(context).size.height*0.43,
                             child: ListView.builder(
                               physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
-                              itemCount: 6,
+                              itemCount: 15,
                               itemBuilder: (context, index) {
                                 return Column(
                                   children: [
@@ -246,8 +246,8 @@ class _ServicedashboardState extends State<Servicedashboard> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
-                    color: CupertinoColors.white,
-                    elevation: 5,
+                    surfaceTintColor: Colors.white,
+                    elevation: 2,
                     child: Column(
                       children: [
                         Padding(
@@ -478,8 +478,8 @@ class _ServicedashboardState extends State<Servicedashboard> {
                 SizedBox(height: 40,),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Card(elevation: 5,
-                    color: Colors.white,
+                  child: Card(elevation: 2,
+                    surfaceTintColor: Colors.white,
                     child: Column(
                       children: [
                         const SizedBox(height: 20,),
@@ -489,7 +489,7 @@ class _ServicedashboardState extends State<Servicedashboard> {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               SizedBox(
-                                height: 280,
+                                height: MediaQuery.of(context).size.height*0.5,
                                 width: MediaQuery.of(context).size.width+130,
                                 child: ListView.builder(
                                   itemCount: 1,
@@ -577,12 +577,12 @@ class _ServicedashboardState extends State<Servicedashboard> {
                                           ),
                                         ),
                                         Container(
-                                          height: 200,
+                                          height: MediaQuery.of(context).size.height*0.45,
                                           width: MediaQuery.of(context).size.width+130,
                                           child: ListView.builder(
                                             padding: EdgeInsets.zero,
                                             physics: const ClampingScrollPhysics(),
-                                            itemCount: 6,
+                                            itemCount: 15,
                                             itemBuilder: (BuildContext context, int rowIndex) {
                                               final isEvenRow = rowIndex % 2 == 0;
                                               final backgroundColor = isEvenRow ? Colors.yellow : Colors.redAccent;

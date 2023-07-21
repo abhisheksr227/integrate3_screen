@@ -270,28 +270,26 @@ class _PickupdashboardState extends State<Pickupdashboard> {
           SizedBox(
             height: 20,
           ),
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Express Orders${"      "}:"),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text("Normal Orders${"       "}:"),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text("Total Orders${"            "}:"),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text("Picking Confirmed ${""}:")
-                ],
-              ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Express Orders${"      "}:"),
+                SizedBox(
+                  height: 10,
+                ),
+                Text("Normal Orders${"       "}:"),
+                SizedBox(
+                  height: 10,
+                ),
+                Text("Total Orders${"            "}:"),
+                SizedBox(
+                  height: 10,
+                ),
+                Text("Picking Confirmed ${""}:")
+              ],
             ),
           ),
           Padding(
@@ -303,8 +301,8 @@ class _PickupdashboardState extends State<Pickupdashboard> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
-              color: CupertinoColors.white,
-              elevation: 5,
+              surfaceTintColor: Colors.white,
+              elevation: 2,
               child: Column(
                 children: [
                   SizedBox(
@@ -318,7 +316,7 @@ class _PickupdashboardState extends State<Pickupdashboard> {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           SizedBox(
-                              height: 240,
+                              height: MediaQuery.of(context).size.height*0.5,
                               width: MediaQuery.of(context).size.width+130,
                               child: ListView.builder(
                                   itemCount: 1,
@@ -402,8 +400,8 @@ class _PickupdashboardState extends State<Pickupdashboard> {
                                                               FontWeight.bold),
                                                     ))),
                                           ])),
-                                      Container(
-                                        height: 200,
+                                      SizedBox(
+                                        height: MediaQuery.of(context).size.height*0.45,
                                         width: MediaQuery.of(context).size.width+130,
                                         child: ListView.separated(
                                             separatorBuilder: (context, index) {
@@ -416,7 +414,7 @@ class _PickupdashboardState extends State<Pickupdashboard> {
                                             },
                                             padding: EdgeInsets.zero,
                                             physics: ClampingScrollPhysics(),
-                                            itemCount: 6,
+                                            itemCount: 15,
                                             itemBuilder: (BuildContext context,
                                                 int rowIndex) {
                                               return SizedBox(
@@ -565,8 +563,8 @@ class _PickupdashboardState extends State<Pickupdashboard> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
-                  color: CupertinoColors.white,
-                  elevation: 5,
+                  surfaceTintColor: Colors.white,
+                  elevation: 2,
                   child: Column(
                     children: [
                       SizedBox(
@@ -580,7 +578,7 @@ class _PickupdashboardState extends State<Pickupdashboard> {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               SizedBox(
-                                  height: 240,
+                                  height: MediaQuery.of(context).size.height*0.5,
                                   width: MediaQuery.of(context).size.width+130,
                                   child: ListView.builder(
                                       itemCount: 1,
@@ -665,7 +663,7 @@ class _PickupdashboardState extends State<Pickupdashboard> {
                                                         ))),
                                               ])),
                                           Container(
-                                            height: 200,
+                                            height: MediaQuery.of(context).size.height*0.45,
                                             width: MediaQuery.of(context).size.width+130,
                                             child: ListView.separated(
                                                 separatorBuilder: (context, index) {
@@ -827,8 +825,8 @@ class _PickupdashboardState extends State<Pickupdashboard> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
-                  color: CupertinoColors.white,
-                  elevation: 5,
+                  surfaceTintColor: CupertinoColors.white,
+                  elevation: 2,
                   child: Column(
                     children: [
                       SizedBox(
@@ -842,7 +840,7 @@ class _PickupdashboardState extends State<Pickupdashboard> {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               SizedBox(
-                                  height: 240,
+                                  height: MediaQuery.of(context).size.height*0.5,
                                   width: MediaQuery.of(context).size.width+130,
                                   child: ListView.builder(
                                       itemCount: 1,
@@ -927,7 +925,7 @@ class _PickupdashboardState extends State<Pickupdashboard> {
                                                         ))),
                                               ])),
                                           Container(
-                                            height: 200,
+                                            height: MediaQuery.of(context).size.height*0.45,
                                             width: MediaQuery.of(context).size.width+130,
                                             child: ListView.separated(
                                                 separatorBuilder: (context, index) {
@@ -1089,8 +1087,8 @@ class _PickupdashboardState extends State<Pickupdashboard> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
-                  color: CupertinoColors.white,
-                  elevation: 5,
+                  surfaceTintColor: CupertinoColors.white,
+                  elevation: 2,
                   child: Column(
                     children: [
                       SizedBox(
@@ -1104,7 +1102,7 @@ class _PickupdashboardState extends State<Pickupdashboard> {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               SizedBox(
-                                  height: 240,
+                                  height: MediaQuery.of(context).size.height*0.5,
                                   width: MediaQuery.of(context).size.width+130,
                                   child: ListView.builder(
                                       itemCount: 1,
@@ -1188,8 +1186,8 @@ class _PickupdashboardState extends State<Pickupdashboard> {
                                                               FontWeight.bold),
                                                         ))),
                                               ])),
-                                          Container(
-                                            height: 200,
+                                          SizedBox(
+                                            height: MediaQuery.of(context).size.height*0.45,
                                             width: MediaQuery.of(context).size.width+130,
                                             child: ListView.separated(
                                                 separatorBuilder: (context, index) {
@@ -1342,7 +1340,13 @@ class _PickupdashboardState extends State<Pickupdashboard> {
           SizedBox(
             height: 50,
           ),
-          Card(child: Text("Category Wise Allocation")),
+          Card(child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("Category Wise Allocation"),
+          )),
+              SizedBox(
+                height: 20,
+              ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -1372,20 +1376,15 @@ class _PickupdashboardState extends State<Pickupdashboard> {
               Text('Monthly'),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              PieChart(
-                dataMap: dataMap,
-                colorList: colorList,
-                chartRadius: MediaQuery.of(context).size.width / 2,
-                ringStrokeWidth: 24,
-                animationDuration: Duration(seconds: 3),
-                chartValuesOptions: ChartValuesOptions(
-                    showChartValues: false, showChartValueBackground: false),
-                legendOptions: LegendOptions(showLegends: false),
-              )
-            ],
+          PieChart(
+            dataMap: dataMap,
+            colorList: colorList,
+            chartRadius: MediaQuery.of(context).size.width / 2,
+            ringStrokeWidth: 24,
+            animationDuration: Duration(seconds: 3),
+            chartValuesOptions: ChartValuesOptions(
+                showChartValues: false, showChartValueBackground: false),
+            legendOptions: LegendOptions(showLegends: false),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -1410,7 +1409,10 @@ class _PickupdashboardState extends State<Pickupdashboard> {
           Padding(
             padding: EdgeInsets.all(15.0),
             child: Card(
-              child: Text("Order v/s Processing"),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("Order v/s Processing"),
+              ),
             ),
           ),
           Text("Last 7 days "),

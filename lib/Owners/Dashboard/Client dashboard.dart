@@ -557,9 +557,10 @@ class _ClientdashboardState extends State<Clientdashboard> {
                 height: 10,
               ),
               Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(8),
                 child: Card(
-                  elevation: 10,
+                  elevation: 2,
+                  surfaceTintColor: Colors.white,
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -619,11 +620,11 @@ class _ClientdashboardState extends State<Clientdashboard> {
                           endIndent: 10,
                         ),
                         SizedBox(
-                          height: 200,
+                          height: MediaQuery.of(context).size.height*0.5,
                           child: ListView.builder(
                             physics: ClampingScrollPhysics(
                                 parent: FixedExtentScrollPhysics()),
-                            itemCount: 6,
+                            itemCount: 15,
                             itemBuilder: (context, index) {
                               return Column(
                                 children: [
@@ -681,9 +682,10 @@ class _ClientdashboardState extends State<Clientdashboard> {
                 style: TextStyle(fontSize: 20),
               )),
               Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(8),
                 child: Card(
-                  elevation: 10,
+                  elevation: 2,
+                  surfaceTintColor: Colors.white,
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -756,11 +758,11 @@ class _ClientdashboardState extends State<Clientdashboard> {
                           endIndent: 10,
                         ),
                         SizedBox(
-                          height: 200,
+                          height: MediaQuery.of(context).size.height*0.5,
                           child: ListView.builder(
                             physics: ClampingScrollPhysics(
                                 parent: FixedExtentScrollPhysics()),
-                            itemCount: 6,
+                            itemCount: 15,
                             itemBuilder: (context, index) {
                               return Column(
                                 children: [

@@ -210,7 +210,7 @@ class _NewComplaintState extends State<NewComplaint> {
                                                             child: Container(
                                                               alignment: Alignment.center,
                                                               child: Text(
-                                                                "Damaged",
+                                                                "8-6-2023",
                                                                 style: TextStyle(color: Colors.black),
                                                               ),
                                                             ),

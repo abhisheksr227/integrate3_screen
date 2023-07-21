@@ -188,7 +188,8 @@ class _StaffdashboardState extends State<Staffdashboard> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
-                  elevation: 5,
+                  elevation: 2,
+                  surfaceTintColor: Colors.white,
                   child: Column(
                     children: [
                       Padding(
@@ -200,7 +201,7 @@ class _StaffdashboardState extends State<Staffdashboard> {
                             children: [
                               SizedBox(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.4,
+                                    MediaQuery.of(context).size.height * 0.5,
                                 width: MediaQuery.of(context).size.width,
                                 child: ListView.builder(
                                   itemCount: 1,
@@ -290,8 +291,8 @@ class _StaffdashboardState extends State<Staffdashboard> {
                                             ],
                                           ),
                                         ),
-                                        Container(
-                                          height: MediaQuery.of(context).size.height * 0.34,
+                                        SizedBox(
+                                          height: MediaQuery.of(context).size.height * 0.44,
                                           width:
                                               MediaQuery.of(context).size.width*2,
                                           child: ListView.builder(

@@ -1170,8 +1170,8 @@ class _DashboardState extends State<Dashboard> {
             Padding(
               padding: const EdgeInsets.all(8),
               child: Card(
-                color: Colors.white,
-                elevation: 5,
+                surfaceTintColor: Colors.white,
+                elevation: 2,
                 child: Column(children: [
                   Container(
                       height: 40,
@@ -1236,7 +1236,7 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
                   SizedBox(
-                    height: 360,
+                    height: MediaQuery.of(context).size.height*0.5,
                     width: MediaQuery.of(context).size.width,
                     child: ListView.builder(
                         scrollDirection: Axis.vertical,
@@ -1314,12 +1314,12 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
             SizedBox(
-              height: 285,
+              height: MediaQuery.of(context).size.height*0.5,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
-                  color: Colors.white,
-                  elevation: 5,
+                  surfaceTintColor: Colors.white,
+                  elevation: 2,
                   child: Column(
                     children: [
                       Row(
@@ -1402,9 +1402,9 @@ class _DashboardState extends State<Dashboard> {
                         ),
                       ),
                       SizedBox(
-                        height: 200,
+                        height: MediaQuery.of(context).size.height*0.4,
                         child: ListView.builder(
-                          itemCount: 5,
+                          itemCount: 10,
                           itemBuilder: (context, index) {
                             return Container(
                                 height: 40,
@@ -1484,10 +1484,10 @@ class _DashboardState extends State<Dashboard> {
             Padding(
               padding: const EdgeInsets.all(8),
               child: SizedBox(
-                height: 430,
+                height: MediaQuery.of(context).size.height*0.5,
                 child: Card(
-                  elevation: 5,
-                  color: Colors.white,
+                  elevation: 2,
+                  surfaceTintColor: Colors.white,
                   child: Column(
                     children: [
                       Row(
@@ -1553,7 +1553,7 @@ class _DashboardState extends State<Dashboard> {
                       SizedBox(
                         height: 360,
                         child: ListView.builder(
-                          itemCount: 9,
+                          itemCount: 15,
                           itemBuilder: (context, index) {
                             return Row(
                               children: [

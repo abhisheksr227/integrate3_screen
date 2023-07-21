@@ -140,6 +140,7 @@ class _DelivereddashboardState extends State<Delivereddashboard> {
                           readOnly: true,
                           onTap: () => selectFromDate(context),
                           decoration: InputDecoration(
+                            contentPadding: EdgeInsets.only(left: 10),
                             hintText: fromDate != null
                                 ? dateFormat.format(fromDate!)
                                 : dateFormat
@@ -153,9 +154,10 @@ class _DelivereddashboardState extends State<Delivereddashboard> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.all(8),
                   child: Card(
-                    elevation: 10,
+                    elevation: 2,
+                    surfaceTintColor: Colors.white,
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -240,11 +242,11 @@ class _DelivereddashboardState extends State<Delivereddashboard> {
                             endIndent: 10,
                           ),
                           SizedBox(
-                            height: 200,
+                            height: MediaQuery.of(context).size.height*0.5,
                             child: ListView.builder(
                               physics: ClampingScrollPhysics(
                                   parent: FixedExtentScrollPhysics()),
-                              itemCount: 6,
+                              itemCount: 15,
                               itemBuilder: (context, index) {
                                 return Column(
                                   children: [
@@ -306,7 +308,8 @@ class _DelivereddashboardState extends State<Delivereddashboard> {
                 Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Card(
-                        elevation: 5,
+                        elevation: 2,
+                        surfaceTintColor: Colors.white,
                         child: Column(
                           children: [
                             SizedBox(
@@ -320,7 +323,7 @@ class _DelivereddashboardState extends State<Delivereddashboard> {
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
                                     SizedBox(
-                                        height: 240,
+                                        height: MediaQuery.of(context).size.height*0.5,
                                         width: MediaQuery.of(context).size.width+130,
                                         child: ListView.builder(
                                             itemCount: 1,
@@ -405,8 +408,8 @@ class _DelivereddashboardState extends State<Delivereddashboard> {
                                                                     FontWeight.bold),
                                                               ))),
                                                     ])),
-                                                Container(
-                                                  height: 200,
+                                                SizedBox(
+                                                  height: MediaQuery.of(context).size.height*0.45,
                                                   width: MediaQuery.of(context).size.width+130,
                                                   child: ListView.separated(
                                                       separatorBuilder: (context, index) {
@@ -802,9 +805,10 @@ class _DelivereddashboardState extends State<Delivereddashboard> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.all(8),
                   child: Card(
-                    elevation: 10,
+                    elevation: 2,
+                    surfaceTintColor: Colors.white,
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -888,11 +892,11 @@ class _DelivereddashboardState extends State<Delivereddashboard> {
                             endIndent: 10,
                           ),
                           SizedBox(
-                            height: 250,
+                            height: MediaQuery.of(context).size.height*0.5,
                             child: ListView.builder(
                               physics: ClampingScrollPhysics(
                                   parent: FixedExtentScrollPhysics()),
-                              itemCount: 5,
+                              itemCount: 15,
                               itemBuilder: (context, index) {
                                 return Column(
                                   children: [

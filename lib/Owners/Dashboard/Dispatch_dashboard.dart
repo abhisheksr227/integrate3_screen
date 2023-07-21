@@ -128,114 +128,106 @@ class _DispatchdashboardState extends State<Dispatchdashboard> {
                     ),
                   ],
                 ),
-
-
-
-SizedBox(height: 20,)
-
-                ,Padding(
+              SizedBox(height: 20,),
+                Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
-                    color: CupertinoColors.white,
-                    elevation: 5,
+                    surfaceTintColor: CupertinoColors.white,
+                    elevation: 2,
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
-                        child: Row(crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            SizedBox(
-                                height: 250,
-                                width: MediaQuery.of(context).size.width,
-                                child:ListView.builder(
-                                    itemCount: 1,
-                                    padding: EdgeInsets.zero,
-                                    scrollDirection: Axis.horizontal,
-                                    physics: const ClampingScrollPhysics(),
-                                    itemBuilder: (context,index) {
-                                      return Column(children: [
-                                        SizedBox(
-                                            height: 40,
-                                            width: MediaQuery.of(context).size.width,
-                                            child: Row(children: [
-                                              Expanded(child: Container(
-                                                  alignment: Alignment.center,
-                                                  child: Text("Staff Name", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
-                                              Expanded(child: Container(
-                                                  alignment: Alignment.center,
+                        child: SizedBox(
+                            height: MediaQuery.of(context).size.height*0.5,
+                            width: MediaQuery.of(context).size.width,
+                            child:ListView.builder(
+                                itemCount: 1,
+                                padding: EdgeInsets.zero,
+                                scrollDirection: Axis.horizontal,
+                                physics: const ClampingScrollPhysics(),
+                                itemBuilder: (context,index) {
+                                  return Column(children: [
+                                    SizedBox(
+                                        height: 40,
+                                        width: MediaQuery.of(context).size.width,
+                                        child: Row(children: [
+                                          Expanded(child: Container(
+                                              alignment: Alignment.center,
+                                              child: Text("Staff Name", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
+                                          Expanded(child: Container(
+                                              alignment: Alignment.center,
 
-                                                  child: Text("Status", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
-                                              Expanded(child: Container(
-                                                  alignment: Alignment.center,
+                                              child: Text("Status", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
+                                          Expanded(child: Container(
+                                              alignment: Alignment.center,
 
-                                                  child: Text("Ready for Delivery", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
-                                              Expanded(child: Container(
-                                                  alignment: Alignment.center,
+                                              child: Text("Ready for Delivery", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
+                                          Expanded(child: Container(
+                                              alignment: Alignment.center,
 
-                                                  child: Text("Dispatched", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
-                                              Expanded(child: Container(
-                                                  alignment: Alignment.center,
+                                              child: Text("Dispatched", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
+                                          Expanded(child: Container(
+                                              alignment: Alignment.center,
 
-                                                  child: Text("Delivered", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
-                                            ])),
-                                        Container(
-                                          height: 200,
-                                          width:MediaQuery.of(context).size.width,
-                                          child: ListView.separated(
-                                            separatorBuilder: (context, index) {
-                                              return  Divider(
-                                                color: Colors.grey,
-                                                thickness: .3,
-                                                indent: 10,
-                                                endIndent: 10,
-                                              );
-                                            },
-                                              padding: EdgeInsets.zero,
-                                              physics: const ClampingScrollPhysics(),
-                                              itemCount: 6,
-                                              itemBuilder: (BuildContext context,int rowIndex){
-                                                return  SizedBox(
-                                                  height: 40,
-                                                  width: MediaQuery.of(context).size.width,
+                                              child: Text("Delivered", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
+                                        ])),
+                                    SizedBox(
+                                      height: MediaQuery.of(context).size.height*0.45,
+                                      width:MediaQuery.of(context).size.width,
+                                      child: ListView.separated(
+                                        separatorBuilder: (context, index) {
+                                          return  Divider(
+                                            color: Colors.grey,
+                                            thickness: .3,
+                                            indent: 10,
+                                            endIndent: 10,
+                                          );
+                                        },
+                                          padding: EdgeInsets.zero,
+                                          physics: const ClampingScrollPhysics(),
+                                          itemCount: 12,
+                                          itemBuilder: (BuildContext context,int rowIndex){
+                                            return  SizedBox(
+                                              height: 40,
+                                              width: MediaQuery.of(context).size.width,
 
-                                                  child: ListView.builder(
-                                                      itemCount: 1,
-                                                      scrollDirection: Axis.horizontal,
-                                                      itemBuilder: (context,index) {
-                                                        return Container(
-                                                            height: 40,
-                                                            width: MediaQuery.of(context).size.width,
-                                                            child: Row(children: [
-                                                              Expanded(child: Container(
-                                                                  alignment: Alignment.center,
+                                              child: ListView.builder(
+                                                  itemCount: 1,
+                                                  scrollDirection: Axis.horizontal,
+                                                  itemBuilder: (context,index) {
+                                                    return Container(
+                                                        height: 40,
+                                                        width: MediaQuery.of(context).size.width,
+                                                        child: Row(children: [
+                                                          Expanded(child: Container(
+                                                              alignment: Alignment.center,
 
-                                                                  child: Text("ABCD", style: TextStyle(color: Colors.black),))),
-                                                              Expanded(child: Container(
-                                                                  alignment: Alignment.center,
-                                                                  child: Text("Onfield", style: TextStyle(color: Colors.black),))),
-                                                              Expanded(child: Container(
-                                                                  alignment: Alignment.center,
-                                                                  child: Text("10", style: TextStyle(color: Colors.black),))),
-                                                              Expanded(child: Container(
-                                                                  alignment: Alignment.center,
-                                                                  child: Text("5", style: TextStyle(color: Colors.black),))),
-                                                              Expanded(child: Container(
-                                                                  alignment: Alignment.center,
-                                                                  child: Text("3", style: TextStyle(color: Colors.black),))),
+                                                              child: Text("ABCD", style: TextStyle(color: Colors.black),))),
+                                                          Expanded(child: Container(
+                                                              alignment: Alignment.center,
+                                                              child: Text("Onfield", style: TextStyle(color: Colors.black),))),
+                                                          Expanded(child: Container(
+                                                              alignment: Alignment.center,
+                                                              child: Text("10", style: TextStyle(color: Colors.black),))),
+                                                          Expanded(child: Container(
+                                                              alignment: Alignment.center,
+                                                              child: Text("5", style: TextStyle(color: Colors.black),))),
+                                                          Expanded(child: Container(
+                                                              alignment: Alignment.center,
+                                                              child: Text("3", style: TextStyle(color: Colors.black),))),
 
 
-                                                            ]));
-                                                      }),
-                                                );
+                                                        ]));
+                                                  }),
+                                            );
 
 
-                                              }),)
+                                          }),)
 
-                                      ]);
+                                  ]);
 
-                                    })),
-                          ],
-                        ),
+                                })),
                       ),
                     ),
                   ),
@@ -262,8 +254,8 @@ const Text("Delivery Planner"),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
-                    color: CupertinoColors.white,
-                    elevation: 5,
+                    surfaceTintColor: CupertinoColors.white,
+                    elevation: 2,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -274,7 +266,7 @@ const Text("Delivery Planner"),
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 SizedBox(
-                                  height: MediaQuery.of(context).size.height*0.40,
+                                  height: MediaQuery.of(context).size.height*0.50,
                                   width: MediaQuery.of(context).size.width,
                                   child: ListView.builder(
                                     itemCount: 1,
@@ -349,7 +341,7 @@ const Text("Delivery Planner"),
                                             ),
                                           ),
                                           SizedBox(
-                                            height: MediaQuery.of(context).size.height*0.28,
+                                            height: MediaQuery.of(context).size.height*0.44,
                                             width: MediaQuery.of(context).size.width,
                                             child: ListView.separated(
                                               separatorBuilder: (context, index) {
