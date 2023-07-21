@@ -45,21 +45,22 @@ class _NewComplaintState extends State<NewComplaint> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(8),
               child: Card(
-                elevation: 5,
+                surfaceTintColor: Colors.white,
+                elevation: 2,
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(15),
+                        padding: const EdgeInsets.all(8),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               SizedBox(
-                                height: MediaQuery.of(context).size.height*0.20,
+                                height: MediaQuery.of(context).size.height*0.5,
                                 width: MediaQuery.of(context).size.width*2,
                                 child: ListView.builder(
                                   itemCount: 1,
@@ -133,7 +134,7 @@ class _NewComplaintState extends State<NewComplaint> {
                                           ),
                                         ),
                                         Container(
-                                          height: MediaQuery.of(context).size.height*0.10,
+                                          height: MediaQuery.of(context).size.height*0.44,
                                           width: MediaQuery.of(context).size.width*2,
                                           child: ListView.separated(
                                             separatorBuilder: (context, index) {
@@ -146,7 +147,7 @@ class _NewComplaintState extends State<NewComplaint> {
                                             },
                                             padding: EdgeInsets.zero,
                                             physics: const ClampingScrollPhysics(),
-                                            itemCount: 1,
+                                            itemCount: 20,
                                             itemBuilder: (BuildContext context, int rowIndex) {
 
                                               return SizedBox(
