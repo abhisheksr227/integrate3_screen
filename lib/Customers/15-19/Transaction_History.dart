@@ -80,7 +80,7 @@ class _TransactionhistoryState extends State<Transactionhistory> {
                           }, decoration: InputDecoration(
                           border: InputBorder.none,
                           prefixIcon: Icon(CupertinoIcons.calendar,color: Colors.blue,),
-                          contentPadding: EdgeInsets.only(top: 1),
+                          contentPadding: EdgeInsets.only(top: 5),
                         ),
                         ),
                       ),
@@ -126,7 +126,7 @@ class _TransactionhistoryState extends State<Transactionhistory> {
                           hintText: 'Select date',
                           border: InputBorder.none,
                           prefixIcon: Icon(CupertinoIcons.calendar,color: Colors.blue,),
-                          contentPadding: EdgeInsets.only(top: 1),
+                          contentPadding: EdgeInsets.only(top: 5),
                         ),
                         ),
                       ),
@@ -140,9 +140,10 @@ class _TransactionhistoryState extends State<Transactionhistory> {
               height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(8),
               child: Card(
-                elevation: 5,
+                elevation: 2,
+                surfaceTintColor: Colors.white,
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -150,7 +151,7 @@ class _TransactionhistoryState extends State<Transactionhistory> {
                   child: Column(
                     children: [
                       Container(
-                        padding: EdgeInsets.all(10),
+                        padding: EdgeInsets.all(8),
                         child: Row(
                           children: [
                             Container(
@@ -245,10 +246,10 @@ class _TransactionhistoryState extends State<Transactionhistory> {
                         endIndent: 10,
                       ),
                       SizedBox(
-                        height: 150,
+                        height: MediaQuery.of(context).size.height*0.51,
                         child: ListView.builder(
                           physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
-                          itemCount: 1,
+                          itemCount: 10,
                           itemBuilder: (context, index) {
                             return Column(
                               children: [

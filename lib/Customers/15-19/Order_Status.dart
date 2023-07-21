@@ -1,8 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-
-import 'Item_Details.dart';
 
 class Orderstushistory extends StatefulWidget {
   const Orderstushistory({Key? key}) : super(key: key);
@@ -27,18 +24,101 @@ class _OrderstushistoryState extends State<Orderstushistory> {
   Color color = Color(0xff0d2bd4);
 
   int selectedRowIndex = -1;
-  bool isVisible = false;
-
-  void toggleVisibility() {
-    setState(() {
-      isVisible = true;
-    });
-  }
 
   void selectRow(int index) {
     setState(() {
       selectedRowIndex = index;
     });
+  }
+
+  Future<void> showItemDetails(BuildContext context) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Center(child: Text('Item Details',style: TextStyle(color: Colors.blue),)),
+          content: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.5,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Row(
+                      children: [
+                        Text("Order No"),
+                        SizedBox(width: 26),
+                        Text(":"),
+                        SizedBox(width: 15),
+                        Text("12xx")
+                      ],
+                    ),
+                    SizedBox(height: 10,),
+                    Row(
+                      children: [
+                        Text("Date"),
+                        SizedBox(width: 53),
+                        Text(":"),
+                        SizedBox(width: 15),
+                        Text("20-04-2023")
+
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Text("Status"),
+                        SizedBox(width: 42),
+                        Text(":"),
+                        SizedBox(width: 15),
+                        Text("Completed")
+                      ],
+                    ),SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Text("Order Type"),
+                        SizedBox(width: 15),
+                        Text(":"),
+                        SizedBox(width: 15),
+                        Text("Express")
+                      ],
+                    ),
+
+                    SizedBox(
+                      height: 40,
+                    ),Text("PRESS & FOLD"),
+                    SizedBox(height: 30,),
+                    Center(child: Text("Shirts - 2")),
+                    Center(child: Text("Pant - 1"))
+                    ,SizedBox(
+                      height: 30,
+                    ),Text("PRESS & HANG"),
+                    SizedBox(height: 10,),
+                    Center(child: Text("Shirts - 2")),
+                    Center(child: Text("Pant - 4")),
+                    SizedBox(height: 10,),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Close',style: TextStyle(color: Colors.blue),),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -66,6 +146,7 @@ class _OrderstushistoryState extends State<Orderstushistory> {
             Padding(
               padding: const EdgeInsets.all(8),
               child: Card(
+                surfaceTintColor: Colors.white,
                 elevation: 2,
                 child: Container(
                   decoration: BoxDecoration(
@@ -139,16 +220,16 @@ class _OrderstushistoryState extends State<Orderstushistory> {
                         endIndent: 10,
                       ),
                       SizedBox(
-                        height: 170,
+                        height: MediaQuery.of(context).size.height*0.79,
                         child: ListView.builder(
-                          itemCount: 1,
+                          itemCount: 9,
                           itemBuilder: (BuildContext context, int rowIndex) {
                             return Column(
                               children: [
                                 GestureDetector(
                                   onTap: () {
                                     selectRow(rowIndex);
-                                    toggleVisibility();
+                                    showItemDetails(context);
                                   },
                                   child: Container(
                                     color: selectedRowIndex == rowIndex ? Colors.grey : null,
@@ -197,100 +278,6 @@ class _OrderstushistoryState extends State<Orderstushistory> {
                     ],
                   ),
                 ),
-              ),
-            ),
-            SizedBox(height: 20,),
-            if(isVisible)
-            SizedBox(
-              child: Column(
-                children: [
-                  Center(
-                    child: Text(
-                      "ITEM DETAILS",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue[800]),
-                    ),
-                  ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Card(
-                elevation: 10,
-                child: Container(
-                  width: MediaQuery.of(context).size.width / 1.5,
-                  height: MediaQuery.of(context).size.height * 0.5,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 30,
-                        ),
-                        Row(
-                          children: [
-                            Text("Order No"),
-                            SizedBox(width: 26),
-                            Text(":"),
-                            SizedBox(width: 15),
-                            Text("12xx")
-                          ],
-                        ),
-                        SizedBox(height: 10,),
-                        Row(
-                          children: [
-                            Text("Date"),
-                            SizedBox(width: 53),
-                            Text(":"),
-                            SizedBox(width: 15),
-                            Text("20-04-2023")
-
-                          ],
-                        ),
-                        SizedBox(height: 10),
-                        Row(
-                          children: [
-                            Text("Status"),
-                            SizedBox(width: 42),
-                            Text(":"),
-                            SizedBox(width: 15),
-                            Text("Completed")
-                          ],
-                        ),SizedBox(height: 10),
-                        Row(
-                          children: [
-                            Text("Order Type"),
-                            SizedBox(width: 15),
-                            Text(":"),
-                            SizedBox(width: 15),
-                            Text("Express")
-                          ],
-                        ),
-
-                        SizedBox(
-                          height: 40,
-                        ),Text("PRESS & FOLD"),
-                        SizedBox(height: 30,),
-                        Center(child: Text("Shirts - 2")),
-                        Center(child: Text("Pant - 1"))
-                        ,SizedBox(
-                          height: 30,
-                        ),Text("PRESS & HANG"),
-                        SizedBox(height: 10,),
-                        Center(child: Text("Shirts - 2")),
-                        Center(child: Text("Pant - 4")),
-                        SizedBox(height: 10,),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-                ],
               ),
             ),
           ],

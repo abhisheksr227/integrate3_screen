@@ -85,7 +85,7 @@ class _OrderhistoryState extends State<Orderhistory> {
                           }, decoration: InputDecoration(
                           border: InputBorder.none,
                           prefixIcon: Icon(CupertinoIcons.calendar,color: Colors.blue,),
-                          contentPadding: EdgeInsets.only(top: 1),
+                          contentPadding: EdgeInsets.only(top: 5),
                         ),
                         ),
                       ),
@@ -131,7 +131,7 @@ class _OrderhistoryState extends State<Orderhistory> {
                           hintText: 'Select date',
                           border: InputBorder.none,
                           prefixIcon: Icon(CupertinoIcons.calendar,color: Colors.blue,),
-                          contentPadding: EdgeInsets.only(top: 1),
+                          contentPadding: EdgeInsets.only(top: 5),
                         ),
                         ),
                       ),
@@ -147,7 +147,7 @@ class _OrderhistoryState extends State<Orderhistory> {
               padding: const EdgeInsets.all(8.0),
               child: Card(
                 elevation: 5,
-                color: Colors.white,
+                surfaceTintColor: Colors.white,
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
@@ -158,7 +158,7 @@ class _OrderhistoryState extends State<Orderhistory> {
                           children: [
                             SizedBox(
                               height:
-                              MediaQuery.of(context).size.height * 0.30,
+                              MediaQuery.of(context).size.height*0.7,
                               width:
                               MediaQuery.of(context).size.width * 2,
                               child: ListView.builder(
@@ -278,8 +278,7 @@ class _OrderhistoryState extends State<Orderhistory> {
                                         child: Container(
                                           height: MediaQuery.of(context)
                                               .size
-                                              .height *
-                                              0.20,
+                                              .height *0.64,
                                           width: MediaQuery.of(context)
                                               .size
                                               .width *
@@ -296,7 +295,7 @@ class _OrderhistoryState extends State<Orderhistory> {
                                             padding: EdgeInsets.zero,
                                             physics:
                                             const ClampingScrollPhysics(),
-                                            itemCount: 1,
+                                            itemCount: 20,
                                             itemBuilder:
                                                 (BuildContext context,
                                                 int rowIndex) {

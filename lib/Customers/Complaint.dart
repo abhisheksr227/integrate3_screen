@@ -59,10 +59,10 @@ class _ComplaintState extends State<Complaint> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(8),
               child: Card(
-                color: Colors.white,
-                elevation: 5,
+                surfaceTintColor: Colors.white,
+                elevation: 2,
                 child: Column(children: [
                         SizedBox(
                             height: 40,
@@ -123,7 +123,7 @@ class _ComplaintState extends State<Complaint> {
                           ),
                         ),
                         SizedBox(
-                          height: 100,
+                          height: MediaQuery.of(context).size.height*0.3,
                           width: MediaQuery.of(context).size.width,
                           child: ListView.builder(
                             scrollDirection: Axis.vertical,
