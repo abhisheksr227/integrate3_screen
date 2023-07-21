@@ -10,14 +10,11 @@ class BagsMaster extends StatefulWidget {
 }
 
 class _BagsMasterState extends State<BagsMaster> {
-
-
   int selectedRow = -1;
   String? selectedOption;
   int allradionutton = 0;
   bool isButtonVisible = false;
   int selectedRowIndex = -1;
-
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +23,15 @@ class _BagsMasterState extends State<BagsMaster> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu),
-        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        iconTheme: IconThemeData(color: Colors.blue, size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        title: Center(child: Text("BAGS MASTER",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
+        title: Center(
+            child: Text("BAGS MASTER",
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500))),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20),
@@ -47,7 +48,9 @@ class _BagsMasterState extends State<BagsMaster> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -58,7 +61,8 @@ class _BagsMasterState extends State<BagsMaster> {
                   child: DropdownButton<String>(
                     hint: Text(
                       "Select",
-                      style: TextStyle(fontSize: screenWidth * 0.02, color: Colors.grey),
+                      style: TextStyle(
+                          fontSize: screenWidth * 0.02, color: Colors.grey),
                     ),
                     value: selectedOption,
                     onChanged: (String? newValue) {
@@ -97,53 +101,69 @@ class _BagsMasterState extends State<BagsMaster> {
                 SizedBox(width: screenWidth * 0.02),
                 Text("All"),
               ],
-            ),SizedBox(
-              height: 20,
             ),
-      Card(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),color: CupertinoColors.systemGrey6,child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Text("Select Category"),
-      )),
-SizedBox(
-  height: 20,
-),
-      Row(mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text("Bag Colour"),SizedBox(
-            width: 20,
-          ),
-          Container(
-            height: screenHeight * 0.04,
-            width: screenWidth * 0.35,
-            decoration: BoxDecoration(border: Border.all(color: Colors.lightBlue)),
-          ),
-        ],
-      ),
             SizedBox(
               height: 20,
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.center,
+            Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)),
+                color: CupertinoColors.systemGrey6,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text("Select Category"),
+                )),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Rate"),SizedBox(
+                Text("Bag Colour"),
+                SizedBox(
+                  width: 20,
+                ),
+                Container(
+                  height: screenHeight * 0.04,
+                  width: screenWidth * 0.35,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.lightBlue)),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Rate"),
+                SizedBox(
                   width: 60,
                 ),
                 Container(
                   height: screenHeight * 0.04,
                   width: screenWidth * 0.35,
-                  decoration: BoxDecoration(border: Border.all(color: Colors.lightBlue)),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.lightBlue)),
                 ),
               ],
             ),
-
-
             SizedBox(height: screenHeight * 0.03),
-            ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.blue[500],),onPressed: () {
-
-            }, child: Text("Save",style: TextStyle(color: Colors.white),)),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue[500],
+                ),
+                onPressed: () {},
+                child: Text(
+                  "Save",
+                  style: TextStyle(color: Colors.white),
+                )),
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Card(
-                elevation: 10,
+                surfaceTintColor: Colors.white,
+                elevation: 2,
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -154,16 +174,16 @@ SizedBox(
                         padding: EdgeInsets.all(10),
                         child: Row(
                           children: [
-                            Container(
-                              width: 60,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Sl No.",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: Container(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Sl No.",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
@@ -181,74 +201,76 @@ SizedBox(
                                 ),
                               ),
                             ),
-                            Container(
-                              width: 80,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Category",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: Container(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Category",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
-                            Container(
-                              width: 80,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Rate",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: Container(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Rate",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
                           ],
                         ),
-                      ), Divider(
+                      ),
+                      Divider(
                         color: Colors.grey,
                         thickness: .3,
                         indent: 10,
                         endIndent: 10,
                       ),
                       SizedBox(
-                        height: 100,
+                        height: MediaQuery.of(context).size.height*0.5,
                         child: ListView.builder(
-                          physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
-                          itemCount: 3,
+                          physics: ClampingScrollPhysics(
+                              parent: FixedExtentScrollPhysics()),
+                          itemCount: 20,
                           itemBuilder: (context, index) {
                             return Column(
                               children: [
                                 Row(
                                   children: [
-                                    Container(
-                                      width: 60,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text(""),
+                                    Expanded(
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        child: Text("1"),
+                                      ),
                                     ),
                                     Expanded(
                                       child: Container(
                                         height: 40,
                                         alignment: Alignment.center,
-                                        child: Text(""),
+                                        child: Text("Blue"),
                                       ),
                                     ),
-                                    Container(
-                                      width: 80,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text(""),
+                                    Expanded(
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        child: Text("Wash"),
+                                      ),
                                     ),
-                                    Container(
-                                      width: 80,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text(""),
+                                    Expanded(
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        child: Text("5"),
+                                      ),
                                     ),
                                   ],
                                 ),

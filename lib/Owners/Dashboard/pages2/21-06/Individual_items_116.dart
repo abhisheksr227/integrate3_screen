@@ -113,7 +113,8 @@ class _IndividualItemsState extends State<IndividualItems> {
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Card(
-                elevation: 10,
+                surfaceTintColor: Colors.white,
+                elevation: 2,
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -126,7 +127,6 @@ class _IndividualItemsState extends State<IndividualItems> {
                           children: [
                             Expanded(
                               child: Container(
-                                width: 40,
                                 height: 40,
                                 alignment: Alignment.center,
                                 child: Text(
@@ -141,8 +141,6 @@ class _IndividualItemsState extends State<IndividualItems> {
                             ),
                             Expanded(
                               child: Container(
-                                height: 40,
-                                width: 80,
                                 alignment: Alignment.center,
                                 child: Text(
                                   "Particular",
@@ -156,8 +154,6 @@ class _IndividualItemsState extends State<IndividualItems> {
                             ),
                             Expanded(
                               child: Container(
-                                width: 80,
-                                height: 40,
                                 alignment: Alignment.center,
                                 child: Text(
                                   "Count",
@@ -178,10 +174,10 @@ class _IndividualItemsState extends State<IndividualItems> {
                         endIndent: 10,
                       ),
                       SizedBox(
-                        height: 150,
+                        height: MediaQuery.of(context).size.height*0.7,
                         child: ListView.builder(
                           physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
-                          itemCount: 3,
+                          itemCount: 20,
                           itemBuilder: (context, index) {
                             return Column(
                               children: [
@@ -189,7 +185,6 @@ class _IndividualItemsState extends State<IndividualItems> {
                                   children: [
                                     Expanded(
                                       child: Container(
-                                        width: 40,
                                         height: 40,
                                         alignment: Alignment.center,
                                         child: Text("1"),
@@ -197,15 +192,11 @@ class _IndividualItemsState extends State<IndividualItems> {
                                     ),
                                     Expanded(
                                       child: Container(
-                                        width: 80,
-                                        height: 40,
                                         alignment: Alignment.center,
                                         child: Text("Dryclean"),
                                       ),
                                     ), Expanded(
                                       child: Container(
-                                        width: 80,
-                                        height: 40,
                                         alignment: Alignment.center,
                                         child: Text("Dryclean"),
                                       ),

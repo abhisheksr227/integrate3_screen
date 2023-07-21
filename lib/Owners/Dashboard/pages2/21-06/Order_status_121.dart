@@ -71,7 +71,7 @@ SizedBox(
 ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Card(elevation: 10,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                child: Card(elevation: 2,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   child: Padding(
                     padding: const EdgeInsets.all(20),
                     child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,

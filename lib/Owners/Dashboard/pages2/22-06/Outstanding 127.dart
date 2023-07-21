@@ -110,7 +110,8 @@ class _OutStandingState extends State<OutStanding> {
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Card(
-                elevation: 10,
+                surfaceTintColor: Colors.white,
+                elevation: 2,
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -121,16 +122,16 @@ class _OutStandingState extends State<OutStanding> {
                         padding: EdgeInsets.all(10),
                         child: Row(
                           children: [
-                            Container(
-                              width: 40,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Sl No.",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: Container(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Sl No.",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
@@ -148,16 +149,16 @@ class _OutStandingState extends State<OutStanding> {
                                 ),
                               ),
                             ),
-                            Container(
-                              width: 80,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Total outstanding",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: Container(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Total outstanding",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
@@ -171,26 +172,26 @@ class _OutStandingState extends State<OutStanding> {
                         endIndent: 10,
                       ),
                       SizedBox(
-                        height: 150,
+                        height: MediaQuery.of(context).size.height*0.5,
                         child: ListView.builder(
                           physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
-                          itemCount: 3,
+                          itemCount: 10,
                           itemBuilder: (context, index) {
                             return Column(
                               children: [
                                 Row(
                                   children: [
-                                    Container(
-                                      width: 40,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text(""),
+                                    Expanded(
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        child: Text("1"),
+                                      ),
                                     ),
-                                    Container(
-                                      width: 80,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text(""),
+                                    Expanded(
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        child: Text(""),
+                                      ),
                                     ),
                                   ],
                                 ),

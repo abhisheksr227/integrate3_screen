@@ -25,7 +25,6 @@ class _OverDuesState extends State<OverDues> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu),
         iconTheme: IconThemeData(color: Colors.blue,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,

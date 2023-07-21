@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'Create_invoice_119.dart';
 
 class ListAll extends StatefulWidget {
   const ListAll({Key? key}) : super(key: key);
@@ -10,9 +9,6 @@ class ListAll extends StatefulWidget {
 }
 
 class _ListAllState extends State<ListAll> {
-
-
-
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -32,11 +28,15 @@ class _ListAllState extends State<ListAll> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu),
-        iconTheme: IconThemeData(color: Colors.blue,size: 30),
+        iconTheme: IconThemeData(color: Colors.blue, size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
-        title: Center(child: Text("LIST ALL",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
+        title: Center(
+            child: Text("LIST ALL",
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500))),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20),
@@ -53,7 +53,9 @@ class _ListAllState extends State<ListAll> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -100,47 +102,64 @@ class _ListAllState extends State<ListAll> {
                   SizedBox(width: 30),
                   Text("All"),
                 ],
-              ),SizedBox(
+              ),
+              SizedBox(
                 height: 30,
               ),
-              Row( mainAxisAlignment: MainAxisAlignment.center,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('Filter by: '),
-                  SizedBox(width: 10,),
+                  SizedBox(
+                    width: 10,
+                  ),
                   DropdownButton(
                     items: [
-                      DropdownMenuItem(child:Row(
-                        children: [
-                          Radio(value: 0, groupValue: null, onChanged: null),
-                          Text('All'),
-                        ],
-                      ), value: 0),
-                      DropdownMenuItem(child:Row(
-                        children: [
-                          Radio(value: 1, groupValue: null, onChanged: null),
-                          Text('Staff wise'),
-                        ],
-                      ), value: 1),
-                      DropdownMenuItem(child:Row(
-                        children: [
-                          Radio(value: 2, groupValue: null, onChanged: null),
-                          Text('Area wise'),
-                        ],
-                      ), value: 2),
-                      DropdownMenuItem(child:Row(
-                        children: [
-                          Radio(value: 3, groupValue: null, onChanged: null),
-                          Text('Active'),
-                        ],
-                      ), value: 3),
-                      DropdownMenuItem(child:Row(
-                        children: [
-                          Radio(value: 4, groupValue: null, onChanged: null),
-                          Text('Inaactive'),
-                        ],
-                      ), value: 4),
-
-
+                      DropdownMenuItem(
+                          child: Row(
+                            children: [
+                              Radio(
+                                  value: 0, groupValue: null, onChanged: null),
+                              Text('All'),
+                            ],
+                          ),
+                          value: 0),
+                      DropdownMenuItem(
+                          child: Row(
+                            children: [
+                              Radio(
+                                  value: 1, groupValue: null, onChanged: null),
+                              Text('Staff wise'),
+                            ],
+                          ),
+                          value: 1),
+                      DropdownMenuItem(
+                          child: Row(
+                            children: [
+                              Radio(
+                                  value: 2, groupValue: null, onChanged: null),
+                              Text('Area wise'),
+                            ],
+                          ),
+                          value: 2),
+                      DropdownMenuItem(
+                          child: Row(
+                            children: [
+                              Radio(
+                                  value: 3, groupValue: null, onChanged: null),
+                              Text('Active'),
+                            ],
+                          ),
+                          value: 3),
+                      DropdownMenuItem(
+                          child: Row(
+                            children: [
+                              Radio(
+                                  value: 4, groupValue: null, onChanged: null),
+                              Text('Inaactive'),
+                            ],
+                          ),
+                          value: 4),
                     ],
                     onChanged: (value) {
                       // Handle dropdown value change
@@ -154,200 +173,198 @@ class _ListAllState extends State<ListAll> {
                   //     },
                   //     child: Icon(Icons.search,color: Colors.blue,)
                   // ),
-                  ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.blue[500]),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue[500]),
                       onPressed: () {
                         // Handle search button click
                       },
-                      child: Text("Load",style: TextStyle(color: Colors.white),)
-                  ),
+                      child: Text(
+                        "Load",
+                        style: TextStyle(color: Colors.white),
+                      )),
                 ],
               ),
               SizedBox(
                 height: 30,
-              ), Padding(
-                padding: const EdgeInsets.only(left:20),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
                 child: Row(
                   children: [
-                    Text("Search results",style: TextStyle(color: Colors.blue[800],fontSize: 20)),
+                    Text("Search results",
+                        style:
+                            TextStyle(color: Colors.blue[800], fontSize: 20)),
                   ],
                 ),
-              ),SizedBox(height: 20,),
+              ),
+              SizedBox(
+                height: 20,
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
-                  elevation: 10,
-                  child: SizedBox(height: 130,
-                    child: Padding(
-                      padding: EdgeInsets.all(15),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 40,
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      "Sl.No",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      "Client Name",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      "Area",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      "Staff",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      "Status",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                  surfaceTintColor: Colors.white,
+                  elevation: 2,
+                  color: Colors.white,
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: SizedBox(
+                                height: 40,
+                                child: Center(
+                                    child: Text('Sl.No',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold))),
+                              ),
+                            ),
+                            Expanded(
+                              flex:2,
+                              child: SizedBox(
+                                child: Center(
+                                    child: Text('Client Name',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold))),
+                              ),
+                            ),
+                            Expanded(
+                              child: SizedBox(
+                                child: Center(
+                                    child: Text('Area',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold))),
+                              ),
+                            ),
+                            Expanded(
+                              child: SizedBox(
+                                child: Center(
+                                    child: Text('Staff',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold))),
+                              ),
+                            ),
+                            Expanded(
+                              child: SizedBox(
+                                child: Center(
+                                    child: Text('Status',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold))),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Container(
+                              height: 0.5,
+                              width: MediaQuery.of(context).size.width,
+                              color: Colors.deepPurple,
                             ),
                           ),
-                          Divider(
-                            color: Colors.lightBlue,
-                          ),
-                          Expanded(
-                            child: ListView.builder(
-                              padding: EdgeInsets.zero,
-                              itemCount: 1, // Replace with actual item count
-                              itemBuilder: (BuildContext context, int rowIndex) {
-                                return SizedBox(
-                                  height: 40,
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            "",
-                                            style: TextStyle(color: Colors.black),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            "",
-                                            style: TextStyle(color: Colors.black),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            "",
-                                            style: TextStyle(color: Colors.black),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            " ",
-                                            style: TextStyle(color: Colors.black),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            "Active/Inactive",
-                                            style: TextStyle(color: Colors.black),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height*0.5,
+                          child: ListView.builder(
+                            itemCount: 10,
+                            itemBuilder: (context, index) {
+                              return Row(
+                                children: [
+                                  Expanded(
+                                    child: SizedBox(
+                                      height: 40,
+                                      child: Center(child: Text('1')),
+                                    ),
                                   ),
-                                );
-                              },
-                            ),
+                                  Expanded(
+                                    flex:2,
+                                    child: SizedBox(
+                                      child: Center(child: Text('Noor Shaa')),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: SizedBox(
+                                      child: Center(child: Center(child: Text('Al Nadha'))),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: SizedBox(
+                                      child: Center(child: Center(child: Text('Abu'))),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: SizedBox(
+                                      child: Center(child: Center(child: Text('Active'))),
+                                    ),
+                                  ),
+                                ],
+                              );
+                            },
                           ),
-                        ],
-                      ),
+                        )
+                      ],
                     ),
                   ),
                 ),
               ),
-Row(mainAxisAlignment: MainAxisAlignment.end,
-  children: [
-    SizedBox(height: 30,
-      child: ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.blue[600],shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
-          onPressed: () {
-            // Handle search button click
-          },
-          child: Text("View",style: TextStyle(color: Colors.white))
-      ),
-    ),SizedBox(width: 10,)
-    , SizedBox(height: 30,
-      child: ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.blue[600],shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
-          onPressed: () {
-            // Handle search button click
-          },
-          child: Text("Edit",style: TextStyle(color: Colors.white))
-      ),
-    ),SizedBox(width: 10,), SizedBox(
-      height: 30,
-
-      child: ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.blue[600],shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
-          onPressed: () {
-            // Handle search button click
-          },
-          child: Text("Delete",style: TextStyle(color: Colors.white))
-      ),
-    ),SizedBox(width: 20,),
-
-  ],
-),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  SizedBox(
+                    height: 30,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue[600],
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30))),
+                        onPressed: () {
+                          // Handle search button click
+                        },
+                        child: Text("View",
+                            style: TextStyle(color: Colors.white))),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  SizedBox(
+                    height: 30,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue[600],
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30))),
+                        onPressed: () {
+                          // Handle search button click
+                        },
+                        child: Text("Edit",
+                            style: TextStyle(color: Colors.white))),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  SizedBox(
+                    height: 30,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue[600],
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30))),
+                        onPressed: () {
+                          // Handle search button click
+                        },
+                        child: Text("Delete",
+                            style: TextStyle(color: Colors.white))),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                ],
+              ),
             ]),
       ),
     );

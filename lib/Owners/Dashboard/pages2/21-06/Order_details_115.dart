@@ -11,11 +11,7 @@ class OrderDetails extends StatefulWidget {
 class _OrderDetailsState extends State<OrderDetails> {
   final ScrollController _horizontal = ScrollController();
 
-  List<Color> colorList = [
-    Color(0xffD95AF3),
-    Color(0xffFA4A42),
-    Color(0xffFE9539)
-  ];
+
 
   int neworderradio = 0;
 
@@ -38,7 +34,6 @@ class _OrderDetailsState extends State<OrderDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu),
         iconTheme: IconThemeData(color: Colors.blue,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
@@ -125,7 +120,8 @@ class _OrderDetailsState extends State<OrderDetails> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
-                  elevation: 10,
+                  surfaceTintColor: Colors.white,
+                  elevation: 2,
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
@@ -136,7 +132,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                             children: [
                               SizedBox(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.30,
+                                    MediaQuery.of(context).size.height * 0.7,
                                 width: MediaQuery.of(context).size.width * 2,
                                 child: ListView.builder(
                                   itemCount: 1,
@@ -228,7 +224,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                             FontWeight.bold),
                                                   ),
                                                 ),
-                                              ),
+                                              ),SizedBox(width: 5,),
                                               Expanded(
                                                 child: Container(
                                                   alignment: Alignment.center,
@@ -242,6 +238,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                 ),
                                               ),
                                               Expanded(
+                                                flex:2,
                                                 child: Container(
                                                   alignment: Alignment.center,
                                                   child: Text(
@@ -272,7 +269,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                           height: MediaQuery.of(context)
                                                   .size
                                                   .height *
-                                              0.20,
+                                              0.5,
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width *
@@ -289,7 +286,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                             padding: EdgeInsets.zero,
                                             physics:
                                                 const ClampingScrollPhysics(),
-                                            itemCount: 6,
+                                            itemCount: 20,
                                             itemBuilder: (BuildContext context,
                                                 int rowIndex) {
                                               final isEvenRow =
@@ -326,7 +323,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                                   Alignment
                                                                       .center,
                                                               child: Text(
-                                                                "",
+                                                                "1",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
@@ -339,7 +336,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                                   Alignment
                                                                       .center,
                                                               child: Text(
-                                                                "",
+                                                                "1678",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
@@ -352,7 +349,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                                   Alignment
                                                                       .center,
                                                               child: Text(
-                                                                "",
+                                                                "Noor",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
@@ -365,7 +362,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                                   Alignment
                                                                       .center,
                                                               child: Text(
-                                                                "",
+                                                                "Shaas",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
@@ -378,7 +375,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                                   Alignment
                                                                       .center,
                                                               child: Text(
-                                                                "",
+                                                                "Al Nadha",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
@@ -391,7 +388,34 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                                   Alignment
                                                                       .center,
                                                               child: Text(
-                                                                "",
+                                                                "10",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
+                                                              ),
+                                                            ),
+                                                          ),SizedBox(width: 5,),
+                                                          Expanded(
+                                                            child: Container(
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
+                                                              child: Text(
+                                                                "200",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .black),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Expanded(
+                                                            flex:2,
+                                                            child: Container(
+                                                              alignment:
+                                                                  Alignment
+                                                                      .center,
+                                                              child: Text(
+                                                                "Active",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
@@ -404,33 +428,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                                   Alignment
                                                                       .center,
                                                               child: Text(
-                                                                "",
-                                                                style: TextStyle(
-                                                                    color: Colors
-                                                                        .black),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Expanded(
-                                                            child: Container(
-                                                              alignment:
-                                                                  Alignment
-                                                                      .center,
-                                                              child: Text(
-                                                                "",
-                                                                style: TextStyle(
-                                                                    color: Colors
-                                                                        .black),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Expanded(
-                                                            child: Container(
-                                                              alignment:
-                                                                  Alignment
-                                                                      .center,
-                                                              child: Text(
-                                                                "",
+                                                                "07:00AM",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
@@ -454,27 +452,23 @@ class _OrderDetailsState extends State<OrderDetails> {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding:
-                              EdgeInsets.only(top: 30, left: 15, right: 15),
-                          child: Scrollbar(
-                            trackVisibility: true,
-                            controller: _horizontal,
-                            child: SizedBox(
-                              height: 5,
-                              width: MediaQuery.of(context).size.width,
-                              child: ListView(
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  Container(
-                                    width: 150,
-                                    decoration: BoxDecoration(
-                                        color: Colors.lightBlue,
-                                        borderRadius:
-                                            BorderRadius.circular(30)),
-                                  ),
-                                ],
-                              ),
+                        Scrollbar(
+                          trackVisibility: true,
+                          controller: _horizontal,
+                          child: SizedBox(
+                            height: 5,
+                            width: MediaQuery.of(context).size.width,
+                            child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                Container(
+                                  width: 150,
+                                  decoration: BoxDecoration(
+                                      color: Colors.lightBlue,
+                                      borderRadius:
+                                          BorderRadius.circular(30)),
+                                ),
+                              ],
                             ),
                           ),
                         ),

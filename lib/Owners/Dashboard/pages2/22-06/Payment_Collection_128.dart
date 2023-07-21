@@ -51,7 +51,6 @@ class _PaymentCollectionState extends State<PaymentCollection> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu),
         iconTheme: IconThemeData(color: Colors.blue,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
@@ -136,7 +135,7 @@ class _PaymentCollectionState extends State<PaymentCollection> {
                           labelText:"From Date",
                           hintText: fromDate != null ? dateFormat.format(fromDate!) : "From Date", // Format the fromDate
                           border: OutlineInputBorder(),
-                          suffixIcon: Icon(Icons.date_range),
+                          suffixIcon: Icon(Icons.date_range,color: Colors.blue),
                         ),
                       ),
                     ),
@@ -150,7 +149,8 @@ class _PaymentCollectionState extends State<PaymentCollection> {
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Card(
-                  elevation: 5,
+                  surfaceTintColor: Colors.white,
+                  elevation: 2,
                   child: Column(
                     children: [
                       SingleChildScrollView(
@@ -159,7 +159,7 @@ class _PaymentCollectionState extends State<PaymentCollection> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.32,
+                              height: MediaQuery.of(context).size.height * 0.5,
                               width: MediaQuery.of(context).size.width * 2,
                               child: ListView.builder(
                                 itemCount: 1,
@@ -266,7 +266,7 @@ class _PaymentCollectionState extends State<PaymentCollection> {
                                       ),
 
                                       Container(
-                                        height: MediaQuery.of(context).size.height * 0.20,
+                                        height: MediaQuery.of(context).size.height * 0.4,
                                         width: MediaQuery.of(context).size.width * 2,
                                         child: ListView.builder(
                                           padding: EdgeInsets.zero,
@@ -297,7 +297,7 @@ class _PaymentCollectionState extends State<PaymentCollection> {
                                                                 width: 40,
                                                                 alignment: Alignment.center,
                                                                 child: Text(
-                                                                  "10",
+                                                                  "1",
                                                                   style: TextStyle(
                                                                     color: Colors.black,
                                                                   ),
@@ -307,7 +307,7 @@ class _PaymentCollectionState extends State<PaymentCollection> {
                                                                 child: Container(
                                                                   alignment: Alignment.center,
                                                                   child: Text(
-                                                                    "hlw",
+                                                                    "Noor",
                                                                     style: TextStyle(
                                                                       color: Colors.black,
                                                                     ),
@@ -318,7 +318,7 @@ class _PaymentCollectionState extends State<PaymentCollection> {
                                                                 child: Container(
                                                                   alignment: Alignment.center,
                                                                   child: Text(
-                                                                    "",
+                                                                    "Shaa",
                                                                     style: TextStyle(
                                                                       color: Colors.black,
                                                                     ),
@@ -329,7 +329,7 @@ class _PaymentCollectionState extends State<PaymentCollection> {
                                                                 child: Container(
                                                                   alignment: Alignment.center,
                                                                   child: Text(
-                                                                    "",
+                                                                    "1267",
                                                                     style: TextStyle(
                                                                       color: Colors.black,
                                                                     ),
@@ -340,7 +340,7 @@ class _PaymentCollectionState extends State<PaymentCollection> {
                                                                 child: Container(
                                                                   alignment: Alignment.center,
                                                                   child: Text(
-                                                                    "",
+                                                                    "T345",
                                                                     style: TextStyle(
                                                                       color: Colors.black,
                                                                     ),
@@ -351,7 +351,7 @@ class _PaymentCollectionState extends State<PaymentCollection> {
                                                                 child: Container(
                                                                   alignment: Alignment.center,
                                                                   child: Text(
-                                                                    "",
+                                                                    "5",
                                                                     style: TextStyle(
                                                                       color: Colors.black,
                                                                     ),
@@ -362,7 +362,7 @@ class _PaymentCollectionState extends State<PaymentCollection> {
                                                                 child: Container(
                                                                   alignment: Alignment.center,
                                                                   child: Text(
-                                                                    "",
+                                                                    "5",
                                                                     style: TextStyle(
                                                                       color: Colors.black,
                                                                     ),
@@ -373,7 +373,7 @@ class _PaymentCollectionState extends State<PaymentCollection> {
                                                                 child: Container(
                                                                   alignment: Alignment.center,
                                                                   child: Text(
-                                                                    "",
+                                                                    "0",
                                                                     style: TextStyle(
                                                                       color: Colors.black,
                                                                     ),
@@ -406,26 +406,23 @@ class _PaymentCollectionState extends State<PaymentCollection> {
                           ],
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 10, left: 15, right: 15),
-                        child: Scrollbar(
-                          trackVisibility: true,
-                          controller: _horizontal,
-                          child: SizedBox(
-                            height: 5,
-                            width: MediaQuery.of(context).size.width,
-                            child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                Container(
-                                  width: 150,
-                                  decoration: BoxDecoration(
-                                    color: Colors.lightBlue,
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
+                      Scrollbar(
+                        trackVisibility: true,
+                        controller: _horizontal,
+                        child: SizedBox(
+                          height: 5,
+                          width: MediaQuery.of(context).size.width,
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              Container(
+                                width: 150,
+                                decoration: BoxDecoration(
+                                  color: Colors.lightBlue,
+                                  borderRadius: BorderRadius.circular(30),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),

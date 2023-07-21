@@ -31,7 +31,6 @@ class _PendingOrdersState extends State<PendingOrders> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu),
         iconTheme: IconThemeData(color: Colors.blue,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
@@ -103,7 +102,8 @@ class _PendingOrdersState extends State<PendingOrders> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
-                  elevation: 10,
+                   surfaceTintColor: Colors.white,
+                  elevation: 2,
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
@@ -114,7 +114,7 @@ class _PendingOrdersState extends State<PendingOrders> {
                             children: [
                               SizedBox(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.30,
+                                    MediaQuery.of(context).size.height * 0.7,
                                 width: MediaQuery.of(context).size.width * 2,
                                 child: ListView.separated(
                                   separatorBuilder: (context, index) {
@@ -333,7 +333,7 @@ class _PendingOrdersState extends State<PendingOrders> {
                                           height: MediaQuery.of(context)
                                                   .size
                                                   .height *
-                                              0.20,
+                                              0.6,
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width *
@@ -350,7 +350,7 @@ class _PendingOrdersState extends State<PendingOrders> {
                                             padding: EdgeInsets.zero,
                                             physics:
                                                  ClampingScrollPhysics( ),
-                                            itemCount: 6,
+                                            itemCount: 20,
                                             itemBuilder: (BuildContext context,
                                                 int rowIndex) {
                                               final isEvenRow =
@@ -387,7 +387,7 @@ class _PendingOrdersState extends State<PendingOrders> {
                                                                   Alignment
                                                                       .center,
                                                               child: Text(
-                                                                "",
+                                                                "1",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
@@ -400,7 +400,7 @@ class _PendingOrdersState extends State<PendingOrders> {
                                                                   Alignment
                                                                       .center,
                                                               child: Text(
-                                                                "",
+                                                                "1543",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
@@ -413,7 +413,7 @@ class _PendingOrdersState extends State<PendingOrders> {
                                                                   Alignment
                                                                       .center,
                                                               child: Text(
-                                                                "",
+                                                                "Wash",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
@@ -426,7 +426,7 @@ class _PendingOrdersState extends State<PendingOrders> {
                                                                   Alignment
                                                                       .center,
                                                               child: Text(
-                                                                "",
+                                                                "Noor",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
@@ -439,7 +439,7 @@ class _PendingOrdersState extends State<PendingOrders> {
                                                                   Alignment
                                                                       .center,
                                                               child: Text(
-                                                                "",
+                                                                "04:00Am",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
@@ -452,7 +452,7 @@ class _PendingOrdersState extends State<PendingOrders> {
                                                                   Alignment
                                                                       .center,
                                                               child: Text(
-                                                                "",
+                                                                "05:00PM",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
@@ -465,7 +465,7 @@ class _PendingOrdersState extends State<PendingOrders> {
                                                                   Alignment
                                                                       .center,
                                                               child: Text(
-                                                                "",
+                                                                "50",
                                                                 style: TextStyle(
                                                                     color: Colors
                                                                         .black),
@@ -489,25 +489,22 @@ class _PendingOrdersState extends State<PendingOrders> {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 30, left: 15, right: 15),
-                          child: Scrollbar(
-                            trackVisibility: true,
-                            controller: _horizontal,
-                            child: SizedBox(
-                              height: 5,
-                              width: MediaQuery.of(context).size.width,
-                              child: ListView(
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  Container(
-                                    width: 150,
-                                    decoration: BoxDecoration(
-                                        color: Colors.lightBlue,
-                                        borderRadius: BorderRadius.circular(30)),
-                                  ),
-                                ],
-                              ),
+                        Scrollbar(
+                          trackVisibility: true,
+                          controller: _horizontal,
+                          child: SizedBox(
+                            height: 5,
+                            width: MediaQuery.of(context).size.width,
+                            child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                Container(
+                                  width: 150,
+                                  decoration: BoxDecoration(
+                                      color: Colors.lightBlue,
+                                      borderRadius: BorderRadius.circular(30)),
+                                ),
+                              ],
                             ),
                           ),
                         ),

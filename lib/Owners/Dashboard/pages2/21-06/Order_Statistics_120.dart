@@ -58,7 +58,6 @@ class _OrderStatisticsState extends State<OrderStatistics> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu),
         iconTheme: IconThemeData(color: Colors.blue,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,

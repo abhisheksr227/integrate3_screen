@@ -69,7 +69,6 @@ class _BagsState extends State<Bags> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu),
         iconTheme: IconThemeData(color: Colors.blue,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
@@ -154,7 +153,7 @@ class _BagsState extends State<Bags> {
                             labelText:"From Date",
                             hintText: fromDate != null ? dateFormat.format(fromDate!) : "From Date", // Format the fromDate
                             border: OutlineInputBorder(),
-                            suffixIcon: Icon(Icons.date_range),
+                            suffixIcon: Icon(Icons.date_range,color: Colors.blue),
                           ),
                         ),
                       ),
@@ -173,20 +172,14 @@ class _BagsState extends State<Bags> {
                             labelText: "To Date",
                             hintText: toDate != null ? toDate.toString() : "To Date",
                             border: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
-                            suffixIcon: Icon(Icons.date_range),
+                            suffixIcon: Icon(Icons.date_range,color: Colors.blue),
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 20,
-                    ),
 
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 30,
               ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
@@ -198,7 +191,7 @@ class _BagsState extends State<Bags> {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.32,
+                            height: MediaQuery.of(context).size.height * 0.7,
                             width: MediaQuery.of(context).size.width * 2,
                             child: ListView.builder(
                               itemCount: 1,
@@ -213,13 +206,14 @@ class _BagsState extends State<Bags> {
                                       width: MediaQuery.of(context).size.width * 2,
                                       child: Row(
                                         children: [
-                                          Container(
-                                            width: 40,
-                                            alignment: Alignment.center,
-                                            child: Text(
-                                              "Sl No",
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
+                                          Expanded(
+                                            child: Container(
+                                              alignment: Alignment.center,
+                                              child: Text(
+                                                "Sl No",
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -294,12 +288,12 @@ class _BagsState extends State<Bags> {
                                     ),
 
                                     Container(
-                                      height: MediaQuery.of(context).size.height * 0.20,
+                                      height: MediaQuery.of(context).size.height * 0.6,
                                       width: MediaQuery.of(context).size.width * 2,
                                       child: ListView.builder(
                                         padding: EdgeInsets.zero,
                                         physics: const ClampingScrollPhysics(),
-                                        itemCount: 4,
+                                        itemCount: 20,
                                         itemBuilder: (BuildContext context, int rowIndex) {
                                           return Column(
                                             children: [
@@ -327,21 +321,11 @@ class _BagsState extends State<Bags> {
                                                         width: MediaQuery.of(context).size.width * 2,
                                                         child: Row(
                                                           children: [
-                                                            Container(
-                                                              width: 40,
-                                                              alignment: Alignment.center,
-                                                              child: Text(
-                                                                "10",
-                                                                style: TextStyle(
-                                                                  color: Colors.black,
-                                                                ),
-                                                              ),
-                                                            ),
                                                             Expanded(
                                                               child: Container(
                                                                 alignment: Alignment.center,
                                                                 child: Text(
-                                                                  "hlw",
+                                                                  "1",
                                                                   style: TextStyle(
                                                                     color: Colors.black,
                                                                   ),
@@ -352,7 +336,7 @@ class _BagsState extends State<Bags> {
                                                               child: Container(
                                                                 alignment: Alignment.center,
                                                                 child: Text(
-                                                                  "",
+                                                                  "Noor",
                                                                   style: TextStyle(
                                                                     color: Colors.black,
                                                                   ),
@@ -363,7 +347,7 @@ class _BagsState extends State<Bags> {
                                                               child: Container(
                                                                 alignment: Alignment.center,
                                                                 child: Text(
-                                                                  "",
+                                                                  "Al Nadha",
                                                                   style: TextStyle(
                                                                     color: Colors.black,
                                                                   ),
@@ -374,7 +358,7 @@ class _BagsState extends State<Bags> {
                                                               child: Container(
                                                                 alignment: Alignment.center,
                                                                 child: Text(
-                                                                  "",
+                                                                  "Noor",
                                                                   style: TextStyle(
                                                                     color: Colors.black,
                                                                   ),
@@ -385,7 +369,7 @@ class _BagsState extends State<Bags> {
                                                               child: Container(
                                                                 alignment: Alignment.center,
                                                                 child: Text(
-                                                                  "",
+                                                                  "2",
                                                                   style: TextStyle(
                                                                     color: Colors.black,
                                                                   ),
@@ -396,7 +380,18 @@ class _BagsState extends State<Bags> {
                                                               child: Container(
                                                                 alignment: Alignment.center,
                                                                 child: Text(
-                                                                  "",
+                                                                  "Completed",
+                                                                  style: TextStyle(
+                                                                    color: Colors.black,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              child: Container(
+                                                                alignment: Alignment.center,
+                                                                child: Text(
+                                                                  "Completed",
                                                                   style: TextStyle(
                                                                     color: Colors.black,
                                                                   ),
@@ -424,26 +419,23 @@ class _BagsState extends State<Bags> {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 10, left: 15, right: 15),
-                      child: Scrollbar(
-                        trackVisibility: true,
-                        controller: _horizontal,
-                        child: SizedBox(
-                          height: 5,
-                          width: MediaQuery.of(context).size.width,
-                          child: ListView(
-                            scrollDirection: Axis.horizontal,
-                            children: [
-                              Container(
-                                width: 150,
-                                decoration: BoxDecoration(
-                                  color: Colors.lightBlue,
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
+                    Scrollbar(
+                      trackVisibility: true,
+                      controller: _horizontal,
+                      child: SizedBox(
+                        height: 5,
+                        width: MediaQuery.of(context).size.width,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            Container(
+                              width: 150,
+                              decoration: BoxDecoration(
+                                color: Colors.lightBlue,
+                                borderRadius: BorderRadius.circular(30),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),

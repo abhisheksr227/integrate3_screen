@@ -32,14 +32,14 @@ class _AgeingReportState extends State<AgeingReport> {
         return Dialog(
           child: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10.0),
               child: SizedBox(
-                height: 350,
+                height: MediaQuery.of(context).size.height*0.6,
                 child: ListView.builder(
-                  itemCount: 2,
+                  itemCount: 4,
                   itemBuilder: (context, index) {
                     return Container(
-                      height: 150,
+                      height: MediaQuery.of(context).size.height*0.2,
                       decoration:
                       BoxDecoration(border: Border.all(color: Colors.lightBlue)),
                       child: Padding(
@@ -100,7 +100,6 @@ class _AgeingReportState extends State<AgeingReport> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu),
         iconTheme: IconThemeData(color: Colors.blue,size: 30),
         elevation: 0,
         backgroundColor: CupertinoColors.white,
@@ -150,7 +149,7 @@ class _AgeingReportState extends State<AgeingReport> {
                     child: Padding(
                       padding: EdgeInsets.all(screenWidth * 0.03),
                       child: Card(
-                        elevation: 10,
+                        elevation: 2,
                         child: Container(
                           decoration:
                           BoxDecoration(border: Border.all(color: Colors.lightBlue)),
@@ -198,7 +197,7 @@ class _AgeingReportState extends State<AgeingReport> {
             Padding(
               padding: EdgeInsets.all(screenWidth * 0.03),
               child: Card(
-                elevation: 10,
+                elevation: 2,
                 child: Container(
                   decoration:
                   BoxDecoration(border: Border.all(color: Colors.lightBlue)),
