@@ -1402,7 +1402,7 @@ class _DashboardState extends State<Dashboard> {
                         ),
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height*0.4,
+                        height: MediaQuery.of(context).size.height*0.35,
                         child: ListView.builder(
                           itemCount: 10,
                           itemBuilder: (context, index) {
@@ -1551,7 +1551,7 @@ class _DashboardState extends State<Dashboard> {
                         ),
                       ),
                       SizedBox(
-                        height: 360,
+                        height: MediaQuery.of(context).size.height*0.35,
                         child: ListView.builder(
                           itemCount: 15,
                           itemBuilder: (context, index) {

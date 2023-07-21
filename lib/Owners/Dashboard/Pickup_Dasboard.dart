@@ -401,7 +401,7 @@ class _PickupdashboardState extends State<Pickupdashboard> {
                                                     ))),
                                           ])),
                                       SizedBox(
-                                        height: MediaQuery.of(context).size.height*0.45,
+                                        height: MediaQuery.of(context).size.height*0.4,
                                         width: MediaQuery.of(context).size.width+130,
                                         child: ListView.separated(
                                             separatorBuilder: (context, index) {
@@ -663,7 +663,7 @@ class _PickupdashboardState extends State<Pickupdashboard> {
                                                         ))),
                                               ])),
                                           Container(
-                                            height: MediaQuery.of(context).size.height*0.45,
+                                            height: MediaQuery.of(context).size.height*0.4,
                                             width: MediaQuery.of(context).size.width+130,
                                             child: ListView.separated(
                                                 separatorBuilder: (context, index) {
@@ -925,7 +925,7 @@ class _PickupdashboardState extends State<Pickupdashboard> {
                                                         ))),
                                               ])),
                                           Container(
-                                            height: MediaQuery.of(context).size.height*0.45,
+                                            height: MediaQuery.of(context).size.height*0.4,
                                             width: MediaQuery.of(context).size.width+130,
                                             child: ListView.separated(
                                                 separatorBuilder: (context, index) {
@@ -1187,7 +1187,7 @@ class _PickupdashboardState extends State<Pickupdashboard> {
                                                         ))),
                                               ])),
                                           SizedBox(
-                                            height: MediaQuery.of(context).size.height*0.45,
+                                            height: MediaQuery.of(context).size.height*0.4,
                                             width: MediaQuery.of(context).size.width+130,
                                             child: ListView.separated(
                                                 separatorBuilder: (context, index) {

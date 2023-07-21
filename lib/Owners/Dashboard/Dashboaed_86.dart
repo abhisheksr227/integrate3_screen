@@ -93,36 +93,34 @@ class _sampleState extends State<sample> {
                               decoration: BoxDecoration(border: Border.all(color: Colors.blue),
                                 borderRadius: BorderRadius.circular(5),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: TextFormField(
-                                  textAlign: TextAlign.center,
-                                  controller: Date,
-                                  style: TextStyle(fontSize: 14),
-                                  onTap: () async {
-                                    FocusScope.of(context).requestFocus(FocusNode());
-                                    var pickedDate = await showDatePicker(
-                                        builder: (context, child) {
-                                          return Theme(
-                                              data: ThemeData().copyWith(
-                                                colorScheme: ColorScheme.light(
-                                                  primary: Colors.blue,
-                                                  onPrimary: Colors.white,
-                                                  surface: Colors.blue,
-                                                  onSurface: Colors.black,
-                                                ),
-                                                dialogBackgroundColor:Colors.blueGrey.shade50,
-                                              ), child: child!);
+                              child: TextFormField(
+                                textAlign: TextAlign.center,
+                                controller: Date,
+                                style: TextStyle(fontSize: 14),
+                                onTap: () async {
+                                  FocusScope.of(context).requestFocus(FocusNode());
+                                  var pickedDate = await showDatePicker(
+                                      builder: (context, child) {
+                                        return Theme(
+                                            data: ThemeData().copyWith(
+                                              colorScheme: ColorScheme.light(
+                                                primary: Colors.blue,
+                                                onPrimary: Colors.white,
+                                                surface: Colors.blue,
+                                                onSurface: Colors.black,
+                                              ),
+                                              dialogBackgroundColor:Colors.blueGrey.shade50,
+                                            ), child: child!);
 
-                                        },
-                                        context: context,
-                                        initialDate: DateTime.now(),
-                                        firstDate: DateTime(2000,01,01),
-                                        lastDate: DateTime(2050,12,31));
-                                    Date.text = DateFormat('dd-MM-yyyy').format(pickedDate!);
-                                  },
-                                  decoration: InputDecoration(contentPadding: EdgeInsets.all(10),border: InputBorder.none,
-                                  ),
+                                      },
+                                      context: context,
+                                      initialDate: DateTime.now(),
+                                      firstDate: DateTime(2000,01,01),
+                                      lastDate: DateTime(2050,12,31));
+                                  Date.text = DateFormat('dd-MM-yyyy').format(pickedDate!);
+                                },
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.only(bottom: 22),border: InputBorder.none,
                                 ),
                               )
                           ),

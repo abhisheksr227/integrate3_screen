@@ -197,7 +197,7 @@ class _ServicedashboardState extends State<Servicedashboard> {
                             endIndent: 10,
                           ),
                           SizedBox(
-                            height: MediaQuery.of(context).size.height*0.43,
+                            height: MediaQuery.of(context).size.height*0.4,
                             child: ListView.builder(
                               physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
                               itemCount: 15,
@@ -577,7 +577,7 @@ class _ServicedashboardState extends State<Servicedashboard> {
                                           ),
                                         ),
                                         Container(
-                                          height: MediaQuery.of(context).size.height*0.45,
+                                          height: MediaQuery.of(context).size.height*0.4,
                                           width: MediaQuery.of(context).size.width+130,
                                           child: ListView.builder(
                                             padding: EdgeInsets.zero,

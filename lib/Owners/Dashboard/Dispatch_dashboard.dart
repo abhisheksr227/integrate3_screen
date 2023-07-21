@@ -173,7 +173,7 @@ class _DispatchdashboardState extends State<Dispatchdashboard> {
                                               child: Text("Delivered", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))),
                                         ])),
                                     SizedBox(
-                                      height: MediaQuery.of(context).size.height*0.45,
+                                      height: MediaQuery.of(context).size.height*0.4,
                                       width:MediaQuery.of(context).size.width,
                                       child: ListView.separated(
                                         separatorBuilder: (context, index) {
