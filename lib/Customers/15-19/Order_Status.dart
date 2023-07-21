@@ -64,9 +64,9 @@ class _OrderstushistoryState extends State<Orderstushistory> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(8),
               child: Card(
-                elevation: 10,
+                elevation: 2,
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),

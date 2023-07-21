@@ -176,14 +176,13 @@ class _CustomerNewOrderState extends State<CustomerNewOrder> {
                 child: Text(
                   'SUBMIT',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.blue[800],
-                  padding: EdgeInsets.symmetric(vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
