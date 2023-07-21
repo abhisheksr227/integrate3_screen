@@ -39,8 +39,8 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
                 children: [
                   Text("Order N.o"),
                   Container(
-                    width: 100,
-                    height: 20,
+                    width: MediaQuery.of(context).size.width*0.25,
+                    height: 30,
                     decoration: BoxDecoration(
                       color: Colors.white, // You can set your desired background color
                       borderRadius: BorderRadius.all(Radius.circular(0)), // Set the border radius to 0 for a rectangle
@@ -51,6 +51,7 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(10),
                         border: InputBorder.none, // Remove the border from the TextField
                         // Add any additional decoration properties you may need
                       ),
@@ -59,8 +60,8 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
 
                   Text("Order Type") ,// Optional spacing between text fields
                   Container(
-                    width: 100,
-                    height: 20,
+                    width: MediaQuery.of(context).size.width*0.25,
+                    height: 30,
                     decoration: BoxDecoration(
                       color: Colors.white, // You can set your desired background color
                       borderRadius: BorderRadius.all(Radius.circular(0)), // Set the border radius to 0 for a rectangle
@@ -71,6 +72,7 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(10),
                         border: InputBorder.none,
                         // Remove the border from the TextField
                         // Add any additional decoration properties you may need
@@ -106,11 +108,11 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
               )
 
             ),
-            SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Card(
-                elevation: 5,
+                surfaceTintColor: Colors.white,
+                elevation: 2,
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -121,16 +123,17 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
                         padding: EdgeInsets.all(10),
                         child: Row(
                           children: [
-                            Container(
-                              width: 60,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Sl No.",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: Container(
+                                height: 40,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Sl No.",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
@@ -148,29 +151,31 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
                                 ),
                               ),
                             ),
-                            Container(
-                              width: 80,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Type",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: Container(
+                                height: 40,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Type",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
-                            Container(
-                              width: 80,
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Qty",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: Container(
+                                height: 40,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Qty",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
@@ -183,20 +188,21 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
                         endIndent: 10,
                       ),
                       SizedBox(
-                        height: 170,
+                        height: MediaQuery.of(context).size.height*0.4,
                         child: ListView.builder(
                           physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
-                          itemCount: 3,
+                          itemCount: 20,
                           itemBuilder: (context, index) {
                             return Column(
                               children: [
                                 Row(
                                   children: [
-                                    Container(
-                                      width: 60,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text("1"),
+                                    Expanded(
+                                      child: Container(
+                                        height: 40,
+                                        alignment: Alignment.center,
+                                        child: Text("1"),
+                                      ),
                                     ),
                                     Expanded(
                                       child: Container(
@@ -205,17 +211,19 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
                                         child: Text("cat"),
                                       ),
                                     ),
-                                    Container(
-                                      width: 80,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text("Normal"),
+                                    Expanded(
+                                      child: Container(
+                                        height: 40,
+                                        alignment: Alignment.center,
+                                        child: Text("Normal"),
+                                      ),
                                     ),
-                                    Container(
-                                      width: 80,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Text("2"),
+                                    Expanded(
+                                      child: Container(
+                                        height: 40,
+                                        alignment: Alignment.center,
+                                        child: Text("2"),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -235,30 +243,19 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Container(
-                  width: 120,
-                  height: 20,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.deepPurple, width: 1),
-                  ),
-                  child: ElevatedButton(
+            Padding(
+              padding: const EdgeInsets.only(right: 25),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ElevatedButton(
                     onPressed: () {
-                      // Button onPressed action
                     },
-                    child: Text("Engage Now",style: TextStyle(fontSize: 10,color: Colors.black)), // You can replace null with an icon or any other widget
+                    child: Text("Engage Now",style: TextStyle(fontSize: 10,color: Colors.white)),style:  ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple), // You can replace null with an icon or any other widget
                   ),
-                ),
-                SizedBox(
-                  width: 40,
-                )
-              ],
-            ),SizedBox(
-              height: 40,
-            ),
+                ],
+              ),
+            )
             // ElevatedButton(onPressed: () {
             //   Navigator.push(context, MaterialPageRoute(builder: (context) {
             //     return NewOrder();

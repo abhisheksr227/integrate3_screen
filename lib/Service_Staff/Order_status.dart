@@ -90,7 +90,8 @@ class _OrderstatusState extends State<Orderstatus> {
                 child: Row(crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Card(
-                      elevation: 5,
+                      surfaceTintColor: Colors.white,
+                      elevation: 2,
                       color: Colors.white,
                       child: Column(children: [
                         SizedBox(
@@ -147,12 +148,12 @@ class _OrderstatusState extends State<Orderstatus> {
                           ),
                         ),
                         SizedBox(
-                          height: 220,
+                          height: MediaQuery.of(context).size.height*0.7,
                           width: MediaQuery.of(context).size.width*2.2,
                           child: ListView.builder(
                               padding: EdgeInsets.zero,
                               physics: const ClampingScrollPhysics(),
-                              itemCount: 10,
+                              itemCount: 20,
                               itemBuilder: (BuildContext context,int rowIndex){
                                 return  Container(
                                     height: 40,

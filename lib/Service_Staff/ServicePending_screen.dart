@@ -4,50 +4,27 @@ import 'package:intl/intl.dart';
 
 import 'ReadyForDelivery.dart';
 
-class ServicePendingScreen extends StatelessWidget {
-  // Dummy list of orders with delivery times for testing
-  final List<Map<String, dynamic>> orders = [
-    {
-      'jNo': '1',
-      'orderNo': '1678',
-      'orderType': 'Normal',
-      'customerName': 'Abu',
-      'staffName': 'Noor',
-      'deliveryTime': '10:00 AM',
-    },
-    {
-      'jNo': '2',
-      'orderNo': '2345',
-      'orderType': 'Urgent',
-      'customerName': 'John',
-      'staffName': 'Mike',
-      'deliveryTime': '4:00 PM',
-    },
-    {
-      'jNo': '3',
-      'orderNo': '1678',
-      'orderType': 'Normal',
-      'customerName': 'shaa',
-      'staffName': 'Noor',
-      'deliveryTime': '8:00 PM',
-    },
-    {
-      'jNo': '1',
-      'orderNo': '1678',
-      'orderType': 'Normal',
-      'customerName': 'Abu',
-      'staffName': 'Noor',
-      'deliveryTime': '7:00 PM',
-    },
-    {
-      'jNo': '1',
-      'orderNo': '1678',
-      'orderType': 'Normal',
-      'customerName': 'Abu',
-      'staffName': 'Noor',
-      'deliveryTime': '4:00 PM',
-    },
-    // Add more orders here
+class ServicePendingScreen extends StatefulWidget {
+
+  @override
+  State<ServicePendingScreen> createState() => _ServicePendingScreenState();
+}
+
+class _ServicePendingScreenState extends State<ServicePendingScreen> {
+  final List<String> timeList = [
+    '10:00 AM',
+    '4:00 PM',
+    '5:00 PM',
+    '6:00 PM',
+    '9:00 PM',
+    '8:00 AM',
+    '11:00 PM',
+    '11:00 AM',
+    '4:00 PM',
+    '7:00 PM',
+    '9:00 PM',
+    '1:00 PM',
+    '6:00 AM'
   ];
 
   // Function to get the current time as TimeOfDay object.
@@ -80,216 +57,223 @@ class ServicePendingScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Card(
-          elevation: 5,
-          color: Colors.white,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width + 200,
-              child: Column(
-                children: [
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width + 200,
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                child: SizedBox(
-                                  child: Center(
-                                      child: Text('J.No',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold))),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height:40),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                surfaceTintColor: Colors.white,
+                elevation: 2,
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width + 200,
+                    child: Column(
+                      children: [
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: SizedBox(
+                            width: MediaQuery.of(context).size.width + 200,
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: SizedBox(
+                                        child: Center(
+                                            child: Text('J.No',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold))),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 2,
+                                      child: SizedBox(
+                                        child: Center(
+                                            child: Text('Order No',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold))),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 2,
+                                      child: SizedBox(
+                                        child: Center(
+                                            child: Text('Order Type',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold))),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 3,
+                                      child: SizedBox(
+                                        child: Center(
+                                            child: Text('Customer Name',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold))),
+                                      ),
+                                    ),
+                                    SizedBox(width: 5,),
+                                    Expanded(
+                                      flex: 2,
+                                      child: SizedBox(
+                                        child: Center(
+                                            child: Text('Staff Name',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold))),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 3,
+                                      child: SizedBox(
+                                        child: Center(
+                                            child: Text('Delivery Time',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold))),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 2,
+                                      child: SizedBox(),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              Expanded(
-                                flex: 2,
-                                child: SizedBox(
-                                  child: Center(
-                                      child: Text('Order No',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold))),
+                                Padding(
+                                  padding: const EdgeInsets.all(10),
+                                  child: Container(
+                                    height: 0.5,
+                                    width: MediaQuery.of(context).size.width + 200,
+                                    color: Colors.deepPurple,
+                                  ),
                                 ),
-                              ),
-                              Expanded(
-                                flex: 2,
-                                child: SizedBox(
-                                  child: Center(
-                                      child: Text('Order Type',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold))),
-                                ),
-                              ),
-                              Expanded(
-                                flex: 3,
-                                child: SizedBox(
-                                  child: Center(
-                                      child: Text('Customer Name',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold))),
-                                ),
-                              ),
-                              SizedBox(width: 5,),
-                              Expanded(
-                                flex: 2,
-                                child: SizedBox(
-                                  child: Center(
-                                      child: Text('Staff Name',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold))),
-                                ),
-                              ),
-                              Expanded(
-                                flex: 3,
-                                child: SizedBox(
-                                  child: Center(
-                                      child: Text('Delivery Time',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold))),
-                                ),
-                              ),
-                              Expanded(
-                                flex: 2,
-                                child: SizedBox(),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Container(
-                              height: 0.5,
-                              width: MediaQuery.of(context).size.width + 200,
-                              color: Colors.deepPurple,
-                            ),
-                          ),
-                          // Add the ListView inside a SizedBox with a specific height
-                          SizedBox(
-                            height: 300,
-                            child: ListView.builder(
-                              itemCount: orders.length,
-                              itemBuilder: (context, index) {
-                                final order = orders[index];
-                                final itemDeliveryTime = order['deliveryTime'];
-                                final currentTime = getCurrentTime();
-                                final parsedDeliveryTime =
-                                parseDeliveryTime(itemDeliveryTime);
+                                // Add the ListView inside a SizedBox with a specific height
+                                SizedBox(
+                                  height: MediaQuery.of(context).size.height*0.7,
+                                  child: ListView.builder(
+                                    itemCount: timeList.length,
+                                    itemBuilder: (context, index) {
+                                      final itemDeliveryTime =timeList[index];
+                                      final currentTime = getCurrentTime();
+                                      final parsedDeliveryTime =
+                                      parseDeliveryTime(itemDeliveryTime);
 
-                                Color rowColor = Colors.white;
-                                if (parsedDeliveryTime.hour < currentTime.hour ||
-                                    (parsedDeliveryTime.hour == currentTime.hour &&
-                                        parsedDeliveryTime.minute < currentTime.minute)) {
-                                  rowColor = Colors.yellow;
-                                } else {
-                                  rowColor = Colors.grey;
-                                }
+                                      Color rowColor = Colors.white70;
+                                      if (parsedDeliveryTime.hour < currentTime.hour ||
+                                          (parsedDeliveryTime.hour == currentTime.hour &&
+                                              parsedDeliveryTime.minute < currentTime.minute)) {
+                                        rowColor = Colors.yellow;
+                                      } else {
+                                        rowColor = Colors.white;
+                                      }
 
-                                return Container(
-                                  color: rowColor,
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                        child: SizedBox(
-                                          child: Center(
-                                            child: Text(order['jNo']),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        flex: 2,
-                                        child: SizedBox(
-                                          child: Center(
-                                            child: Text(order['orderNo']),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        flex: 2,
-                                        child: SizedBox(
-                                          child: Center(
-                                            child: Text(order['orderType']),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        flex: 3,
-                                        child: SizedBox(
-                                          child: Center(
-                                            child: Text(order['customerName']),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(width: 5,),
-                                      Expanded(
-                                        flex: 2,
-                                        child: SizedBox(
-                                          child: Center(
-                                            child: Text(order['staffName']),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        flex: 3,
-                                        child: SizedBox(
-                                          height: 40,
-                                          child: Center(
-                                            child: Text(order['deliveryTime']),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        flex: 2,
-                                        child: SizedBox(
-                                          child: Center(
-                                            child: InkWell(
-                                              onTap: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        ReadyForDelivery(),
-                                                  ),
-                                                );
-                                              },
-                                              child: Container(
-                                                height: 20,
-                                                width: 50,
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(10),
-                                                  color: Colors.deepPurple,
+                                      return Container(
+                                        color: rowColor,
+                                        child: Row(
+                                          children: [
+                                            Expanded(
+                                              child: SizedBox(
+                                                child: Center(
+                                                  child: Text("1"),
                                                 ),
-                                                child: const Center(
-                                                  child: Text(
-                                                    'Engage',
-                                                    style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 10,
+                                              ),
+                                            ),
+                                            Expanded(
+                                              flex: 2,
+                                              child: SizedBox(
+                                                child: Center(
+                                                  child: Text("1678"),
+                                                ),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              flex: 2,
+                                              child: SizedBox(
+                                                child: Center(
+                                                  child: Text("Normal"),
+                                                ),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              flex: 3,
+                                              child: SizedBox(
+                                                child: Center(
+                                                  child: Text("Abu"),
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(width: 5,),
+                                            Expanded(
+                                              flex: 2,
+                                              child: SizedBox(
+                                                child: Center(
+                                                  child: Text("Noor"),
+                                                ),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              flex: 3,
+                                              child: SizedBox(
+                                                height: 40,
+                                                child: Center(
+                                                  child: Text(timeList[index]),
+                                                ),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              flex: 2,
+                                              child: SizedBox(
+                                                child: Center(
+                                                  child: InkWell(
+                                                    onTap: () {
+                                                      Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              ReadyForDelivery(),
+                                                        ),
+                                                      );
+                                                    },
+                                                    child: Container(
+                                                      height: 20,
+                                                      width: 50,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(10),
+                                                        color: Colors.deepPurple,
+                                                      ),
+                                                      child: const Center(
+                                                        child: Text(
+                                                          'Engage',
+                                                          style: TextStyle(
+                                                            color: Colors.white,
+                                                            fontSize: 10,
+                                                          ),
+                                                        ),
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ),
-                                          ),
+                                          ],
                                         ),
-                                      ),
-                                    ],
+                                      );
+                                    },
                                   ),
-                                );
-                              },
+                                ),
+                              ],
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
+                ),
               ),
             ),
-          ),
+          ],
         ),
       ),
     );

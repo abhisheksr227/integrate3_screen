@@ -17,7 +17,7 @@ class _ServiceItemdetailsState extends State<ServiceItemdetails> {
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Card(
-                elevation: 10,
+                elevation: 5,
                 child: Container(
                   width: MediaQuery.of(context).size.width / 1.5,
                   height: MediaQuery.of(context).size.height * 0.5,

@@ -631,7 +631,8 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
-                  elevation: 5,
+                  surfaceTintColor: Colors.white,
+                  elevation: 2,
                   color: Colors.white,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -844,7 +845,8 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
-                  elevation: 5,
+                  surfaceTintColor: Colors.white,
+                  elevation: 2,
                   color: Colors.white,
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
@@ -909,9 +911,9 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                           ),
                         ),
                         SizedBox(
-                          height: 130,
+                          height: 250,
                           child: ListView.builder(
-                            itemCount: 3,
+                            itemCount: 10,
                             itemBuilder: (context, index) {
                               return Row(
                                 children: [

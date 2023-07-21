@@ -27,140 +27,143 @@ class _DispatcheditemsState extends State<Dispatcheditems> {
           ),
         ],
       ),
-      body: Column(children: [
-        SizedBox(height: 20,),
-        Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Card(
-            elevation: 5,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 60,
-                          height: 40,
-                          alignment: Alignment.center,
-                          child: Text(
-                            "Sl No.",
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            height: 40,
-                            alignment: Alignment.center,
-                            child: Text(
-                              "Order No",
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Column(children: [
+          SizedBox(height: 20,),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Card(
+              surfaceTintColor: Colors.white,
+              elevation: 2,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 40,
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Sl No.",
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        Container(
-                          width: 80,
-                          height: 40,
-                          alignment: Alignment.center,
-                          child: Text(
-                            "Order Type",
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 80,
-                          height: 40,
-                          alignment: Alignment.center,
-                          child: Text(
-                            "Staff",
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ), Divider(
-                    color: Colors.grey,
-                    thickness: .3,
-                    indent: 10,
-                    endIndent: 10,
-                  ),
-                  SizedBox(
-                    height: 170,
-                    child: ListView.builder(
-                      physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
-                      itemCount: 3,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                  width: 60,
-                                  height: 40,
-                                  alignment: Alignment.center,
-                                  child: Text("1"),
+                          Expanded(
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Order No",
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
                                 ),
-                                Expanded(
-                                  child: Container(
-                                    height: 40,
-                                    alignment: Alignment.center,
-                                    child: Text("1003"),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Order Type",
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Staff",
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ), Divider(
+                      color: Colors.grey,
+                      thickness: .3,
+                      indent: 10,
+                      endIndent: 10,
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height*0.7,
+                      child: ListView.builder(
+                        physics: ClampingScrollPhysics(parent: FixedExtentScrollPhysics()),
+                        itemCount: 20,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      child: Text("1"),
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  width: 80,
-                                  height: 40,
-                                  alignment: Alignment.center,
-                                  child: Text("Normal"),
-                                ),
-                                Container(
-                                  width: 80,
-                                  height: 40,
-                                  alignment: Alignment.center,
-                                  child: Text("Noor"),
-                                ),
-                              ],
-                            ),
-                            Divider(
-                              color: Colors.grey,
-                              thickness: .3,
-                              indent: 10,
-                              endIndent: 10,
-                            ),
-                          ],
-                        );
-                      },
+                                  Expanded(
+                                    child: Container(
+                                      height: 40,
+                                      alignment: Alignment.center,
+                                      child: Text("1003"),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      child: Text("Normal"),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      child: Text("Noor"),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Divider(
+                                color: Colors.grey,
+                                thickness: .3,
+                                indent: 10,
+                                endIndent: 10,
+                              ),
+                            ],
+                          );
+                        },
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
-        ),
 
-        SizedBox(height: 30,),
+          SizedBox(height: 30,),
 
-      ]),
+        ]),
+      ),
     );
   }
 }

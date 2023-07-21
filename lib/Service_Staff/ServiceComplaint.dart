@@ -26,6 +26,7 @@ class _ServiceComplaintState extends State<ServiceComplaint> {
   }
   @override
   Widget build(BuildContext context) {
+    Size size=MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
@@ -58,8 +59,8 @@ class _ServiceComplaintState extends State<ServiceComplaint> {
             Padding(
               padding: const EdgeInsets.all(15),
               child: Card(
-                color: Colors.white,
-                elevation: 5,
+                surfaceTintColor: Colors.white,
+                elevation: 2,
                 child: Column(children: [
                         SizedBox(
                             height: 40,
@@ -120,12 +121,12 @@ class _ServiceComplaintState extends State<ServiceComplaint> {
                           ),
                         ),
                         SizedBox(
-                          height: 100,
+                          height: size.height*0.6,
                           width: MediaQuery.of(context).size.width,
                           child: ListView.builder(
                             scrollDirection: Axis.vertical,
                               padding: EdgeInsets.zero,
-                              itemCount: 1,
+                              itemCount: 20,
                               itemBuilder: (BuildContext context, int rowIndex) {
                                 return SizedBox(
                                     height: 40,

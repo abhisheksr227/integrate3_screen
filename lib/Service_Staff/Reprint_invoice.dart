@@ -24,10 +24,13 @@ class Reprint_invoice extends StatelessWidget {
       ),
       body:  Column(
         children: [
+          SizedBox(height:40),
           Padding(
+
             padding: const EdgeInsets.all(8.0),
             child: Card(
-              elevation: 5,
+              surfaceTintColor: Colors.white,
+              elevation: 2,
               color: Colors.white,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -119,9 +122,9 @@ class Reprint_invoice extends StatelessWidget {
                               ),
                               // Add the ListView inside a SizedBox with a specific height
                               SizedBox(
-                                height: 300,
+                                height: MediaQuery.of(context).size.height*0.7,
                                 child: ListView.builder(
-                                  itemCount: 10,
+                                  itemCount: 20,
                                   itemBuilder: (context, index) {
                                     return Row(
                                       children: [
