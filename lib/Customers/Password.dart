@@ -29,59 +29,42 @@ class _PasswordState extends State<Password> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            children: [
-              SizedBox(height: 50,),
-              Container(
-                height: MediaQuery.of(context).size.height*0.06,
-                width: MediaQuery.of(context).size.width*0.50,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.blue)),
-                child: TextFormField(textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(borderSide: BorderSide.none),
-                    contentPadding: EdgeInsets.only(),
-                    hintText: 'New Password',
-                      ),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(height: 50,),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xFF2196F3))),
+                  contentPadding: EdgeInsets.only(left: 10),
+                  label: Text('New Password'),
+                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xFF2196F3))),
+                    ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xFF2196F3))),
+                  contentPadding: EdgeInsets.only(left: 10),
+                  label: Text('Re Enter Password'),
+                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xFF2196F3))),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Container(
-                  height: MediaQuery.of(context).size.height*0.06,
-                  width: MediaQuery.of(context).size.width*0.50,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.blue)),
-                  child: TextFormField(textAlign: TextAlign.center,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(borderSide: BorderSide.none),
-                      contentPadding: EdgeInsets.only(),
-                      hintText: 'Re Enter',
-                    ),
-                  ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(40),
+              child: SizedBox(
+                width: 150,
+                child: ElevatedButton(onPressed: () {  },
+                  child: Text('SAVE',style: TextStyle(color: Colors.white),),
+                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blue)),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: InkWell(onTap: () {
-                },
-                  child: Container(
-                    height: 50,
-                    width: 150,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
-                      color: Colors.blue[700],
-                    ),
-                    child: Center(
-                      child: Text('SAVE',style: TextStyle(color: Colors.white,
-                          fontSize: 18,fontWeight: FontWeight.bold),),
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
