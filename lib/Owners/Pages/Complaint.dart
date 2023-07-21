@@ -52,12 +52,12 @@ class _ComplaintState extends State<Complaint> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(8),
               child: Card(
-                color: Colors.white,
-                elevation: 5,
+                surfaceTintColor: Colors.white,
+                elevation: 2,
                 child: SizedBox(
-                    height: 150,
+                    height: MediaQuery.of(context).size.height*0.5,
                     width: MediaQuery.of(context).size.width,
                     child: ListView.builder(
                         itemCount: 1,
@@ -124,7 +124,7 @@ class _ComplaintState extends State<Complaint> {
                               ),
                             ),
                             SizedBox(
-                              height: 100,
+                              height: MediaQuery.of(context).size.height*0.4,
                               width: MediaQuery.of(context).size.width,
                               child: ListView.builder(
                                   padding: EdgeInsets.zero,

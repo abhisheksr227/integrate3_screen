@@ -166,7 +166,7 @@ class _AssignState extends State<Assign> {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height,
+              height: MediaQuery.of(context).size.height*0.5,
               child: ListView.builder(
                 itemCount: 6,
                 itemBuilder: (context, index) {

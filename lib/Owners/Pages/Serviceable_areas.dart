@@ -116,7 +116,7 @@ class _AreasState extends State<Areas> {
               ),
             ),
             SizedBox(
-              height: 200,
+              height: MediaQuery.of(context).size.height*0.5,
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
                 itemCount: 3,

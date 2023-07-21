@@ -55,9 +55,9 @@ class _PaymentState extends State<Payment> {
             ],),
             SizedBox(height: 30,),
             Padding(
-              padding: const EdgeInsets.all(15),
-              child: Card(elevation: 5,
-                color: Colors.white,
+              padding: const EdgeInsets.all(8),
+              child: Card(elevation: 2,
+                surfaceTintColor: Colors.white,
                 child: Column(
                   children: [
                     Row(
@@ -121,7 +121,7 @@ class _PaymentState extends State<Payment> {
                       ),
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height*0.3,
+                      height: MediaQuery.of(context).size.height*0.5,
                       child: ListView.builder(
                         itemCount: 7,
                         itemBuilder: (context, index) {
@@ -176,14 +176,14 @@ class _PaymentState extends State<Payment> {
                     onTap: () {
                     },
                     child: Container(
-                      height: 50,
-                      width: 150,
+                      height: 40,
+                      width: 120,
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
                         color: Colors.blue[700],
                       ),
                       child: Center(
                         child: Text('Exit',style: TextStyle(color: Colors.white,
-                            fontSize: 18,fontWeight: FontWeight.bold),),
+                            fontSize: 16,fontWeight: FontWeight.bold),),
                       ),
                     ),
                   ),

@@ -111,7 +111,7 @@ class _PriceGroupState extends State<PriceGroup> {
               height: MediaQuery.of(context).size.height*0.5,
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
-                itemCount: 3,
+                itemCount: 20,
                 itemBuilder: (context, index) {
                   return
                     ListTile(

@@ -114,10 +114,10 @@ class _AssignStaffState extends State<AssignStaff> {
             Padding(
               padding: const EdgeInsets.all(15),
               child: Card(
-                elevation: 5,
-                color: Colors.white,
+                elevation: 2,
+                surfaceTintColor: Colors.white,
                 child: SizedBox(
-                    height: 150,
+                    height: MediaQuery.of(context).size.height*0.5,
                     width: MediaQuery.of(context).size.width,
                     child: ListView.builder(
                       physics: ClampingScrollPhysics(parent: NeverScrollableScrollPhysics()),
@@ -175,7 +175,7 @@ class _AssignStaffState extends State<AssignStaff> {
                               ),
                             ),
                             SizedBox(
-                              height: 100,
+                              height: MediaQuery.of(context).size.height*0.4,
                               width: MediaQuery.of(context).size.width,
                               child: ListView.builder(
                                   padding: EdgeInsets.zero,

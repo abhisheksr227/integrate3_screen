@@ -181,10 +181,10 @@ class _RevenueReportState extends State<RevenueReport> {
             ),
             SizedBox(height: 20,),
             Padding(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(8),
               child: Card(
-                elevation: 5,
-                color: Colors.white,
+                elevation: 2,
+                surfaceTintColor: Colors.white,
                 child: Column(
                   children: [
                     Row(
@@ -234,7 +234,7 @@ class _RevenueReportState extends State<RevenueReport> {
                       ),
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.width*0.6,
+                      height: MediaQuery.of(context).size.height*0.5,
                       child: ListView.builder(
                         itemCount: 6,
                         itemBuilder: (context, index) {

@@ -153,7 +153,7 @@ class _DeliveredState extends State<Delivered> {
               ],
             ),
             SizedBox(
-              height: 320,
+              height: MediaQuery.of(context).size.height*0.5,
               child: ListView.builder(
                 itemCount: 2,
                 itemBuilder: (context, index) {
@@ -161,15 +161,11 @@ class _DeliveredState extends State<Delivered> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ListTile(
-                        leading: Text('9 : 30am'),
+                        leading: Text('9 : 30am',style: TextStyle(fontSize: 14),),
                         title: Row(crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
                               width: 30,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(10),
-                              child: Text(':'),
                             ),
                             Column(crossAxisAlignment: CrossAxisAlignment.start,
                               children: [

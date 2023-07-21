@@ -80,8 +80,8 @@ class _ReadyForDispatchState extends State<ReadyForDispatch> {
             Padding(
               padding: const EdgeInsets.all(5),
               child: Card(
-                elevation: 5,
-                color: Colors.white,
+                elevation: 2,
+                surfaceTintColor: Colors.white,
                 child: Column(
                   children: [
                     Row(
@@ -176,7 +176,7 @@ class _ReadyForDispatchState extends State<ReadyForDispatch> {
                       ),
                     ),
                     SizedBox(
-                      height: 200,
+                      height: MediaQuery.of(context).size.height*0.68,
                       child: ListView.builder(
                         itemCount: 5,
                         itemBuilder: (context, index) {

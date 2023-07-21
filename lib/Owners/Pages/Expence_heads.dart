@@ -55,10 +55,10 @@ class _ExpenceState extends State<Expense> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(8),
               child: Card(
-                elevation: 5,
-                color: Colors.white,
+                elevation: 2,
+                surfaceTintColor: Colors.white,
                 child: Column(
                   children: [
                     Row(
@@ -108,9 +108,9 @@ class _ExpenceState extends State<Expense> {
                       ),
                     ),
                     SizedBox(
-                      height: 200,
+                      height: MediaQuery.of(context).size.height*0.5,
                       child: ListView.builder(
-                        itemCount: 3,
+                        itemCount: 15,
                         itemBuilder: (context, index) {
                           return
                             Row(

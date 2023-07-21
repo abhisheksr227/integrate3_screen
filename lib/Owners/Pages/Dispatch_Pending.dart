@@ -91,10 +91,10 @@ class _DispatchPendingState extends State<DispatchPending> {
             Padding(
               padding: const EdgeInsets.all(8),
               child: Card(
-                elevation: 5,
-                color: Colors.white,
+                elevation: 2,
+                surfaceTintColor: Colors.white,
                 child: SizedBox(
-                  height: 385,
+                  height: MediaQuery.of(context).size.height*0.5,
                   child: Column(
                     children: [
                       Row(
@@ -178,7 +178,7 @@ class _DispatchPendingState extends State<DispatchPending> {
                         ),
                       ),
                       SizedBox(
-                        height: 320,
+                        height: MediaQuery.of(context).size.height*0.4,
                         child: ListView.builder(
                           itemCount: 8,
                           itemBuilder: (context, index) {

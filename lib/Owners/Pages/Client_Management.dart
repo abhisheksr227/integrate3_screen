@@ -106,9 +106,12 @@ class _ManagementState extends State<Management> {
                 ),
               ],
             ),
+            SizedBox(height: 15,),
             Padding(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(8),
               child: Card(
+                elevation: 2,
+                surfaceTintColor: Colors.white,
                 child: SizedBox(
                   child: Column(
                     children: [
@@ -150,7 +153,7 @@ class _ManagementState extends State<Management> {
                   ),
             ),
             SizedBox(
-                  height: 200,
+                  height: MediaQuery.of(context).size.height*0.5,
                   child: ListView.builder(
                     itemCount: 5,
                     itemBuilder: (context, index) {

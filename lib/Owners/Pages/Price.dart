@@ -177,9 +177,9 @@ class _PriceState extends State<Price> {
               height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.all(15),
-              child: Card( elevation: 5,
-                color: Colors.white,
+              padding: const EdgeInsets.all(8),
+              child: Card( elevation: 2,
+                surfaceTintColor: Colors.white,
                 child: SizedBox(
                   child: Column(
                     children: [
@@ -232,7 +232,7 @@ class _PriceState extends State<Price> {
                   ),
                 ),
                 SizedBox(
-                          height: 200,
+                          height: MediaQuery.of(context).size.height*0.5,
                           width: MediaQuery.of(context).size.width,
                           child: ListView.builder(
                               itemCount: 5,
