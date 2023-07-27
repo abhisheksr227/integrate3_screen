@@ -245,7 +245,7 @@ class _ServiceReadyForDeliverState extends State<ServiceReadyForDeliver> {
                                                       ),
                                                       child: const Center(
                                                         child: Text(
-                                                          'Engage',
+                                                          'Delivered',
                                                           style: TextStyle(
                                                             color: Colors.white,
                                                             fontSize: 10,

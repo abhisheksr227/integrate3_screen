@@ -245,7 +245,7 @@ class _CompletedScreenState extends State<CompletedScreen> {
                                                       ),
                                                       child: const Center(
                                                         child: Text(
-                                                          'Engage',
+                                                          'Invoice',
                                                           style: TextStyle(
                                                             color: Colors.white,
                                                             fontSize: 10,

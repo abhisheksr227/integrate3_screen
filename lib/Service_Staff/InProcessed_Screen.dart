@@ -238,14 +238,14 @@ class _InprocessedScreenState extends State<InprocessedScreen> {
                                                     },
                                                     child: Container(
                                                       height: 20,
-                                                      width: 50,
+                                                      width: 60,
                                                       decoration: BoxDecoration(
                                                         borderRadius: BorderRadius.circular(10),
                                                         color: Colors.deepPurple,
                                                       ),
                                                       child: const Center(
                                                         child: Text(
-                                                          'Engage',
+                                                          'Completed',
                                                           style: TextStyle(
                                                             color: Colors.white,
                                                             fontSize: 10,
