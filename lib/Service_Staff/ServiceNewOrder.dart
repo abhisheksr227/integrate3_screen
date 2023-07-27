@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'ServiceNewOrder_Screen.dart';
+import 'Service_new_order.dart';
 import 'Service_staff_dashboard_75.dart';
 
 class ServiceNewOrder extends StatefulWidget {
@@ -77,124 +79,40 @@ class _ServiceNewOrderState extends State<ServiceNewOrder> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(25),
-              child: Row(
-                children: [
-                  Expanded(child: Text("Select Staff")),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.deepPurple)),
-                      child: DropdownButtonFormField<String>(
-                        value: selectedStaff,
-                        onChanged: (newValue) {
-                          setState(() {
-                            selectedStaff = newValue;
-                          });
-                        },
-                        items: staffNames.map((staffName) {
-                          return DropdownMenuItem<String>(
-                            value: staffName,
-                            child: Text(staffName),
-                          );
-                        }).toList(),
-                        hint: Text(staffNames[0]),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(25),
-              child: Row(
-                children: [
-                  Expanded(child: Text("Mode")),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.deepPurple)),
-                      child: DropdownButtonFormField<String>(
-                        value: selectedMode,
-                        onChanged: (newValue) {
-                          setState(() {
-                            selectedMode = newValue;
-                          });
-                        },
-                        items: modeOptions.map((mode) {
-                          return DropdownMenuItem<String>(
-                            value: mode,
-                            child: Text(mode),
-                          );
-                        }).toList(),
-                        hint: Text(modeOptions[0]),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(25),
-              child: Row(
-                children: [
-                  Text(
-                    'Picking Time',
-                    style: TextStyle(),
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.deepPurple)),
-                      child: DropdownButtonFormField(
-                          validator: (d) {
-                            if (d!.contains('Select Your Time')) {
-                              return 'Select Your Time';
-                            }
-                            return null;
-                          },
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                                borderSide: BorderSide.none),
-                            contentPadding: EdgeInsets.only(),
-                            prefix: SizedBox(
-                              width: 10,
-                            ),
-                            hintText: 'Select Your TIme',
-                          ),
-                          value: Time,
-                          items: Timerange
-                              .map((e) => DropdownMenuItem(
-                            value: e,
-                            child: Text(e),
-                          ))
-                              .toList(),
-                          onChanged: (v) {
-                            setState(() {
-                              Time = v!;
-                            });
-                          }),
-                    ),
-                  ),
-                ],
-              ),
-            ),
             SizedBox(
               height: 50,
-              width: 100,
+              width: MediaQuery.of(context).size.width/2,
               child: ElevatedButton(
                 onPressed: () {
                   _showDropdownDialog();
                 },
                 child: Text(
-                  'Select Options',
+                  'New Pickup',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.deepPurple[800],
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 30,),
+            SizedBox(
+              height: 50,
+              width: MediaQuery.of(context).size.width/2,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceNewOrderscreen(),)
+                  );},
+                child: Text(
+                  'Collect Items',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -221,6 +139,7 @@ class _ServiceNewOrderState extends State<ServiceNewOrder> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+          surfaceTintColor: Colors.white,
           title: Text('Select Options'),
           content: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

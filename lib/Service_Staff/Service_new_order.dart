@@ -7,12 +7,12 @@ import '../Picker_App/util/bottom_navigation_bar.dart';
 import '../Picker_App/util/drawer.dart';
 
 
-class ServiceNewOrderScreen extends StatefulWidget {
+class ServiceNewOrderscreen extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => ServiceNewOrderScreenState();
+  State<StatefulWidget> createState() => ServiceNewOrderscreenState();
 }
 
-class ServiceNewOrderScreenState extends State<ServiceNewOrderScreen> {
+class ServiceNewOrderscreenState extends State<ServiceNewOrderscreen> {
   int count = 0;
   int neworderradio = 0;
   int availableoffersradio = 0;
@@ -579,13 +579,6 @@ class ServiceNewOrderScreenState extends State<ServiceNewOrderScreen> {
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('Assets/Images/bg.png'), fit: BoxFit.fill),
-        ),
-        child: BottomDrawer(),
       ),
     );
   }
