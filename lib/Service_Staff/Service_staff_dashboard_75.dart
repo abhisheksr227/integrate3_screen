@@ -17,6 +17,7 @@ import 'Report83.dart';
 import 'Reprint_invoice.dart';
 import 'ServiceItem_Details.dart';
 import 'ServiceNewOrder.dart';
+import 'Service_add_clients.dart';
 import 'Service_login.dart';
 import 'Servicelogin77.dart';
 
@@ -383,7 +384,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                 ),
                                 SizedBox(height: 10),
                                 Text(
-                                  'In Processed',
+                                  'In Process',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                               ],
@@ -520,95 +521,23 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
               SizedBox(
                 height: 20,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5, right: 10),
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ServiceNewOrder(),
-                            ));
-                      },
-                      child: Container(
-                        height: MediaQuery.of(context).size.height * 0.045,
-                        width: MediaQuery.of(context).size.width * 0.30,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.deepPurple),
-                        child: const Center(
-                            child: Text(
-                          'New Order',
-                          style: TextStyle(color: Colors.white),
-                        )),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5),
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Orderstatus(),
-                            ));
-                      },
-                      child: Container(
-                        height: MediaQuery.of(context).size.height * 0.045,
-                        width: MediaQuery.of(context).size.width * 0.30,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.deepPurple),
-                        child: const Center(
-                            child: Text(
-                          'Order Status',
-                          style: TextStyle(color: Colors.white),
-                        )),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+             Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+               children: [
+                 ElevatedButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) =>ServiceNewOrder(),)), child: Text("New Order",style: TextStyle(color: Colors.white)),style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple)),
+                 ElevatedButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) =>Orderstatus(), )),child: Text("Order Status",style: TextStyle(color: Colors.white)),style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple))
+               ],
+             ),
               SizedBox(
                 height: 15,
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 5),
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ServiceLogin(),
-                        ));
-                  },
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Reprint_invoice(),));
-                    },
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.045,
-                      width: MediaQuery.of(context).size.width * 0.30,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.deepPurple),
-                      child: const Center(
-                          child: Text(
-                        'Reprint Invoice',
-                        style: TextStyle(color: Colors.white),
-                      )),
-                    ),
-                  ),
-                ),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ElevatedButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) =>ServiceAddClients(),)), child: Text("Add Client",style: TextStyle(color: Colors.white)),style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple)),
+                  ElevatedButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Reprint_invoice(),)), child: Text("Reprint Invoice",style: TextStyle(color: Colors.white)),style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple)),
+                ],
               ),
-             Padding(
+
+              Padding(
                padding: const EdgeInsets.only(top:30,bottom: 10),
                child: Container(
                   height: MediaQuery.of(context).size.height / 25,
@@ -643,8 +572,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                           SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: SizedBox(
-                              width: MediaQuery.of(context).size.width +
-                                  200, // Ensure it has a width
+                              width: MediaQuery.of(context).size.width + 200,
                               child: Column(
                                 children: [
                                   Row(
@@ -654,8 +582,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                           child: Center(
                                               child: Text('J.No',
                                                   style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold))),
+                                                      fontWeight: FontWeight.bold))),
                                         ),
                                       ),
                                       Expanded(
@@ -664,18 +591,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                           child: Center(
                                               child: Text('Order No',
                                                   style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold))),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        flex: 2,
-                                        child: SizedBox(
-                                          child: Center(
-                                              child: Text('Order Type',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                      FontWeight.bold))),
+                                                      fontWeight: FontWeight.bold))),
                                         ),
                                       ),
                                       Expanded(
@@ -684,18 +600,17 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                           child: Center(
                                               child: Text('Customer Name',
                                                   style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold))),
+                                                      fontWeight: FontWeight.bold))),
                                         ),
-                                      ),SizedBox(width: 5,),
+                                      ),
+                                      SizedBox(width: 5,),
                                       Expanded(
                                         flex: 2,
                                         child: SizedBox(
                                           child: Center(
                                               child: Text('Staff Name',
                                                   style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold))),
+                                                      fontWeight: FontWeight.bold))),
                                         ),
                                       ),
                                       Expanded(
@@ -704,12 +619,11 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                           child: Center(
                                               child: Text('Delivery Time',
                                                   style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold))),
+                                                      fontWeight: FontWeight.bold))),
                                         ),
                                       ),
                                       Expanded(
-                                        flex: 2,
+                                        flex: 3,
                                         child: SizedBox(),
                                       ),
                                     ],
@@ -718,107 +632,84 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                     padding: const EdgeInsets.all(10),
                                     child: Container(
                                       height: 0.5,
-                                      width: MediaQuery.of(context).size.width+200,
+                                      width: MediaQuery.of(context).size.width + 200,
                                       color: Colors.deepPurple,
                                     ),
                                   ),
                                   // Add the ListView inside a SizedBox with a specific height
                                   SizedBox(
-                                    height: 300,
+                                    height: MediaQuery.of(context).size.height * 0.4,
                                     child: ListView.builder(
-                                      itemCount: 10,
-                                      itemBuilder: (BuildContext context,int rowIndex) {
-                                        return GestureDetector(
-                                          onTap: () {
-                                            selectRow(rowIndex);
-                                            showItemDetails(context);
-                                          },
-                                          child: Container(
-                                            color: selectedRowIndex == rowIndex ? Colors.grey : null,
-                                            child: Row(
-                                              children: [
-                                                Expanded(
-                                                  child: SizedBox(
-                                                    child: Center(child: Text('1')),
+                                      itemCount: 20,
+                                      itemBuilder: (context, index) {
+                                        Color rowColor;
+                                        if (index % 3 == 0) {
+                                          // Set the color of every third row to orange
+                                          rowColor = Colors.orange;
+                                        } else if (index % 3 == 1) {
+                                          // Set the color of every third row to yellow
+                                          rowColor = Colors.yellow;
+                                        } else {
+                                          // Set the color of every third row to white
+                                          rowColor = Colors.white;
+                                        }
+
+                                        return Container(
+                                          color: rowColor, // Apply the color to the row container
+                                          child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: SizedBox(
+                                                  child: Center(
+                                                    child: Text("1"),
                                                   ),
                                                 ),
-                                                Expanded(
-                                                  flex:2,
-                                                  child: SizedBox(
-                                                    child:
-                                                        Center(child: Text('1678')),
+                                              ),
+                                              Expanded(
+                                                flex: 2,
+                                                child: SizedBox(
+                                                  child: Center(
+                                                    child: Text("1678"),
                                                   ),
                                                 ),
-                                                Expanded(
-                                                  flex:2,
-                                                  child: SizedBox(
-                                                    child:
-                                                    Center(child: Text('Normal')),
+                                              ),
+                                              Expanded(
+                                                flex: 3,
+                                                child: SizedBox(
+                                                  child: Center(
+                                                    child: Text("Abu"),
                                                   ),
                                                 ),
-                                                Expanded(
-                                                  flex:3,
-                                                  child: SizedBox(
-                                                    child:
-                                                        Center(child: Text('Abu')),
-                                                  ),
-                                                ),SizedBox(width: 5,),
-                                                Expanded(
-                                                  flex:2,
-                                                  child: SizedBox(
-                                                    child:
-                                                    Center(child: Text('Noor')),
+                                              ),
+                                              SizedBox(width: 5,),
+                                              Expanded(
+                                                flex: 2,
+                                                child: SizedBox(
+                                                  child: Center(
+                                                    child: Text("Noor"),
                                                   ),
                                                 ),
-                                                Expanded(
-                                                  flex: 3,
-                                                  child: SizedBox(
-                                                    height: 40,
-                                                    child: Center(
-                                                        child: Text(
-                                                            'Today 4 : 00 pm')),
+                                              ),
+                                              Expanded(
+                                                flex: 3,
+                                                child: SizedBox(
+                                                  height: 40,
+                                                  child: Center(
+                                                    child: Text("5:00pm"),
                                                   ),
                                                 ),
-                                                Expanded(
-                                                  flex:2,
-                                                  child: SizedBox(
-                                                    child: Center(
-                                                      child: InkWell(
-                                                        onTap: () {
-                                                          Navigator.push(
-                                                              context,
-                                                              MaterialPageRoute(
-                                                                builder: (context) =>
-                                                                    ReadyForDelivery(),
-                                                              ));
-                                                        },
-                                                        child: Container(
-                                                          height: 20,
-                                                          width: 50,
-                                                          decoration: BoxDecoration(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(10),
-                                                              color: Colors
-                                                                  .deepPurple),
-                                                          child: const Center(
-                                                              child: Text(
-                                                            'Engage',
-                                                            style: TextStyle(
-                                                                color: Colors.white,
-                                                                fontSize: 10),
-                                                          )),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
+                                              ),
+                                              Expanded(
+                                                flex: 3,
+                                                child: Center(
+                                                    child: ElevatedButton(onPressed: () {
+
+                                                    },child:Text("Engage",style: TextStyle(color: Colors.white)) ,style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),)
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                            ],
                                           ),
                                         );
-
-                                        // ... Your previous code ...
                                       },
                                     ),
                                   ),

@@ -11,33 +11,6 @@ class ServiceReadyForDeliver extends StatefulWidget {
 }
 
 class _ServiceReadyForDeliverState extends State<ServiceReadyForDeliver> {
-  final List<String> timeList = [
-    '10:00 AM',
-    '4:00 PM',
-    '5:00 PM',
-    '6:00 PM',
-    '9:00 PM',
-    '8:00 AM',
-    '11:00 PM',
-    '11:00 AM',
-    '4:00 PM',
-    '7:00 PM',
-    '9:00 PM',
-    '1:00 PM',
-    '6:00 AM'
-  ];
-
-  // Function to get the current time as TimeOfDay object.
-  TimeOfDay getCurrentTime() {
-    final now = DateTime.now();
-    return TimeOfDay.fromDateTime(now);
-  }
-
-  // Function to parse delivery time as TimeOfDay object.
-  TimeOfDay parseDeliveryTime(String deliveryTime) {
-    final time = DateFormat('hh:mm a').parse(deliveryTime);
-    return TimeOfDay(hour: time.hour, minute: time.minute);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +33,6 @@ class _ServiceReadyForDeliverState extends State<ServiceReadyForDeliver> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height:40),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
@@ -99,15 +71,6 @@ class _ServiceReadyForDeliverState extends State<ServiceReadyForDeliver> {
                                       ),
                                     ),
                                     Expanded(
-                                      flex: 2,
-                                      child: SizedBox(
-                                        child: Center(
-                                            child: Text('Order Type',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold))),
-                                      ),
-                                    ),
-                                    Expanded(
                                       flex: 3,
                                       child: SizedBox(
                                         child: Center(
@@ -136,7 +99,7 @@ class _ServiceReadyForDeliverState extends State<ServiceReadyForDeliver> {
                                       ),
                                     ),
                                     Expanded(
-                                      flex: 2,
+                                      flex: 3,
                                       child: SizedBox(),
                                     ),
                                   ],
@@ -151,26 +114,24 @@ class _ServiceReadyForDeliverState extends State<ServiceReadyForDeliver> {
                                 ),
                                 // Add the ListView inside a SizedBox with a specific height
                                 SizedBox(
-                                  height: MediaQuery.of(context).size.height*0.7,
+                                  height: MediaQuery.of(context).size.height * 0.7,
                                   child: ListView.builder(
-                                    itemCount: timeList.length,
+                                    itemCount: 20,
                                     itemBuilder: (context, index) {
-                                      final itemDeliveryTime =timeList[index];
-                                      final currentTime = getCurrentTime();
-                                      final parsedDeliveryTime =
-                                      parseDeliveryTime(itemDeliveryTime);
-
-                                      Color rowColor = Colors.white70;
-                                      if (parsedDeliveryTime.hour < currentTime.hour ||
-                                          (parsedDeliveryTime.hour == currentTime.hour &&
-                                              parsedDeliveryTime.minute < currentTime.minute)) {
+                                      Color rowColor;
+                                      if (index % 3 == 0) {
+                                        // Set the color of every third row to orange
+                                        rowColor = Colors.orange;
+                                      } else if (index % 3 == 1) {
+                                        // Set the color of every third row to yellow
                                         rowColor = Colors.yellow;
                                       } else {
+                                        // Set the color of every third row to white
                                         rowColor = Colors.white;
                                       }
 
                                       return Container(
-                                        color: rowColor,
+                                        color: rowColor, // Apply the color to the row container
                                         child: Row(
                                           children: [
                                             Expanded(
@@ -185,14 +146,6 @@ class _ServiceReadyForDeliverState extends State<ServiceReadyForDeliver> {
                                               child: SizedBox(
                                                 child: Center(
                                                   child: Text("1678"),
-                                                ),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              flex: 2,
-                                              child: SizedBox(
-                                                child: Center(
-                                                  child: Text("Normal"),
                                                 ),
                                               ),
                                             ),
@@ -218,43 +171,16 @@ class _ServiceReadyForDeliverState extends State<ServiceReadyForDeliver> {
                                               child: SizedBox(
                                                 height: 40,
                                                 child: Center(
-                                                  child: Text(timeList[index]),
+                                                  child: Text("5:00pm"),
                                                 ),
                                               ),
                                             ),
                                             Expanded(
-                                              flex: 2,
-                                              child: SizedBox(
-                                                child: Center(
-                                                  child: InkWell(
-                                                    onTap: () {
-                                                      Navigator.push(
-                                                        context,
-                                                        MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              ReadyForDelivery(),
-                                                        ),
-                                                      );
-                                                    },
-                                                    child: Container(
-                                                      height: 20,
-                                                      width: 50,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius: BorderRadius.circular(10),
-                                                        color: Colors.deepPurple,
-                                                      ),
-                                                      child: const Center(
-                                                        child: Text(
-                                                          'Delivered',
-                                                          style: TextStyle(
-                                                            color: Colors.white,
-                                                            fontSize: 10,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
+                                              flex: 3,
+                                              child: Center(
+                                                  child: ElevatedButton(onPressed: () {
+
+                                                  },child:Text("Deliver",style: TextStyle(color: Colors.white)) ,style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),)
                                               ),
                                             ),
                                           ],
@@ -272,7 +198,8 @@ class _ServiceReadyForDeliverState extends State<ServiceReadyForDeliver> {
                   ),
                 ),
               ),
-            ),
+            )
+
           ],
         ),
       ),
