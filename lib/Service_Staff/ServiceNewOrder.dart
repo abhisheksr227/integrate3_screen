@@ -1,16 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'Service_staff_dashboard_75.dart';
 
 class ServiceNewOrder extends StatefulWidget {
   const ServiceNewOrder({Key? key}) : super(key: key);
-
   @override
   State<ServiceNewOrder> createState() => _ServiceNewOrderState();
 }
-
 class _ServiceNewOrderState extends State<ServiceNewOrder> {
+
+  String? selectedStaff;
+  String? selectedMode;
+
+  List<String> staffNames = ['Staff 1', 'Staff 2', 'Staff 3'];
+  List<String> modeOptions = ['Urgent', 'Normal', 'Express'];
+
 
   String selectedOption = '';
   bool expressSelected = false;
@@ -41,46 +45,129 @@ class _ServiceNewOrderState extends State<ServiceNewOrder> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 50),
-            Text(
-              'Picking Time',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Container(
+                decoration: BoxDecoration(border: Border.all(color: Colors.deepPurple),
+                    borderRadius: BorderRadius.circular(20)),
+                child: TextField(
+                  decoration: InputDecoration(hintText: "Mobile Number/Customer ID",
+                    contentPadding: EdgeInsets.all(10),
+                    border: InputBorder.none,
+                    suffixIcon: Container(decoration: BoxDecoration(color: Colors.grey,
+                        borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(20),
+                            topRight: Radius.circular(20))),
+                        child: Icon(Icons.search,)),
+                  ),
+                ),
               ),
             ),
-            SizedBox(height: 30),
-            Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.deepPurple)),
-              child: DropdownButtonFormField(
-                  validator: (d) {
-                    if (d!.contains('Select Your Time')) {
-                      return 'Select Your Time';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(borderSide: BorderSide.none),
-                    contentPadding: EdgeInsets.only(),
-                    prefix: SizedBox(
-                      width: 10,
+            Padding(
+              padding: const EdgeInsets.all(25),
+              child: Row(
+                children: [
+                  Expanded(child: Text("Select Staff")),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: Colors.deepPurple)),
+                      child: DropdownButtonFormField<String>(
+                        value: selectedStaff,
+                        onChanged: (newValue) {
+                          setState(() {
+                            selectedStaff = newValue;
+                          });
+                        },
+                        items: staffNames.map((staffName) {
+                          return DropdownMenuItem<String>(
+                            value: staffName,
+                            child: Text(staffName),
+                          );
+                        }).toList(),
+                        hint: Text(staffNames[0]),
+                      ),
                     ),
-                    hintText: 'Select Your TIme',
                   ),
-                  value: Time,
-                  items: Timerange.map((e) => DropdownMenuItem(value: e,child: Text(e),)).toList(),
-                  onChanged: (v) {
-                    setState(() {
-                      Time = v!;
-                    });
-                  }),
+                ],
+              ),
             ),
-            SizedBox(height: 50),
-            SizedBox(width: 150,
+            Padding(
+              padding: const EdgeInsets.all(25),
+              child: Row(
+                children: [
+                  Expanded(child: Text("Mode")),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: Colors.deepPurple)),
+                      child: DropdownButtonFormField<String>(
+                        value: selectedMode,
+                        onChanged: (newValue) {
+                          setState(() {
+                            selectedMode = newValue;
+                          });
+                        },
+                        items: modeOptions.map((mode) {
+                          return DropdownMenuItem<String>(
+                            value: mode,
+                            child: Text(mode),
+                          );
+                        }).toList(),
+                        hint: Text(modeOptions[0]),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(25),
+              child: Row(
+                children: [
+                  Text(
+                    'Picking Time',
+                    style: TextStyle(
+                    ),
+                  ),SizedBox(width: 30,),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: Colors.deepPurple)),
+                      child: DropdownButtonFormField(
+                          validator: (d) {
+                            if (d!.contains('Select Your Time')) {
+                              return 'Select Your Time';
+                            }
+                            return null;
+                          },
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(borderSide: BorderSide.none),
+                            contentPadding: EdgeInsets.only(),
+                            prefix: SizedBox(
+                              width: 10,
+                            ),
+                            hintText: 'Select Your TIme',
+                          ),
+                          value: Time,
+                          items: Timerange.map((e) => DropdownMenuItem(value: e,child: Text(e),)).toList(),
+                          onChanged: (v) {
+                            setState(() {
+                              Time = v!;
+                            });
+                          }),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(
+              height: 50,
+              width: 100,
               child: ElevatedButton(
                 onPressed: () {
                   showDialog(
@@ -102,7 +189,7 @@ class _ServiceNewOrderState extends State<ServiceNewOrder> {
                   );
                 },
                 child: Text(
-                  'SUBMIT',
+                  'Save',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -117,16 +204,6 @@ class _ServiceNewOrderState extends State<ServiceNewOrder> {
                   ),
                 ),
               ),
-            ),
-
-            SizedBox(height: 100),
-            Text(
-              'Terms & Conditions',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey[600],
-              ),
-              textAlign: TextAlign.center,
             ),
           ],
         ),
