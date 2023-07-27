@@ -517,24 +517,25 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                   ],
                 ),
               ),
-
-              SizedBox(
-                height: 20,
-              ),
-             Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
-               children: [
-                 ElevatedButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) =>ServiceNewOrder(),)), child: Text("New Order",style: TextStyle(color: Colors.white)),style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple)),
-                 ElevatedButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) =>Orderstatus(), )),child: Text("Order Status",style: TextStyle(color: Colors.white)),style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple))
-               ],
+             Padding(
+               padding: const EdgeInsets.only(left: 25,right: 25,top:20),
+               child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                 children: [
+                   Expanded(child: ElevatedButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) =>ServiceNewOrder(),)), child: Text("New Order",style: TextStyle(color: Colors.white)),style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple))),
+                   SizedBox(width: 20,),
+                   Expanded(child: ElevatedButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) =>Orderstatus(), )),child: Text("Order Status",style: TextStyle(color: Colors.white)),style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple)))
+                 ],
+               ),
              ),
-              SizedBox(
-                height: 15,
-              ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  ElevatedButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) =>ServiceAddClients(),)), child: Text("Add Client",style: TextStyle(color: Colors.white)),style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple)),
-                  ElevatedButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Reprint_invoice(),)), child: Text("Reprint Invoice",style: TextStyle(color: Colors.white)),style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple)),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(left: 25,right: 25,top:20),
+                child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Expanded(child: ElevatedButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) =>ServiceAddClients(),)), child: Text("Add Client",style: TextStyle(color: Colors.white)),style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple))),
+                    SizedBox(width: 20,),
+                    Expanded(child: ElevatedButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Reprint_invoice(),)), child: Text("Reprint Invoice",style: TextStyle(color: Colors.white)),style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple))),
+                  ],
+                ),
               ),
 
               Padding(
@@ -701,10 +702,13 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                                               ),
                                               Expanded(
                                                 flex: 3,
-                                                child: Center(
+                                                child: Padding(
+                                                  padding: const EdgeInsets.all(2.0),
+                                                  child: Center(
                                                     child: ElevatedButton(onPressed: () {
 
-                                                    },child:Text("Engage",style: TextStyle(color: Colors.white)) ,style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),)
+                                                    },child:Text("Engage",style: TextStyle(color: Colors.white)) ,style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),),
+                                                  ),
                                                 ),
                                               ),
                                             ],
@@ -850,7 +854,7 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
           ),
         ),
         bottomNavigationBar: Container(
-          color: Colors.deepPurple,
+          color: Colors.transparent,
           child: BottomNavigationBar(
             backgroundColor: Colors.deepPurple,
             selectedItemColor: Colors.white,
