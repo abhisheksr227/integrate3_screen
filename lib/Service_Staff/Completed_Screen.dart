@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import 'GenerateInvoice_Screen.dart';
 import 'ReadyForDelivery.dart';
 
 class CompletedScreen extends StatefulWidget {
@@ -179,7 +180,7 @@ class _CompletedScreenState extends State<CompletedScreen> {
                                               child: SizedBox(
                                                 child: Center(
                                                   child: ElevatedButton(onPressed: () {
-
+                                                    Navigator.push(context, MaterialPageRoute(builder: (context) => GenarateInvoice(),));
                                                   },child:Text("Invoice",style: TextStyle(color: Colors.white)) ,style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),)
                                                 ),
                                               ),
@@ -200,7 +201,6 @@ class _CompletedScreenState extends State<CompletedScreen> {
                 ),
               ),
             )
-
           ],
         ),
       ),

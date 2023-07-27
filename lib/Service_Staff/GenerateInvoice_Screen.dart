@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class PaymentDetails extends StatefulWidget {
-  const PaymentDetails({Key? key}) : super(key: key);
+class GenarateInvoice extends StatefulWidget {
+  const GenarateInvoice({Key? key}) : super(key: key);
 
   @override
-  State<PaymentDetails> createState() => _PaymentDetailsState();
+  State<GenarateInvoice> createState() => _GenarateInvoiceState();
 }
 
-class _PaymentDetailsState extends State<PaymentDetails> {
+class _GenarateInvoiceState extends State<GenarateInvoice> {
   String selectedOption='cash';
   @override
   Widget build(BuildContext context) {
@@ -105,17 +105,11 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                             Text('Taxable Amount'),
                             Text('V A T'),
                             Text('Grand Total'),
-                            Text('Previous Outstandings'),
-                            Text('Amount'),
-                            Text('Mode of Payment'),
                           ],
                         ),
                         SizedBox(width: 30,),
                         Column(
                           children: [
-                            Text(':'),
-                            Text(':'),
-                            Text(':'),
                             Text(':'),
                             Text(':'),
                             Text(':'),
@@ -141,54 +135,6 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                             Text('xx'),
                             Text('xx'),
                             Text('50'),
-                            Text('30'),
-                            Text('xxxx'),
-                            Column(crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Radio<String>(
-                                      value: 'cash',
-                                      groupValue: selectedOption,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          selectedOption = value!;
-                                        });
-                                      },
-                                    ),
-                                    Text('Cash'),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Radio<String>(
-                                      value: 'cheque',
-                                      groupValue: selectedOption,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          selectedOption = value!;
-                                        });
-                                      },
-                                    ),
-                                    Text('Cheque'),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Radio<String>(
-                                      value: 'online',
-                                      groupValue: selectedOption,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          selectedOption = value!;
-                                        });
-                                      },
-                                    ),
-                                    Text('Online'),
-                                  ],
-                                ),
-                              ],
-                            )
                           ],
                         ),
                       ],
@@ -199,7 +145,7 @@ class _PaymentDetailsState extends State<PaymentDetails> {
 
                     });
                   },
-                    child: Text('SAVE',style: TextStyle(color: Colors.white),),
+                    child: Text('Genarate Invoice',style: TextStyle(color: Colors.white),),
                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.deepPurple)),
                   ),
                   SizedBox(

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:integrate_3screens/Service_Staff/PaymentDetails_Screen.dart';
 
 class ServiceUndeliveredScreen extends StatefulWidget {
 
@@ -175,7 +176,7 @@ class _ServiceUndeliveredScreenState extends State<ServiceUndeliveredScreen> {
                                               flex: 3,
                                               child: Center(
                                                   child: ElevatedButton(onPressed: () {
-
+                                                    Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentDetails(),));
                                                   },child:Text("Deliver",style: TextStyle(color: Colors.white)) ,style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),)
                                               ),
                                             ),
@@ -195,7 +196,6 @@ class _ServiceUndeliveredScreenState extends State<ServiceUndeliveredScreen> {
                 ),
               ),
             )
-
           ],
         ),
       ),
