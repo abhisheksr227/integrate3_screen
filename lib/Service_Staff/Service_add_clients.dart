@@ -568,6 +568,27 @@ class _ServiceAddClientsState extends State<ServiceAddClients> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 40),
+                  child: Text('Credit Date'),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 40,bottom: 10,right: 15),
+                  child: Container(
+                      height: 40,
+                      width: 200,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: Colors.blue)),
+                      child:Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("12/08/2023"),
+                      ) ),
+                )
+              ],
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 40),
                   child: Text('Credit Limit'),
                 ),
                 Padding(
