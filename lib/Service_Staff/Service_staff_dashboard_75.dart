@@ -1,3 +1,4 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:integrate_3screens/Service_Staff/Completed_Screen.dart';
@@ -849,6 +850,135 @@ class _StaffServiceDashboardState extends State<StaffServiceDashboard> {
                     ),
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text('Category Wise',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,color: Colors.deepPurple),),
+              SizedBox(
+                height: 250,
+                width: 250,
+                child: PieChart(PieChartData(
+                    centerSpaceRadius: 1,
+                    borderData: FlBorderData(show: false),
+                    sections: [
+                      PieChartSectionData(
+                          value: 25,
+                          color: Colors.orange[900],
+                          radius: 100,
+                          title: 'Ironing'),
+                      PieChartSectionData(
+                          value: 40,
+                          color: Colors.blue,
+                          radius: 100,
+                          title: 'Washing'),
+                      PieChartSectionData(
+                          value: 35,
+                          color: Colors.green,
+                          radius: 100,
+                          title: 'Dry cleaning'),
+                    ])),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text('Orders Processed',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,color: Colors.deepPurple),),
+              Padding(
+                padding: const EdgeInsets.only(left: 15, top: 30),
+                child: SizedBox(
+                  height: 300,
+                  child: BarChart(BarChartData(
+                      gridData: FlGridData(show: false),
+                      borderData: FlBorderData(
+                          border: const Border(
+                            top: BorderSide.none,
+                            right: BorderSide.none,
+                            left: BorderSide(width: 1),
+                            bottom: BorderSide(width: 1),
+                          )),
+                      groupsSpace: 10,
+                      titlesData: FlTitlesData(
+                          topTitles: AxisTitles(
+                              sideTitles: SideTitles(showTitles: false)),
+                          rightTitles: AxisTitles(
+                              sideTitles: SideTitles(showTitles: false)),
+                          leftTitles: AxisTitles(
+                              sideTitles: SideTitles(showTitles: false)),
+                          bottomTitles: AxisTitles(
+                              sideTitles: SideTitles(
+                                showTitles: true,
+                                getTitlesWidget: (value, meta) {
+                                  String text = '';
+                                  switch (value.toInt()) {
+                                    case 1:
+                                      text = '01/02';
+                                      break;
+                                    case 2:
+                                      text = '02/02';
+                                      break;
+                                    case 3:
+                                      text = '03/02';
+                                      break;
+                                    case 4:
+                                      text = '04/02';
+                                      break;
+                                    case 5:
+                                      text = '05/02';
+                                      break;
+                                  }
+
+                                  return Text(text);
+                                },
+                              ))),
+
+                      // add bars
+                      barGroups: [
+                        BarChartGroupData(x: 1, barRods: [
+                          BarChartRodData(
+                              toY: 10,
+                              width: 25,
+                              color: Colors.deepPurple,
+                              borderRadius: BorderRadius.zero),
+                        ]),
+                        BarChartGroupData(x: 2, barRods: [
+                          BarChartRodData(
+                              toY: 9,
+                              width: 25,
+                              color: Colors.deepPurple,
+                              borderRadius: BorderRadius.zero),
+                        ]),
+                        BarChartGroupData(x: 3, barRods: [
+                          BarChartRodData(
+                              toY: 4,
+                              width: 25,
+                              color: Colors.deepPurple,
+                              borderRadius: BorderRadius.zero),
+                        ]),
+                        BarChartGroupData(x: 4, barRods: [
+                          BarChartRodData(
+                              toY: 2,
+                              width: 25,
+                              color: Colors.deepPurple,
+                              borderRadius: BorderRadius.zero),
+                        ]),
+                        BarChartGroupData(x: 5, barRods: [
+                          BarChartRodData(
+                              toY: 13,
+                              width: 25,
+                              color: Colors.deepPurple,
+                              borderRadius: BorderRadius.zero),
+                        ]),
+                      ])),
+                ),
+              ),
+              SizedBox(
+                height: 30,
               ),
             ],
           ),

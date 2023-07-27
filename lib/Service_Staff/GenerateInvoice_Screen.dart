@@ -50,6 +50,7 @@ class _GenarateInvoiceState extends State<GenarateInvoice> {
                           Column(crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text('Name'),
+                              Text('Address'),
                               Text('Location'),
                               Text('Area'),
                               Text('Phone No.'),
@@ -62,12 +63,14 @@ class _GenarateInvoiceState extends State<GenarateInvoice> {
                               Text(':'),
                               Text(':'),
                               Text(':'),
+                              Text(':'),
                             ],
                           ),
                           SizedBox(width: 30,),
                           Column(crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text('Aswin'),
+                              Text('xxxxx'),
                               Text('Al Nadha'),
                               Text('Doha Street'),
                               Text('xxxxxxxxxx'),

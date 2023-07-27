@@ -9,7 +9,8 @@ class PaymentDetails extends StatefulWidget {
 }
 
 class _PaymentDetailsState extends State<PaymentDetails> {
-  String selectedOption='cash';
+  String Mode = 'Cash';
+  List<String> PaymentMode = ['Cash','Online','Cheque',];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,6 +51,7 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                           Column(crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text('Name'),
+                              Text('Address'),
                               Text('Location'),
                               Text('Area'),
                               Text('Phone No.'),
@@ -62,12 +64,14 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                               Text(':'),
                               Text(':'),
                               Text(':'),
+                              Text(':'),
                             ],
                           ),
                           SizedBox(width: 30,),
                           Column(crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text('Aswin'),
+                              Text('xxxx'),
                               Text('Al Nadha'),
                               Text('Doha Street'),
                               Text('xxxxxxxxxx'),
@@ -107,6 +111,9 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                             Text('Grand Total'),
                             Text('Previous Outstandings'),
                             Text('Amount'),
+                            SizedBox(
+                              height: 20,
+                            ),
                             Text('Mode of Payment'),
                           ],
                         ),
@@ -125,6 +132,9 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                             Text(':'),
                             Text(':'),
                             Text(':'),
+                            SizedBox(
+                              height: 20,
+                            ),
                             Text(':'),
                           ],
                         ),
@@ -143,52 +153,32 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                             Text('50'),
                             Text('30'),
                             Text('xxxx'),
-                            Column(crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Radio<String>(
-                                      value: 'cash',
-                                      groupValue: selectedOption,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          selectedOption = value!;
-                                        });
-                                      },
-                                    ),
-                                    Text('Cash'),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Radio<String>(
-                                      value: 'cheque',
-                                      groupValue: selectedOption,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          selectedOption = value!;
-                                        });
-                                      },
-                                    ),
-                                    Text('Cheque'),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Radio<String>(
-                                      value: 'online',
-                                      groupValue: selectedOption,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          selectedOption = value!;
-                                        });
-                                      },
-                                    ),
-                                    Text('Online'),
-                                  ],
-                                ),
-                              ],
-                            )
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Container(
+                              width: 100,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(color: Colors.deepPurple)),
+                              child: DropdownButtonFormField(
+                                  decoration: InputDecoration(
+                                      border: OutlineInputBorder(borderSide: BorderSide.none),
+                                      contentPadding: EdgeInsets.only(bottom: 10),
+                                      prefix: SizedBox(
+                                        width: 10,
+                                      ),
+                                      hintStyle: TextStyle(fontWeight: FontWeight.normal)
+                                  ), value: Mode,
+                                  items: PaymentMode.map((e) => DropdownMenuItem(value: e,child: Text(e),)).toList(),
+                                  onChanged: (v) {
+                                    setState(() {
+                                      Mode = v!;
+                                    });
+                                  }
+                              ),
+                            ),
                           ],
                         ),
                       ],

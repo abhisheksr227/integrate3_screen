@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class ServiceAddClients extends StatefulWidget {
   const ServiceAddClients({Key? key}) : super(key: key);
@@ -24,20 +23,23 @@ class _ServiceAddClientsState extends State<ServiceAddClients> {
     }
     return Colors.blue;
   }
+  String Type = 'Select';
+  List<String> CustomerType = ['Select','Home','Co-orperate',];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.blue,size: 30),
+          iconTheme: IconThemeData(color: Colors.deepPurple,size: 30),
           elevation: 0,
           backgroundColor: CupertinoColors.white,
-          title: Center(child: Text("ADD CLIENTS",style: TextStyle(color: Colors.blue,fontSize: 18,fontWeight: FontWeight.w500))),
+          title: Center(child: Text("ADD CLIENTS",style: TextStyle(color: Colors.deepPurple,fontSize: 18,fontWeight: FontWeight.w500))),
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 20),
               child: Icon(
                 Icons.refresh_outlined,
-                color: Colors.blue,
+                color: Colors.deepPurple,
                 size: 30,
               ),
             ),
@@ -108,7 +110,7 @@ class _ServiceAddClientsState extends State<ServiceAddClients> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                       contentPadding: EdgeInsets.only(top: 10),
-                      hintText: 'House No.' ,
+                      hintText: 'House No./Flat No.' ,
                       prefixIcon: Icon(Icons.star,color: Colors.red,size: 15,)
                   ),
                 ),
@@ -295,67 +297,34 @@ class _ServiceAddClientsState extends State<ServiceAddClients> {
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 40),
-                  child: Text('Birthday'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 40,bottom: 10,right: 15),
-                  child: Container(
-                      height: 40,
-                      width: 200,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.blue)),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.only(),
-                            border: OutlineInputBorder(borderSide: BorderSide.none)),
-                        textAlign: TextAlign.center,
-                        controller: dob,
-                        onTap: () async {
-                          FocusScope.of(context).requestFocus(FocusNode());
-                          var pickedDate = await showDatePicker(
-                              builder: (context, child) {
-                                return Theme(data: ThemeData().copyWith(
-                                  colorScheme: ColorScheme.light(
-                                    primary: Colors.blue,
-                                    onPrimary: Colors.white,
-                                    surface: Colors.blue,
-                                    onSurface: Colors.black,
-                                  ),
-                                  dialogBackgroundColor:Colors.blueGrey.shade50,
-                                ), child: child!);
-
-                              },
-                              context: context,
-                              initialDate: DateTime.now(),
-                              firstDate: DateTime(1960,01,01),
-                              lastDate: DateTime(2030,12,31));
-                          dob.text = DateFormat('dd-MM-yyyy').format(pickedDate!);
-                        },
-                      )),
-                )
-              ],
-    ),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
               Padding(
                 padding: const EdgeInsets.only(left: 40),
                 child: Text('Profession'),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 40,bottom: 10,right: 15),
-                child: Container(
-                    height: 40,
+                Padding(
+                  padding: const EdgeInsets.only(left: 55,bottom: 10,right: 15),
+                  child:Container(
                     width: 200,
+                    height: 40,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Colors.blue)),
-                    child: TextFormField(
-                      decoration: InputDecoration(border: OutlineInputBorder(borderSide: BorderSide.none)),
-                    )),
-            )
+                    child: DropdownButtonFormField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(borderSide: BorderSide.none),
+                          contentPadding: EdgeInsets.only(bottom: 10),
+                          prefix: SizedBox(
+                            width: 10,
+                          ),
+                          hintText: 'Select',
+                          hintStyle: TextStyle(fontWeight: FontWeight.normal)
+                      ), items: [
+                      DropdownMenuItem(child: Text('select'))
+                    ],
+                      onChanged: (value) {  },
+                    ),
+                  ),
+                )
             ],
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -380,12 +349,14 @@ class _ServiceAddClientsState extends State<ServiceAddClients> {
                         prefix: SizedBox(
                           width: 10,
                         ),
-                        hintText: 'Select',
                         hintStyle: TextStyle(fontWeight: FontWeight.normal)
-                      ), items: [
-                      DropdownMenuItem(child: Text('select'))
-                    ],
-                      onChanged: (value) {  },
+                      ), value: Type,
+                          items: CustomerType.map((e) => DropdownMenuItem(value: e,child: Text(e),)).toList(),
+                          onChanged: (v) {
+                            setState(() {
+                              Type = v!;
+                            });
+                          }
                     ),
                   ),
                 )
@@ -633,7 +604,7 @@ class _ServiceAddClientsState extends State<ServiceAddClients> {
               child: SizedBox(
                 width: 100,
                 child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
                     onPressed: () {
                     },
                     child: Text('Save',style: TextStyle(color: Colors.white),)),
