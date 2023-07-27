@@ -56,6 +56,9 @@ class _ServiceNewOrderState extends State<ServiceNewOrder> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(
+              height: 20,
+            ),
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Container(
@@ -80,52 +83,25 @@ class _ServiceNewOrderState extends State<ServiceNewOrder> {
               ),
             ),
             SizedBox(
-              height: 50,
-              width: MediaQuery.of(context).size.width/2,
-              child: ElevatedButton(
-                onPressed: () {
-                  _showDropdownDialog();
-                },
-                child: Text(
-                  'New Pickup',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.deepPurple[800],
-                  padding: EdgeInsets.symmetric(vertical: 15),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                ),
+              height: 30,
+            ),
+            SizedBox(
+              width: 150,
+              child: ElevatedButton(onPressed: () {
+                _showDropdownDialog();
+              },
+                child: Text('New Pickup',style: TextStyle(color: Colors.white),),
+                style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.deepPurple)),
               ),
             ),
             SizedBox(height: 30,),
             SizedBox(
-              height: 50,
-              width: MediaQuery.of(context).size.width/2,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceNewOrderscreen(),)
-                  );},
-                child: Text(
-                  'Collect Items',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.deepPurple[800],
-                  padding: EdgeInsets.symmetric(vertical: 15),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                ),
+              width: 150,
+              child: ElevatedButton(onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceNewOrderscreen(),));
+              },
+                child: Text('Collect Items',style: TextStyle(color: Colors.white),),
+                style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.deepPurple)),
               ),
             ),
           ],
@@ -151,6 +127,7 @@ class _ServiceNewOrderState extends State<ServiceNewOrder> {
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: Colors.deepPurple)),
                 child: DropdownButtonFormField<String>(
+                  decoration: InputDecoration(border: InputBorder.none,contentPadding: EdgeInsets.only(left: 10)),
                   value: selectedStaff,
                   onChanged: (newValue) {
                     setState(() {
@@ -173,6 +150,7 @@ class _ServiceNewOrderState extends State<ServiceNewOrder> {
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: Colors.deepPurple)),
                 child: DropdownButtonFormField<String>(
+                  decoration: InputDecoration(border: InputBorder.none,contentPadding: EdgeInsets.only(left: 10)),
                   value: selectedMode,
                   onChanged: (newValue) {
                     setState(() {
