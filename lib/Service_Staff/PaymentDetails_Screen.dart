@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:integrate_3screens/Service_Staff/ServiceReciept_Screen.dart';
 
 class PaymentDetails extends StatefulWidget {
   const PaymentDetails({Key? key}) : super(key: key);
@@ -185,9 +186,7 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                     ),
                   ),
                   ElevatedButton(onPressed: () {
-                    setState(() {
-
-                    });
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceReciept(),));
                   },
                     child: Text('SAVE',style: TextStyle(color: Colors.white),),
                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.deepPurple)),

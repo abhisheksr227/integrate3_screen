@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:integrate_3screens/Service_Staff/ServiceReciept_Screen.dart';
 
 class GenarateInvoice extends StatefulWidget {
   const GenarateInvoice({Key? key}) : super(key: key);
@@ -144,9 +145,7 @@ class _GenarateInvoiceState extends State<GenarateInvoice> {
                     ),
                   ),
                   ElevatedButton(onPressed: () {
-                    setState(() {
-
-                    });
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceReciept(),));
                   },
                     child: Text('Genarate Invoice',style: TextStyle(color: Colors.white),),
                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.deepPurple)),
